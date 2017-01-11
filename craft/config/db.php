@@ -4,24 +4,26 @@
  * Database Configuration
  *
  * All of your system's database configuration settings go in here.
- * You can see a list of the default settings in craft/app/etc/config/defaults/db.php
+ * You can see a list of the default settings in craft/app/config/defaults/db.php
  */
 
-return array(
+ return array(
+   '*' => array(
+     'server' => 'localhost',
+     'database' => 'studentmedia_craft',
+     'tablePrefix' => 'craft',
+     'user' => 'PUT USER NAME HERE',
+     'password' => 'PUT PASSWORD HERE',
+   ),
 
-	// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
-	'server' => 'localhost',
+   'studentmedia.web' => array(
+     'user' => 'root',
+     'password' => 'root',
+   ),
 
-	// The name of the database to select.
-	'database' => 'treno',
-
-	// The database username to connect with.
-	'user' => 'root',
-
-	// The database password to connect with.
-	'password' => 'root',
-
-	// The prefix to use when naming tables. This can be no more than 5 characters.
-	'tablePrefix' => 'craft',
-
-);
+   // Use IP of your droplet and MySQL credentials of a user you created
+   'kentstatestudentmedia.com' => array(
+     'user' => 'PUT USER NAME HERE',
+     'password' => 'PUT PASSWORD HERE',
+   )
+ );
