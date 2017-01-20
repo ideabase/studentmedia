@@ -70,6 +70,9 @@
 		</footer>
 	</div>
   <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
+  {% if craft.config.devMode %}
+  <!-- Live Reload - For local environment only -->
   <script src="//localhost:35729/livereload.js"></script>
+  {% endif %}
 </body>
 </html>
