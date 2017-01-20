@@ -14,9 +14,17 @@ return array(
          'enableCsrfProtection' => true,
          'omitScriptNameInUrls' => true,
          'cpTrigger' => 'admin',
+         'environmentVariables' => array(
+          'basePath' => '',
+          'baseUrl'  => 'https://kentstatestudentmedia.com',
+        )
 	),
 	'studentmedia.web' => array(
 	    'devMode' => true,
       'siteUrl' => 'http://studentmedia.web',
+      'environmentVariables' => array(
+       'basePath' => '',
+       'baseUrl'  => 'http://studentmedia.web',
+     )
 	)
 );
