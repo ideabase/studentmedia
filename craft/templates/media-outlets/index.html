@@ -1,0 +1,10 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<h1>Media Outlets</h1>
+
+	{% for entry in craft.entries.section('mediaOutlets').find() %}
+			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+      {{entry.whatever}}
+	{% endfor %}
+{% endblock %}
