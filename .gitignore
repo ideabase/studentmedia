@@ -2,3 +2,6 @@
 *.css.map
 /httpdocs/node_modules
 /craft/config/db.php
+/.DS_Store
+/httpdocs/.DS_Store
+/httpdocs/assets/.DS_Store
