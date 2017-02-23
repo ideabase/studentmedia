@@ -23,6 +23,13 @@
 	<h1>{{ entry.title }}</h1>
 
 	{{ entry.body }}
+  {% for entry in craft.entries.section('mediaPartner') %}
+    <article>
+      <h1><img src="{{entry.url}}" alt="{{ entry.title} }">{{ entry.title}}</img></h1>
+      {{ entry.summary }}
+      <a href="{{entry.url}}">Continue reading</a>
+    </article>
+  {% endfor %}
 
 	<h2>Recent News</h2>
 	<ul>
