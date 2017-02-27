@@ -23,10 +23,14 @@
   <h1>{{ entry.title }}</h1>
 
   {{entry.body}}
-  {% for entry in craft.entries.section('mediaPartners') %}
-    <article>
-      {{ entry.title }}
-    </article>
+  {% for entry in craft.entries.section('partners') %}
+    <h1>{{ entry.title}}</h1>
+    {% for asset in entry.logo %}
+      <img src="{{asset.url}}" alt="{{asset.title}}" />
+    {%endfor %}
+    {% for asset in entry.image %}
+      <img src="{{asset.url}}" alt="{{asset.title}}" />
+    {%endfor %}
   {% endfor %}
 
 	<h2>Recent News</h2>
