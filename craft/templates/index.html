@@ -17,12 +17,21 @@
  # http://craftcms.com/docs/routing
  #}
 
-{% extends "_layout" %}
+ {% extends "_layout" %}
 
-{% block content %}
-	<h1>{{ entry.title }}</h1>
+ {% block content %}
+  <h1>{{ entry.title }}</h1>
 
-	{{ entry.body }}
+  {{entry.body}}
+  {% for entry in craft.entries.section('partners') %}
+    <h1>{{ entry.title}}</h1>
+    {% for asset in entry.logo %}
+      <img src="{{asset.url}}" alt="{{asset.title}}" />
+    {%endfor %}
+    {% for asset in entry.image %}
+      <img src="{{asset.url}}" alt="{{asset.title}}" />
+    {%endfor %}
+  {% endfor %}
 
 	<h2>Recent News</h2>
 	<ul>

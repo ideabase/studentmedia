@@ -11,15 +11,15 @@ padding-top: 1em;
   width: 48%;
 }
 
-@media screen and (min-width: 550px){
-  .left-box-footer{
+@media screen and (min-width: 750px){
+  .right-box-footer{
     width: 75%;
     display: flex;
     justify-content: space-around;
-    flex-flow: row;
+
 
   }
-  .right-box-footer{
+  .left-box-footer{
     width: 25%;
   }
   .footer-content{

@@ -24,3 +24,19 @@ background:linear-gradient(
   display: flex;
   flex-wrap: wrap
 }
+
+.brand-logo-grid{
+  display: flex;
+}
+
+.brand-logo-div-outside-container{
+  overflow: scroll;
+}
+
+
+@media screen and (min-width: 750px){
+.media-partner{
+width: 200px;
+height: 200px;
+  }
+}
