@@ -1,0 +1,26 @@
+.media-partner{
+background:linear-gradient(
+  rgba(0, 0, 0, 0.75),
+  rgba(0, 0, 0, 0.75)
+  ),
+  url("/assets/img/brands/example.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  margin: 5px;
+}
+
+.brand-logo{
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-partners-container{
+  display: flex;
+  flex-wrap: wrap
+}

@@ -11,13 +11,36 @@ padding-top: 1em;
   width: 48%;
 }
 
+@media screen and (min-width: 550px){
+  .left-box-footer{
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row;
+
+  }
+  .right-box-footer{
+    width: 25%;
+  }
+  .footer-content{
+  }
+}
+
+
+
+
+
+
+
+
+
 .bottom-box-footer{
   width: 100%;
 }
 
 /* Footer font styles - change to variables when using SASS */
 .footer-header{
-  font-family: 'Montserrat', sans-serif;
+  font-family: $mont;
   color: white;
   font-weight: bold;
   font-size: 15px;
@@ -25,7 +48,7 @@ padding-top: 1em;
   margin-bottom: 10px;
 }
 .footer-list-item{
-  font-family: 'Montserrat', sans-serif;
+  font-family: $mont;
   color: #1f3c72;
   font-weight: bold;
   font-size: 13px;
@@ -40,20 +63,15 @@ padding-top: 1em;
 
 .footer-logo-image{
   width: 60%;
+  max-width: 300px;
   padding-top: 2em;
 }
 
-/* Footer top border*/
-footer{
-  border-top-color: white;
-  border-top-style: solid;
-  border-width: .5px;
-}
-
+/*Footer border*/
 .footer-border{
   width: 100%;
   height: 5px;
-  border-bottom-color: white;
+  border-bottom-color: $white;
   border-bottom-style: solid;
   border-width: .5px;
   margin-left: 1em;
@@ -63,5 +81,5 @@ footer{
 a{
   cursor: pointer;
   text-decoration: none;
-  color: #1f3c72;
+  color: $dark-blue;
 }
