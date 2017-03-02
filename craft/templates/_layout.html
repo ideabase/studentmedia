@@ -29,10 +29,7 @@
 			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
 
 			<nav>
-				<ul>
-					<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-          <li><a href="{{ url('hi') }}" {% if craft.request.firstSegment == 'hi' %}class="active"{% endif %}>Hi</a></li>
-				</ul>
+        {{ craft.amNav.getNav("mainMenu") }}
 			</nav>
 		</header>
 
