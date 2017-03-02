@@ -24,7 +24,7 @@
 
   {% extends “_layout” %}
 	{% block content %}
-{% for entry in craft.entries.section(‘SECTIONHANDLE’) %}
+{% for entry in craft.entries.section(‘body’) %}
 	{{entry.body}}
 {% endfor %}
 {% endblock %}
