@@ -6,8 +6,6 @@ var labels = document.getElementsByClassName('nav-label');
 
 // Event Listening
 navTrigger.addEventListener('click', navToggle);
-window.addEventListener('resize', resize);
-
 
 function navToggle(e) {
   var closed = (navTrigger.className.indexOf('close') > 0);
@@ -19,5 +17,3 @@ function navToggle(e) {
     nav.className = 'in';
   }
 }
-
-window.onload = resize;
