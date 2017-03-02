@@ -66,6 +66,12 @@ header {
   }
 }
 
+@media screen and (min-width: 1500px) {
+  header {
+    max-width: 80%;
+  }
+}
+
 a {
   color: #1f3c72;
   font-weight: 500;
@@ -186,9 +192,20 @@ main {
 @media screen and (min-width: 800px) {
   main {
     max-width: 85%;
-    height: 80vh;
   }
 
+}
+
+@media screen and (min-width: 1500px) {
+  main {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 800px) and (min-height: 900px) {
+  main {
+    height: 80vh;
+  }
 }
 
 ul {
