@@ -113,6 +113,7 @@ a:hover, a:focus {
 p {
   font-weight: 300;
   margin-bottom: 1.5em;
+  line-height: 1.4;
 }
 
 @media screen and (min-width: 600px) {
@@ -197,7 +198,9 @@ ul {
 
 @media screen and (min-width: 600px) {
   ul {
+    -moz-columns: 2;
     columns: 2;
+    -moz-column-gap: 50px;
     column-gap: 50px;
   }
 }
@@ -205,6 +208,7 @@ ul {
 ul a {
   margin-bottom:1.25em;
   display:inline-block;
+  line-height: 1.2;
 }
 
 @media screen and (min-width: 600px) {
