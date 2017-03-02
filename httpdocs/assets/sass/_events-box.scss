@@ -4,12 +4,16 @@
   margin: 0 auto;
   padding: 25px;
   background-color: $white;
+  margin-bottom: -50px;
+  position: relative;
+  margin-top: 50px;
 }
 
 .events-div-flex-container{
   display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+background-color: $white;
 }
 
 

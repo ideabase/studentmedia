@@ -2,6 +2,20 @@
   width: 400px;
   margin: 0 auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 5px;
+  width: 80%;
+  margin-top: 50px;
+  background-color: $white;
+
+
+.statistics-box-flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 }
 .big-number{
   font-family: 'Montserrat', sans-serif;
@@ -28,19 +42,26 @@
 }
 
 .statistics-box{
-  margin-top: 50px;
+  margin-top: 25px;
+  width: 100%;
 }
 
-h2{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-  text-align: center;
-  color: $mandarin;
+.statistics-header{
+  background-color: #1f3c72; /*change to dark blue*/
+width: 250px;
+padding-left: 40px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-left: -60px;
+margin-top: 20px;
+color: $mandarin;
+font-weight: 400;
+
 }
 
-@media screen and(min-width: 550px){
-.statistics-container{
-  width: 80%;
-}
 
+@media screen and(min-width: 850px){
+  .statistics-box{
+    width: 32%;
+  }
 }
