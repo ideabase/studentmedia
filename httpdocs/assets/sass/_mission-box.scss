@@ -1,0 +1,36 @@
+.mission-container{
+  margin: 0 auto;
+  width: 80%;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  background-color: $white;
+  margin-top: -50px;
+  position: relative;
+  background-color: $white;
+}
+.mission-blurb{
+  margin-top: 25px;
+  color: black;
+  font-weight: $light;
+}
+
+/*Pattern for sure*/
+.subhead {
+  color: $mandarin;
+  background-color: $dark-blue; /*change to dark blue*/
+  width: 250px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -60px;
+  margin-top: 20px;
+  padding-right: 10px;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: .2px;
+  line-height: 1.4em;
+  display: inline
+}

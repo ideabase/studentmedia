@@ -7,8 +7,8 @@ background:linear-gradient(
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: flex;
   margin: 5px;
@@ -31,12 +31,39 @@ background:linear-gradient(
 
 .brand-logo-div-outside-container{
   overflow: scroll;
+  margin-top: 25px;
 }
 
 
 @media screen and (min-width: 750px){
 .media-partner{
-width: 200px;
-height: 200px;
+width: 250px;
+height: 250px;
   }
+}
+
+.outside-div-container-brands{
+  width: 80%;
+  background-color: $white;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  margin: 0 auto;
+  padding-top: 25px;
+  margin-top: 50px;
+}
+
+.media-partners-header{
+  color: $mandarin;
+  background-color: $dark-blue; /*change to dark blue*/
+  width: 250px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -40px;
+  margin-top: 20px;
+  padding-right: 10px;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: .2px;
+  line-height: 1.4em;
+  display: inline;
 }

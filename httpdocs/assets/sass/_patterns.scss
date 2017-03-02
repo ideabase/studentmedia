@@ -1,0 +1,47 @@
+/*Buttons*/
+.learn-more-button, .support-button {
+   padding: 10px 30px 10px 30px;
+   background-color: blue;
+   font-weight: 300;
+   font-size: 1em;
+   letter-spacing: .3px;
+   line-height: 1.4em;
+   color: white;
+   background-color: rgb(139, 210, 207); /*change to light blue*/
+   border-color:none;
+   border-width: 0;
+   transition: .4s;
+   transition-timing-function: ease-in;
+   transition-timing-function: ease-out;
+   height: 40px;
+   width: 150px;
+   text-align: center;
+ }
+
+.support-button:hover {
+  background-color: rgb(209, 222, 34);
+  border-radius: 30px;
+  transition-duration: .4s;
+  transition-timing-function: ease-in;
+}
+.learn-more-button:hover {
+  background-color: rgb(209, 222, 34);
+  border-radius: 30px;
+  transition-duration: .4s;
+  transition-timing-function: ease-in;
+}
+
+.support-button:active {
+  background-color: rgb(209, 222, 34);
+}
+
+.learn-more-button:active{
+  background-color: rgb(209, 222, 34);
+}
+/*End Buttons*/
+
+
+/*Home Page*/
+body{
+  background-color: $gray;
+}
