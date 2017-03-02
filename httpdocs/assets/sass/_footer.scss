@@ -3,7 +3,7 @@ width: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-background-color: #8ad1cf;
+background-color: $dark-blue;
 padding-top: 75px;
 
 }
@@ -34,17 +34,16 @@ padding-top: 75px;
 
 /* Footer font styles - change to variables when using SASS */
 .footer-header{
-  font-family: $mont;
-  color: white;
+  color: $lime-green;
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
   margin-bottom: 10px;
+  letter-spacing: .2px;
 }
 .footer-list-item{
   font-family: $mont;
-  color: #1f3c72;
-  font-weight: bold;
+  color: $white;
   font-size: 13px;
   margin-bottom: 10px;
 }
@@ -74,5 +73,5 @@ padding-top: 75px;
 a{
   cursor: pointer;
   text-decoration: none;
-  color: $dark-blue;
+  color: $white;
 }
