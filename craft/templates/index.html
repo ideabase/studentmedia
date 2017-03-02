@@ -34,13 +34,6 @@
     {%endfor %}
   {% endfor %}
 
-  {% extends “_layout” %}
-	{% block content %}
-  {% for entry in craft.entries.section(‘body’) %}
-	   <p>{{entry.body}}</p>
-  {% endfor %}
-  {% endblock %}
-
 	<h2>Recent News</h2>
 	<ul>
 		{% for entry in craft.entries.section('news').limit(5).find() %}
