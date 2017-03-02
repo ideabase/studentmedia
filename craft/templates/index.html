@@ -22,7 +22,12 @@
  {% block content %}
   <h1>{{ entry.title }}</h1>
 
-  {{entry.body}}
+  {% extends “_layout” %}
+	{% block content %}
+{% for entry in craft.entries.section(‘SECTIONHANDLE’) %}
+	{{entry.body}}
+{% endfor %}
+{% endblock %}
   {% for entry in craft.entries.section('partners') %}
     <h1>{{ entry.title}}</h1>
     {% for asset in entry.logo %}
