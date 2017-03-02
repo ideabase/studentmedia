@@ -20,12 +20,20 @@
  {% extends "_layout" %}
 
  {% block content %}
-  <h1>{{ entry.title }}</h1>
-  <h2>{{entry.tagline}}</h2>
+ <div class="hero-image">
+   {% for asset in entry.image %}
+     <img class="hero-image-home" src="{{asset.url}}" alt="{{asset.title}}" />
+   {%endfor %}
+ <div class="header-quote">
+   <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+  </div>
+ </div>
+
   <p>{{entry.body}}</p>
-  {% for asset in entry.image %}
-    <img src="{{asset.url}}" alt="{{asset.title}}" />
-  {%endfor %}
+
+
+
+
   {% for entry in craft.entries.section('partners') %}
     <a href="{{ entry.url }}"><h1>{{ entry.title}}</h1></a>
     {% for asset in entry.logo %}
