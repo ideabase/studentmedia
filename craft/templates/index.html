@@ -21,14 +21,11 @@
 
  {% block content %}
   <h1>{{ entry.title }}</h1>
-  <p>{{entry.body}}</p>
-  {% for asset in entry.image %}
-    <img src="{{asset.url}}" alt="{{asset.title}}" />
-  {%endfor %}
 
-  {{entry.body}}
+  {% extends “_layout” %}
+	{% block content %}
   {% for entry in craft.entries.section('partners') %}
-    <a href="{{ entry.url }}"><h1>{{ entry.title}}</h1></a>
+    <h1>{{ entry.title}}</h1>
     {% for asset in entry.logo %}
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
@@ -36,5 +33,17 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
+  {% extends “_layout” %}
+	{% block content %}
+  {% for entry in craft.entries.section(‘body’) %}
+	   {{entry.body}}
+  {% endfor %}
+  {% endblock %}
 
+	<h2>Recent News</h2>
+	<ul>
+		{% for entry in craft.entries.section('news').limit(5).find() %}
+			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		{% endfor %}
+	</ul>
 {% endblock %}
