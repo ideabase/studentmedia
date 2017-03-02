@@ -1,0 +1,76 @@
+.video-container-home{
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+  padding-top: 25px;
+    background-color: $white;
+
+
+}
+.video-div-flex-container{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.video-box{
+  margin: 15px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  background:
+    url("/assets/img/brands/example.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+margin: 15px;
+height: 350px;
+}
+
+/*.placeholder-image{
+  justify-content: center;
+  width: 500px;
+  height: 250px;
+}*/
+
+.video-blurb-paragragh{
+  color: black;
+  font-weight: $light;
+  width: 100%;
+  margin: 0;
+}
+.video-blurb, .video-box{
+  padding: 15px;
+}
+
+@media screen and (min-width: 970px){
+  .video-box{
+    width: 56%;
+    max-width: 800px;
+    justify-content: center;
+
+  }
+
+  .video-blurb{
+    width:40%;
+  }
+}
+
+
+.video-box-header{
+  color: $mandarin;
+  background-color: $dark-blue; /*change to dark blue*/
+  width: 250px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -35px;
+  margin-top: 20px;
+  padding-right: 10px;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: .2px;
+  line-height: 1.4em;
+  display: inline
+}
