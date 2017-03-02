@@ -33,10 +33,11 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
+
   {% extends “_layout” %}
 	{% block content %}
   {% for entry in craft.entries.section(‘body’) %}
-	   {{entry.body}}
+	   <p>{{entry.body}}</p>
   {% endfor %}
   {% endblock %}
 
