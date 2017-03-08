@@ -6,5 +6,8 @@
 	{% for entry in craft.entries.section('mediaOutlets').find() %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
       {{entry.whatever}}
+			{% for entry in entry.events %}
+			{{ entry.events }}
+{% endfor %}
 	{% endfor %}
 {% endblock %}

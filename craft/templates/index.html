@@ -31,7 +31,9 @@
 
   <p>{{entry.body}}</p>
 
-
+  {% for asset in entry.video %}
+  	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+  {% endfor %}
 
 
   {% for entry in craft.entries.section('partners') %}
