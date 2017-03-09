@@ -22,13 +22,14 @@
  {% block content %}
  <div class="hero-image">
    {% for asset in entry.heroImage %}
-     <img class="hero-image-home" src="{{asset.url}}" alt="{{asset.title}}" />
+     <img class="hero-image-home" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
    {%endfor %}
  <div class="header-quote">
    <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
   </div>
  </div>
 
+ <h2>Our Mission</h2>
   <p>{{entry.body}}</p>
 
   <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
