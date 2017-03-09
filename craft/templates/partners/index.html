@@ -3,11 +3,14 @@
 {% block content %}
 	<h1>Media Outlets</h1>
 
-	{% for entry in craft.entries.section('mediaOutlets').find() %}
+	{% for entry in craft.entries.section('partners').find() %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-      {{entry.whatever}}
-			{% for entry in entry.events %}
-			{{ entry.events }}
-{% endfor %}
+			{% for asset in entry.heroImage %}
+		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
 	{% endfor %}
+	{% for asset in entry.logo %}
+	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+	{% endfor %}
+	{{entry.shortDescription}}
+{% endfor %}
 {% endblock %}
