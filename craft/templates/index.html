@@ -45,6 +45,7 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
-   <h2>{{ entry.statistics }}</h2>
-
+  {% for entry in entry.statistics %}
+  	{{ entry.title }}
+  {% endfor %}
 {% endblock %}
