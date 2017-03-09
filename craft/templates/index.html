@@ -21,7 +21,7 @@
 
  {% block content %}
  <div class="hero-image">
-   {% for asset in entry.image %}
+   {% for asset in entry.heroImage %}
      <img class="hero-image-home" src="{{asset.url}}" alt="{{asset.title}}" />
    {%endfor %}
  <div class="header-quote">
@@ -31,10 +31,7 @@
 
   <p>{{entry.body}}</p>
 
-  {% for asset in entry.video %}
-  	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-  {% endfor %}
-
+  <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
   {% for entry in craft.entries.section('partners') %}
     <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
