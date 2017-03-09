@@ -20,11 +20,22 @@
  {% extends "_layout" %}
 
  {% block content %}
-  <h1>{{ entry.title }}</h1>
+ <div class="hero-image">
+   {% for asset in entry.heroImage %}
+     <img class="hero-image-home" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
+   {%endfor %}
+ <div class="header-quote">
+   <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+  </div>
+ </div>
 
-  {{entry.body}}
+ <h2>Our Mission</h2>
+  <p>{{entry.body}}</p>
+
+  <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
   {% for entry in craft.entries.section('partners') %}
-    <h1>{{ entry.title}}</h1>
+    <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
     {% for asset in entry.logo %}
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
@@ -32,11 +43,14 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
+  {% for entry in craft.entries.section('statistics') %}
+    <a href="{{entry.url}}"><h2>{{ entry.title }}</h2></a>
+    <p>{{entry.description}}</p>
+  {% endfor %}
+  {% for entry in craft.entries.section('events') %}
+	 <h2>{{ entry.title }}</h2>
+   <p>{{entry.description}}</p>
+{% endfor %}
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+
 {% endblock %}

@@ -21,14 +21,16 @@
 </head>
 
 <body>
-	<div id="container">
-		<header id="header">
-      {% for asset in header.logo %}
-        <img src="{{asset.url}}" alt="{{asset.title}}"/>
-      {% endfor %}
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
-
-			<nav>
+		<header>
+      <section class = "header-nav-container">
+        <button id="nav-trigger" class="nav-trigger header-button"><img src = "/assets/img/icons/Menu-26.png"></button>
+      </section>
+      <section class = "header-logo-container">
+        {% for asset in header.logo %}
+          <img class = "header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
+        {% endfor %}
+      </section>
+			<nav id="nav" class="out">
         {{ craft.amNav.getNav("mainMenu") }}
 			</nav>
 		</header>
@@ -45,7 +47,6 @@
 			{{footer.phone}}
       {{footer.email}}
     </footer>
-	</div>
   <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   {% if craft.config.devMode %}
   <!-- Live Reload - For local environment only -->
