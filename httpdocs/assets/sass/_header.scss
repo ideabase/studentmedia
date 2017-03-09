@@ -6,6 +6,7 @@ header{
   position: absolute;
 }
 
+
 .nav-trigger{
   margin-left: 5px;
   margin-top: 5px;
@@ -93,6 +94,11 @@ nav li {
   position: relative;
   background: #cecece;
   color: $dark-blue;
+  border-bottom-style: solid;
+  border-bottom-color: $dark-blue;
+  border-bottom-width: .5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media screen and (min-width: 800px){
@@ -111,6 +117,7 @@ nav li {
 
   nav li{
     background-color: $white;
+    border-style: none;
   }
 
   .header-logo{
