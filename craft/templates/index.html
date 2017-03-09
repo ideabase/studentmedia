@@ -37,7 +37,7 @@
 
 
   {% for entry in craft.entries.section('partners') %}
-    <a href="{{ entry.url }}"><h1>{{ entry.title}}</h1></a>
+    <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
     {% for asset in entry.logo %}
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
@@ -45,11 +45,11 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
-  {% for entry in entry.section ('statistics') %}
-    <a href="{{ entry.url }}"><h2>{{ entry.title }}</h2></a>
+  {% for entry in craft.entries.section('statistics') %}
+    <a href="{{entry.url}}"><h2>{{ entry.title }}</h2></a>
     <p>{{entry.description}}</p>
   {% endfor %}
-  {% for entry in entry.section ('events') %}
+  {% for entry in craft.entries.section('events') %}
 	 <h2>{{ entry.title }}</h2>
    <p>{{entry.description}}</p>
 {% endfor %}
