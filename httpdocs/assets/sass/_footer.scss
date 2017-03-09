@@ -9,7 +9,7 @@ padding-top: 75px;
 }
 
 .left-box-footer, .right-box-footer{
-  width: 48%;
+  width: 50%;
 }
 
 @media screen and (min-width: 750px){
@@ -17,8 +17,9 @@ padding-top: 75px;
     width: 75%;
     display: flex;
     justify-content: space-around;
-
-
+  }
+  .bottom-box-footer{
+    display: flex;
   }
   .left-box-footer{
     width: 25%;
@@ -26,10 +27,14 @@ padding-top: 75px;
   .footer-content{
   }
 }
-
-
-.bottom-box-footer{
+.footer-logo-image{
   width: 100%;
+  min-width: 200px;
+}
+.bottom-box-footer{
+  width: 50%;
+  padding-bottom: 2em;
+  padding-top: 2em;
 }
 
 /* Footer font styles - change to variables when using SASS */
@@ -74,4 +79,8 @@ a{
   cursor: pointer;
   text-decoration: none;
   color: $white;
+}
+
+.footer-content-list{
+  text-align: center;
 }
