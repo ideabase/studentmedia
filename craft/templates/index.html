@@ -45,6 +45,12 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
+  {% for entry in entry.statistics %}
+	{{ entry.title }}
+  {% for entry in entry.events %}
+	{{ entry.title }}
+{% endfor %}
+{% endfor %}
 
 
 {% endblock %}
