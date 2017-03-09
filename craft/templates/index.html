@@ -46,9 +46,11 @@
     {%endfor %}
   {% endfor %}
   {% for entry in craft.entries.section('statistics') %}
-    <h1>{{ entry.title}}</h1></a>
-    {% for asset in entry.logo %}
-    {% for entry in craft.entries.section('events') %}
-      <h1>{{ entry.title}}</h1></a>
-      {% for asset in entry.logo %}
+    <h1>{{ entry.title}}</h1>
+  {% endfor %}
+  {% for entry in entry.events %}
+	{{ entry.title }}
+{% endfor %}
+
+
 {% endblock %}
