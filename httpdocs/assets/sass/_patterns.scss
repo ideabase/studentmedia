@@ -24,24 +24,34 @@
   transition-duration: .4s;
   transition-timing-function: ease-in;
 }
-.learn-more-button:hover {
-  background-color: rgb(209, 222, 34);
-  border-radius: 30px;
-  transition-duration: .4s;
-  transition-timing-function: ease-in;
-}
 
 .support-button:active {
   background-color: rgb(209, 222, 34);
 }
 
-.learn-more-button:active{
-  background-color: rgb(209, 222, 34);
-}
+
 /*End Buttons*/
 
 
 /*Home Page*/
 body{
   background-color: #cecece;
+}
+
+/*Pattern for sure*/
+.subhead {
+  color: $lime-green;
+  background-color: $dark-blue; /*change to dark blue*/
+  width: 250px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -60px;
+  margin-top: 20px;
+  padding-right: 20px;
+  font-weight: 400;
+  font-size: 1.4em;
+  letter-spacing: .2px;
+  line-height: 1.4em;
+  display: inline
 }
