@@ -45,8 +45,6 @@
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
   {% endfor %}
-  {% for entry in craft.entries.section(‘statistics’) %}
-	  <h2>{{ entry.statistics}}</h2></a>
-{% endfor %}
+   <h2>{{ entry.statistics }}</h2>
 
 {% endblock %}
