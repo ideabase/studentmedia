@@ -13,4 +13,12 @@
 	{% endfor %}
 	{{entry.shortDescription}}
 {% endfor %}
+
+<h2>Events</h2>
+{% for entry in craft.entries.section('events').find() %}
+<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+{{entry.time}}
+{{entry.location}}
+{{entry.description}}
+{% endfor %}
 {% endblock %}
