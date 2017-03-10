@@ -1,5 +1,5 @@
 /*Buttons*/
-.learn-more-button, .support-button {
+.support-button {
    padding: 10px 30px 10px 30px;
    background-color: blue;
    font-weight: 300;
@@ -40,18 +40,33 @@ body{
 
 /*Pattern for sure*/
 .subhead {
-  color: $lime-green;
+  color: $white;
   background-color: $dark-blue; /*change to dark blue*/
-  width: 250px;
-  padding-left: 40px;
+  padding-left: 60px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-left: -60px;
   margin-top: 20px;
-  padding-right: 20px;
   font-weight: 400;
-  font-size: 1.4em;
+  font-size: 2em;
   letter-spacing: .2px;
   line-height: 1.4em;
-  display: inline
+  display: block;
+}
+
+.icon:before{
+  content: '';
+  display:block;
+  width: 60px;
+  height: 30px;
+  background: $lime-green;
+  position: absolute;
+  bottom: 10%;
+  right: 90%;
+}
+
+.subhead-list{
+  list-style-type: none;
+}
+body{
+  margin: 0 auto;
 }

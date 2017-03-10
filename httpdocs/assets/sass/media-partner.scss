@@ -1,0 +1,34 @@
+.media-partner-content-container, .media-partner-social-media-container{
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.media-partner-content-container, .social-media-icon, .media-partner-social-media-container {
+  border-style: solid;
+}
+
+.social-media-icon{
+  width: 32%;
+  height: 100px;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+.media-partner-social-media-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.media-partner-content-container{ /*Remove once filled with content*/
+  height: 500px;
+}
+
+@media screen and (min-width 800px){
+  .social-media-icon{
+    float: left;
+
+  }
+  .media-partner-social-media-container{
+    display: inline;
+  }
+}
