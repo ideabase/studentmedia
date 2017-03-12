@@ -28,7 +28,7 @@
 
 <h2>Upcoming Events</h2>
 {% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
-{{entry.title}}
+<a href=" {{entry.url}}">{{ entry.title }}</a>
 {%endfor%}
 
 <h2>Student Leader</h2>

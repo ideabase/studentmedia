@@ -3,6 +3,9 @@
 {% block content %}
 
 		<h1>{{ entry.title }}</h1>
+		{% for asset in entry.image %}
+	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+{% endfor %}
     {{entry.description}}
     {{entry.time}}
     {{entry.location}}
