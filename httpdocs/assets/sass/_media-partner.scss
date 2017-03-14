@@ -1,0 +1,39 @@
+.media-partner-contact-container, .media-partner-about-container, .media-partner-social-media-container, .media-partner-events-container{
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.media-partner-contact-container, .media-partner-about-container, .social-media-icon, .media-partner-social-media-container, .media-partner-events-container {
+  border-style: solid;
+}
+
+.social-media-icon{
+  width: 32%;
+  height: 100px;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+.social-media-flex-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.media-partner-contact-container, .media-partner-events-container, .media-partner-about-container{ /*Remove once filled with content*/
+  height: 500px;
+}
+
+.media-partner-about-container{
+  margin-top: -50px;
+  position: relative;
+}
+
+@media screen and (min-width 800px){
+  .social-media-icon{
+    float: left;
+
+  }
+  .media-partner-social-media-container{
+    display: inline;
+  }
+}
