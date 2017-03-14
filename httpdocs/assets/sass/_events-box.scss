@@ -17,7 +17,7 @@ background-color: $white;
 
 .events-list{
   list-style-type: none;
-  font-weight: $light;
+  font-weight: black;
   color: black;
   padding: 0;
 }
@@ -33,6 +33,7 @@ background-color: $white;
 
 .events-buttons{
   display: flex;
+  margin: 10px;
 }
 
 /*There is definitely a better way to do this*/
