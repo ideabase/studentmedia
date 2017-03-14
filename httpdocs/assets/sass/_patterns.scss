@@ -43,26 +43,27 @@ body{
 .subhead {
   color: $white;
   background-color: $dark-blue; /*change to dark blue*/
-  padding-left: 60px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: 0px;
   font-weight: 400;
   font-size: 2em;
   letter-spacing: .2px;
   line-height: 1.4em;
   display: block;
+  position: relative;
 }
 
-.icon:before{
+.subhead::before{
   content: '';
   display:block;
-  width: 60px;
+  width: 65px;
   height: 30px;
   background: $lime-green;
   position: absolute;
-  bottom: 10%;
-  right: 90%;
+  bottom: 25%;
+  left: -10%;
 }
 
 .subhead-list{
