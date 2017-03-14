@@ -14,10 +14,76 @@ background:linear-gradient(
   margin: 5px;
 }
 
+
+.amag-container {
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+    ),
+    url("/assets/img/brands/backgroundimages/mag.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin: 5px;
+}
+
+.bsr-container {
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+    ),
+    url("/assets/img/brands/backgroundimages/sound.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin: 5px;
+}
+
+.fusion-container {
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+    ),
+    url("/assets/img/brands/backgroundimages/fusion.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin: 5px;
+}
+
+.kentstater-container {
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+    ),
+    url("/assets/img/brands/backgroundimages/magazine.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    margin: 5px;
+}
+
 .brand-logo{
   margin: auto;
   align-items: center;
   justify-content: center;
+  max-width: 75%;
 }
 
 .media-partners-container{
