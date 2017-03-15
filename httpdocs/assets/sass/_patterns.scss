@@ -42,7 +42,7 @@ body{
 /*Pattern for sure*/
 .subhead {
   color: $white;
-  background-color: $dark-blue; /*change to dark blue*/
+  background-color: $dark-blue;
   padding-left: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -62,8 +62,10 @@ body{
   height: 30px;
   background: $lime-green;
   position: absolute;
-  bottom: 25%;
-  left: -10%;
+  bottom: 17px;
+  left: -30px;
+  /*bottom: 25%;
+  left: -10%;*/
 }
 
 .subhead-list{
