@@ -47,7 +47,6 @@
       <div class = "brand-logo-grid">
         {% for entry in craft.entries.section('partners') %}
         <section class = "media-partners-container">
-        <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
         <div class="media-partner amag-container">
         {% for asset in entry.logo %}
         <img src="{{asset.url}}" alt="{{asset.title}}" />
@@ -68,6 +67,7 @@
             {% for entry in craft.entries.section('statistics') %}
             <div class = "statistics-box">
             <div class = "statistics-number">
+            <h3 class = "big-number">{{ entry.title }}</h3>
           </div>
           <hr class = "statistics-border"/>
           <p class = "statistics-blurb">{{ entry.statistics }}</p>
