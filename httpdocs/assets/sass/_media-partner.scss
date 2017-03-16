@@ -1,13 +1,11 @@
-
 .media-partner-contact-container, .media-partner-about-container, .media-partner-social-media-container, .media-partner-events-container{
   width: 80%;
   margin: 0 auto;
   background-color: white;
 }
 
-.social-icon{
-  //border-style: solid;
-  max-height: 100px;
+.social-media-icon{
+  border-style: solid;
 }
 .media-partner-about-blurb{
   padding-left: 15px;
@@ -20,13 +18,12 @@
   margin-top:15px;
   margin-bottom: 15px;
 }
-
 .social-media-flex-container{
   display: flex;
   justify-content: space-around;
 }
 
-.media-partner-contact-container, .media-partner-events-container{ /*Remove once filled with content*/
+.media-partner-events-container{ /*Remove once filled with content*/
   height: 500px;
 }
 
@@ -38,60 +35,94 @@
   margin-top: -50px;
   position: relative;
 }
-.media-partner-contact-caption::after{
+.media-partner-contact-caption::before{
   content: '';
   display:block;
-  width: 75%;
-  height: 10px;
+  height: 5px;
   background: $lime-green;
-}
-//start of Kelsey's code...Jesus take the wheel
-.email {
-  color: black;
-  text-decoration: none;
-  font-size: 1em;
+  width: 100%;
 }
 
-figcaption.media-partner-contact-caption {
-  font-weight: bold;
-  font-size: 1.5em;
-  line-height: 2em;
-}
-
-.media-partner-contact-title {
-  color: $light-blue;
-  line-height: 2.5em;
-  font-size: 1em;
-}
-.contact-picture{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+.media-partner-contact{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-
-//end
 
 @media screen and (min-width 800px){
   .social-media-icon{
     float: left;
-  }
 
+  }
   .media-partner-social-media-container{
     display: inline;
   }
-
-.media-partner-contact {
-    display: inherit;
-    align-content: center;
-  }
-
-
 }
 
-@media screen and(min-width 600px){
+
+
+.contact-picture{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-style: solid; /*Delete this - couldn't tell where circle ended*/
+}
+
+
+
+
+
+
+
+.contact-name{
+  text-transform: uppercase;
+  color: $dark-blue;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  -webkit-margin-after: 0em;
+}
+
+.contact-title{
+  color: $light-blue;
+  font-weight: $light;
+  font-size: 16px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0.5em;
+}
+
+.contact-email, .contact-phone{
+  font-size: 14px;
+  font-weight: $light;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.contact-name, .contact-title, .contact-email, .contact-phone{
+  text-align: center;
+}
+
+@media screen and (min-width: 650px){
   .media-partner-contact{
-    //display: flex;
+    display: flex;
+  }
+  .figure-contact-container{
+    width: 30%;
+  }
+  .media-partner-contact-caption{
+    width: 70%;
+  }
+  .media-partner-contact-caption::after{
+    margin-left: -40px;
+  }
+  .media-partner-contact-caption::after{
+    content: '';
+    display:block;
+    height: 5px;
+    background: $lime-green;
+    width: 100%;
+}
+.media-partner-contact-caption::before{
+  content: '';
+  display:none;
   }
 }
