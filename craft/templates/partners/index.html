@@ -4,6 +4,7 @@
 	<h1>Media Outlets</h1>
 
 	{% for entry in craft.entries.section('partners').find() %}
+	{% if entry.featuredMediaPartner %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			{% for asset in entry.heroImage %}
 		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
@@ -12,6 +13,7 @@
 	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
 	{% endfor %}
 	{{entry.shortDescription}}
+	{% endif %}
 {% endfor %}
 
 <h2>Events</h2>

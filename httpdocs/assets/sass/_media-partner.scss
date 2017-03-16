@@ -1,11 +1,13 @@
+
 .media-partner-contact-container, .media-partner-about-container, .media-partner-social-media-container, .media-partner-events-container{
   width: 80%;
   margin: 0 auto;
   background-color: white;
 }
 
-.social-media-icon{
-  border-style: solid;
+.social-icon{
+  //border-style: solid;
+  max-height: 100px;
 }
 .media-partner-about-blurb{
   padding-left: 15px;
@@ -18,6 +20,7 @@
   margin-top:15px;
   margin-bottom: 15px;
 }
+
 .social-media-flex-container{
   display: flex;
   justify-content: space-around;
@@ -38,29 +41,57 @@
 .media-partner-contact-caption::after{
   content: '';
   display:block;
-  width: 100%;
-  height: 5px;
+  width: 75%;
+  height: 10px;
   background: $lime-green;
-
 }
-@media screen and (min-width 800px){
-  .social-media-icon{
-    float: left;
-
-  }
-  .media-partner-social-media-container{
-    display: inline;
-  }
+//start of Kelsey's code...Jesus take the wheel
+.email {
+  color: black;
+  text-decoration: none;
+  font-size: 1em;
 }
 
+figcaption.media-partner-contact-caption {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.media-partner-contact-title {
+  color: $light-blue;
+  line-height: 2.5em;
+  font-size: 1em;
+}
 .contact-picture{
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  display: flex;
+}
+
+
+//end
+
+@media screen and (min-width 800px){
+  .social-media-icon{
+    float: left;
+  }
+
+  .media-partner-social-media-container{
+    display: inline;
+  }
+
+.media-partner-contact {
+    display: inherit;
+    align-content: center;
+  }
+
+
 }
 
 @media screen and(min-width 600px){
   .media-partner-contact{
-    display: flex;
+    //display: flex;
   }
 }

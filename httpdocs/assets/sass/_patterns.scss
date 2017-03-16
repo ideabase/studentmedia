@@ -39,6 +39,35 @@ body{
   background-color: #acacac;
 }
 
+
+@media screen and (min-width: 400px){
+.subhead {
+  color: $white;
+  background-color: $dark-blue;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing: .2px;
+  line-height: 1.4em;
+  display: block;
+  position: relative;
+}
+.subhead::before{
+  height: 20px;
+  width: 50px;
+  content: '';
+  display:block;
+  background: $lime-green;
+  position: absolute;
+  bottom: 17px;
+  left: -30px;
+}
+}
+
+@media screen and (min-width: 700px){
 /*Pattern for sure*/
 .subhead {
   color: $white;
@@ -47,9 +76,9 @@ body{
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 0px;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 2em;
-  letter-spacing: .2px;
+  letter-spacing: .3px;
   line-height: 1.4em;
   display: block;
   position: relative;
@@ -73,4 +102,5 @@ body{
 }
 body{
   margin: 0 auto;
+}
 }
