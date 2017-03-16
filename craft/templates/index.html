@@ -45,10 +45,8 @@
     <h2 class="subhead">Media Partners</h2>
     <section class = "brand-logo-div-outside-container">
       <div class = "brand-logo-grid">
-        <section class = "media-partners-container">
         {% for entry in craft.entries.section('partners') %}
-        {% if entry.featuredMediaPartner %}
-        <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
+        <section class = "media-partners-container">
         <div class="media-partner amag-container">
         {% for asset in entry.logo %}
         <img src="{{asset.url}}" alt="{{asset.title}}" />
@@ -57,27 +55,26 @@
         {% for asset in entry.image %}
         <img src="{{asset.url}}" alt="{{asset.title}}" />
         {%endfor %}
-        {% endif %}
-        {% endfor %}
       </section>
+        {% endfor %}
       </div>
       </section>
       </section>
 
-  <section class = "statistics-container">
-    <h2 class = "subhead">Our Statistics</h2>
-    <div class = "statistics-box-flex-container">
-      <div class = "statistics-box">
-        <div class = "statistics-number">
-          {% for entry in craft.entries.section('statistics') %}
-          <h3 class = "big-number"><h2>{{ entry.title }}</h2></h3>
+      <section class = "statistics-container">
+          <h2 class = "subhead">Our Statistics</h2>
+      <div class = "statistics-box-flex-container">
+            {% for entry in craft.entries.section('statistics') %}
+            <div class = "statistics-box">
+            <div class = "statistics-number">
+            <h3 class = "big-number">{{ entry.title }}</h3>
+          </div>
+          <hr class = "statistics-border"/>
+          <p class = "statistics-blurb">{{ entry.statistics }}</p>
         </div>
-        <hr class = "statistics-border"/>
-        <p class = "statistics-blurb">{{ entry.statistics }}</p>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
+
+            {% endfor %}
+      </section>
 
 
 <section class = "events-container">
