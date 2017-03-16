@@ -35,6 +35,7 @@
 
   <h2>Media Partners</h2>
   {% for entry in craft.entries.section('partners') %}
+  {% if entry.featuredMediaPartner %}
     <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
     {% for asset in entry.logo %}
       <img src="{{asset.url}}" alt="{{asset.title}}" />
@@ -42,6 +43,7 @@
     {% for asset in entry.image %}
       <img src="{{asset.url}}" alt="{{asset.title}}" />
     {%endfor %}
+    {% endif %}
   {% endfor %}
 
   <h2>Statistics</h2>
