@@ -47,6 +47,7 @@
       <div class = "brand-logo-grid">
         <section class = "media-partners-container">
         {% for entry in craft.entries.section('partners') %}
+        {% if entry.featuredMediaPartner %}
         <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
         <div class="media-partner amag-container">
         {% for asset in entry.logo %}
@@ -56,6 +57,7 @@
         {% for asset in entry.image %}
         <img src="{{asset.url}}" alt="{{asset.title}}" />
         {%endfor %}
+        {% endif %}
         {% endfor %}
       </section>
       </div>
