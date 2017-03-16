@@ -2,7 +2,6 @@
   width: 80%;
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   margin: 0 auto;
-  padding: 25px;
   background-color: $white;
   margin-bottom: -50px;
   position: relative;
@@ -18,7 +17,7 @@ background-color: $white;
 
 .events-list{
   list-style-type: none;
-  font-weight: $light;
+  font-weight: black;
   color: black;
   padding: 0;
 }
@@ -34,6 +33,7 @@ background-color: $white;
 
 .events-buttons{
   display: flex;
+  margin: 10px;
 }
 
 /*There is definitely a better way to do this*/

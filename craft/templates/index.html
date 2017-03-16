@@ -29,34 +29,65 @@
   </div>
  </div>
 
- <h2>Our Mission</h2>
-  <p>{{entry.body}}</p>
-  <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ <section class = "video-container-home">
+   <h2 class="subhead">Our Mission</h2>
+   <div class = "video-div-flex-container">
+    <div class = "video-blurb">
+      <p class = "video-blurb-paragragh">{{entry.body}}</p>
+    </div>
+    <div class = "video-box">
+      <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </section>
 
-  <h2>Media Partners</h2>
-  {% for entry in craft.entries.section('partners') %}
-  {% if entry.featuredMediaPartner %}
-    <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
-    {% for asset in entry.logo %}
-      <img src="{{asset.url}}" alt="{{asset.title}}" />
-    {%endfor %}
-    {% for asset in entry.image %}
-      <img src="{{asset.url}}" alt="{{asset.title}}" />
-    {%endfor %}
-    {% endif %}
+
+  <section class = "outside-div-container-brands">
+    <h2 class="subhead">Media Partners</h2>
+    <section class = "brand-logo-div-outside-container">
+      <div class = "brand-logo-grid">
+        <section class = "media-partners-container">
+        {% for entry in craft.entries.section('partners') %}
+        <a href="{{entry.url}}"><h1>{{ entry.title}}</h1></a>
+        <div class="media-partner amag-container">
+        {% for asset in entry.logo %}
+        <img src="{{asset.url}}" alt="{{asset.title}}" />
+        {%endfor %}
+        </div>
+        {% for asset in entry.image %}
+        <img src="{{asset.url}}" alt="{{asset.title}}" />
+        {%endfor %}
+        {% endfor %}
+      </section>
+      </div>
+      </section>
+      </section>
+
+  <section class = "statistics-container">
+    <h2 class = "subhead">Our Statistics</h2>
+    <div class = "statistics-box-flex-container">
+      <div class = "statistics-box">
+        <div class = "statistics-number">
+          {% for entry in craft.entries.section('statistics') %}
+          <h3 class = "big-number"><h2>{{ entry.title }}</h2></h3>
+        </div>
+        <hr class = "statistics-border"/>
+        <p class = "statistics-blurb">{{ entry.statistics }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+<section class = "events-container">
+  <h2 class ="subhead">Events</h2>
+  <div class = "events-div-flex-container">
+    {% for entry in craft.entries.section('events') %}
+  	 <h3>{{ entry.title }}</h3>
+     <p>{{entry.description}}</p>
   {% endfor %}
+</div>
+</section>
 
-  <h2>Statistics</h2>
-  {% for entry in craft.entries.section('statistics') %}
-    <a href="{{entry.url}}"><h2>{{ entry.title }}</h2></a>
-    <p>{{entry.description}}</p>
-  {% endfor %}
-
-  <h2>Events</h2>
-  {% for entry in craft.entries.section('events') %}
-	 <h3>{{ entry.title }}</h3>
-   <p>{{entry.description}}</p>
-{% endfor %}
 
 
 {% endblock %}
