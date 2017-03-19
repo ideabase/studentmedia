@@ -38,8 +38,37 @@
 body{
   background-color: #acacac;
 }
+body{
+  margin: 0 auto;
+}
 
 
+@media screen and (min-width: 100px){
+.subhead {
+  color: $white;
+  background-color: $dark-blue;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 1em;
+  //letter-spacing: .2px;
+  line-height: 1em;
+  display: block;
+  position: relative;
+}
+.subhead::before{
+  height: 15px;
+  width: 30px;
+  content: '';
+  display:block;
+  background: $lime-green;
+  position: absolute;
+  bottom: 10px;
+  left: -15px;
+}
+}
 @media screen and (min-width: 400px){
 .subhead {
   color: $white;
@@ -99,8 +128,5 @@ body{
 
 .subhead-list{
   list-style-type: none;
-}
-body{
-  margin: 0 auto;
 }
 }
