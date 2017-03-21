@@ -1,10 +1,12 @@
 
-// selected elements
+// Navigation Menu Button //
+
 var navTrigger = document.getElementById('nav-trigger');
 var nav = document.getElementById('nav');
 var labels = document.getElementsByClassName('nav-label');
 
-// Event Listening
+
+// Navigation Menu Open/Close //
 navTrigger.addEventListener('click', navToggle);
 
 function navToggle(e) {
@@ -17,3 +19,6 @@ function navToggle(e) {
     nav.className = 'in';
   }
 }
+
+
+// Accordion //
