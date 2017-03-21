@@ -95,6 +95,10 @@ background:linear-gradient(
   display: flex;
 }
 
+.media-partner-container:hover {
+  color: blue;
+}
+
 .brand-logo-div-outside-container{
   overflow: scroll;
   margin-top: 25px;

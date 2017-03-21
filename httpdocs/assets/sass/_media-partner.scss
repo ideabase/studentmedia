@@ -4,23 +4,24 @@
   background-color: white;
 }
 
-.social-media-icon{
-  border-style: solid;
-}
 .media-partner-about-blurb{
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
 }
-.social-media-icon{
-  width: 32%;
-  height: 100px;
-  margin-top:15px;
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
-.social-media-flex-container{
-  display: flex;
-  justify-content: space-around;
+
+.social-media-icon{
+  width: 50px;
 }
 
 .media-partner-events-container{ /*Remove once filled with content*/
@@ -31,17 +32,18 @@
   margin-bottom: -50px;
   position: relative;
 }
+
 .media-partner-about-container{
   margin-top: -50px;
   position: relative;
 }
-.media-partner-contact-caption::before{
+/*.media-partner-contact-caption::before{
   content: '';
   display:block;
   height: 5px;
   background: $lime-green;
   width: 100%;
-}
+}*/
 
 .media-partner-contact{
   display: flex;
@@ -49,30 +51,15 @@
   justify-content: center;
 }
 
-@media screen and (min-width 800px){
-  .social-media-icon{
-    float: left;
-
-  }
-  .media-partner-social-media-container{
-    display: inline;
-  }
+.student-contact, .department-contact {
+  width: 75%;
+  margin: 0 auto;
+  padding: 2px 0 10px 0;
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-color: $lime-green;
+  border-bottom-width: 6px;
 }
-
-
-
-.contact-picture{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border-style: solid; /*Delete this - couldn't tell where circle ended*/
-}
-
-
-
-
-
-
 
 .contact-name{
   text-transform: uppercase;
@@ -101,9 +88,36 @@
   text-align: center;
 }
 
+
+@media screen and (min-width 800px){
+.media-partner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start;
+  margin: 0 auto;
+  //flex-wrap: wrap;
+}
+
+.student-contact {
+  border: none;
+  max-width: 30%;
+  flex-direction: row;
+}
+.department-contact {
+  max-width: 30%;
+  flex-direction: row;
+}
+.social-media {
+  border-bottom: none;
+  max-width: 30%;
+  flex-direction: row;
+}
+}
+
 @media screen and (min-width: 650px){
   .media-partner-contact{
-    display: flex;
+    //display: flex;
   }
   .figure-contact-container{
     width: 30%;
