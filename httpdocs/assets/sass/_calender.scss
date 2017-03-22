@@ -1,36 +1,44 @@
+.calander-container {
+  max-height: 500px;
+  //width: 450px;
+  overflow: scroll;
+}
 .event-container {
-  background-color: red;
+  background-color: white;
   border-style: solid;
   border-color: #c0c0c0;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .date-box {
   background-color: $mandarin;
-}
-
-.date-box {
-  width: 100px;
+  //width: 400px;
   height: 150px;
-  position: fixed;
+  //display: inline-flex;
+  position: relative;
     top: 30px;
     left: 15px;
 }
 .date-style {
   color: white;
-  font-weight: 600;
+  font-weight: 500;
   color: white;
   font-size: 3em;
   text-align: center;
   display: inline-block;
-  position: fixed;
-    top: -23px;
-    left: 35px;
+  position: relative;
+    top: -50px;
+    left: 20px;
 }
 
 .date {
   border-bottom-style: solid;
   border-bottom-color: white;
   height: 100px;
+  width: 100px;
 }
 .month {
   background-color: $mandarin;
@@ -44,14 +52,18 @@
   letter-spacing: .08em;
   text-align: center;
   display: inline-block;
-  position: fixed;
-    top: 87px;
-    left: 29px;
+  position: relative;
+    top: -45px;
+    left: 14px;
 }
 .event {
-  width: 300px;
-  position: fixed;
-    left: 120px;
+  padding-left: 15px;
+  padding-right: 10px;
+  //width: 300px;
+  //display: flex;
+  //width: 80%;
+  //position: fixed;
+    //left: 120px;
 }
 .event-title{
   padding-left: 10px;
