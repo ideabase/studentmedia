@@ -1,5 +1,6 @@
 header{
   background-color: $white;
+  z-index: 200;
 }
 
 .header-nav-container{
@@ -8,18 +9,29 @@ header{
 
 
 .nav-trigger{
-  margin-left: 5px;
-  margin-top: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
   background-color: $white;
   border-style: none;
-  border-color: none;
+  border: 2px solid $dark-blue;
+  padding: .25em .5em .35 .5em;
+  font-size: .9em;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 500;
+  border-radius: 3px;
 }
+
 .header-logo-container{
   text-align: center;
 }
 
 .header-logo{
-  width: 200px;
+  width: 175px;
+}
+
+.header-logo__condensed {
+  display: none;
 }
 
 .nav-trigger.open {
@@ -70,10 +82,9 @@ nav.in li {
 nav {
   width: 100%;
   position: fixed;
-  z-index: 100;
-  top: -100%;
-  margin-top: 13vh;
-  height:  85vh;
+  z-index: 90;
+  top: -100vh;
+  height: 100vh;
   transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 }
 

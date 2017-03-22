@@ -1,0 +1,39 @@
+@keyframes drop {
+	from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.body-nav-scrolled {
+  margin-top: 112px;
+}
+
+.main-nav-scrolled {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation-name: drop;
+	animation-duration: .7s;
+  animation-fill-mode: both;
+}
+
+.main-nav-scrolled .header-logo{
+  display: none
+}
+
+.main-nav-scrolled .nav-trigger {
+  margin-top: 15px;
+}
+
+.main-nav-scrolled .header-logo__condensed {
+  display: block;
+  width: 50px;
+  margin: .5em auto;
+}
