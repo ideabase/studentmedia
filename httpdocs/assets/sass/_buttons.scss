@@ -1,8 +1,8 @@
 .cta-header {
-   padding: 10px 30px 10px 30px;
+   padding: .5em 2em .65em 2em;
    font-family: $mont;
    font-weight: 300;
-   font-size: 1em;
+   font-size: .9em;
    letter-spacing: .3px;
    line-height: 1.4em;
    color: white;
@@ -12,6 +12,16 @@
    transition-timing-function: ease-out;
    text-align: center;
    display: inline-block;
+   width: inherit;
+   margin: 0 auto;
+   @media screen and (min-width: 700px) {
+     width: 80%;
+     margin-top: 1em;
+     padding: .5em;
+   }
+   &:hover {
+     background-color: $dark-blue;
+   }
  }
 
 .main-button {
