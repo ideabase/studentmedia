@@ -1,0 +1,53 @@
+.cta-header {
+   padding: .5em 2em .65em 2em;
+   font-family: $mont;
+   font-weight: 300;
+   font-size: .9em;
+   letter-spacing: .3px;
+   line-height: 1.4em;
+   color: white;
+   background-color: $light-blue;
+   transition: .4s;
+   transition-timing-function: ease-in;
+   transition-timing-function: ease-out;
+   text-align: center;
+   display: inline-block;
+   width: inherit;
+   margin: 0 auto;
+   @media screen and (min-width: 700px) {
+     width: 80%;
+     margin-top: 1em;
+     padding: .5em;
+   }
+   &:hover {
+     background-color: $dark-blue;
+   }
+ }
+
+.main-button {
+   padding: 10px 30px 10px 30px;
+   font-family: $mont;
+   font-weight: 300;
+   font-size: 1em;
+   letter-spacing: .3px;
+   line-height: 1.4em;
+   color: white;
+   background-color: $light-blue;
+   border-color:none;
+   border-width: 0;
+   transition: .4s;
+   transition-timing-function: ease-in;
+   transition-timing-function: ease-out;
+   text-align: center;
+ }
+
+.main-button:hover {
+  background-color: $dark-blue;
+  border-radius: 30px;
+  transition-duration: .4s;
+  transition-timing-function: ease-in;
+}
+
+.main-button:active {
+  background-color: rgb(209, 222, 34);
+}

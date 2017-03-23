@@ -1,21 +1,25 @@
 <header>
   <section class = "header-nav-container">
-    <button id="nav-trigger" class="nav-trigger"><img src = "/assets/img/icons/Menu-26.png"></button>
+    <button id="nav-trigger" class="nav-trigger">Menu</button>
   </section>
   <section class = "header-logo-container">
-    <img class = "header-logo" src ="/assets/img/logos/SM_Logo.svg">
+    <a href="#">
+      <img class = "header-logo" src ="/assets/img/logos/SM_Logo.svg">
+      <img class = "header-logo__condensed" src ="/assets/img/logos/logo_mark.svg">
+    </a>
   </section>
 <nav id="nav" class="out">
   <ul>
-    <li><span class="nav-label">About</span></span></li>
-    <li><span class="nav-label">Get Involved</span></li>
-    <li><span class="nav-label">Advertising</span></li>
-    <li><span class="nav-label">Media Partners</span></li>
-    <li><span class="nav-label">Contact</span></li>
-    <li><span class="nav-label"><button class ="main-button">Support Us</button></span></li>
+    <li><a href="#" class="nav-label">About</a></li>
+    <li><a href="#" class="nav-label">Get Involved</a></li>
+    <li><a href="#" class="nav-label">Advertising</a></li>
+    <li><a href="#" class="nav-label">Media Partners</a></li>
+    <li><a href="#" class="nav-label">Contact</a></li>
+    <li><a href="#" class="nav-label cta-header">Support Us</a></li>
   </ul>
 </nav>
 </header>
+<main>
 <div class="hero-image">
 <img class = "hero-image-home" src="/assets/img/hero_img/people-cropped_960.jpg"> <!--Change out picture URL-->
 <div class="header-quote"><h1 class = "hero-image-caption">The Kent Stater</h1></div><!--Change image caption-->
@@ -23,16 +27,23 @@
 
 <section class = "media-partner-about-container">
   <h2 class = "subhead">About</h2>
-  <p class = "media-partner-about-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p class = "media-partner-about-blurb">The Kent Stater is the award-winning, student-run newspaper at Kent State University. Reaching more than 15,000 people per issue, the Stater keeps the community up-to-date with campus, local and national news, sports and features. The Stater publishes on Monday, Wednesday and Thursday and has a circulation of 6,750 per day. During the summer months, The Kent Stater runs special print issues and also runs the annual Orientation issue to welcome new and returning students.
+  </p>
+  <div class="button-section">
+    <a href="#"><button class="main-button media-partner-button">Visit Website</button></a>
+    <a href="#"><button class="main-button media-partner-button">Advertise</button></a>
+  </div>
 </section>
 
 <section class = "media-partner-contact-container">
   <h2 class = "subhead">Contact & Connect</h2>
+
   <div class="media-partner-container">
+
   <div class="student-contact">
-      <h2 class = "contact-name">Melody Noname</h3>
-      <h3 class = "contact-title">Director of Student Media</h2>
-      <p class = "contact-email">tcronie@kent.edu</p>
+      <h2 class = "contact-name">Jimmy Miller</h3>
+      <h3 class = "contact-title">Editor in Chief</h2>
+      <p class = "contact-email"><a href="mailto:jmill231@kent.edu">jmill231@kent.edu</a></p>
   </div>
 
   <div class="department-contact">
@@ -45,9 +56,6 @@
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/facebook.svg"></a></div>
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/twitter.svg"></a></div>
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
   </div>
 </div>
 </section>
@@ -55,7 +63,57 @@
 
 <section class = "media-partner-events-container">
   <h2 class = "subhead">Events</h2>
+  <section class="calender-container calender-main">
+    <div class="event-container">
+        <div class="date-box">
+          <div class="date">
+            <h4 class="date-style">18</h4>
+          </div>
+          <div class="month">
+            <h4 class="month-style">OCT</h4>
+          </div>
+        </div>
+        <div class="event">
+          <h3 class="event-title">News Paper Release</h3>
+          <p class="event-words">The Kent Stater will release it's special edition Homecoming issue. Look out for it
+            on stands around campus and downtown Kent! Find out the homecoing court and all of the festivities going on
+            around Kent on Saturday.
+          </p>
+        </div>
+    </div>
+    <div class="event-container">
+        <div class="date-box">
+          <div class="date">
+            <h4 class="date-style">04</h4>
+          </div>
+          <div class="month">
+            <h4 class="month-style">NOV</h4>
+          </div>
+        </div>
+        <div class="event">
+          <h3 class="event-title">Applications Due</h3>
+          <p class="event-words">Now is your chance to work for the Kent Stater! Fill out an application and submit it by Novemeber 4th to be considered. Calling all writers, photographers, and designers.
+          </p>
+        </div>
+    </div>
+    <div class="event-container">
+        <div class="date-box">
+          <div class="date">
+            <h4 class="date-style">10</h4>
+          </div>
+          <div class="month">
+            <h4 class="month-style">NOV</h4>
+          </div>
+        </div>
+        <div class="event">
+          <h3 class="event-title">Release Date</h3>
+          <p class="event-words">Release date for latest issue of The Kent Stater. Pick up a copy around campus!
+          </p>
+        </div>
+    </div>
+  </section>
 </section>
+</main>
 <footer>
   <section class = "footer-border"></section>
   <section class = "right-box-footer">

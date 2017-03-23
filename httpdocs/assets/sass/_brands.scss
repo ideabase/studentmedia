@@ -1,3 +1,32 @@
+.outside-div-container-brands{
+  width: 80%;
+  background-color: $white;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  margin: 0 auto;
+  margin-top: 50px;
+  overflow: scroll;
+  margin-top: 25px;
+}
+
+.media-partner-container {
+  text-align: center;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.media-partner-name {
+  margin-top: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.media-partner-description {
+  margin-top: 0;
+  line-height: 0em;
+  display: inline-block;
+  position: relative;
+}
+
 .media-partner{
 background:linear-gradient(
   rgba(0, 0, 0, 0.75),
@@ -11,7 +40,7 @@ background:linear-gradient(
   height: 200px;
   border-radius: 50%;
   display: flex;
-  margin: 5px;
+  margin: 0 auto;
 }
 
 
@@ -28,7 +57,7 @@ background:linear-gradient(
     height: 200px;
     border-radius: 50%;
     display: flex;
-    margin: 5px;
+    margin: 0 auto;
 }
 
 .bsr-container {
@@ -44,7 +73,7 @@ background:linear-gradient(
     height: 200px;
     border-radius: 50%;
     display: flex;
-    margin: 5px;
+    margin: 0 auto;
 }
 
 .fusion-container {
@@ -60,7 +89,7 @@ background:linear-gradient(
     height: 200px;
     border-radius: 50%;
     display: flex;
-    margin: 5px;
+    margin: 0 auto;
 }
 
 .kentstater-container {
@@ -76,7 +105,7 @@ background:linear-gradient(
     height: 200px;
     border-radius: 50%;
     display: flex;
-    margin: 5px;
+    margin: 0 auto;
 }
 
 .brand-logo{
@@ -86,37 +115,13 @@ background:linear-gradient(
   max-width: 75%;
 }
 
-.media-partners-container{
-  display: flex;
-  flex-wrap: wrap
+.calender-subhead {
+  width: 80%;
+  margin: auto;
 }
-
-.brand-logo-grid{
-  display: flex;
-}
-
-/*
-.media-partner-container:hover {
-  background-color: blue;
-}
-*/
-
-.brand-logo-div-outside-container{
-  overflow: scroll;
-  margin-top: 25px;
-}
-
 
 @media screen and (min-width: 750px){
 .media-partner, .bsr-container, .kentstater-container, .fusion-container, .amag-container {
 display: flex;
   }
-}
-
-.outside-div-container-brands{
-  width: 80%;
-  background-color: $white;
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-  margin: 0 auto;
-  margin-top: 50px;
 }

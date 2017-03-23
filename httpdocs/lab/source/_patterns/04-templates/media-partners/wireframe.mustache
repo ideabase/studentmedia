@@ -1,4 +1,5 @@
 {{>organisms-header}}
+<main>
 <div class="hero-image">
 <img class = "hero-image-home" src="/assets/img/hero_img/people-cropped_960.jpg"> <!--Change out picture URL-->
 <div class="header-quote"><h1 class = "hero-image-caption">The Kent Stater</h1></div><!--Change image caption-->
@@ -6,16 +7,23 @@
 
 <section class = "media-partner-about-container">
   <h2 class = "subhead">About</h2>
-  <p class = "media-partner-about-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p class = "media-partner-about-blurb">The Kent Stater is the award-winning, student-run newspaper at Kent State University. Reaching more than 15,000 people per issue, the Stater keeps the community up-to-date with campus, local and national news, sports and features. The Stater publishes on Monday, Wednesday and Thursday and has a circulation of 6,750 per day. During the summer months, The Kent Stater runs special print issues and also runs the annual Orientation issue to welcome new and returning students.
+  </p>
+  <div class="button-section">
+    <a href="#"><button class="main-button media-partner-button">Visit Website</button></a>
+    <a href="#"><button class="main-button media-partner-button">Advertise</button></a>
+  </div>
 </section>
 
 <section class = "media-partner-contact-container">
   <h2 class = "subhead">Contact & Connect</h2>
+
   <div class="media-partner-container">
+
   <div class="student-contact">
-      <h2 class = "contact-name">Melody Noname</h3>
-      <h3 class = "contact-title">Director of Student Media</h2>
-      <p class = "contact-email">tcronie@kent.edu</p>
+      <h2 class = "contact-name">Jimmy Miller</h3>
+      <h3 class = "contact-title">Editor in Chief</h2>
+      <p class = "contact-email"><a href="mailto:jmill231@kent.edu">jmill231@kent.edu</a></p>
   </div>
 
   <div class="department-contact">
@@ -28,9 +36,6 @@
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/facebook.svg"></a></div>
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/twitter.svg"></a></div>
     <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
-    <div class = "social-media-icon"><a href="#"><img src="/assets/img/icons/instagram.svg"></a></div>
   </div>
 </div>
 </section>
@@ -38,5 +43,7 @@
 
 <section class = "media-partner-events-container">
   <h2 class = "subhead">Events</h2>
+  {{>organisms-calender}}
 </section>
+</main>
 {{>organisms-footer}}

@@ -1,0 +1,23 @@
+/*.main-body {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}*/
+
+.brand-logo-grid {
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.media-widget {
+  border-style: solid;
+  border-color: black;
+  border-radius: 3px;
+  height: 500px;
+  width: 400px;
+  position: absolute;
+    top: 905px;
+    left: 130px;
+}

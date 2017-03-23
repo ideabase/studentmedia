@@ -1,5 +1,6 @@
 header{
   background-color: $white;
+  z-index: 200;
 }
 
 .header-nav-container{
@@ -8,18 +9,29 @@ header{
 
 
 .nav-trigger{
-  margin-left: 5px;
-  margin-top: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
   background-color: $white;
   border-style: none;
-  border-color: none;
+  border: 2px solid $dark-blue;
+  padding: .25em .5em .35 .5em;
+  font-size: .9em;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 500;
+  border-radius: 3px;
 }
+
 .header-logo-container{
   text-align: center;
 }
 
 .header-logo{
-  width: 200px;
+  width: 175px;
+}
+
+.header-logo__condensed {
+  display: none;
 }
 
 .nav-trigger.open {
@@ -59,22 +71,21 @@ nav.in li {
 }
 
 .nav-label {
-  position: absolute;
   width: 100%;
   left: 0;
   text-align: center;
-  top: 50%;
-	margin-top: -8px;
+  text-decoration: none;
+  color: $dark-blue;
 }
 
 nav {
   width: 100%;
   position: fixed;
-  z-index: 100;
-  top: -100%;
-  margin-top: 13vh;
-  height:  85vh;
+  z-index: 90;
+  top: -100vh;
+  height: 100vh;
   transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  background-color: white;
 }
 
 nav ul {
@@ -92,13 +103,13 @@ nav ul {
 nav li {
   flex: 1;
   position: relative;
-  background: #cecece;
-  color: $dark-blue;
   border-bottom-style: solid;
   border-bottom-color: $dark-blue;
   border-bottom-width: .5px;
   padding-left: 5px;
   padding-right: 5px;
+  display:flex;
+  align-items:center;
 }
 
 @media screen and (min-width: 800px){
@@ -106,26 +117,50 @@ nav li {
   nav{
     top: inherit;
     height: inherit;
-    width: 65%;
+    width: 75%;
     position: relative;
     margin: inherit;
     display: flex;
     align-items: center;
     margin-left: auto; // This pushes the nav to the right
-    padding-right: 15px;
+    padding-right: inherit;
+  }
+
+  nav.out {
+    pointer-events: inherit;
   }
 
   nav li{
     background-color: $white;
-    border-style: none;
-  }
-
-  .header-logo{
-    width: 250px;
+    border-top: 3px solid $dark-blue;
+    border-bottom: none;
+    font-size: .9em;
+    padding-top: .5em;
+    padding-left: inherit;
+    padding-right: inherit;
+    flex: 1;
+    flex-grow: 2;
+    text-align: center;
+    transition: .3s border-color ease-in-out;
+    &:hover {
+      border-color: $lime-green;
+    }
+    &:last-child {
+      border-top: none;
+      margin-left: 1em;
+      padding-top: 0;
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 
   .header-logo-container {
-    width: 25%;
+    width: 20%;
+    .header-logo {
+      width: auto;
+      max-width: 250px;
+    }
   }
 
   .header-nav-container{
@@ -136,17 +171,28 @@ nav li {
     position: relative;
     top: inherit;
     margin: inherit;
+    text-decoration: none;
+    color: $dark-blue;
+    transition: .3s color ease-in-out;
   }
+
 
   nav ul{
     flex-flow: row;
-    align-items: center;
-    vertical-align: middle;
+    align-content: space-between;
   }
 
   header{
     display: flex;
     justify-content: space-around;
+    padding: .5em;
   }
 
+}
+
+@media screen and (min-width: 1000px){
+  nav li{
+    font-size: 1em;
+    padding-top: .2em;
+    }
 }
