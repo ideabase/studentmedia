@@ -1,0 +1,19 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<h1>Advertising</h1>
+  {% set categories = craft.categories.group('adFormat') %}
+  {% for category in categories %}
+  <strong>{{category.title}}</strong>
+  {{category.description}}
+  {% for quote in craft.entries.section('testimonials')%}
+  <h2>{{quote.quote}}</h2>
+  {{quote.author}}
+  {% endfor %}
+  {% for entry in craft.entries.section('partners').relatedTo(category) %}
+			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+      {{entry.shortDescription}}
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}
