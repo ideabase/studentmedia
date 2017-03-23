@@ -8,7 +8,7 @@
   {{category.description}}
   {% for quote in craft.entries.section('testimonials')%}
   <h2>{{quote.quote}}</h2>
-  {{quote.author}}
+  {{quote.quotee}}
   {% endfor %}
   {% for entry in craft.entries.section('partners').relatedTo(category) %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
