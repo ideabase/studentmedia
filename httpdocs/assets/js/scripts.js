@@ -37,6 +37,17 @@ function navToggle(e) {
   }
 }
 
+// Drop Down / Accordion Open/Close //
+
+$(document).ready(function() {
+  	  $('body').addClass('js');
+		  var $menuTrigger = $('.has-subnav > a');
+		$menuTrigger.click(function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			$this.toggleClass('active').next('ul').toggleClass('active');
+		});
+});
 
 // Accordion //
 
