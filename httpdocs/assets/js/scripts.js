@@ -1,10 +1,29 @@
+// Sticky Navigation //
 
-// selected elements
+var mn = $("header");
+    mns = "main-nav-scrolled";
+    bns = "body-nav-scrolled";
+    body = $("body");
+    hnav = $('header').height();
+
+$(window).scroll(function() {
+  if( $(this).scrollTop() > (hnav+175) ) {
+    mn.addClass(mns);
+    body.addClass(bns);
+  } else {
+    mn.removeClass(mns);
+    body.removeClass(bns);
+  }
+});
+
+// Navigation Menu Button //
+
 var navTrigger = document.getElementById('nav-trigger');
 var nav = document.getElementById('nav');
 var labels = document.getElementsByClassName('nav-label');
 
-// Event Listening
+
+// Navigation Menu Open/Close //
 navTrigger.addEventListener('click', navToggle);
 
 function navToggle(e) {
@@ -17,3 +36,6 @@ function navToggle(e) {
     nav.className = 'in';
   }
 }
+
+
+// Accordion //
