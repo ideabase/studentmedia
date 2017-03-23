@@ -1,5 +1,5 @@
 .calender-container {
-  width: 80%;
+  width: 100%;
   max-height: 500px;
   margin: 0 auto;
   //width: 450px;
@@ -77,6 +77,8 @@
   //max-width: 250px;
 }
 
-@media screen and (min-width 500px){
+
+.scroll-container{
   width: 80%;
+  margin: 0 auto;
 }
