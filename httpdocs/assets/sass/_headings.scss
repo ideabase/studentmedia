@@ -1,4 +1,4 @@
-@media screen and (min-width: 100px){
+
 .subhead {
   color: $white;
   background-color: $dark-blue;
@@ -13,6 +13,7 @@
   display: block;
   position: relative;
 }
+
 .subhead::before{
   height: 15px;
   width: 30px;
@@ -23,7 +24,7 @@
   bottom: 10px;
   left: -15px;
 }
-}
+
 @media screen and (min-width: 400px){
 .subhead {
   color: $white;
@@ -50,6 +51,7 @@
   left: -30px;
 }
 }
+
 
 @media screen and (min-width: 700px){
 /*Pattern for sure*/

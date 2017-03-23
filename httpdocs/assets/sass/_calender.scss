@@ -1,5 +1,7 @@
 .calender-container {
+  width: 80%;
   max-height: 500px;
+  margin: 0 auto;
   //width: 450px;
   overflow: scroll;
 }
@@ -73,4 +75,8 @@
   font-size: .8em;
   padding-left: 10px;
   //max-width: 250px;
+}
+
+@media screen and (min-width 500px){
+  width: 80%;
 }
