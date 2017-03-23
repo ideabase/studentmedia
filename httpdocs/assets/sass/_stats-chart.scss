@@ -1,18 +1,17 @@
-.statistics-container{
+/*.statistics-container{
   width: 400px;
   margin: 0 auto;
-  //*box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.03);
   width: 80%;
   margin-top: 50px;
   background-color: $white;
-
+*/
 
 .statistics-box-flex-container{
   display: flex;
   flex-wrap: wrap;
 }
 
-}
 .big-number{
   font-family: 'Montserrat', sans-serif;
   font-size: 80px;
