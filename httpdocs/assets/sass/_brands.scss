@@ -122,7 +122,6 @@ background:linear-gradient(
 
 @media screen and (min-width: 750px){
 .media-partner, .bsr-container, .kentstater-container, .fusion-container, .amag-container {
-width: 250px;
-height: 250px;
+display: flex;
   }
 }
