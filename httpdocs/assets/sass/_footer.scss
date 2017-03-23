@@ -1,40 +1,32 @@
 footer{
 width: 100%;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
 background-color: $dark-blue;
 padding-top: 75px;
-
 }
 
-.left-box-footer, .right-box-footer{
-  width: 50%;
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-@media screen and (min-width: 750px){
-  .right-box-footer{
-    width: 75%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .bottom-box-footer{
-    display: flex;
-  }
-  .left-box-footer{
-    width: 25%;
-  }
-  .footer-content{
-  }
-}
+
 .footer-logo-image{
   width: 100%;
   min-width: 200px;
 }
 .bottom-box-footer{
-  width: 50%;
   padding-bottom: 2em;
   padding-top: 2em;
+  margin: 0 auto;
+  text-align: center;
+  @media screen and (min-width: 550px){
+    display: inline-flex;
+  }
+}
+
+.bottom-box-footer__container {
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Footer font styles - change to variables when using SASS */
@@ -43,25 +35,52 @@ padding-top: 75px;
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-  margin-bottom: 10px;
   letter-spacing: .2px;
+  margin-top: 1em;
+  display:inline-block;
+  width:100%;
 }
+
+footer .nav__level2 {
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
+
 .footer-list-item{
   font-family: $mont;
   color: $white;
   font-size: 13px;
   margin-bottom: 10px;
+  text-transform: none;
+  font-weight: normal;
 }
 
 .footer-content-list{
   list-style-type: none;
-  padding-left: 1em;
+  margin-left: 1em;
   margin-right: 1em;
+  border-top: 2px solid white;
+  padding-top: 1em;
+  @media screen and (min-width: 550px){
+    columns:2;
+  }
+  @media screen and (min-width: 750px){
+    columns:4;
+  }
 }
 
 .footer-logo-image{
   width: 60%;
   max-width: 300px;
+  @media screen and (min-width: 550px){
+    width: 80%;
+  }
+}
+
+.footer-contact-list {
+  @media screen and (min-width: 550px){
+    text-align: left;
+  }
 }
 
 /*Footer border*/
