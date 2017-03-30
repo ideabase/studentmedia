@@ -1,11 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #acacac;
+  //background-color: #acacac;
 }
 
 main{
-  background-color: #acacac;
+  //background-color: #ffffff;
   margin: 0 auto;
-  //width: 80%;
+  margin-top: -50px;
+  //margin-bottom: -50%;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
