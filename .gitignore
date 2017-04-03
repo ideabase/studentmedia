@@ -2,7 +2,9 @@
 *.css.map
 /httpdocs/node_modules
 /craft/config/db.php
-/.DS_Store
-/httpdocs/.DS_Store
-/httpdocs/assets/.DS_Store
-craft/.DS_Store
+**/.DS_Store
+httpdocs/assets/img/hero_img/
+httpdocs/assets/img/global/
+httpdocs/assets/img/statistics/
+httpdocs/assets/img/video/
+httpdocs/assets/img/hero_img/_hero/
