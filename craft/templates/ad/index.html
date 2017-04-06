@@ -13,6 +13,10 @@
   {% for entry in craft.entries.section('partners').relatedTo(category) %}
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
       {{entry.shortDescription}}
+			{% for ad in craft.entries.section('ad').relatedTo(category) %}
+				<a href="{{ad.url}}">View Ad Rates</a>
+			{% endfor %}
+
   {% endfor %}
 {% endfor %}
 
