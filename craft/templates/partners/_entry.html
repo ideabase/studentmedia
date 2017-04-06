@@ -39,4 +39,8 @@
 {{entry.email}}
 {%endfor%}
 
+{% for ad in craft.entries.section('ad').relatedTo(entry) %}
+	<a href="{{ad.url}}">Advertise With Us</a>
+{% endfor %}
+
 {% endblock %}
