@@ -1,0 +1,30 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+{% for block in entry.adUnit %}
+
+    {% if block.type == "adUnit" %}
+
+        <h3>{{ block.adType }}</h3>
+          <h4>{{ block.adUnits }}</h4>
+          {% if entry.adUnitr %}
+    <h3>Unit Name</h3>
+
+    <ul>
+        {% for row in entry.adUnitr %}
+            <li>{{ row.name }} {{ row.price }} {{ row.size }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+          {{block.adDescription}}
+
+    {% elseif block.type == "adBundle" %}
+        <h3>{{entry.title}}</h3>
+        <h4>{{ block.bundlePrice }}</h4>
+        {{ block.bundleDescription }}
+
+    {% endif %}
+
+{% endfor %}
+{% endblock %}
