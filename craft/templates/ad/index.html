@@ -6,7 +6,7 @@
   {% for category in categories %}
   <strong>{{category.title}}</strong>
   {{category.description}}
-  {% for quote in craft.entries.section('testimonials')%}
+  {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
   <h2>{{quote.quote}}</h2>
   {{quote.quotee}}
   {% endfor %}
