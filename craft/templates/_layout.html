@@ -21,19 +21,10 @@
 </head>
 
 <body>
-		<header>
-      <section class = "header-nav-container">
-        <button id="nav-trigger" class="nav-trigger">Menu</button>
-      </section>
-      <section class = "header-logo-container">
-        {% for asset in header.logo %}
-          <img class = "header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
-        {% endfor %}
-      </section>
-			<nav id="nav" class="out">
-        {{ craft.amNav.getNav("mainMenu") }}
-			</nav>
-		</header>
+
+    <!-- INCLUDE HEADER -->
+    {% include '_includes/header.html' %}
+    <!-- INCLUDE HEADER -->
 
 		<main id="content" role="main">
 			{% block content %}
@@ -42,16 +33,11 @@
 			{% endblock %}
 		</main>
 
-		<footer id="footer">
-      <section class = "footer-border"></section>
-      {{ craft.amNav.getNav("mainMenu") }}
-      <li class="footer-list-item"></li>
-      {{footer.mailingAddress}}
-      <li class="footer-list-item"></li>
-			{{footer.phone}}
-      <li class="footer-list-item"></li>
-      {{footer.email}}
-    </footer>
+    <!-- INCLUDE FOOTER -->
+    {% include '_includes/footer.html' %}
+    <!-- INCLUDE FOOTER -->
+
+
   <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   <script async src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
   {% if craft.config.devMode %}

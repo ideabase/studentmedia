@@ -1,0 +1,57 @@
+
+{% set nav = craft.amNav.getNavRaw("mainMenu") %}
+
+{% macro addNodeToNavigation(node, index) %}
+    {%- set nodeClasses = [] -%}
+    {%- if node.hasChildren -%}
+        {%- set nodeClasses = nodeClasses|merge([]) -%}
+    {%- endif -%}
+    {%- if node.active or node.hasActiveChild -%}
+        {%- set nodeClasses = nodeClasses|merge(['active']) -%}
+    {%- endif -%}
+    {%- if node.level == 1 and node.listClass == '' -%}
+        {%- set nodeClasses = nodeClasses|merge(['footer-header']) -%}
+    {%- endif -%}
+    {%- if node.level == 2 -%}
+        {%- set nodeClasses = nodeClasses|merge(['footer-list-item']) -%}
+    {%- endif -%}
+    {%- if node.listClass|length -%}
+        {%- set nodeClasses = nodeClasses|merge([node.listClass]) -%}
+    {%- endif -%}
+    <li{% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}"{% endif %}>
+        <a href="{{ node.url }}" class="link" title="{{ node.name }}"{% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a>
+        {% if node.hasChildren %}
+            <ul class="nav__level{{ (node.level + 1) }}">
+                {% for subnode in node.children %}
+                    {{ _self.addNodeToNavigation(subnode, loop.index) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}
+
+<footer>
+  <nav class="footer-navigation">
+    <ul class="footer-content-list">
+    {% for node in nav %}
+          {{ _self.addNodeToNavigation(node, loop.index) }}
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class ="bottom-box-footer__container">
+  <section class="bottom-box-footer">
+    <!-- INSERT FOOTER LOGO
+    <div class="logo-footer">
+      <img src="" />
+    </div> 
+    -->
+    <div class="footer-contact-info">
+      <ul class="footer-contact-list">
+        <li class="footer-list-item">{{footer.mailingAddress}}</li>     
+        <li class="footer-list-item">{{footer.phone}}</li>
+        <li class="footer-list-item">{{footer.email}}</li>
+      </ul>
+    </div>
+  </section>
+  </div>    
+</footer>
