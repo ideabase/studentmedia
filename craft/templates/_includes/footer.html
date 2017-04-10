@@ -9,7 +9,7 @@
     {%- if node.active or node.hasActiveChild -%}
         {%- set nodeClasses = nodeClasses|merge(['active']) -%}
     {%- endif -%}
-    {%- if node.level == 1 and node.listClass == '' -%}
+    {%- if node.level == 1 -%}
         {%- set nodeClasses = nodeClasses|merge(['footer-header']) -%}
     {%- endif -%}
     {%- if node.level == 2 -%}
