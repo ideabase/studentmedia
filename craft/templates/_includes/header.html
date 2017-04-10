@@ -8,6 +8,9 @@
             <img class = "header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
           </a>
         {% endfor %}
+        {% for asset in header.smallLogo %}
+          <img class = "header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+        {% endfor %}
       </section>
 			<nav id="nav" class="out">
         {{ craft.amNav.getNav("mainMenu") }}

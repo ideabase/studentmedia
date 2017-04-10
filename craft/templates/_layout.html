@@ -18,14 +18,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Page Description Goes Here">
+  {% hook 'seomaticRender' %}
 </head>
 
 <body>
-
+    <!-- Helper code for the Admin toolbar, only shown when logged in -->
+      {% if entry is defined %}
+      {% set config = {
+        entry: entry,
+      } %}
+      {{ craft.adminbar.bar(config) }}
+    {% endif %}
     <!-- INCLUDE HEADER -->
     {% include '_includes/header.html' %}
     <!-- INCLUDE HEADER -->
-
+    {% block hero %}
+    {% endblock %}
 		<main id="content" role="main">
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
