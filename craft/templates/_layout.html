@@ -25,7 +25,8 @@
     <!-- INCLUDE HEADER -->
     {% include '_includes/header.html' %}
     <!-- INCLUDE HEADER -->
-
+    {% block hero %}
+    {% endblock %}
 		<main id="content" role="main">
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
