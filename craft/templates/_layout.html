@@ -21,7 +21,13 @@
 </head>
 
 <body>
-
+    <!-- Helper code for the Admin toolbar, only shown when logged in -->
+      {% if entry is defined %}
+      {% set config = {
+        entry: entry,
+      } %}
+      {{ craft.adminbar.bar(config) }}
+    {% endif %}
     <!-- INCLUDE HEADER -->
     {% include '_includes/header.html' %}
     <!-- INCLUDE HEADER -->
