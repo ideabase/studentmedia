@@ -30,5 +30,5 @@
 
 .fadein img {
   position:absolute; left:0; right:0; opacity:0;
-  @include fade($num:3, $fade:3, $visible:3);
+  @include fade($num:3, $fade:4, $visible:5);
 }
