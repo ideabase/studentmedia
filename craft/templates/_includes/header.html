@@ -1,0 +1,18 @@
+<header>
+      <section class = "header-nav-container">
+        <button id="nav-trigger" class="nav-trigger">Menu</button>
+      </section>
+      <section class = "header-logo-container">
+        {% for asset in header.logo %}
+          <a href= "{{siteUrl}}">
+            <img class = "header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
+          </a>
+        {% endfor %}
+        {% for asset in header.smallLogo %}
+          <img class = "header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+        {% endfor %}
+      </section>
+			<nav id="nav" class="out">
+        {{ craft.amNav.getNav("mainMenu") }}
+			</nav>
+</header>

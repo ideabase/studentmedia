@@ -58,8 +58,8 @@ class RichTextFieldType extends BaseFieldType
 		}
 
 		$columns = array(
-			'text'       => Craft::t('Text (stores about 64K)'),
-			'mediumtext' => Craft::t('MediumText (stores about 4GB)')
+			'text'       => 'text (~64K)',
+			'mediumtext' => 'mediumtext (~16MB)'
 		);
 
 		$sourceOptions = array();
@@ -430,7 +430,7 @@ class RichTextFieldType extends BaseFieldType
 
 		$assetSourceIds = $this->getSettings()->availableAssetSources;
 
-		if (!$assetSourceIds)
+		if ($assetSourceIds === '*' || !$assetSourceIds)
 		{
 			$assetSourceIds = craft()->assetSources->getPublicSourceIds();
 		}
@@ -440,10 +440,17 @@ class RichTextFieldType extends BaseFieldType
 			'parentId' => ':empty:'
 		));
 
+		// Sort it by source order.
+		$list = array();
+
 		foreach ($folders as $folder)
 		{
-			$sources[] = 'folder:'.$folder->id;
+		    $list[$folder->sourceId] = $folder->id;
 		}
+
+		foreach ($assetSourceIds as $assetSourceId) {
+		    $sources[] = 'folder:'.$list[$assetSourceId];
+        }
 
 		return $sources;
 	}
@@ -505,9 +512,7 @@ class RichTextFieldType extends BaseFieldType
 	{
 		craft()->templates->includeCssResource('lib/redactor/redactor.min.css');
 
-		// Gotta use the uncompressed Redactor JS until the compressed one gets our Live Preview menu fix
-		craft()->templates->includeJsResource('lib/redactor/redactor.js');
-		//craft()->templates->includeJsResource('lib/redactor/redactor'.(craft()->config->get('useCompressedJs') ? '.min' : '').'.js');
+		craft()->templates->includeJsResource('lib/redactor/redactor'.(craft()->config->get('useCompressedJs') ? '.min' : '').'.js');
 
 		$this->_maybeIncludeRedactorPlugin($configJs, 'fullscreen', false);
 		$this->_maybeIncludeRedactorPlugin($configJs, 'source|html', false);

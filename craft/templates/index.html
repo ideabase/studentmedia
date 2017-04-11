@@ -18,23 +18,22 @@
  #}
 
  {% extends "_layout" %}
+ {% block hero %}
+   <section class="hero-image fadein">
+     {% for asset in entry.heroImage %}
+       <img class="hero-image-home" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
+     {% endfor %}
+   <div class="header-quote">
+     <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+   </div>
+  </section>
+ {% endblock %}
 
  {% block content %}
- <div class="hero-image">
-   {% for asset in entry.heroImage %}
-     <img class="hero-image-home" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
-   {%endfor %}
- <div class="header-quote">
-   <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
-  </div>
- </div>
-
  <section class = "video-container-home">
    <h2 class="subhead">Our Mission</h2>
    <div class = "video-div-flex-container">
-    <div class = "video-blurb">
-      <p class = "video-blurb-paragragh">{{entry.body}}</p>
-    </div>
+    <div class = "video-blurb">{{entry.body}}</div>
     <div class = "video-box">
       <iframe src="{{entry.video}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>

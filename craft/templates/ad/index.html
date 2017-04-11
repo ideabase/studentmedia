@@ -6,13 +6,18 @@
   {% for category in categories %}
   <strong>{{category.title}}</strong>
   {{category.description}}
-  {% for quote in craft.entries.section('testimonials')%}
+  {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
   <h2>{{quote.quote}}</h2>
   {{quote.quotee}}
   {% endfor %}
   {% for entry in craft.entries.section('partners').relatedTo(category) %}
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			<h3>{{ entry.title }}</h3>
       {{entry.shortDescription}}
+			{% for ad in craft.entries.section('ad').relatedTo(category) %}
+			<a href="{{ entry.url }}">Learn more about this partner</a>
+				<a href="{{ad.url}}">View Ad Rates</a>
+			{% endfor %}
+
   {% endfor %}
 {% endfor %}
 
