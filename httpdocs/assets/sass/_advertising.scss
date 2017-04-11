@@ -91,11 +91,6 @@ padding-top: 1em;
   border-color: $gray
 }
 
-p.advertising-blurb{
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 15px;
-}
 
 /*TBH I cannot believe this worked, but not using unicode?*/
 div.accordion:before{
@@ -103,7 +98,7 @@ div.accordion:before{
   color: $lime-green;
   float: left;
   font-size: 40px;
-  margin-top: 9px;
+  margin-top: 4px;
   margin-left: 10px;
 
 }
@@ -160,11 +155,6 @@ th{
   font-weight: bold;
 }
 
-.small-header{
-      -webkit-margin-after: 0.5em; /*Removes space after h4 element*/
-      color: $mandarin;
-      text-transform: uppercase;
-}
 
 .advertising-content{
   margin-bottom: 50px;
