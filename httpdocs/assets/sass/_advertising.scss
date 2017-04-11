@@ -42,19 +42,8 @@ width: 30%;
 
 .platform-list{
   font-weight: $light;
-  padding: 0;
+  padding: 1em;
   list-style-type: none;
-}
-
-.platform-title-header{
-  margin: 0;
-  font-weight: 500;
-  letter-spacing: .5px;
-}
-.platform-price-header{
-  color: $dark-blue;
-  margin: 0;
-  font-weight: $light;
 }
 
 .platform-list li{
@@ -62,16 +51,27 @@ width: 30%;
   font-size: 12px;
 }
 
+.platform-title-header{
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: .5px;
+
+}
+.platform-price-header{
+  color: $dark-blue;
+  margin: 0;
+  font-weight: $light;
+}
+
+
+
 .platform-content{
   background-color: $white;
   margin: 15px;
   margin: 0 auto;
   margin-bottom: 15px;
   margin-top: 15px;
-  padding-right: 40px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 30px
+padding-top: 1em;
 }
 
 /*Light gray Kelsey will probably change because she hates every color I pick out lolol*/
