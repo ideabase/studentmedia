@@ -4,11 +4,14 @@ body {
   //background-color: #acacac;
 }
 
-main{
+/*main*/.main-container{
   //background-color: #ffffff;
   margin: 0 auto;
   margin-top: -50px;
-  //margin-bottom: -50%;
+  padding-bottom: 50px;
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+  position: relative;
+  background-color: $white;
 }

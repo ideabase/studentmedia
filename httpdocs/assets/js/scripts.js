@@ -49,8 +49,7 @@ $(document).ready(function() {
 		});
 });
 
-// Accordion //
-
+// Advertising Accordion //
 $(function() {
 	var Accordion = function(el, multiple) {
 		this.el = el || {};

@@ -1,68 +1,26 @@
-
+/*Main advertising*/
 .accordion {
-  width: 70%;
   margin: 30px auto 20px;
-  background: #FFF;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
 }
 
 .accordion .link {
   cursor: pointer;
   display: block;
-  padding: 15px 15px 15px 42px;
-  color: #4D4D4D;
-  font-size: 14px;
-  font-weight: 700;
+  padding-left: 35px;
   position: relative;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
-.accordion li:last-child .link { border-bottom: 0; }
-
-.accordion li i {
-  position: absolute;
-  top: 16px;
-  left: 12px;
-  font-size: 18px;
-  color: #595959;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+.advertising-platform-headers{
+  font-weight: $light;
+  color: black;
 }
-
-.accordion li i.fa-chevron-down {
-  right: 12px;
-  left: auto;
-  font-size: 16px;
-}
-
-.accordion li.open .link { color: #b63b4d; }
-
-.accordion li.open i { color: #b63b4d; }
-
-.accordion li.open i.fa-chevron-down {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-/**
- * Submenu
- -----------------------------*/
-
 
 .submenu {
   display: none;
 }
-
-
-
-
 
 .platform-content{
   width: 100%;
@@ -70,7 +28,6 @@
 @media screen and (min-width: 800px){
 .platform-content{
 width: 30%;
-  background-color: red;
 }
 }
 
@@ -85,6 +42,8 @@ width: 30%;
 
 .platform-list{
   font-weight: $light;
+  padding: 0;
+  list-style-type: none;
 }
 
 .platform-title-header{
@@ -93,7 +52,7 @@ width: 30%;
   letter-spacing: .5px;
 }
 .platform-price-header{
-  color: $white;
+  color: $dark-blue;
   margin: 0;
   font-weight: $light;
 }
@@ -104,19 +63,24 @@ width: 30%;
 }
 
 .platform-content{
-  background-color: $gray;
+  background-color: $white;
   margin: 15px;
   margin: 0 auto;
   margin-bottom: 15px;
+  margin-top: 15px;
   padding-right: 40px;
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 30px
 }
 
+/*Light gray Kelsey will probably change because she hates every color I pick out lolol*/
+.submenu{
+  background-color: #ededed;
+}
+
 .platforms-container{
-  background-color: $white;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -124,5 +88,122 @@ width: 30%;
 
 .platform-dropdown{
   border-style: solid;
-  border-color: gray;
+  border-color: $gray
+}
+
+p.advertising-blurb{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+/*TBH I cannot believe this worked, but not using unicode?*/
+div.accordion:before{
+  content: '+';
+  color: $lime-green;
+  float: left;
+  font-size: 40px;
+  margin-top: 9px;
+  margin-left: 10px;
+
+}
+
+div.accordion.open:before{
+  content: "Kelsey smells";
+}
+
+
+
+/*Individual advertising*/
+main{
+  width: 80%;
+  margin: 0 auto;
+}
+.advertising-matrix{
+  width: 100%;
+    border-spacing: 0;
+}
+
+th, td{
+  text-align:left;
+  padding: 10px;
+}
+
+th{
+  border-bottom: 1px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-style: solid;
+  border-color: black;
+}
+
+
+
+@media screen and (min-width: 750px){
+  .advertising-column{
+    width: 45%;
+    margin: 0 auto;
+  }
+  .advertising-body-container{
+    display: flex;
+  }
+}
+
+.advertising-price-list, .advertising-content-list, .advertising-contact-list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advertising-price-list{
+  font-weight: bold;
+}
+
+.small-header{
+      -webkit-margin-after: 0.5em; /*Removes space after h4 element*/
+      color: $mandarin;
+      text-transform: uppercase;
+}
+
+.advertising-content{
+  margin-bottom: 50px;
+}
+
+.advertising-bottom-section{
+  width: 100%;
+}
+
+
+.advertising-button{
+  width: 200px;
+  height: 50px;
+  margin:10px;
+}
+.advertising-bottom-section{
+  text-align: center;
+}
+
+/*Spacing the lists*/
+li{
+  margin-bottom: 5px;
+}
+
+
+.advertising-button{
+  background-color: $white;
+  border-style: solid;
+  border-color: $lime-green;
+  border-width: 2.5px;
+  font-family: $mont;
+  cursor: pointer;
+  color: $dark-blue;
+}
+
+.advertising-button:hover{
+  background-color: $lime-green;
+}
+
+.advertising-contact-list{
+  color: $dark-blue;
 }
