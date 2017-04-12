@@ -1,3 +1,4 @@
+
 @mixin fade($num:1, $fade:1, $visible:2) {
    $a: 100 / (($fade + $visible) * $num);
    @keyframes fade {
@@ -8,10 +9,10 @@
     100% { opacity: 0; }
   }
 
-  animation-name: fade; 
-  animation-duration: (($fade + $visible) * $num) + s; 
-  animation-iteration-count: infinite; 
-  
+  animation-name: fade;
+  animation-duration: (($fade + $visible) * $num) + s;
+  animation-iteration-count: infinite;
+
   @for $i from 1 through $num {
     &:nth-child(#{$i}) {
       animation-delay: (#{($fade + $visible) * ($i - 1)}) + s;
