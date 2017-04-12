@@ -35,6 +35,12 @@
   overflow: hidden;
 }
 
+@media screen and(max-width: 475px){
+  .header-quote {
+    display: none;
+  }
+}
+
 @media screen and(min-width: 650px){
   .hero-image-caption{
     font-size: 2em;

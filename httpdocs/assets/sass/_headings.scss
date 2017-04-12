@@ -22,6 +22,7 @@
     margin-left: 20px;
     display:inline-block;
     text-transform: uppercase;
+    -webkit-margin-start: 15px;
   }
 
 
@@ -76,4 +77,29 @@ p {
   color: orange; /*turn to $lime-green*/
   letter-spacing: .1px;
   text-transform: uppercase;
+}
+
+@media screen and(max-width: 550px){
+.first-word {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #d1de44;
+  margin-left: 20px;
+  display:inline-block;
+  text-transform: uppercase;
+}
+
+.head-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: white;
+    margin-left: 20px;
+    display: inline-block;
+    padding-left: -5px;
+    text-transform: uppercase;
+    -webkit-margin-start: 10px;
+    padding-top: -50px;
+  }
 }
