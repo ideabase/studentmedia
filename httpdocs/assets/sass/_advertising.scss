@@ -37,21 +37,35 @@
 
 .platform-list{
   font-weight: $light;
-  padding: 1em;
+  padding: .8em;
   list-style-type: none;
 }
 
 .platform-list li{
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: .8em;
+  font-weight: normal;
+}
+
+.bold-info li{
+  margin-bottom: 5px;
+  font-size: .8em;
+  font-weight: $light;
+}
+
+.platform-list td{
+  margin-bottom: 5px;
+  font-size: .8em;
+  //font-weight: ;
 }
 
 .platform-title-header{
   margin: 0;
   font-weight: 500;
   letter-spacing: .5px;
-
+  font-weight: 300;
 }
+
 .platform-price-header{
   color: $dark-blue;
   margin: 0;
