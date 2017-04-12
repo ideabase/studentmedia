@@ -126,6 +126,7 @@ div.accordion.open:before{
 th, td{
   text-align:left;
   padding: 10px;
+  font-size: .9em;
 }
 
 th{
@@ -137,20 +138,29 @@ th{
   border-color: black;
 }
 
+.orange-header {
+  margin-left: 15px;
+}
 
 .advertising-price-list, .advertising-content-list, .advertising-contact-list{
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-left: 15px;
 }
+
 
 .advertising-price-list{
   font-weight: bold;
+  font-size: .9em;
 }
 
 
 .advertising-content{
   margin-bottom: 50px;
+  font-size: .9em;
+  font-weight: 300;
+  line-height: 1.5em;
 }
 
 .advertising-bottom-section{
@@ -198,6 +208,10 @@ li{
   }
   .advertising-body-container{
     display: flex;
+  }
+
+  .orange-header {
+    //margin-left: 15px;
   }
 }
 
