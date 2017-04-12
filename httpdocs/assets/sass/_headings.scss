@@ -25,10 +25,10 @@
   }
 
 
-  .subhead{
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .subhead {
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 8px;
     margin-top: 0px;
     font-weight: 400;
     line-height: 1em;
@@ -38,14 +38,15 @@
   }
 
   .subhead::before{
-    height: 15px;
-    width: 30px;
+    height: 18px;
+    width: 40px;
     content: '';
     display:block;
     background: $lime-green;
     position: absolute;
     bottom: 10px;
-    left: -15px;
+    left: -30px;
+    //display: inline-block;
   }
 
 
@@ -61,9 +62,9 @@ p {
   font-family: 'Montserrat', sans-serif;
   font-size: .9em;
   font-weight: 300;
-  line-height: 1.5em;
+  line-height: 1.6em;
   margin-left: 20px;
-  width: 50%;
+  //width: 50%;
 }
 
 

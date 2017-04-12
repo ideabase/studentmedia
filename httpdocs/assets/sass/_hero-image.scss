@@ -1,5 +1,5 @@
  .hero-image-home{
-  -webkit-filter: grayscale(100%);
+  //-webkit-filter: grayscale(100%);
   width: 100%;
   position: relative;
 
@@ -8,22 +8,31 @@
 .header-quote {
   width: 70%;
   position: absolute;
-  bottom: 40%;
+  bottom: 20%;
   left: 10%;
+  background-color: #454545;
+  padding: 10px;
+  padding-left: 20px
 }
 
 .hero-image-caption {
   font-family:'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 1em;
   letter-spacing: 1.3px;
   line-height: 1.3em;
   color: rgb(209, 222, 34);
-  background-color: $dark-blue; /*change to dark blue*/
-  padding-left: 10px;
-  padding-right: 10px;
+  //background-color: $dark-blue; /*change to dark blue*/
+  //padding-left: 10px;
+  //padding-right: 10px;
   display: inline;
   /*Should probably think of a better solution for this - follow up with Chris*/
+}
 
+.hero-image{
+  width: 100%;
+  position: relative;
+  max-height: 700px;
+  overflow: hidden;
 }
 
 @media screen and(min-width: 650px){
@@ -34,13 +43,6 @@
 
 @media screen and (min-width: 785px){
   .hero-image-caption{
-    font-size: 3em;
+    //font-size: 3em;
 }
-}
-
-.hero-image{
-  width: 100%;
-  position: relative;
-  max-height: 700px;
-  overflow: hidden;
 }
