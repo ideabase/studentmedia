@@ -1,84 +1,23 @@
 .media-partner{
-background:linear-gradient(
-  rgba(0, 0, 0, 0.75),
-  rgba(0, 0, 0, 0.75)
-  ),
-  url("/assets/img/brands/example.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  display: flex;
   margin: 5px;
-}
-
-
-
-
-.amag-container {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)
-    ),
-    url("/assets/img/brands/backgroundimages/mag.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    margin: 5px;
-}
-
-.bsr-container {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)
-    ),
-    url("/assets/img/brands/backgroundimages/sound.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    margin: 5px;
-}
-
-.fusion-container {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)
-    ),
-    url("/assets/img/brands/backgroundimages/fusion.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    margin: 5px;
-}
-
-.kentstater-container {
-  background:linear-gradient(
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)
-    ),
-    url("/assets/img/brands/backgroundimages/magazine.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    display: flex;
-    margin: 5px;
+  display: flex;
+  background-image: url("/assets/img/brands/backgroundimages/fusion.jpeg");
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index:5;
+    background-color: rgba(0,0,0,.5);
+  }
 }
 
 .brand-logo{
@@ -86,26 +25,7 @@ background:linear-gradient(
   align-items: center;
   justify-content: center;
   max-width: 75%;
-}
-
-.media-partners-container{
-  display: flex;
-  flex-wrap: wrap
-}
-
-.brand-logo-grid{
-  display: flex;
-}
-
-/*
-.media-partner-container:hover {
-  background-color: blue;
-}
-*/
-
-.brand-logo-div-outside-container{
-  overflow: scroll;
-  margin-top: 25px;
+  z-index:10;
 }
 
 .media-partner-description, .media-partner-name{

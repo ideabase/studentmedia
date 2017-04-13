@@ -76,3 +76,8 @@ $(function() {
 
 	var accordion = new Accordion($('#accordion'), false);
 });
+
+// Owl Carousel //
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
