@@ -43,18 +43,25 @@
   <section class = "outside-div-container-brands">
     <h2 class="subhead">Media Partners</h2>
       <div class = "owl-carousel brand-logo-grid">
+        {% set cols = 2 %}
         {% for entry in craft.entries.section('partners') %}
+          {% if loop.index0 % cols == 0 %}
+            <div class="media-partner-container">
+          {% endif %}
           {% if entry.heroImage | length %}
             {% for asset in entry.heroImage %}
-              <div class="media-partner" style="background-image:url('{{asset.url}}');">
+              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url}}');">
             {% endfor %}
           {% else %}
-              <div class="media-partner">
+              <a href="{{entry.url}}" class="media-partner">
           {% endif %}
           {% for asset in entry.logo %}
           <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
-          {%endfor %}
-        </div>
+          {% endfor %}
+        </a>
+        {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+          </div>
+        {% endif %}
         {% endfor %}
       </div>
   </section>
