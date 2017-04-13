@@ -2,9 +2,20 @@
   //-webkit-filter: grayscale(100%);
   width: 100%;
   position: relative;
+}
 
+  .secondary-image {
+   //-webkit-filter: grayscale(100%);
+   width: 100%;
+   position: relative;
   /*max-height: 700px; We can make this a background image and use nackground-image:contain?*/
 }
+
+.secondary-hero-image {
+  height: 225px;
+  overflow: hidden;
+}
+
 .header-quote {
   width: 70%;
   position: absolute;
@@ -45,10 +56,16 @@
   .hero-image-caption{
     font-size: 2em;
   }
+  .secondary-hero-image {
+    height: 325px;
+    overflow: hidden;
+  }
 }
 
-@media screen and (min-width: 785px){
-  .hero-image-caption{
-    //font-size: 3em;
-}
+@media screen and(min-width: 850px){
+
+  .secondary-hero-image {
+    height: 375px;
+    overflow: hidden;
+  }
 }
