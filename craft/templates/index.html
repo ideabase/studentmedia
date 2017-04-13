@@ -42,23 +42,22 @@
 
   <section class = "outside-div-container-brands">
     <h2 class="subhead">Media Partners</h2>
-    <section class = "brand-logo-div-outside-container">
-      <div class = "brand-logo-grid">
+      <div class = "owl-carousel brand-logo-grid">
         {% for entry in craft.entries.section('partners') %}
-        <section class = "media-partners-container">
-        <div class="media-partner amag-container">
-        {% for asset in entry.logo %}
-        <img src="{{asset.url}}" alt="{{asset.title}}" />
-        {%endfor %}
+          {% if entry.heroImage | length %}
+            {% for asset in entry.heroImage %}
+              <div class="media-partner" style="background-image:url('{{asset.url}}');">
+            {% endfor %}
+          {% else %}
+              <div class="media-partner">
+          {% endif %}
+          {% for asset in entry.logo %}
+          <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+          {%endfor %}
         </div>
-        {% for asset in entry.image %}
-        <img src="{{asset.url}}" alt="{{asset.title}}" />
-        {%endfor %}
-      </section>
         {% endfor %}
       </div>
-      </section>
-      </section>
+  </section>
 
       <section class = "statistics-container">
           <h2 class = "subhead">Our Statistics</h2>
