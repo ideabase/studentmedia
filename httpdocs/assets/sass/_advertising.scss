@@ -167,11 +167,6 @@ th{
 }
 
 
-.advertising-button{
-  width: 200px;
-  height: 50px;
-  margin:10px;
-}
 .advertising-bottom-section{
   text-align: center;
 }
@@ -181,20 +176,6 @@ li{
   margin-bottom: 5px;
 }
 
-
-.advertising-button{
-  background-color: $white;
-  border-style: solid;
-  border-color: $lime-green;
-  border-width: 2.5px;
-  font-family: $mont;
-  cursor: pointer;
-  color: $dark-blue;
-}
-
-.advertising-button:hover{
-  background-color: $lime-green;
-}
 
 .advertising-contact-list{
   color: $dark-blue;
