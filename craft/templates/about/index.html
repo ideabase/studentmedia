@@ -1,0 +1,25 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<h1>About</h1>
+{% for entry in craft.entries.section('aboutMainPage').find() %}
+			{% for asset in entry.heroImage %}
+		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+	{% endfor %}
+{{entry.body}}
+<h2>News</h2>
+{% for entry in craft.entries.section('news').find() %}
+	<article>
+		<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+		{{ entry.body.getPage(1) }}
+		<p><a href="{{ entry.url }}">Continue reading</a></p>
+	</article>
+{% endfor %}
+
+<h2>Support Us</h2>
+	{{entry.body2}}
+{% endfor %}
+
+
+{% endblock %}
