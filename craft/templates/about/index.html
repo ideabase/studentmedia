@@ -1,7 +1,7 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>About</h1>
+	<h1>About Us</h1>
 {% for entry in craft.entries.section('aboutMainPage').find() %}
 			{% for asset in entry.heroImage %}
 		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
