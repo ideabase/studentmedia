@@ -1,0 +1,13 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<h1>Get Involved</h1>
+  {% for entry in craft.entries.section('getInvolvedMainPage').find() %}
+	{% for asset in entry.heroImage %}
+<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+{% endfor %}
+{{entry.body}}
+
+{% endfor %}
+
+{% endblock %}
