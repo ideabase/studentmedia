@@ -76,6 +76,103 @@ margin-bottom: 0;
 
 
 
+/*About Us-Board Members */
+
+@media screen and (max-width:650px) {
+    .voting-members {
+      display: block;
+    }
+
+    .meeting-minutes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .meeting-box {
+      width: 49%;
+    }
+}
+
+@media screen and (min-width:650px) {
+    .voting-members {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      width: 32%;
+    }
+
+    .meeting-box {
+      width: 24.5%;
+    }
+
+    .meeting-minutes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+@media screen and (min-width:1000px) {
+    .non-voting-members {
+      display: flex;
+      flex-wrap: wrap;
+      //justify-content: space-between;
+    }
+    .non-voting-member-name {
+      width: 47%;
+    }
+}
+
+.member-title {
+  padding-left: 20px;
+  color: $dark-blue;
+  margin-bottom: 0;
+}
+
+.member-name {
+  margin-top: 5px;
+}
+
+.non-voting-member-name {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+b {
+  font-weight: 500;
+}
+
+.guidelines {
+  display: inline;
+}
+.guidelines-button {
+  display: inline-block;
+}
+
+.non-voting-members {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.meeting-box {
+  text-align: center;
+  background-color: #ededed;
+}
+
+.meeting-date {
+  margin-left: 0;
+}
+
+.meeting-pdf {
+  margin-left: 0;
+  text-decoration: underline;
+  font-size: .7em;
+}
+
+
+
 @media screen and (min-width: 800px){
   .news-stories-content{
     display: flex;
