@@ -10,10 +10,6 @@
   padding-top: 4px;
 }
 
-.app-button {
-  margin-left: 20px;
-}
-
 .FAQ-container {
   margin-left: 20px;
   margin-right: 20px;
@@ -23,37 +19,98 @@
 margin-bottom: 0;
 }
 
+.app-button {
+  margin-left: 0;
+  display: block;
+}
+
 .answer {
   margin-top: 3px;
   margin-bottom: 0;
 }
 
+.mediapartner-type {
+  //margin-left: 20px;
+  margin-top: 10px;
+}
+
+.position-opening {
+  //margin-left: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.opening-description {
+  margin-top: 7px;
+  padding-right: 10px;
+  margin-left: 0;
+}
+.contact {
+  //margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.contact-name-title {
+  margin-top: 7px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.email {
+    color: $mandarin;
+    font-size: .9em;
+    text-decoration: none;
+    font-size: 200;
+}
+
+.job-opening-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-top: 2px black solid;
+}
+
+.job-opening-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (min-width: 625px){
-  .job-openings-container {
+  /*.job-openings-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+  }*/
 
   .FAQ-container {
     display: flex;
     flex-wrap: wrap;
   }
-
   .FAQ {
     width: 45%;
   }
 
-  .mediapartner-section{
+  /*.mediapartner-section{
     width: 30%;
     margin: 0 auto;
   }
   .job-openings-container {
     display: flex;
     justify-content: space-between;
-  }
+  }*/
 }
 
+@media screen and (min-width: 750px){
+  .student-employee-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flexbox {
+    width: 33%;
+  }
+
+
+}
 
 
 
