@@ -1,10 +1,10 @@
 {% extends "_layout" %}
 
 {% block content %}
+<h1 class = "hero-image-caption">{{entry.tagline}}</h1>
 	{% for asset in entry.heroImage %}
 		<img src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}
-	<h1 class = "hero-image-caption">{{entry.tagline}}</h1>
 	<h1>{{entry.title}}</h1>
 	{{entry.body}}
 	<h2>News</h2>
