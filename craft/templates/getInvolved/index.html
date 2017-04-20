@@ -3,8 +3,9 @@
 {% block content %}
 {% for entry in craft.entries.section('getInvolved').find() %}
 	<h1>{{entry.title}}</h1>
+	{% endfor %}
 	{% for asset in entry.heroImage %}
-<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+<img src="{{asset.url}}" alt="{{asset.title}}"/>
+{{entry.body}}
 {% endfor %}
 {% endblock %}
-{{entry.body}}
