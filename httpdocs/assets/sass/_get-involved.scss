@@ -34,11 +34,12 @@ margin-bottom: 0;
   margin-top: 10px;
 }
 
-.position-opening {
+.position-name {
   //margin-left: 20px;
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
 
 .opening-description {
   margin-top: 7px;
@@ -105,129 +106,23 @@ margin-bottom: 0;
     display: flex;
     flex-wrap: wrap;
   }
-  .flexbox {
+  .mediapartner-name {
     width: 33%;
   }
 
-
-}
-
-
-
-/*About Us News cause it wouldn't work for some reason*/
-/*About Us News*/
-.news-stories-content{
-  background-color: #ededed;
-}
-
-.news-story-image{
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-
-.news-stories-content{
-  margin-bottom: 15px;
-  padding: 15px;
-}
-
-
-
-/*About Us-Board Members */
-
-@media screen and (max-width:650px) {
-    .voting-members {
-      display: block;
-    }
-
-    .meeting-minutes-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .meeting-box {
-      width: 49%;
-    }
-}
-
-@media screen and (min-width:650px) {
-    .voting-members {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .member {
-      width: 32%;
-    }
-
-    .meeting-box {
-      width: 24.5%;
-    }
-
-    .meeting-minutes-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+  .position-name-contact-container {
+    width:65%;
+    display: flex;
   }
 
-@media screen and (min-width:1000px) {
-    .non-voting-members {
-      display: flex;
-      flex-wrap: wrap;
-      //justify-content: space-between;
-    }
-    .non-voting-member-name {
-      width: 47%;
-    }
-}
+  .position-opening {
+    width: 32%;
+  }
 
-.member-title {
-  padding-left: 20px;
-  color: $dark-blue;
-  margin-bottom: 0;
+  .position-contact {
+    width: 32%;
+  }
 }
-
-.member-name {
-  margin-top: 5px;
-}
-
-.non-voting-member-name {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-b {
-  font-weight: 500;
-}
-
-.guidelines {
-  display: inline;
-}
-.guidelines-button {
-  display: inline-block;
-}
-
-.non-voting-members {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-.meeting-box {
-  text-align: center;
-  background-color: #ededed;
-}
-
-.meeting-date {
-  margin-left: 0;
-}
-
-.meeting-pdf {
-  margin-left: 0;
-  text-decoration: underline;
-  font-size: .7em;
-}
-/*end of board members CSS*/
 
 
 @media screen and (min-width: 800px){
