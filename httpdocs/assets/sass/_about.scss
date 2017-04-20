@@ -1,6 +1,8 @@
 /*About Us News*/
 .news-stories-content{
   background-color: #ededed;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .news-story-image, .recognition-image{
@@ -8,7 +10,7 @@
   height: auto;
 }
 .news-story-image{
-  max-width: 400px;
+  max-width: 800px;
 }
 .news-stories-content, .recognition-content{
   margin-bottom: 15px;
@@ -25,10 +27,10 @@
     display: flex;
   }
 
-  .news-story-description-container, .news-image-container, {
+  /*.news-story-description-container, .news-image-container, {
     width: 50%;
   }
-
+*/
 }
 
 .recognition-list{
@@ -36,17 +38,6 @@
   margin-top: 0;
   padding: 0;
 }
-/*
-@media screen and (min-width: 1200px){
-  .recognition-image-container{
-    width: 50%;
-  }
-
-  .recognition-description-container{
-    width: 80%;
-  }
-}
-*/
 
 .recognition-item{
   padding: 15px;
@@ -82,4 +73,16 @@
   width: 200px;
   margin-left: 25%;
   margin-right: 25%;
+}
+
+.news-story-description{
+margin-left: 0;
+}
+
+.news-story-description-container{
+  padding-left: 15px;
+}
+
+.news-story-image{
+  text-align: center;
 }
