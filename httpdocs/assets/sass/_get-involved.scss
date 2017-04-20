@@ -53,35 +53,3 @@ margin-bottom: 0;
     justify-content: space-between;
   }
 }
-
-
-
-
-/*About Us News cause it wouldn't work for some reason*/
-/*About Us News*/
-.news-stories-content{
-  background-color: #ededed;
-}
-
-.news-story-image{
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-
-.news-stories-content{
-  margin-bottom: 15px;
-  padding: 15px;
-}
-
-
-
-@media screen and (min-width: 800px){
-  .news-stories-content{
-    display: flex;
-  }
-  .news-story-description-container, .news-image-container{
-    width: 50%;
-  }
-
-}
