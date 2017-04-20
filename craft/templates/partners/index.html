@@ -2,17 +2,17 @@
 
 {% block content %}
 
+<div class="secondary-hero-image">
+	<img class = "secondary-image" {% for asset in entry.heroImage %} <img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+	{% endfor %} >
+</div>
+
 
 	<h1>Media Outlets</h1>
 	<h2 class = "subhead">Media Partners</h2>
 
 	{% for entry in craft.entries.section('partners').find() %}
 	{% if entry.featuredMediaPartner %}
-
-	<div class="secondary-hero-image">
-		<img class = "secondary-image" {% for asset in entry.heroImage %} <img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-		{% endfor %} >
-	</div>
 
 
 	<section class = "outside-div-container-brands">
