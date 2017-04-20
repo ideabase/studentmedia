@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="secondary-hero-image">
-	<img class = "secondary-image" {% for asset in entry.heroImage %} <img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+	<img class = "secondary-image" {% for asset in entry.heroImage %} <img src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %} >
 </div>
 
@@ -23,7 +23,7 @@
 	  <div class = "media-partner-container">
 	  <div class = "amag-container">
 	    {% for asset in entry.logo %}
-	    <img src=”{{asset.url}}” class = "brand-logo" alt=”{{asset.title}}”>
+	    <img src="{{asset.url}}" class = "brand-logo" alt="{{asset.title}}">
 	    {% endfor %}
 	  </div>
 	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
