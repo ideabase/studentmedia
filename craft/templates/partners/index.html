@@ -3,18 +3,46 @@
 {% block content %}
 	<h1>Media Outlets</h1>
 
+
+	<!--hero images -->
+
+	<div class="hero-image">
+		{% for asset in entry.heroImage %}
+			<img class = "hero-image-home" src=”{{asset.url}}” alt=”{{asset.title}}””>
+		{% endfor %}
+		<div class="header-quote">
+			<h1 class = "hero-image-caption">Kent State Student Media is made by students for students.</h1>
+		</div>
+	</div>
+
 	{% for entry in craft.entries.section('partners').find() %}
-	{% if entry.featuredMediaPartner %}
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			{% for asset in entry.heroImage %}
-		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-	{% endfor %}
-	{% for asset in entry.logo %}
-	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-	{% endfor %}
-	{{entry.shortDescription}}
-	{% endif %}
-{% endfor %}
+
+
+<!--media partners-->
+
+
+	<section class = "outside-div-container-brands">
+	<section class = "brand-logo-div-outside-container">
+		<div class = "brand-logo-grid">
+				<div class = "media-partner-container">
+	        <div class = "amag-container">
+					{% if entry.featuredMediaPartner %}
+					{% for asset in entry.logo %}
+	          <img src=”{{asset.url}}” class = "brand-logo" alt=”{{asset.title}}”>
+	        </div>
+				</div>
+	      {% endfor %}
+	    <h3 class = "media-partner-name">{{entry.title}}</h3>
+	    <p class ="media-partner-description">{{entry.shortDescription}}</p>
+	    {% endif %}
+	    {% endfor %}
+	</div>
+	</section>
+
+	</section>
+
+
+	<!--events-->
 
 <h2>Events</h2>
 {% for entry in craft.entries.section('events').find() %}
