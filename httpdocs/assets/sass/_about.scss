@@ -5,29 +5,48 @@
 
 .news-story-image, .recognition-image{
   width: 100%;
-  max-width: 400px;
   height: auto;
 }
-
+.news-story-image{
+  max-width: 400px;
+}
 .news-stories-content, .recognition-content{
   margin-bottom: 15px;
   padding: 15px;
 }
 
-
+.about-recognition-flex-container{
+  padding-left: 25px;
+  padding-right: 25px;
+}
 
 @media screen and (min-width: 800px){
-  .news-stories-content, .recognition-content, .about-news-flex-container{
+  .news-stories-content, .recognition-content, .about-recognition-flex-container{
     display: flex;
   }
-  .news-story-description-container, .news-image-container, .recognition-description-container{
+
+  .news-story-description-container, .news-image-container, {
     width: 50%;
   }
+
 }
 
 .recognition-list{
   list-style-type: none;
+  margin-top: 0;
+  padding: 0;
 }
+/*
+@media screen and (min-width: 1200px){
+  .recognition-image-container{
+    width: 50%;
+  }
+
+  .recognition-description-container{
+    width: 80%;
+  }
+}
+*/
 
 .recognition-item{
   padding: 15px;
@@ -38,4 +57,29 @@
   border-left: none;
   border-right: none;
   width: 100%;
+}
+
+.recognition-image{
+  margin: 0 auto;
+}
+
+.recognition-name{
+  color: #eeab15; /*change to mandarin*/
+}
+
+.recognition-image-caption{
+  display: block;
+  text-align: center;
+  background-color: #1f3c72; /*change to dark-blue*/
+  color: #ffffff; /*chanfe to white*/
+  padding: 10px;
+  margin-top: -40px;
+  z-index: 1;
+  position: relative;
+}
+
+.recognition-button{
+  width: 200px;
+  margin-left: 25%;
+  margin-right: 25%;
 }
