@@ -3297,11 +3297,17 @@ $(window).scroll(function() {
 
 $('.owl-carousel').owlCarousel({
     center: true,
-    items:4,
+    items:2,
     loop:true,
     margin:10,
     responsive:{
+        450:{
+            items:3
+        },
         600:{
+            items:4
+        },
+        1000:{
             items:6
         }
     }

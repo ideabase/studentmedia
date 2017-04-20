@@ -1,0 +1,241 @@
+.mediapartner-opening {
+  margin-left: 20px;
+  margin-bottom: 0;
+  color: $dark-blue;
+}
+
+.job-opening {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 4px;
+}
+
+.FAQ-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.question {
+margin-bottom: 0;
+}
+
+.app-button {
+  margin-left: 0;
+  display: block;
+}
+
+.answer {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.mediapartner-type {
+  //margin-left: 20px;
+  margin-top: 10px;
+}
+
+.position-opening {
+  //margin-left: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.opening-description {
+  margin-top: 7px;
+  padding-right: 10px;
+  margin-left: 0;
+}
+.contact {
+  //margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.contact-name-title {
+  margin-top: 7px;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.email {
+    color: $mandarin;
+    font-size: .9em;
+    text-decoration: none;
+    font-size: 200;
+}
+
+.job-opening-container {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-top: 2px black solid;
+}
+
+.job-opening-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 625px){
+  /*.job-openings-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }*/
+
+  .FAQ-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .FAQ {
+    width: 45%;
+  }
+
+  /*.mediapartner-section{
+    width: 30%;
+    margin: 0 auto;
+  }
+  .job-openings-container {
+    display: flex;
+    justify-content: space-between;
+  }*/
+}
+
+@media screen and (min-width: 750px){
+  .student-employee-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flexbox {
+    width: 33%;
+  }
+
+
+}
+
+
+
+/*About Us News cause it wouldn't work for some reason*/
+/*About Us News*/
+.news-stories-content{
+  background-color: #ededed;
+}
+
+.news-story-image{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.news-stories-content{
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+
+
+/*About Us-Board Members */
+
+@media screen and (max-width:650px) {
+    .voting-members {
+      display: block;
+    }
+
+    .meeting-minutes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .meeting-box {
+      width: 49%;
+    }
+}
+
+@media screen and (min-width:650px) {
+    .voting-members {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      width: 32%;
+    }
+
+    .meeting-box {
+      width: 24.5%;
+    }
+
+    .meeting-minutes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+@media screen and (min-width:1000px) {
+    .non-voting-members {
+      display: flex;
+      flex-wrap: wrap;
+      //justify-content: space-between;
+    }
+    .non-voting-member-name {
+      width: 47%;
+    }
+}
+
+.member-title {
+  padding-left: 20px;
+  color: $dark-blue;
+  margin-bottom: 0;
+}
+
+.member-name {
+  margin-top: 5px;
+}
+
+.non-voting-member-name {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+b {
+  font-weight: 500;
+}
+
+.guidelines {
+  display: inline;
+}
+.guidelines-button {
+  display: inline-block;
+}
+
+.non-voting-members {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.meeting-box {
+  text-align: center;
+  background-color: #ededed;
+}
+
+.meeting-date {
+  margin-left: 0;
+}
+
+.meeting-pdf {
+  margin-left: 0;
+  text-decoration: underline;
+  font-size: .7em;
+}
+/*end of board members CSS*/
+
+
+@media screen and (min-width: 800px){
+  .news-stories-content{
+    display: flex;
+  }
+  .news-story-description-container, .news-image-container{
+    width: 50%;
+  }
+
+}

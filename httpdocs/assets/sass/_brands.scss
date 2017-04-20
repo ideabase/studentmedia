@@ -6,18 +6,35 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 150px;
-  max-width: 150px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
   margin: 5px;
+  margin-bottom: 15px;
   display: flex;
   background-image: url("/assets/img/brands/backgroundimages/fusion.jpeg");
   position: relative;
   overflow: hidden;
+  @media screen and (min-width: 600px) {
+    height: 125px;
+    width: 125px;
+  }
+  @media screen and (min-width: 1000px) {
+    height: 150px;
+    width: 150px;
+  }
+  &:hover, &:focus {
+    &:after {
+      background-color: rgba(0,0,0,.8);
+    }
+  }
   &:after {
+    transition: .3s background-color ease-in-out;
     content: "";
     height: 100%;
     width: 100%;
+    top:0;
+    left:0;
     position: absolute;
     z-index:5;
     background-color: rgba(0,0,0,.5);
@@ -28,7 +45,7 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-  max-width: 75%;
+  max-width: 65%;
   z-index:10;
 }
 

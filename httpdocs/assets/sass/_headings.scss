@@ -6,29 +6,33 @@
 
 .first-word {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: 500;
-  color: #d1de44; /*turn to $lime-green*/
+  color: $lime-green;
   margin-left: 20px;
   display:inline-block;
   text-transform: uppercase;
+  -webkit-margin-before: .5em;
+  -webkit-margin-after: .5em;
 }
 
 .head-line {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
+    font-size: 2.3em;
     font-weight: 300;
     color: white; /*turn to $lime-green*/
     margin-left: 20px;
     display:inline-block;
     text-transform: uppercase;
     -webkit-margin-start: 15px;
+    -webkit-margin-before: .5em;
+    -webkit-margin-after: .5em;
   }
 
 
   .subhead {
     padding-left: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 8px;
     margin-top: 0px;
     font-weight: 400;
@@ -36,6 +40,10 @@
     display: block;
     position: relative;
     margin-bottom: 0px;
+  }
+
+  .first-subhead {
+    padding-top: 50px;
   }
 
   .subhead::before{
@@ -55,6 +63,7 @@
   font-size: 1.5em;
   font-weight: 400;
   margin-left: 20px;
+  padding-top: 20px;
   color: $mandarin;
 
 }
@@ -65,18 +74,27 @@ p {
   font-weight: 300;
   line-height: 1.6em;
   margin-left: 20px;
-  //width: 50%;
 }
 
-
+.intro-paragraph {
+  max-width: 100%;
+  margin-right: 15px;
+  font-size: .9em;
+  line-height: 1.7em;
+}
 
 .general-header {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 300;
   color: orange; /*turn to $lime-green*/
   letter-spacing: .1px;
   text-transform: uppercase;
+  margin-bottom: 5px;;
+}
+
+.page-header--no-image {
+  margin-top: 0;
 }
 
 @media screen and(max-width: 550px){
@@ -102,4 +120,35 @@ p {
     -webkit-margin-start: 10px;
     padding-top: -50px;
   }
+}
+
+@media screen and(min-width: 700px){
+
+    .intro-paragraph {
+      max-width: 90%;
+      margin-right: 15px;
+      font-size: 1em;
+      line-height: 1.7em;
+}
+}
+
+
+@media screen and(min-width: 900px){
+
+    .intro-paragraph {
+      max-width: 80%;
+      margin-right: 15px;
+      font-size: 1em;
+      line-height: 1.7em;
+}
+}
+
+@media screen and(min-width: 1100px){
+
+    .intro-paragraph {
+      max-width: 70%;
+      margin-right: 15px;
+      font-size: 1em;
+      line-height: 1.7em;
+}
 }

@@ -1,0 +1,9 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<h1>{{entry.title}}</h1>
+	{% for asset in entry.heroImage %}
+<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+{% endfor %}
+{{entry.body}}
+{% endblock %}

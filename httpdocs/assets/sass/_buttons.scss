@@ -1,5 +1,8 @@
 header .cta-header a {
-   padding: .5em 2em .65em 2em;
+   padding-top: 10px;
+   padding-right: 30px;
+   padding-bottom: 10px;
+   padding-left: 30px;
    font-family: $mont;
    font-weight: 300;
    font-size: .9em;
@@ -16,11 +19,14 @@ header .cta-header a {
    margin: 0 auto;
    @media screen and (min-width: 700px) {
      width: 80%;
-     margin-top: 1em;
+     margin-top: 1.7em;
      padding: .5em;
    }
    &:hover {
      background-color: $dark-blue;
+     border-radius: 30px;
+     transition-duration: .4s;
+     transition-timing-function: ease-in;
    }
  }
 
@@ -50,4 +56,26 @@ header .cta-header a {
 
 .main-button:active {
   background-color: rgb(209, 222, 34);
+}
+
+//Square button used for visiting other pages outside of body copy
+.secondary-button{
+  background-color: $white;
+  border-style: solid;
+  border-color: $lime-green;
+  border-width: 2.5px;
+  font-family: $mont;
+  cursor: pointer;
+  color: $dark-blue;
+  width: 200px;
+  height: 50px;
+  margin:10px;
+  font-size: .9em;
+}
+
+.secondary-button:hover{
+  //border-radius: 30px;
+  transition-duration: .3s;
+  transition-timing-function: ease-in;
+  background-color: $lime-green;
 }
