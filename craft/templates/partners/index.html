@@ -1,26 +1,61 @@
 {% extends "_layout" %}
 
 {% block content %}
+
+
 	<h1>Media Outlets</h1>
+	<h2 class = "subhead">Media Partners</h2>
 
 	{% for entry in craft.entries.section('partners').find() %}
 	{% if entry.featuredMediaPartner %}
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			{% for asset in entry.heroImage %}
-		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-	{% endfor %}
-	{% for asset in entry.logo %}
-	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-	{% endfor %}
-	{{entry.shortDescription}}
-	{% endif %}
-{% endfor %}
 
-<h2>Events</h2>
-{% for entry in craft.entries.section('events').find() %}
-<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-{{entry.time}}
-{{entry.location}}
-{{entry.description}}
-{% endfor %}
-{% endblock %}
+	<div class="secondary-hero-image">
+		<img class = "secondary-image" {% for asset in entry.heroImage %} <img src=”{{asset.url}}” alt=”{{asset.title}}”” />
+		{% endfor %} >
+	</div>
+
+
+	<section class = "outside-div-container-brands">
+	<section class = "brand-logo-div-outside-container">
+
+		<div class = "brand-logo-grid">
+
+	  <div class = "media-partner-container">
+	  <div class = "amag-container">
+	    {% for asset in entry.logo %}
+	    <img src=”{{asset.url}}” class = "brand-logo" alt=”{{asset.title}}”>
+	    {% endfor %}
+	  </div>
+	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
+	  <p class ="media-partner-description">{{entry.shortDescription}}</p>
+	  </div>
+
+	</div>
+	</section>
+	{% endif %}
+	{% endfor %}
+	</section>
+
+
+	<section class = "scroll-container">
+	<h2 class ="subhead calender-subhead">Calender & Events</h2>
+	<section class="calender-container calender-main">
+	  <div class ="container-scroll-box">
+	  {% for entry in craft.entries.section('events').find() %}
+	  <div class="event-container">
+	      <div class="date-box">
+	        <div class="date">
+	          <h4 class="date-style">{{entry.time}}</h4>
+	        </div>
+	        <div class="month">
+	          <h4 class="month-style">{{entry.time}}</h4>
+	        </div>
+	      </div>
+	      <div class="event">
+	        <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+	        <p class="event-words">{{entry.description}}</p>
+	      </div>
+			</div>
+
+	      {% endfor %}
+	      {% endblock %}
