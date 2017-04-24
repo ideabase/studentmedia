@@ -2,18 +2,78 @@
 
 {% block content %}
 
-		<h1>{{ entry.title }}</h1>
-		{% for asset in entry.heroImage %}
+<div class="secondary-hero-image">
+	{% for asset in entry.heroImage %}
+		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}
+</div>
+
+<main>
+<section class="media-partner-about-container">
+	<div class="page-header">
+		<h1 class="first-word">{{ entry.title }}</h1>
+	</div>	
+	<p class="media-partner-about-blurb">{{entry.description}}</p>
+	<div class="button-section">
+		<a href="#"><button class="main-button media-partner-button">Visit Website</button></a>
+		<a href="#"><button class="main-button media-partner-button">Advertise</button></a>
+	</div>
+</section>
+
+<section class="media-partner-contact-container">
+	<h2 class="subhead">Contact & Connect</h2>
+
+	<div class="media-partner-container">
+
+	<div class="student-contact">
+		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
+		<h3 class = "contact-title">FIELD FOR JOB TITLE</h3>
+	    <p class = "contact-email"><a href="mailto:jmill231@kent.edu">FIELD FOR EMAIL</a></p>
+	</div>
+
+	<div class="department-contact">
+	    <h2 class = "contact-name">FIELD FOR DEPARTMENT NAME</h2>
+	    <p class = "contact-phone">{{entry.phone}}</p>
+	    <p class = "contact-phone">FIELD FOR EMAIL</p>
+	</div>
+
+	<div class="social-media">
+		{% for block in entry.socialMedia %}
+		    {% if block.type == "socialMediaBlock" %}
+		        <a href= "{{block.address}}">{{ block.socialName }}</a>
+		    {% endif %}
+		{% endfor %}
+	</div>
+</div>
+</section>
+
+<section class="media-partner-events-container">
+<section class="scroll-container">
+	<h2 class="subhead calender-subhead">Calender & Events</h2>
+	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
+		<div class="event-container">
+			<div class="date-box">
+				<div class="date">
+					<h4 class="date-style">test</h4>
+				</div>
+				<div class="month">
+					<h4 class="month-style">Test Month</h4>
+				</div>
+			</div>
+			<div class="event">
+				<h3 class="event-title">{{ entry.title }}</h3>
+				<p class="event-words">{{entry.description}}</p>
+			</div>
+		</div>
+	{% endfor %}
+</section>
+</section>
+
+<!--{% for asset in entry.logo %}
 	<img src="{{asset.url}}" alt="{{asset.title}}" />
 {% endfor %}
-{% for asset in entry.logo %}
-<img src="{{asset.url}}" alt="{{asset.title}}" />
-{% endfor %}
-{{entry.description}}
-{{entry.firstName}}
-{{entry.lastName}}
-{{entry.phone}}
-{{entry.email}}
+
+
 
 {% for block in entry.socialMedia %}
 
@@ -27,9 +87,7 @@
 {% endfor %}
 
 <h2>Upcoming Events</h2>
-{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
-<a href=" {{entry.url}}">{{ entry.title }}</a>
-{%endfor%}
+
 
 <h2>Student Leader</h2>
 {% for entry in craft.entries.section('staff').relatedTo(entry).limit(4)%}
@@ -37,10 +95,11 @@
 {{entry.lastName}}
 {{entry.phone}}
 {{entry.email}}
-{%endfor%}
+{% endfor %}
 
 {% for ad in craft.entries.section('ad').relatedTo(entry) %}
 	<a href="{{ad.url}}">Advertise With Us</a>
-{% endfor %}
-
+{% endfor %} -->
+</section>
+</main>
 {% endblock %}
