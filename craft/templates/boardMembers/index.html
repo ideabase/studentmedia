@@ -1,10 +1,26 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+<div class="secondary-hero-image">
 	{% for asset in entry.heroImage %}
-		<img src="{{asset.url}}" alt="{{asset.title}}" />
+		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}</div>
+	<div class = "page-header">
+	<h1>{{entry.title}}</h1></div>
+	{{entry.description}}
+	<h2>Media Board - Voting Member</h2>
+	{% for entry in craft.entries.section('staff').find() %}
+		{% if entry.employeeType.contains('voting') %}
+			<h3>{{entry.title}}</h3>
+		{% endif %}
 	{% endfor %}
-	<h1>{{entry.title}}</h1>
-	
+
+	<h2>Media Board - Non-Voting Members</h2>
+	{% for entry in craft.entries.section('staff').find() %}
+
+		{% if entry.employeeType.contains('nonVoting') %}
+			<h3>{{entry.title}}</h3>
+		{% endif %}
+	{% endfor %}
+
 {% endblock %}
