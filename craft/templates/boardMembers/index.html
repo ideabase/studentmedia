@@ -8,19 +8,22 @@
 	<div class = "page-header">
 	<h1 class="first-word">{{entry.title}}</h1></div>
 	{{entry.description}}
-	<h2>Media Board - Voting Member</h2>
+	<h2 class = "subhead">Voting Members</h2>
 	{% for entry in craft.entries.section('staff').find() %}
 		{% if entry.employeeType.contains('voting') %}
-			<h3>{{entry.title}}</h3>
+			<h3 class="member-title">{{entry.jobTitle}}</h3>
+			<p class="member-name">{{entry.firstName}} {{entry.lastName}}</p>
 		{% endif %}
 	{% endfor %}
 
-	<h2>Media Board - Non-Voting Members</h2>
+	<h2 class = "subhead">Non-Voting Members</h2>
 	{% for entry in craft.entries.section('staff').find() %}
 
 		{% if entry.employeeType.contains('nonVoting') %}
-			<h3>{{entry.title}}</h3>
+			<p class="non-voting-member-name">{{entry.title}}, {{entry.jobTitle}}</p>
 		{% endif %}
 	{% endfor %}
+
+	<h2 class = "subhead">Meeting Minutes</h2>
 
 {% endblock %}
