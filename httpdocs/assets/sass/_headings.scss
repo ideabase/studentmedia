@@ -6,14 +6,9 @@
 
 .first-word {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.3em;
   font-weight: 500;
   color: $lime-green;
-  margin-left: 20px;
   display:inline-block;
-  text-transform: uppercase;
-  -webkit-margin-before: .5em;
-  -webkit-margin-after: .5em;
 }
 
 .head-line {
@@ -24,9 +19,6 @@
     margin-left: 20px;
     display:inline-block;
     text-transform: uppercase;
-    -webkit-margin-start: 15px;
-    -webkit-margin-before: .5em;
-    -webkit-margin-after: .5em;
   }
 
 
