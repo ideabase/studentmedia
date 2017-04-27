@@ -9,7 +9,8 @@
 	<h1 class="head-line">{{entry.title}}</h1></div>
 	{% for entry in craft.entries.section('boardMembers').find() %}
 	{% for asset in entry.files %}
-		<h2 class = "subhead">Student Media Board Guidelines</h2> <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Download PDF</a>
+		<h2 class = "subhead">Student Media Board Guidelines</h2>
+		<div class="guidelines"> <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Download PDF</a></div>
 	{% endfor %}
 	{% endfor %}
 
