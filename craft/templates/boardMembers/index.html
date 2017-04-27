@@ -6,7 +6,7 @@
 		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}</div>
 	<div class = "page-header">
-	<h1>{{entry.title}}</h1></div>
+	<h1 class="first-word">{{entry.title}}</h1></div>
 	{{entry.description}}
 	<h2>Media Board - Voting Member</h2>
 	{% for entry in craft.entries.section('staff').find() %}

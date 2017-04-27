@@ -1,16 +1,18 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+<div class="secondary-hero-image">
 	{% for asset in entry.heroImage %}
-		<img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-	<h1>{{entry.title}}</h1>
+		<img class = "secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}</div>
+
+	<div class = "page-header">
+	<h1 class="first-word">{{entry.title}}</h1></div>
 	{{entry.body}}
-	<h2>News</h2>
+	<h2 >News</h2>
 	{% for entry in craft.entries.section('recognition').find() %}
 		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+			<h3 class = "subhead"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 			{{ entry.description }}
 			<p><a href="{{ entry.url }}">Continue reading</a></p>
