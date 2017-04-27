@@ -6,7 +6,7 @@
 		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}</div>
 	<div class = "page-header">
-	<h1 class="first-word">{{entry.title}}</h1></div>
+	<h1 class="head-line">{{entry.title}}</h1></div>
 	{% for entry in craft.entries.section('boardMembers').find() %}
 	{% for asset in entry.files %}
 		Student Media Board Guidelines <a href="{{asset.url}}" alt="{{asset.title}}" />Download PDF</a>
