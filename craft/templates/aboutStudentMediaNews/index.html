@@ -1,11 +1,13 @@
 {% extends "_layout" %}
 
 {% block content %}
-<h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+<div class="secondary-hero-image">
 	{% for asset in entry.heroImage %}
-		<img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-	<h1>{{entry.title}}</h1>
+		<img class = "secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}</div>
+
+	 <div class = "page-header">
+	<h1 class="first-word">{{entry.title}}</h1></div>
 	{{entry.body}}
 	<h2>News</h2>
 	{% for entry in craft.entries.section('news').limit(3) %}

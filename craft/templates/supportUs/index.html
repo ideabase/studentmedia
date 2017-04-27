@@ -1,9 +1,10 @@
 {% extends "_layout" %}
 
 {% block content %}
+<div class="secondary-hero-image">
 	{% for asset in entry.heroImage %}
-	<img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
+	<img class = "secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}</div>
 	<h1>{{entry.title}}</h1>
 
 
