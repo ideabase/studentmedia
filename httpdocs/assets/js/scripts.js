@@ -3347,7 +3347,7 @@ function navToggle(e) {
 
 $(document).ready(function() {
   	  $('body').addClass('js');
-		  var $menuTrigger = $('.has-subnav > a');
+		  var $menuTrigger = $('.has-children > a');
 		$menuTrigger.click(function(e) {
 			e.preventDefault();
 			var $this = $(this);
