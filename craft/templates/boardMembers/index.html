@@ -26,15 +26,17 @@
 	{% for entry in craft.entries.section('staff').find() %}
 
 		{% if entry.employeeType.contains('nonVoting') %}
-			<p class="non-voting-member-name">{{entry.title}}, {{entry.jobTitle}}</p>
+			<p class="non-voting-member-name">{{entry.title}}, <b>{{entry.jobTitle}}</b></p>
 		{% endif %}
 	{% endfor %}
 
 	<h2 class = "subhead">Meeting Minutes</h2>
+	<div class="meeting-minutes-container">
 	{% for entry in craft.entries.section('meetingMinutes').find() %}
-	<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+	<div class="meeting-box">
+	<p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
 	{% for asset in entry.files %}
-		<a href="{{asset.url}}" alt="{{asset.title}}" />{{entry.title}}</a>
+		<a href="{{asset.url}}" alt="{{asset.title}}" />{{entry.title}}</a></div>
 	{% endfor %}
 	{% endfor %}
 
