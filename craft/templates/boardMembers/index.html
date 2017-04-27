@@ -6,7 +6,14 @@
 		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}</div>
 	<div class = "page-header">
-	<h1 class="first-word">{{entry.title}}</h1></div>
+	<h1 class="head-line">{{entry.title}}</h1></div>
+	{% for entry in craft.entries.section('boardMembers').find() %}
+	{% for asset in entry.files %}
+		<h2 class = "subhead">Student Media Board Guidelines</h2>
+		<div class="guidelines"> <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Download PDF</a></div>
+	{% endfor %}
+	{% endfor %}
+
 	{{entry.description}}
 	<h2 class = "subhead">Voting Members</h2>
 	{% for entry in craft.entries.section('staff').find() %}
@@ -20,10 +27,19 @@
 	{% for entry in craft.entries.section('staff').find() %}
 
 		{% if entry.employeeType.contains('nonVoting') %}
-			<p class="non-voting-member-name">{{entry.title}}, {{entry.jobTitle}}</p>
+			<p class="non-voting-member-name">{{entry.title}}, <b>{{entry.jobTitle}}</b></p>
 		{% endif %}
 	{% endfor %}
 
 	<h2 class = "subhead">Meeting Minutes</h2>
+	<div class="meeting-minutes-container">
+	{% for entry in craft.entries.section('meetingMinutes').find() %}
+	<div class="meeting-box">
+	<p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+	{% for asset in entry.files %}
+	<a><img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100"></a>
+		<a href="{{asset.url}}" alt="{{asset.title}}" />{{entry.title}}</a></div>
+	{% endfor %}
+	{% endfor %}
 
 {% endblock %}
