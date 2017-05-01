@@ -1,24 +1,52 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>Advertising</h1>
-  {% set categories = craft.categories.group('adFormat') %}
-  {% for category in categories %}
-  <strong>{{category.title}}</strong>
-  {{category.description}}
-  {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
-  <h2>{{quote.quote}}</h2>
-  {{quote.quotee}}
-  {% endfor %}
-  {% for entry in craft.entries.section('partners').relatedTo(category) %}
-			<h3>{{ entry.title }}</h3>
-      {{entry.shortDescription}}
-			{% for ad in craft.entries.section('ad').relatedTo(category) %}
-			<a href="{{ entry.url }}">Learn more about this partner</a>
-				<a href="{{ad.url}}">View Ad Rates</a>
-			{% endfor %}
+  <div class="page-header">
+	  <h1 class="headline">Advertising</h1>
+  </div>
+  <div class="advertising-content">
+    <h2 class="intro-sentence-header">INTRO SENTENCE HEADER FIELD</h2>
+    <p class="intro-paragraph">INTRO PARAGRAPH FIELD</p>
+  </div>
 
-  {% endfor %}
-{% endfor %}
+  <h2>Creative Services</h2>
+  <p>CREATIVE SERVICES PARAGRAPH</p>
+
+  <h2 class="subhead">Platforms</h2>
+
+  
+  {% set categories = craft.categories.group('adFormat') %}
+
+  {% for category in categories %}
+    <div id="accordion" class="accordion">
+    <div class="link platform-dropdown"><h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
+
+    {% for entry in craft.entries.section('partners').relatedTo(category) %}
+      <div class="submenu">
+        <div class = "platform-content-container">
+          <div class = "platform-content">
+            <h2 class="platform-content-header">{{ entry.title }}</h2>
+            <p class="platform-description">{{entry.shortDescription}}</p>
+          </div>
+          {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
+          <div class="platform-content">
+            <h4 class="testimonial">{{quote.quote}}</h4>
+            <p class="testimonial-name">{{quote.quotee}}</p>
+          </div>
+          {% endfor %}
+          {% for ad in craft.entries.section('ad').relatedTo(category) %}
+            <div class="platform-content">
+              <button class="secondary-button ad-button">Advertising</button>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+    {% endfor %}
+
+
+  {% endfor %} </div>
+   
+
+
 
 {% endblock %}
