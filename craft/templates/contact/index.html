@@ -6,7 +6,17 @@
 		<img src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}
 	<h1>{{entry.title}}</h1>
-	
+	<h2>Reach Us By Phone</h2>
+	{{entry.phone}}
+	<h2>Visit Us in Person</h2>
+	{{entry.address}}
+
+	<h1>Get in Touch with Our Leaders</h1>
+	{% for entry in craft.entries.section('staff').find() %}
+	{% for asset in entry.files %}
+		Student Media Board Guidelines <img src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}
+	{% endfor %}
 
 
 {% endblock %}
