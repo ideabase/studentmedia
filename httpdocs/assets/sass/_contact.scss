@@ -25,5 +25,79 @@ color: $dark-blue;
 
 .contact-address {
   margin-left: 20px;
+}
 
+.circle-image-container {
+  border-radius: 50%;
+  background-color: black;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  margin-left: 20px;
+  }
+
+  .contact-info-section-info {
+    margin-left: 0;
+  }
+
+  .contact-info-section-name {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: $dark-blue;
+    margin-bottom: 0;
+  }
+
+  .contact-title-info-section {
+    color: orange;
+    margin-top: 0;
+    letter-spacing: .1px;
+    font-weight: 400;
+  }
+
+  .contact-info-section-info {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.contact-about-group {
+  display: flex;
+  flex-wrap: wrap;
+  //width:48%;
+}
+
+.leader {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+  .light-blue-line {
+    border-bottom: 15px solid $light-blue;
+    margin-top: 15px;
+    margin-left: -70px;
+  }
+
+  .contact-info-section {
+    margin-left: 20px;
+  }
+
+  .contact-info-about-leader {
+    display: none;
+  }
+
+.contact-info-about-leader:hover {
+    display: block;
+
+  }
+
+
+  @media screen and(max-width: 600px) {
+    .circle-image-container {
+      width: 150px;
+      height: 150px;
+      }
+    .light-blue-line {
+      border-bottom: 10px;
+    }
 }
