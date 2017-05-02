@@ -26,12 +26,4 @@
 		{% endfor %}
 
 
-	<h1>Get in Touch with Our Leaders</h1>
-	{% for entry in craft.entries.section('staff').find() %}
-	{% for asset in entry.files %}
-		Student Media Board Guidelines <img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-	{% endfor %}
-
-
 {% endblock %}
