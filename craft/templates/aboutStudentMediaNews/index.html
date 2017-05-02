@@ -9,13 +9,17 @@
 	 <div class = "page-header">
 	<h1 class="first-word">{{entry.title}}</h1></div>
 	{{entry.body}}
-	<h2>News</h2>
+	
+	<h2>Check Out Our Latest News</h2>
 	{% for entry in craft.entries.section('news').limit(3) %}
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			{{ entry.description }}
-			{% for asset in entry.image %}
-			<img src="{{asset.url}}" alt="{{asset.title}}" />
-			
+			<article>
+				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+				<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+				{{ entry.description}}
+				{% for asset in entry.image %}
+				<img src="{{asset.url}}" alt="{{asset.title}}" />
+			</article>
 			{% endfor %}
 	{% endfor %}
+	<a href="/news">View Past News Stories</a>
 {% endblock %}
