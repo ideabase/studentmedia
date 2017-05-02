@@ -6,6 +6,24 @@
 	{% endfor %}
 	{% for asset in entry.heroImage %}
 <img src="{{asset.url}}" alt="{{asset.title}}"/>
-{{entry.body}}
+{{entry.description}}
+{% for asset in entry.files %}
+	<a href="{{asset.url}}" alt="{{asset.title}}" />Application Form</a>
 {% endfor %}
+{% endfor %}
+
+<h2>Student Employee Opportunities</h2>
+
+<h2>Frequently Asked Questions (FAQ's)</h2>
+
+	{% for block in entry.faq %}
+			{% if block.type == "faqs" %}
+			{{block.question}}
+			{{block.answer}}
+			{% endif %}
+	{% endfor %}
+
+	<h2>Events</h2>
+	
+
 {% endblock %}
