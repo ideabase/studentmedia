@@ -1,3 +1,6 @@
+// Check for JavaScript support and add class to body //
+$('body').addClass('js');
+
 // Sticky Navigation //
 
 var mn = $("header");
@@ -3346,12 +3349,12 @@ function navToggle(e) {
 // Drop Down / Accordion Open/Close //
 
 $(document).ready(function() {
-  	  $('body').addClass('js');
 		  var $menuTrigger = $('.has-children > a');
 		$menuTrigger.click(function(e) {
-			e.preventDefault();
+      e.stopImmediatePropagation();
 			var $this = $(this);
 			$this.toggleClass('active').next('ul').toggleClass('active');
+      return false;
 		});
 });
 

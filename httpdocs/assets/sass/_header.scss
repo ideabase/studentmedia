@@ -2,6 +2,14 @@ header{
   background-color: $white;
   z-index: 200;
   position:relative;
+  margin: 0 auto;
+  max-width: 1300px;
+  @media screen and (min-width: 800px) {
+    width: 93%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 80%;
+  }
 }
 
 .header-nav-container{
@@ -28,7 +36,9 @@ header{
 }
 
 .header-logo{
-  width: 175px;
+  width: 150px;
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 .header-logo__condensed {
@@ -42,6 +52,8 @@ header{
 .nav-trigger.close {
   z-index: 1000;
   position: relative;
+  background-color: $dark-blue;
+  color: white;
 }
 
 // This is where the actual menu text comes from.  This could be changed to anything, including an icon.//
@@ -63,7 +75,7 @@ header nav.in {
 }
 
 header nav.in {
-	top: 0;
+	top: 70px;
 	opacity: 1;
 }
 
@@ -111,12 +123,11 @@ header nav>ul>li {
   text-align: center;
   &:last-child {
       border: none;
-      margin-top: 2em;
   }
 }
 
 header nav li>a {
-  padding: 2em 0;
+  padding: 2em;
   display: block;
 }
 
@@ -139,6 +150,12 @@ header .nav__level2 {
   li>a {
     padding: .5em 0;
   }
+  li:first-child a {
+    padding-top: 2em;
+  }
+  li:last-child a {
+    padding-bottom: 2em;
+  }
 }
 
 .js header  .nav__level2 {
@@ -154,8 +171,7 @@ header .nav__level2 {
 			max-height: 55em;
 }
 
-@media screen and (min-width: 800px){
-
+@media screen and (min-width: 900px){
 
   .js header  ul.nav__level2 {
 				max-height: 0;
@@ -164,9 +180,21 @@ header .nav__level2 {
         transition: .3s max-height ease-in-out;
 	}
 
+  header nav.in {
+  	top: inherit;
+  }
+
+  .header-logo-container{
+    text-align: left;
+  }
+
+  header li.has-children > a {
+    padding-right:.5em;
+  }
+
   header li.has-children > a:after {
     right: -1em;
-    top: 4em;
+    top: 50%;
     content: "▼";
     font-size: .5rem;
   }
@@ -175,31 +203,34 @@ header .nav__level2 {
     content: "▼";
   }
 
-  .js header nav ul li:hover > ul {
-				display: block;
-        list-style-type: none;
+  .js header nav ul li:hover > ul, .js header  .nav__level2.active {
+
         max-height: 50em;
 	}
 
-  .js header nav .nav__level2 {
+  .js header nav ul.nav__level2 {
     position: absolute;
-		top: 5em;
+		top: 4.5em;
 		left: 0;
-		width: 12em;
-    background-color: $light-blue;
+		width: 23em;
+    background-color: rgba($light-blue,.95);
     text-align: left;
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
   }
 
   header nav{
     top: inherit;
     height: inherit;
-    width: 75%;
+    width: 80%;
     position: relative;
     margin: inherit;
     display: flex;
     align-items: center;
-    margin-left: auto; // This pushes the nav to the right
+    margin-left: 1em;
     padding-right: inherit;
+    padding: 0;
   }
 
   header nav.out {
@@ -209,7 +240,7 @@ header .nav__level2 {
   header nav>ul>li{
     border-top: 3px solid $dark-blue;
     border-bottom: none;
-    font-size: .9em;
+    font-size: .8em;
     padding-top: .5em;
     padding-left: inherit;
     padding-right: inherit;
@@ -218,13 +249,18 @@ header .nav__level2 {
     text-align: center;
     transition: .3s border-color ease-in-out;
     position: relative;
+    @media screen and (min-width: 1000px) {
+      font-size: .9em;
+    }
+    @media screen and (min-width: 1300px) {
+      font-size: .95em;
+    }
     &:hover {
       border-color: $lime-green;
     }
     &:last-child {
       border-top: none;
       margin-left: 1em;
-      margin-top:1em;
       padding-top: 0;
       &:hover {
         color: inherit;
@@ -233,12 +269,19 @@ header .nav__level2 {
   }
 
   header .nav__level2 li {
-    display: block;
+    display: inline-block;
+    padding-top: 0;
+    width: 50%;
+    font-size: .9em;
+    &:first-child a, &:last-child a {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
   }
 
   header .nav__level2 li a {
     text-align: left;
-    padding:1em;
+    padding:1em 1.5em 1em 1.5em;
   }
 
   .header-logo-container {
@@ -260,6 +303,7 @@ header .nav__level2 {
     text-decoration: none;
     color: $dark-blue;
     transition: .3s color ease-in-out;
+    padding: 1.5em 0 .5em 0;
   }
 
 
@@ -279,7 +323,9 @@ header .nav__level2 {
 
 @media screen and (min-width: 1000px){
   header nav>ul>li{
-    font-size: 1em;
     padding-top: .2em;
     }
+  header nav {
+    margin-left: 3em;
+  }
 }
