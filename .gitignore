@@ -3,5 +3,5 @@
 /httpdocs/node_modules
 /craft/config/db.php
 **/.DS_Store
-httpdocs/assets/img/global/
 httpdocs/assets/uploads/*
+/httpdocs/assets/img/global/_hero
