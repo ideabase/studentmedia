@@ -30,8 +30,8 @@ color: $dark-blue;
 .circle-image-container {
   border-radius: 50%;
   background-color: black;
-  width: 225px;
-  height: 225px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
   margin-left: 20px;
   }
@@ -68,6 +68,7 @@ color: $dark-blue;
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
+  width: 48%;
 }
 
 
@@ -125,23 +126,39 @@ color: $dark-blue;
     margin-top: 40px;
   }
 
-  @media screen and(mix-width: 400px) {
+  @media screen and(min-width: 200px) {
     .circle-image-container {
       width: 150px;
       height: 150px;
       }
+
     .light-blue-line {
-      border-bottom: 10px;
+      border-bottom: none;
     }
 
-    .student-leader{
-      width: 48%;
+    .leader{
+      width: 100%;
     }
 }
 
 @media screen and(min-width: 800px) {
-  .student-leader{
-    width: 30%;
+  .circle-image-container {
+    width: 200px;
+    height: 200px;
+    }
+
+    .leader {
+      width: 49%;
+      margin-top: 20px;
+    }
+
+
+  /*.student-leader{
+    width: 49%;
+  }*/
+
+  .light-blue-line {
+    border-bottom: 13px solid #8ad1cf;
   }
 
 }
