@@ -23,8 +23,8 @@ header{
   background-color: $white;
   border-style: none;
   border: 2px solid $dark-blue;
-  padding: .25em .5em .35 .5em;
-  font-size: .9em;
+  padding: .35em .6em .45em .6em;
+  font-size: .85em;
   text-transform: uppercase;
   color: black;
   font-weight: 500;
@@ -132,17 +132,22 @@ header nav li>a {
 }
 
 header li.has-children > a:after {
-			content: '+';
+      width: 15px;
+      height: 15px;
+      content: "";
+      background-image: url(/assets/img/global/arrow-down.svg);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
 			position: absolute;
-			top: .75em;
-			right: 0;
+			top: 2.5em;
+			right: 10%;
 			display: block;
-			font-size: 1.5em;
-			padding: 0.25em 0.5em;
+      transition: .1s transform ease-in-out;
 		}
 
 header li.has-children > a.active:after {
-    content: "-";
+    transform: rotate(180deg) scaleX(-1);
+    top: 2.3em;
 }
 
 header .nav__level2 {
@@ -164,7 +169,7 @@ header .nav__level2 {
   display: block;
   margin-left: 0;
   padding-left: 0;
-  transition: all 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .js header  .nav__level2.active {
@@ -180,6 +185,12 @@ header .nav__level2 {
         transition: .3s max-height ease-in-out;
 	}
 
+  header li.has-children > a.active:after {
+      content: "";
+      top: 60%;
+      transform: inherit;
+  }
+
   header nav.in {
   	top: inherit;
   }
@@ -193,14 +204,14 @@ header .nav__level2 {
   }
 
   header li.has-children > a:after {
-    right: -1em;
-    top: 50%;
-    content: "▼";
-    font-size: .5rem;
-  }
-
-  header li.has-children > a.active:after {
-    content: "▼";
+    right: .5em;
+    top: 60%;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-image: url(/assets/img/global/arrow-down.svg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
   }
 
   .js header nav ul li:hover > ul, .js header  .nav__level2.active {
@@ -244,7 +255,7 @@ header .nav__level2 {
     padding-top: .5em;
     padding-left: inherit;
     padding-right: inherit;
-    flex: 1;
+    flex: inherit;
     flex-grow: 2;
     text-align: center;
     transition: .3s border-color ease-in-out;
@@ -257,6 +268,9 @@ header .nav__level2 {
     }
     &:hover {
       border-color: $lime-green;
+      >a {
+        color: darken($gray,15%);
+      }
     }
     &:last-child {
       border-top: none;
