@@ -23,7 +23,7 @@
 	  <p class = "media-partner-description">{{entry.shortDescription}}</p>
 	  </div>
 	</section>
-
+	{% endif %}
 
 	<section class = "scroll-container">
 	<h2 class ="subhead calender-subhead">Calender & Events</h2>
@@ -44,6 +44,7 @@
 	        <p class="event-words">{{entry.description}}</p>
 	      </div>
 			</div>
-				{% endif %}
+
+
 	      {% endfor %}
 	      {% endblock %}
