@@ -5,13 +5,11 @@
 <div class="secondary-hero-image">
 	{% for asset in entry.heroImage %}
 	<img class = "secondary-image"  <img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %} >
+	{% endfor %}
 </div>
 
 	{% for entry in craft.entries.section('partners').find() %}
 	{% if entry.featuredMediaPartner %}
-
-
 	<section class ="lets-try-this">
 	  <div class = "media-partner-container-grid">
 	  <div class = "media-partner">
@@ -24,27 +22,26 @@
 	  </div>
 	</section>
 	{% endif %}
+	{% endfor %}
 
 	<section class = "scroll-container">
 	<h2 class ="subhead calender-subhead">Calender & Events</h2>
 	<section class="calender-container calender-main">
 	  <div class ="container-scroll-box">
 	  {% for entry in craft.entries.section('events').find() %}
-	  <div class="event-container">
-	      <div class="date-box">
-	        <div class="date">
-	          <h4 class="date-style">{{entry.time|date("d")}}</h4>
-	        </div>
-	        <div class="month">
-	          <h4 class="month-style">{{entry.time|date("F")}}</h4>
-	        </div>
-	      </div>
-	      <div class="event">
-	        <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-	        <p class="event-words">{{entry.description}}</p>
-	      </div>
-			</div>
-
-
-	      {% endfor %}
-	      {% endblock %}
+		  <div class="event-container">
+		      <div class="date-box">
+		        <div class="date">
+		          <h4 class="date-style">{{entry.time|date("d")}}</h4>
+		        </div>
+		        <div class="month">
+		          <h4 class="month-style">{{entry.time|date("F")}}</h4>
+		        </div>
+		      </div>
+		      <div class="event">
+		        <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+		        <p class="event-words">{{entry.description}}</p>
+		      </div>
+				</div>
+			{% endfor %}
+{% endblock %}
