@@ -3,7 +3,7 @@
 {% block content %}
 <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
 	{% for asset in entry.heroImage %}
-		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+		<img src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}
 
 <div class = "page-header">
