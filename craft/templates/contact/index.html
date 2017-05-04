@@ -5,26 +5,72 @@
 	{% for asset in entry.heroImage %}
 		<img src="{{asset.url}}" alt="{{asset.title}}" />
 	{% endfor %}
-	<h1>{{entry.title}}</h1>
-	{{entry.description}}
-	<h2>Reach Us By Phone</h2>
-	{{entry.phone}}
-	<h2>Visit Us in Person</h2>
-	{{entry.address}}
 
-	<h1>Get in Touch With Our Leaders</h1>
-		{% for entry in craft.entries.section('staff').find() %}
+<div class = "page-header">
+<h1 class="head-line">{{entry.title}}</h1>
+</div>
+
+<div class = "advertising-content">
+  <h2 class = "intro-sentence-header">Meet our dedicated staff, the people behind it all.</h2>
+  <p class = "intro-paragraph">Have any questions or concerns? Contact us by phone or email and
+we well get back to you as soon as possible.</p>
+</div>
+
+<div class="contact-info">
+
+  <div class="contact-call">
+    <h4 class="contact-h4">Reach Us By Phone:</h4>
+    <p class="contact-p">Student Media Office:</p>
+    <p class="contact-p">{{entry.phone}}</p>
+  </div>
+
+  <div class="contact-address">
+    <h4 class="contact-h4">Visit Us In Person</h4>
+    <p class="contact-p">Student Media Office Address:</p>
+    <p class="contact-p">{{entry.address}}</p>
+    <p class="contact-p">{{entry.address}}</p>
+  </div>
+</div>
+
+<h2 class = "subhead">Get in Touch With Our Leaders</h2>
+
+
+<div class="contact-about-group">
+  <div class="leader">
+  <div class="circle-image-container">
+    {% for entry in craft.entries.section('staff').find() %}
 			{% if entry.employeeType.contains('director') %}
 			{% for asset in entry.image %}
-		<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-	{% endfor %}
-				<h2>{{entry.firstName}} {{entry.lastName}}</h2>
-				{{entry.jobTitle}}
-				{{entry.email}}
-				{{entry.phone}}
-				{{entry.body}}
-			{% endif %}
-		{% endfor %}
+    <img src="{{asset.url}}" alt=”{{asset.title}}” />
+    	{% endfor %}
+  </div>
+  <div class="contact-info-section">
+  <h4 class="contact-info-section-name">{{entry.firstName}} {{entry.lastName}}</h4>
+  <h5 class="contact-title-info-section">{{entry.jobTitle}}</h5>
+  <p class="contact-info-section-info">{{entry.phone}}</p>
+  <p class="contact-info-section-info">{{entry.email}}</p>
+  <div class="light-blue-line">
+  </div>
+  <div class="contact-info-about-leader">
+    <p><strong>About:</strong>{{entry.body}}</p>
+    <p><strong>I can help you with:</strong> General questions, Strategic planning, Idea development, Budgets</p>
+  </div>
+</div>
+</div>
+
+
+<h2 class = "subhead subhead-fix">Student Leaders</h2>
+
+<div class="student-leader-container">
+  <div class="student-leader">
+    <h2 class="student-leader-name">{{entry.firstName}} {{entry.lastName}}</h2>
+    <h5 class="student-leader-title">{{entry.jobTitle}}</h5>
+    <p class="student-leader-email">{{entry.email}}</p>
+  </div>
+
+</div>
+{% endif %}
+{% endfor %}
 
 
 {% endblock %}
