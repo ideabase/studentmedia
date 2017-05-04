@@ -15,7 +15,7 @@
     mollit anim id est laborum.</p>
 </div>
 <h2 class = "subhead">Student Employee Opportunities</h2>
-  <div class="student-employee-container">
+  <section class="student-employee-container">
       <div class="job-opening-container">
         <div class="mediapartner-name">
           <h2 class="mediapartner-type">A Magazine</h2>
@@ -36,60 +36,71 @@
     </div>
   </div>
 
-      <div class="job-opening-container">
-        <div class="flexbox">
-          <h2 class="mediapartner-type">Student Media Office</h2>
-        </div>
-      <div class="flexbox">
-        <h4 class="position-opening">Event Coordinator</h4>
-        <p class="opening-description">Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-      </div>
-      <div class="flexbox">
-        <h4 class="contact">Contact:</h4>
-        <p class="contact-name-title">Adam Jones, Marketing Director</p>
-        <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
-          <button class = "secondary-button app-button">Application Form</button>
-      </div>
+  <div class="job-opening-container">
+    <div class="mediapartner-name">
+      <h2 class="mediapartner-type">Student Media Office</h2>
     </div>
 
-    <div class="job-opening-container">
-      <div class="flexbox">
-        <h2 class="mediapartner-type">TV2</h2>
-      </div>
-    <div class="flexbox">
-      <h4 class="position-opening">Videographer</h4>
-      <p class="opening-description">Lorem ipsum dolor sit amet,
+  <div class="position-name-contact-container">
+
+  <div class="position-opening">
+    <h4 class="position-name">Advertising Sales</h4>
+    <p class="opening-description">Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+
+    <h4 class="position-name">Advertising Designer</h4>
+    <p class="opening-description">Lorem ipsum dolor sit amet,
         consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-    </div>
-    <div class="flexbox">
-      <h4 class="position-opening">Script Writer</h4>
-      <p class="opening-description">Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
-    </div>
-    <div class="flexbox">
-      <h4 class="contact">Contact:</h4>
-      <p class="contact-name-title">Adam Jones, Marketing Director</p>
-      <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
-        <button class = "secondary-button app-button">Application Form</button>
-    </div>
-    <div class="flexbox">
-      <h4 class="contact">Contact:</h4>
-      <p class="contact-name-title">Adam Jones, Marketing Director</p>
-      <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
-        <button class = "secondary-button app-button">Application Form</button>
-    </div>
-    </div>
   </div>
+
+  <div class="position-contact">
+    <h4 class="contact">Contact:</h4>
+    <p class="contact-name-title">Mary Smith, Student Media Director</p>
+    <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
+      <button class = "secondary-button app-button">Application Form</button>
+  </div>
+</div>
+</div>
+
+<div class="job-opening-container">
+  <div class="mediapartner-name">
+    <h2 class="mediapartner-type">TV2</h2>
+  </div>
+
+<div class="position-name-contact-container">
+
+<div class="position-opening">
+  <h4 class="position-name">Video Production</h4>
+  <p class="opening-description">Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+
+  <h4 class="position-name">News Anchor</h4>
+  <p class="opening-description">Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+
+  <h4 class="position-name">Script Writer</h4>
+  <p class="opening-description">Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+</div>
+
+<div class="position-contact">
+  <h4 class="contact">Contact:</h4>
+  <p class="contact-name-title">Mary Smith, Student Media Director</p>
+  <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
+    <button class = "secondary-button app-button">Application Form</button>
+</div>
+</div>
+</div>
+</section>
 
 
 
 <h2 class = "subhead">Student Leadership Application</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+<p class="margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
   minim veniam, quis nostrud exercitation ullamco</p>
-  <h4>Contact Kevin Dilley for more Information</h4>
-  <button class = "secondary-button app-button">Student Leadership Form</button>
+  <h4 class="margin">Contact Kevin Dilley for more Information</h4>
+  <button class = "secondary-button app-button margin">Student Leadership Form</button>
 
 <h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
 <div class="FAQ-container">
@@ -114,5 +125,8 @@
     sed do eiusmod tempor incididunt ut</p>
   </div>
 </div>
+
+{{>organisms-calender}}
+
 </main>
 {{>organisms-footer}}

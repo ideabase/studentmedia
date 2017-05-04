@@ -108,6 +108,14 @@
   margin-top: 14px;
 }
 
+.logo-about-page {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  width: 200px;
+}
+
 @media screen and (min-width: 500px) {
 
 .button-section {
@@ -116,6 +124,20 @@
   flex-direction: row;
   padding-bottom: 20px;
 }
+}
+
+@media screen and (min-width: 500px) {
+  .media-partner-into-container {
+    display: flex;
+  }
+  .logo-about-page {
+    width: 30%;
+    margin-top: 100px;
+  }
+
+  .title-paragraph-container{
+    width: 70%;
+  }
 }
 
 @media screen and (min-width: 850px) {
