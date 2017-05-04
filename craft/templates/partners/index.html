@@ -8,41 +8,20 @@
 	{% endfor %} >
 </div>
 
-
-	<h1>Media Outlets</h1>
-	<h2 class = "subhead">Media Partners</h2>
-
 	{% for entry in craft.entries.section('partners').find() %}
 	{% if entry.featuredMediaPartner %}
 
 
-	<section class = "outside-div-container-brands">
-	<section class = "brand-logo-div-outside-container">
-
-		<div class = "brand-logo-grid">
-
-	  <div class = "media-partner-container">
-
-			{% if entry.heroImage | length %}
-			{% for asset in entry.heroImage %}
-				<a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url}}');">
-			{% endfor %}
-			{% else %}
-				<a href="{{entry.url}}" class="media-partner">
-			{% endif %}
-			{% for asset in entry.logo %}
-			<img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
-			{% endfor %}
-			</a>
-
-	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
-	  <p class ="media-partner-description">{{entry.shortDescription}}</p>
+	<section class ="lets-try-this">
+	  <div class = "media-partner-container-grid">
+	  <div class = "media-partner">
+	    {% for asset in entry.logo %}
+	      <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+	    {% endfor %}
 	  </div>
-
-	</div>
-	</section>
-	{% endif %}
-	{% endfor %}
+	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
+	  <p class = "media-partner-description">{{entry.shortDescription}}</p>
+	  </div>
 	</section>
 
 
