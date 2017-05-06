@@ -12,6 +12,10 @@ footer ul {
   padding-left: 0;
 }
 
+.footer-header {
+  break-inside: avoid;
+  margin-bottom: 0;
+}
 
 .footer-logo-image{
   width: 100%;
@@ -38,22 +42,24 @@ footer ul {
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: .2px;
+  letter-spacing: .4px;
   margin-top: 1em;
-  display:block;
+  margin-bottom: .5rem;
+  display:inline-block;
   width:100%;
 }
 
 footer .nav__level2 {
   margin-top: .5em;
   margin-bottom: 1em;
+  display:inline-block;
 }
 
 .footer-list-item{
   font-family: $mont;
   color: $white;
   font-size: 13px;
-  margin-bottom: 10px;
+  margin-bottom: .75rem;
   text-transform: none;
   font-weight: normal;
 }
@@ -101,6 +107,10 @@ footer .nav__level2 {
   cursor: pointer;
   text-decoration: none;
   color: $white;
+  transition: .3s underline ease-in-out;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
 
 .footer-content-list{
