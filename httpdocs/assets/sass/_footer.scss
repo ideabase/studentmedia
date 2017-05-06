@@ -59,9 +59,10 @@ footer .nav__level2 {
   font-family: $mont;
   color: $white;
   font-size: 13px;
-  margin-bottom: .75rem;
   text-transform: none;
   font-weight: normal;
+  display:inline-block;
+  width:100%;
 }
 
 .footer-content-list{
@@ -74,7 +75,19 @@ footer .nav__level2 {
     columns:2;
   }
   @media screen and (min-width: 750px){
-    columns:4;
+    columns:3;
+  }
+}
+
+// Fix the longer second list of Media Partners to display in two columns. //
+.footer-content-list li:nth-child(2) .nav__level2 {
+  @media screen and (min-width: 750px){
+    display: inline-flex;
+    width: 100%;
+    flex-wrap:wrap;
+    .footer-list-item{
+      width: 50%;
+    }
   }
 }
 
@@ -108,6 +121,9 @@ footer .nav__level2 {
   text-decoration: none;
   color: $white;
   transition: .3s underline ease-in-out;
+  display: block;
+  width: 100%;
+  margin-bottom: .5rem;
   &:hover, &:focus {
     text-decoration: underline;
   }
