@@ -12,6 +12,10 @@ footer ul {
   padding-left: 0;
 }
 
+.footer-header {
+  break-inside: avoid;
+  margin-bottom: 0;
+}
 
 .footer-logo-image{
   width: 100%;
@@ -38,24 +42,27 @@ footer ul {
   font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-  letter-spacing: .2px;
+  letter-spacing: .4px;
   margin-top: 1em;
-  display:block;
+  margin-bottom: .5rem;
+  display:inline-block;
   width:100%;
 }
 
 footer .nav__level2 {
   margin-top: .5em;
   margin-bottom: 1em;
+  display:inline-block;
 }
 
 .footer-list-item{
   font-family: $mont;
   color: $white;
   font-size: 13px;
-  margin-bottom: 10px;
   text-transform: none;
   font-weight: normal;
+  display:inline-block;
+  width:100%;
 }
 
 .footer-content-list{
@@ -68,7 +75,19 @@ footer .nav__level2 {
     columns:2;
   }
   @media screen and (min-width: 750px){
-    columns:4;
+    columns:3;
+  }
+}
+
+// Fix the longer second list of Media Partners to display in two columns. //
+.footer-content-list li:nth-child(2) .nav__level2 {
+  @media screen and (min-width: 750px){
+    display: inline-flex;
+    width: 100%;
+    flex-wrap:wrap;
+    .footer-list-item{
+      width: 50%;
+    }
   }
 }
 
@@ -101,6 +120,13 @@ footer .nav__level2 {
   cursor: pointer;
   text-decoration: none;
   color: $white;
+  transition: .3s underline ease-in-out;
+  display: block;
+  width: 100%;
+  margin-bottom: .5rem;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
 
 .footer-content-list{
