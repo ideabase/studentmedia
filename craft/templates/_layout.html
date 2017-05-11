@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  <title>{% if entry.title is defined %}{{ entry.title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,8 @@
     /* Critical CSS for Home */
     {% include '_includes/critical-home.css' %}
   </style>
+  <script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
+  <noscript><link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"></noscript>
   {% hook 'seomaticRender' %}
 </head>
 
@@ -53,9 +55,6 @@
     <!-- INCLUDE FOOTER -->
     {% include '_includes/footer.html' %}
     <!-- INCLUDE FOOTER -->
-
-
-  <link href="{{ siteUrl }}assets/css/style.css" type="text/css" rel="stylesheet" media="screen"/>
   <script async src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
   {% if craft.config.devMode %}
   <!-- Live Reload - For local environment only -->

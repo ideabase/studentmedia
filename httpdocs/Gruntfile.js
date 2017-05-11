@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'assets/js/min/scripts-min.js': ['assets/js/*.js']
+          'assets/js/min/scripts-min.js': ['assets/js/jquery.js','assets/js/carousel.js','assets/js/scripts.js'],
+          'assets/js/min/loadcss-min.js': ['assets/js/loadcss.js'],
         }
       }
     },
