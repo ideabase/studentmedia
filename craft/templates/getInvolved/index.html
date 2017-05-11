@@ -14,6 +14,15 @@
 
 <h2>Student Employee Opportunities</h2>
 
+{% for block in entry.studentEmployeeOpportunities%}
+	{% if block.type == "employeeOpportunities" %}
+		{{block.hiring}}
+		{{block.position}}
+		{{block.positionDescription}}
+		{{block.contactInformation}}
+	{%endif%}
+{%endfor%}
+
 <h2>Frequently Asked Questions (FAQs)</h2>
 
 	{% for block in entry.faq %}
