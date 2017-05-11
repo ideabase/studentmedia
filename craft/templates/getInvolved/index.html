@@ -24,6 +24,15 @@
 
 <h2>Student Employee Opportunities</h2>
 
+{% for block in entry.studentEmployeeOpportunities%}
+	{% if block.type == "employeeOpportunities" %}
+		{{block.hiring}}
+		{{block.position}}
+		{{block.positionDescription}}
+		{{block.contactInformation}}
+	{%endif%}
+{%endfor%}
+
 <h2>Frequently Asked Questions (FAQ's)</h2>
 
 	{% for block in entry.faq %}
@@ -34,10 +43,14 @@
 	{% endfor %}
 
 	<h2>Events</h2>
+<<<<<<< HEAD
+
+=======
 	{% for entry in craft.entries.section('events').find() %}
 		<h1>{{entry.title}}</h1>
 		{{entry.time}}
 		{{entry.description}}
 		{%endfor%}
+>>>>>>> b43be6acd816ce4e485ce127068a816f37619c3e
 
 {% endblock %}
