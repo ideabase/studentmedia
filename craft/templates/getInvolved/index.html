@@ -24,6 +24,14 @@
 	{% endfor %}
 
 	<h2>Events</h2>
+<<<<<<< HEAD
 
+=======
+	{% for entry in craft.entries.section('events').find() %}
+		<h1>{{entry.title}}</h1>
+		{{entry.time}}
+		{{entry.description}}
+		{%endfor%}
+>>>>>>> b43be6acd816ce4e485ce127068a816f37619c3e
 
 {% endblock %}
