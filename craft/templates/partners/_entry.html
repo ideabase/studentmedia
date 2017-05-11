@@ -1,12 +1,10 @@
 {% extends "_layout" %}
 
-{% block content %}
+{% block hero %}
+	{% include '_includes/hero.html' %}
+{% endblock %}
 
-<div class="secondary-hero-image">
-	{% for asset in entry.heroImage %}
-		<img class="secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-</div>
+{% block content %}
 
 <section class="media-partner-about-container">
 	<div class="page-header">
@@ -24,7 +22,7 @@
 </section>
 
 <section class="scroll-container">
-	<h2 class="subhead calender-subhead">Calender & Events</h2>
+	<h2 class="subhead calender-subhead">Calendar & Events</h2>
 	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
 		<div class="event-container">
 			<div class="date-box">
@@ -74,21 +72,6 @@
 <!--{% for asset in entry.logo %}
 	<img src="{{asset.url}}" alt="{{asset.title}}" />
 {% endfor %}
-
-
-
-{% for block in entry.socialMedia %}
-
-    {% if block.type == "socialMediaBlock" %}
-
-        <a href= "{{block.address}}">{{ block.socialName }}</a>
-
-
-    {% endif %}
-
-{% endfor %}
-
-<h2>Upcoming Events</h2>
 
 
 <h2>Student Leader</h2>

@@ -1,10 +1,11 @@
 {% extends "_layout" %}
 
+{% block hero %}
+	{% include '_includes/hero.html' %}
+{% endblock %}
+
 {% block content %}
-<div class="secondary-hero-image">
-	{% for asset in entry.heroImage %}
-	<img class = "secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}</div>
+
 	<h1>{{entry.title}}</h1>
   <h2>Student Media Fund Drive</h2>
 

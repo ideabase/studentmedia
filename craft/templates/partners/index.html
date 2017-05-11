@@ -1,15 +1,13 @@
 {% extends "_layout" %}
 
+{% block hero %}
+	{% include '_includes/hero.html' %}
+{% endblock %}
+
 {% block content %}
 
-<div class="secondary-hero-image">
-	{% for asset in entry.heroImage %}
-	<img class = "secondary-image"  <img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-</div>
-
-	{% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
 	<section class ="lets-try-this">
+			{% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
 	  <div class = "media-partner-container-grid">
 	  <div class = "media-partner">
 			{% for asset in entry.heroImage %}
@@ -23,8 +21,8 @@
 	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
 	  <p class = "media-partner-description">{{entry.shortDescription}}</p>
 	  </div>
+		{% endfor %}
 	</section>
-	{% endfor %}
 
 	<section class = "scroll-container">
 	<h2 class ="subhead calender-subhead">Calender & Events</h2>
@@ -46,6 +44,6 @@
 		      </div>
 				</div>
 			{% endfor %}
-			{% endblock %}
 	</section>
 	</section>
+	{% endblock %}
