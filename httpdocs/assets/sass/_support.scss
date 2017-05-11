@@ -1,12 +1,18 @@
 .support-image{
-width: 90%;
+width: 100%;
 display: block;
 margin-left: auto;
 margin-right: auto;
-max-width: 500px;
+margin-top: 15px;
+
 }
 
 
-.support-button{
+
+
+@media screen and (max-width:650px){
+.button-wrapper{
+  width:200px;
   margin: 0 auto;
+}
 }
