@@ -614,39 +614,6 @@ li {
   }
 }
 
-.fadein img {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  opacity: 0;
-  -webkit-animation: fade 27s infinite;
-  left: 0;
-  right: 0;
-  -webkit-animation-name: fade;
-  animation-name: fade;
-  -webkit-animation-duration: 27s;
-  animation-duration: 27s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-.fadein img:nth-child(1) {
-  -webkit-animation: 0s;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-
-.fadein img:nth-child(2) {
-  -webkit-animation: 9s;
-  -webkit-animation-delay: 9s;
-  animation-delay: 9s;
-}
-
-.fadein img:nth-child(3) {
-  -webkit-animation: 18s;
-  -webkit-animation-delay: 18s;
-  animation-delay: 18s;
-}
 
 .owl-carousel .owl-nav.disabled,
 .owl-carousel .owl-dots.disabled {
