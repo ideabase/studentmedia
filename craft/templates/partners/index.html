@@ -1,12 +1,10 @@
 {% extends "_layout" %}
 
-{% block content %}
+{% block hero %}
+	{% include '_includes/hero.html' %}
+{% endblock %}
 
-<div class="secondary-hero-image">
-	{% for asset in entry.heroImage %}
-	<img class = "secondary-image"  <img src="{{asset.url}}" alt="{{asset.title}}" />
-	{% endfor %}
-</div>
+{% block content %}
 
 	<section class ="lets-try-this">
 			{% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
