@@ -39,7 +39,7 @@
   <div class="leader">
   <div class="circle-image-container">
     {% for entry in craft.entries.section('staff').find() %}
-			{% if entry.employeeType.contains('director') %}
+			{% if entry.employeeType.contains('officeStaff') %}
 			{% for asset in entry.image %}
     <img src="{{asset.url}}" alt=”{{asset.title}}” />
     	{% endfor %}
@@ -58,10 +58,14 @@
 </div>
 </div>
 </div>
+{% endif %}
+{% endfor %}
 
 
 <h2 class = "subhead subhead-fix">Student Leaders</h2>
 
+{% for entry in craft.entries.section('staff').find() %}
+{% if entry.employeeType.contains('studentMediaLeader') %}
 <div class="student-leader-container">
   <div class="student-leader">
     <h2 class="student-leader-name">{{entry.firstName}} {{entry.lastName}}</h2>
