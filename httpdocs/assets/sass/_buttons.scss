@@ -33,6 +33,7 @@ header .cta-header a {
  }
 
 .main-button {
+  display: inline-block;
    padding: 10px 30px 10px 30px;
    font-family: $mont;
    font-weight: 300;
@@ -58,6 +59,14 @@ header .cta-header a {
 
 .main-button:active {
   background-color: rgb(209, 222, 34);
+}
+
+.main-button-center {
+  margin: 0 auto;
+}
+
+.div-button {
+  text-align: center;
 }
 
 //Square button used for visiting other pages outside of body copy

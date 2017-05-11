@@ -13,9 +13,8 @@
 </div>
 
 <div class = "advertising-content">
-  <h2 class = "intro-sentence-header">Meet our dedicated staff, the people behind it all.</h2>
-  <p class = "intro-paragraph">Have any questions or concerns? Contact us by phone or email and
-we well get back to you as soon as possible.</p>
+  <h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
+  <p class = "intro-paragraph">{{entry.description}}</p>
 </div>
 
 <div class="contact-info">
@@ -23,14 +22,13 @@ we well get back to you as soon as possible.</p>
   <div class="contact-call">
     <h4 class="contact-h4">Reach Us By Phone:</h4>
     <p class="contact-p">Student Media Office:</p>
-    <p class="contact-p">{{entry.phone}}</p>
+    <p class="contact-p">{{footer.phone}}</p>
   </div>
 
   <div class="contact-address">
     <h4 class="contact-h4">Visit Us In Person</h4>
     <p class="contact-p">Student Media Office Address:</p>
-    <p class="contact-p">{{footer.address}}</p>
-    <p class="contact-p">{{footer.address}}</p>
+    <p class="contact-p">{{footer.mailingAddress}}</p>
   </div>
 </div>
 
@@ -41,7 +39,7 @@ we well get back to you as soon as possible.</p>
   <div class="leader">
   <div class="circle-image-container">
     {% for entry in craft.entries.section('staff').find() %}
-			{% if entry.employeeType.contains('director') %}
+			{% if entry.employeeType.contains('officeStaff') %}
 			{% for asset in entry.image %}
     <img src="{{asset.url}}" alt=”{{asset.title}}” />
     	{% endfor %}
@@ -60,10 +58,14 @@ we well get back to you as soon as possible.</p>
 </div>
 </div>
 </div>
+{% endif %}
+{% endfor %}
 
 
 <h2 class = "subhead subhead-fix">Student Leaders</h2>
 
+{% for entry in craft.entries.section('staff').find() %}
+{% if entry.employeeType.contains('studentMediaLeader') %}
 <div class="student-leader-container">
   <div class="student-leader">
     <h2 class="student-leader-name">{{entry.firstName}} {{entry.lastName}}</h2>

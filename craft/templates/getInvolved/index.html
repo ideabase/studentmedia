@@ -1,29 +1,90 @@
 {% extends "_layout" %}
 
 {% block content %}
-{% for entry in craft.entries.section('getInvolved').find() %}
-	<h1>{{entry.title}}</h1>
-	{% endfor %}
-	{% for asset in entry.heroImage %}
-<img src="{{asset.url}}" alt="{{asset.title}}"/>
-{{entry.description}}
-{% for asset in entry.files %}
+
+  <div class = "page-header">
+    {% for entry in craft.entries.section('getInvolved').find() %}
+       <h1 class="head-line">{{entry.title}}</h1>
+    {% endfor %}
+  </div>
+
+<div class = "advertising-content">
+  <h2 class = "intro-sentence-header">Find Job Opportunities, Connect with Students</h2>
+  <p class = "intro-paragraph">{{entry.description}}</p>
+  {% for asset in entry.files %}
 	<a href="{{asset.url}}" alt="{{asset.title}}" />Application Form</a>
-{% endfor %}
-{% endfor %}
+		{% endfor %}
+</div>
 
-<h2>Student Employee Opportunities</h2>
 
-<h2>Frequently Asked Questions (FAQ's)</h2>
+<h2 class = "subhead">Student Employee Opportunities</h2>
+  <section class="student-employee-container">
+      <div class="job-opening-container">
+        <div class="mediapartner-name">
+          <h2 class="mediapartner-type">{{block.hiring}}</h2>
+        </div>
 
-	{% for block in entry.faq %}
-			{% if block.type == "faqs" %}
-			{{block.question}}
-			{{block.answer}}
-			{% endif %}
-	{% endfor %}
+      <div class="position-name-contact-container">
+      <div class="position-opening">
+        <h4 class="position-name">{{block.position}}</h4>
+        <p class="opening-description">L{{block.positionDescription}}</p>
+      </div>
 
-	<h2>Events</h2>
-	
+      <div class="position-contact">
+        <h4 class="contact">Contact:</h4>
+        <p class="contact-name-title">{{block.contactInformation}}</p>
+        <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
+          <button class = "secondary-button app-button">Application Form</button>
+      </div>
+    </div>
+  </div>
+</section>
 
+
+
+<h2 class = "subhead">Student Leadership Application</h2>
+<p class="margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  minim veniam, quis nostrud exercitation ullamco</p>
+  <h4 class="margin">Contact Kevin Dilley for more Information</h4>
+  <button class = "secondary-button app-button margin">Student Leadership Form</button>
+
+
+
+<h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
+<div class="FAQ-container">
+  {% for block in entry.faq %}
+  {% if block.type == "faqs" %}
+    <div class="FAQ">
+      <h4 class="question">{{block.question}}</h4>
+      <p class="answer">{{block.answer}}</p>
+    </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+
+
+<section class = "scroll-container">
+<h2 class ="subhead calender-subhead">{{entry.title}}</h2>
+<section class="calender-container calender-main">
+  <div class ="container-scroll-box">
+  {% for entry in craft.entries.section('events').find() %}
+    <div class="event-container">
+        <div class="date-box">
+          <div class="date">
+            <h4 class="date-style">{{entry.time|date("d")}}</h4>
+          </div>
+          <div class="month">
+            <h4 class="month-style">{{entry.time|date("F")}}</h4>
+          </div>
+        </div>
+        <div class="event">
+          <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          <p class="event-words">{{entry.description}}</p>
+        </div>
+      </div>
+      {% endfor %}
+</section>
+</section>
 {% endblock %}

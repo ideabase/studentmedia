@@ -10,43 +10,19 @@
 
 <section class="media-partner-about-container">
 	<div class="page-header">
-		<h1 class="first-word">{{ entry.title }}</h1>
+		<h1 class="head-line">{{ entry.title }}</h1>
 	</div>
-	<div class="media-partner-about-blurb">{{entry.body}}</div>
+
+	<div class="title-paragraph-container">
+	<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
+	<p class="intro-paragraph">{{entry.body}}</p>
+
 	<div class="button-section">
 		<a href="#"><button class="main-button media-partner-button">Visit Website</button></a>
 		<a href="#"><button class="main-button media-partner-button">Advertise</button></a>
 	</div>
 </section>
 
-<section class="media-partner-contact-container">
-	<h2 class="subhead">Contact & Connect</h2>
-
-	<div class="media-partner-container">
-
-	<div class="student-contact">
-		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
-		<h3 class = "contact-title">FIELD FOR JOB TITLE</h3>
-	    <p class = "contact-email"><a href="mailto:jmill231@kent.edu">FIELD FOR EMAIL</a></p>
-	</div>
-
-	<div class="department-contact">
-	    <h2 class = "contact-name">FIELD FOR DEPARTMENT NAME</h2>
-	    <p class = "contact-phone">{{entry.phone}}</p>
-	    <p class = "contact-phone">FIELD FOR EMAIL</p>
-	</div>
-
-	<div class="social-media">
-		{% for block in entry.socialMedia %}
-		    {% if block.type == "socialMediaBlock" %}
-		        <a href= "{{block.address}}">{{ block.socialName }}</a>
-		    {% endif %}
-		{% endfor %}
-	</div>
-</div>
-</section>
-
-<section class="media-partner-events-container">
 <section class="scroll-container">
 	<h2 class="subhead calender-subhead">Calender & Events</h2>
 	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
@@ -66,6 +42,33 @@
 		</div>
 	{% endfor %}
 </section>
+</section>
+
+<section class="media-partner-contact-container">
+	<h2 class="subhead">Contact & Connect</h2>
+
+	<div class="media-partner-container">
+
+	<div class="student-contact">
+		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
+		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+	    <p class = "contact-email"><a href="mailto:jmill231@kent.edu">{{entry.email}}</a></p>
+	</div>
+
+	<div class="department-contact">
+	    <h2 class = "contact-name">{{entry.department}}</h2>
+	    <p class = "contact-phone">{{entry.phone}}</p>
+	    <p class = "contact-phone">{{entry.email}}</p>
+	</div>
+
+	<div class="social-media">
+		{% for block in entry.socialMedia %}
+		    {% if block.type == "socialMediaBlock" %}
+		        <a href= "{{block.address}}">{{ block.socialName }}</a>
+		    {% endif %}
+		{% endfor %}
+	</div>
+</div>
 </section>
 
 <!--{% for asset in entry.logo %}

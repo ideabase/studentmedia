@@ -30,6 +30,9 @@
  {% endblock %}
 
  {% block content %}
+ <div class = "page-header">
+  <h1 class="head-line">Student Media At Kent State</h1>
+  </div>
  <section class = "video-container-home">
    <h2 class="subhead">Our Mission</h2>
    <div class = "video-div-flex-container">
@@ -44,20 +47,18 @@
     <h2 class="subhead">Media Partners</h2>
       <div class = "owl-carousel brand-logo-grid">
         {% set cols = 2 %}
-        {% for entry in craft.entries.section('partners') %}
+        {% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
           {% if loop.index0 % cols == 0 %}
             <div class="media-partner-container">
           {% endif %}
           {% if entry.heroImage | length %}
             {% for asset in entry.heroImage %}
-              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url}}');">
+              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
             {% endfor %}
-          {% else %}
-              <a href="{{entry.url}}" class="media-partner">
+            {% for asset in entry.logo %}
+              <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+            {% endfor %}
           {% endif %}
-          {% for asset in entry.logo %}
-          <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
-          {% endfor %}
         </a>
         {% if (loop.index0 % cols == cols - 1 or loop.last) %}
           </div>
@@ -85,9 +86,8 @@
 <section class = "events-container">
   <h2 class ="subhead">Advertise With Us</h2>
   <div class = "events-div-flex-container">
-    {% for entry in craft.entries.section('events') %}
-  	 <h3>{{ entry.title }}</h3>
-     <p>{{entry.description}}</p>
+    {% for entry in craft.entries.section('advertising') %}
+     <p>{{entry.adBody}}</p>
   {% endfor %}
 </div>
 </section>
