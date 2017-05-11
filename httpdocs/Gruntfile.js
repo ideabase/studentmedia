@@ -15,17 +15,17 @@ module.exports = function(grunt) {
       }
     },
     criticalcss: {
-      custom: {
+      home: {
         options: {
-          url: "http://treno.web/production",
+          url: "http://studentmedia.web/index.php",
                 width: 1200,
                 height: 900,
-                outputfile: "assets/css/critical.css",
+                outputfile: "../craft/templates/_includes/critical-home.css",
                 filename: "assets/css/style.css", // Using path.resolve( path.join( ... ) ) is a good idea here
                 buffer: 800*1024,
-                ignoreConsole: false
+                ignoreConsole: true
         }
-      }
+      },
     },
     uglify: {
       my_target: {
