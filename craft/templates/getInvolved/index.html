@@ -1,11 +1,21 @@
 {% extends "_layout" %}
 
 {% block content %}
+
+% block content %}
+<div class="secondary-hero-image">
+	{% for asset in entry.heroImage %}
+		<img class = "secondary-image" src="{{asset.url}}" alt="{{asset.title}}" />
+	{% endfor %}</div>
+
 {% for entry in craft.entries.section('getInvolved').find() %}
 	<h1>{{entry.title}}</h1>
 	{% endfor %}
-	{% for asset in entry.heroImage %}
+
+{% for asset in entry.heroImage %}
 <img src="{{asset.url}}" alt="{{asset.title}}"/>
+
+
 {{entry.description}}
 {% for asset in entry.files %}
 	<a href="{{asset.url}}" alt="{{asset.title}}" />Application Form</a>
