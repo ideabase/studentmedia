@@ -30,6 +30,9 @@
  {% endblock %}
 
  {% block content %}
+ <div class = "page-header">
+  <h1 class="head-line">Student Media At Kent State</h1>
+  </div>
  <section class = "video-container-home">
    <h2 class="subhead">Our Mission</h2>
    <div class = "video-div-flex-container">
@@ -86,7 +89,7 @@
   <h2 class ="subhead">Advertise With Us</h2>
   <div class = "events-div-flex-container">
     {% for entry in craft.entries.section('advertising') %}
-     <p>{{entry.description}}</p>
+     <p>{{entry.adBody}}</p>
   {% endfor %}
 </div>
 </section>
