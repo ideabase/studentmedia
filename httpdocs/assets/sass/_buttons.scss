@@ -33,8 +33,9 @@ header .cta-header a {
  }
 
 .main-button {
+  margin-top: .5em;
   display: inline-block;
-   padding: 10px 30px 10px 30px;
+   padding: 10px 30px 13px 30px;
    font-family: $mont;
    font-weight: 300;
    font-size: 1em;
@@ -48,6 +49,7 @@ header .cta-header a {
    transition-timing-function: ease-in;
    transition-timing-function: ease-out;
    text-align: center;
+   text-decoration: none;
  }
 
 .main-button:hover {

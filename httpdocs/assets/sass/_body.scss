@@ -5,20 +5,29 @@ body {
 }
 
 main{
-margin: 0 auto;
+  margin: 0 auto;
   margin-top: -50px;
-  padding-bottom: 50px;
   width: 95%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 1;
   position: relative;
   background-color: $white;
   max-width: 1300px;
+  padding: 1em;
+  padding-bottom: 2em;
   @media screen and (min-width: 800px) {
     width: 93%;
+    padding: 1em 2em 3em 2em;
   }
   @media screen and (min-width: 1200px) {
     width: 80%;
+  }
+}
+
+.section {
+  margin-bottom: 2em;
+  @media screen and (min-width: 800px) {
+    margin-bottom: 2.5em;
   }
 }
 

@@ -1,14 +1,11 @@
  .hero-image-home{
-  //-webkit-filter: grayscale(100%);
   width: 100%;
   position: relative;
 }
 
   .secondary-image {
-   //-webkit-filter: grayscale(100%);
    width: 100%;
    position: relative;
-  /*max-height: 700px; We can make this a background image and use nackground-image:contain?*/
 }
 
 .secondary-hero-image {
@@ -17,26 +14,38 @@
 }
 
 .header-quote {
-  width: 70%;
+  width: 90%;
   position: absolute;
-  bottom: 20%;
-  left: 10%;
-  background-color: #454545;
-  padding: 10px;
-  padding-left: 20px
+  bottom: 30%;
+  left: 1em;
+  z-index: 3;
+  @media screen and(min-width: 800px){
+    width: 80%;
+    bottom: 20%;
+    margin: 0 auto;
+    left: 5%;
+    max-width: 1300px;
+  }
+  @media screen and (min-width: 1200px) {
+    left: 10%;
+  }
 }
 
 .hero-image-caption {
   font-family:'Montserrat', sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   letter-spacing: 1.3px;
-  line-height: 1.3em;
-  color: rgb(209, 222, 34);
-  //background-color: $dark-blue; /*change to dark blue*/
-  //padding-left: 10px;
-  //padding-right: 10px;
+  line-height: 1.3;
+  color: rgba($lime-green,.97);
   display: inline;
-  /*Should probably think of a better solution for this - follow up with Chris*/
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.1);
+  @media screen and (min-width: 600px) {
+      font-size: 2.5em;
+  }
+  @media screen and (min-width: 800px) {
+      font-size: 4em;
+  }
 }
 
 .hero-image{
@@ -44,18 +53,18 @@
   position: relative;
   max-height: 600px;
   overflow: hidden;
-}
-
-@media screen and(max-width: 475px){
-  .header-quote {
-    display: none;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+    width: 100%;
+    height: 100%;
   }
 }
 
-@media screen and(min-width: 650px){
-  .hero-image-caption{
-    font-size: 2em;
-  }
+@media screen and(min-width: 800px){
   .secondary-hero-image {
     height: 325px;
     overflow: hidden;

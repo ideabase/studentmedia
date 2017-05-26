@@ -20,16 +20,13 @@
   }
 }
 .fadein {
-	height: 300px;
-	@media screen and (min-width: 800px) {
-		height: 800px;
-	}
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
 }
 
 .fadein img {
-  position:absolute; left:0; right:0; opacity:0;
+  //position:absolute; 
+  left:0; right:0; opacity:0;
   @include fade($num:3, $fade:4, $visible:5);
 }

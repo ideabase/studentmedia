@@ -1,20 +1,6 @@
 {#
  # Homepage template
  # ---------------
- #
- # When this template gets loaded, it will be because someone has accessed
- # http://yoursite.com/ (without any URI). Craft checks to see if you have
- # a Single section set to be the Homepage (as you do, by default), and
- # loads the section’s Template (this file). A special ‘entry’ variable
- # will already be set for you, assigned to the Homepage entry.
- #
- # It's worth noting that even if you didn't have a Homepage Single section,
- # as long as this template remains at craft/templates/index.html, it
- # would still be the one to get loaded when accessing http://yoursite.com/,
- # albeit without an ‘entry’ variable already set for you.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
  #}
 
  {% extends "_layout" %}
@@ -30,21 +16,26 @@
  {% endblock %}
 
  {% block content %}
- <div class = "page-header">
-  <h1 class="head-line">Student Media At Kent State</h1>
-  </div>
- <section class = "video-container-home">
-   <h2 class="subhead">Our Mission</h2>
+ <!--<div class = "page-header">
+  <h1 class="head-line">{{entry.tagline}}</h1>
+</div>-->
+ <section class = "section video-container-home">
+   <h2 class="intro-sentence-header">{{ entry.description }}</h2>
    <div class = "video-div-flex-container">
-    <div class = "video-blurb">{{entry.body}}</div>
+    <div class = "video-blurb">
+      <div class="intro-paragraph">{{entry.body}}</div>
+      {% for entry in entry.aboutCta %}
+      	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
+      {% endfor %}
+    </div>
     <div class = "video-box">
       <iframe src="{{entry.video}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   </section>
 
 
-  <section class = "outside-div-container-brands">
-    <h2 class="subhead">Media Partners</h2>
+  <section class = "section outside-div-container-brands">
+    <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
       <div class = "owl-carousel brand-logo-grid">
         {% set cols = 2 %}
         {% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
@@ -67,30 +58,21 @@
       </div>
   </section>
 
-      <section class = "statistics-container">
-      <h2 class ="subhead">Advertise With Us</h2>
+      <section class = "section statistics-container">
+      <h2 class ="subhead">{{entry.advertisingHeader}}</h2>
+      {{entry.adBody}}
       <div class = "statistics-box-flex-container">
             {% for entry in craft.entries.section('statistics') %}
-            <div class = "statistics-box">
-            <div class = "statistics-number">
-            <h3 class = "big-number">{{ entry.title }}</h3>
-          </div>
-          <hr class = "statistics-border"/>
-          <p class = "statistics-blurb">{{ entry.statistics }}</p>
-        </div>
-
+              <div class = "statistics-box">
+                <div class = "statistics-number">
+                  <h3 class = "big-number">{{ entry.title }}</h3>
+                </div>
+                <hr class = "statistics-border"/>
+                <p class = "statistics-blurb">{{ entry.statistics }}</p>
+            </div>
+            {% endfor %}
+            {% for entry in entry.advertingCta %}
+            	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
             {% endfor %}
       </section>
-
-
-<section class = "events-container">
-  <div class = "events-div-flex-container">
-    {% for entry in craft.entries.section('advertising') %}
-     <p>{{entry.adBody}}</p>
-  {% endfor %}
-</div>
-</section>
-
-
-
 {% endblock %}
