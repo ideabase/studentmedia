@@ -123,8 +123,6 @@
   border-color: $gray;
 }
 
-
-/*TBH I cannot believe this worked, but not using unicode?*/
 div.accordion:before{
   content: '+';
   color: $lime-green;
@@ -132,7 +130,6 @@ div.accordion:before{
   font-size: 40px;
   margin-top: 4px;
   margin-left: 10px;
-
 }
 
 div.accordion.open:before{

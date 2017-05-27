@@ -1,8 +1,8 @@
 @import 'variables.scss';
+@import 'reset.scss';
 @import 'about.scss';
 @import 'fonts.scss';
 @import 'animation.scss';
-@import 'images.scss';
 @import 'typography.scss';
 @import 'header.scss';
 @import 'footer.scss';
@@ -18,13 +18,8 @@
 @import 'body.scss';
 @import 'headings.scss';
 @import 'advertising.scss';
-@import 'slideshow.scss';
 @import 'owl-carousel.scss';
 @import 'owl-theme-default.scss';
 @import 'get-involved.scss';
 @import 'contact.scss';
 @import 'support.scss';
-
-* {
-  box-sizing: border-box;
-}
