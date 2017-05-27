@@ -1,20 +1,16 @@
 {% extends "_layout" %}
 
+{% block hero %}
+	{% include '_includes/hero.html' %}
+{% endblock %}
+
 {% block content %}
-  <div class="page-header">
-	  <h1 class="headline">Advertising</h1>
+  <div class = "page-header">
+    <h1 class="head-line">{{entry.title}}</h1>
   </div>
-  <div class="advertising-content">
-    <h2 class="intro-sentence-header">INTRO SENTENCE HEADER FIELD</h2>
-    <p class="intro-paragraph">INTRO PARAGRAPH FIELD</p>
-  </div>
-
-  <h2>Creative Services</h2>
-  <p>CREATIVE SERVICES PARAGRAPH</p>
-
+  <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+  <div class="intro-paragraph">{{entry.body}}</div>
   <h2 class="subhead">Platforms</h2>
-
-  
   {% set categories = craft.categories.group('adFormat') %}
 
   {% for category in categories %}
@@ -43,10 +39,9 @@
         </div>
     {% endfor %}
 
-
-  {% endfor %} </div>
-   
-
-
+  {% endfor %}
+</div>
+<h2 class="subhead">Creative Services</h2>
+{{entry.creativeServicesDescription}}
 
 {% endblock %}
