@@ -19,9 +19,8 @@ header .cta-header a {
    margin: 0 auto;
    margin-top: 1em;
    @media screen and (min-width: 900px) {
-     width: 80%;
      margin-top: 1.7em;
-     padding: .5em;
+     padding: .5em 1em;
    }
    &:hover {
      background-color: $dark-blue;

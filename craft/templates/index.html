@@ -29,7 +29,9 @@
       {% endfor %}
     </div>
     <figure class = "video-box">
-      <iframe src="{{entry.video}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <div class="video-box__container">
+        <iframe src="{{entry.video}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
       <figcaption class="video-box__caption">
           {{entry.videoCaption}}
       </figcaption>

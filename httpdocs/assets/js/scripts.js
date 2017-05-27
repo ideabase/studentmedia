@@ -90,3 +90,8 @@ $(function() {
 
 	var accordion = new Accordion($('#accordion'), false);
 });
+
+$(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".video-box__container").fitVids();
+  });
