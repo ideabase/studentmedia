@@ -5,13 +5,17 @@
 
  {% extends "_layout" %}
  {% block hero %}
-   <section class="hero-image fadein">
-     {% for asset in entry.heroImage %}
-       <img class="hero-image-home" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
-     {% endfor %}
-   <div class="header-quote">
-     <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
-   </div>
+   <section class="hero-image">
+     <div class="home-carousel owl-carousel">
+       {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
+        <div class="hero-image-home">
+          <img src="{{asset.url('hero')}}" alt="{{asset.title}}" />
+        </div>
+       {% endfor %}
+    </div>
+     <div class="header-quote">
+       <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
+     </div>
   </section>
  {% endblock %}
  {% block content %}
@@ -24,9 +28,12 @@
       	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
       {% endfor %}
     </div>
-    <div class = "video-box">
+    <figure class = "video-box">
       <iframe src="{{entry.video}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
+      <figcaption class="video-box__caption">
+          {{entry.videoCaption}}
+      </figcaption>
+    </figure>
   </section>
 
 

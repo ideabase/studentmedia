@@ -3,12 +3,9 @@ header{
   z-index: 200;
   position:relative;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1500px;
   @media screen and (min-width: 800px) {
     width: 93%;
-  }
-  @media screen and (min-width: 1200px) {
-    width: 80%;
   }
 }
 
