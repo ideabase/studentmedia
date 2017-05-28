@@ -10,36 +10,32 @@
 <h1 class="head-line">{{entry.title}}</h1>
 </div>
 
-<div class = "advertising-content">
-  <h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
-  <p class = "intro-paragraph">{{entry.description}}</p>
-</div>
+<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
+<p class = "intro-paragraph">{{entry.body}}</p>
 
 <div class="contact-info">
 
   <div class="contact-call">
     <h4 class="contact-h4">Reach Us By Phone:</h4>
-    <p class="contact-p">Student Media Office:</p>
     <p class="contact-p">{{footer.phone}}</p>
   </div>
 
   <div class="contact-address">
-    <h4 class="contact-h4">Visit Us In Person</h4>
-    <p class="contact-p">Student Media Office Address:</p>
+    <h4 class="contact-h4">Visit Us In Person:</h4>
     <p class="contact-p">{{footer.mailingAddress}}</p>
   </div>
 </div>
 
-<h2 class = "subhead">Get in Touch With Our Leaders</h2>
+<h2 class = "subhead">Our Leadership Team</h2>
 
 
-<div class="contact-about-group">
-  <div class="leader">
+<div class="contact-about-group section">
+	{% for entry in craft.entries.section('staff').find() %}
+	{% if entry.employeeType.contains('officeStaff') %}
+	<div class="leader">
   <div class="circle-image-container">
-    {% for entry in craft.entries.section('staff').find() %}
-			{% if entry.employeeType.contains('officeStaff') %}
 			{% for asset in entry.image %}
-    <img src="{{asset.url}}" alt=”{{asset.title}}” />
+    <img src="{{asset.url('staffProfile')}}" alt=”{{asset.title}}” />
     	{% endfor %}
   </div>
   <div class="contact-info-section">
@@ -50,29 +46,27 @@
   <div class="light-blue-line">
   </div>
   <div class="contact-info-about-leader">
-    <p><strong>About:</strong>{{entry.body}}</p>
-    <p><strong>I can help you with:</strong> General questions, Strategic planning, Idea development, Budgets</p>
+    <strong>About:</strong>
+		{{entry.body}}
   </div>
-</div>
 </div>
 </div>
 {% endif %}
 {% endfor %}
+</div>
 
-
-<h2 class = "subhead subhead-fix">Student Leaders</h2>
-
+<h2 class = "subhead">Student Leaders</h2>
+<div class="student-leader-container section">
 {% for entry in craft.entries.section('staff').find() %}
 {% if entry.employeeType.contains('studentMediaLeader') %}
-<div class="student-leader-container">
   <div class="student-leader">
-    <h2 class="student-leader-name">{{entry.firstName}} {{entry.lastName}}</h2>
+    <h2 class="student-leader-contact">{{entry.firstName}} {{entry.lastName}}</h2>
     <h5 class="student-leader-title">{{entry.jobTitle}}</h5>
     <p class="student-leader-email">{{entry.email}}</p>
   </div>
-</div>
 {% endif %}
 {% endfor %}
+</div>
 
 
 {% endblock %}
