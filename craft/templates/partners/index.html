@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block content %}
-
+	<div class = "page-header">
+		<h1 class="head-line">{{entry.title}}</h1>
+	</div>
+	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+	<div class="intro-paragraph">{{entry.body}}</div>
 	<section class ="lets-try-this">
 			{% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
 	  <div class = "media-partner-container-grid">
-	  <div class = "media-partner">
 			{% for asset in entry.heroImage %}
 				<a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
 			{% endfor %}
@@ -17,8 +20,7 @@
 	      <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
 	    {% endfor %}
 			</a>
-	  </div>
-	  <h3 class = "media-partner-name">{{ entry.title }}</h3>
+	  <h3 class = "media-partner-name"><a href="{{entry.url}}">{{ entry.title }}</a></h3>
 	  <p class = "media-partner-description">{{entry.shortDescription}}</p>
 	  </div>
 		{% endfor %}

@@ -63,6 +63,17 @@ $(document).ready(function() {
 		});
 });
 
+// Drop Down Staff Profiles //
+
+$(document).ready(function() {
+		  var $menuTrigger = $('.leader');
+		$menuTrigger.click(function(e) {
+			var $this = $(this);
+			$this.toggleClass('active');
+      return false;
+		});
+});
+
 // Advertising Accordion //
 $(function() {
 	var Accordion = function(el, multiple) {

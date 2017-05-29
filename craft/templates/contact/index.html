@@ -32,7 +32,7 @@
 <div class="contact-about-group section">
 	{% for entry in craft.entries.section('staff').find() %}
 	{% if entry.employeeType.contains('officeStaff') %}
-	<div class="leader">
+	<a href="#" class="leader">
   <div class="circle-image-container">
 			{% for asset in entry.image %}
     <img src="{{asset.url('staffProfile')}}" alt=”{{asset.title}}” />
@@ -45,12 +45,12 @@
   <p class="contact-info-section-info">{{entry.email}}</p>
   <div class="light-blue-line">
   </div>
-  <div class="contact-info-about-leader">
-    <strong>About:</strong>
-		{{entry.body}}
-  </div>
 </div>
+<div class="contact-info-about-leader">
+	<strong>About:</strong>
+	{{entry.body}}
 </div>
+</a>
 {% endif %}
 {% endfor %}
 </div>

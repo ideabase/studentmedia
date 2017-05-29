@@ -6,9 +6,13 @@
   width: 130px;
   border-radius: 50%;
   display: flex;
-  background-image: url("/assets/img/brands/backgroundimages/fusion.jpeg");
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  z-index: 100;
   @media screen and (min-width: 600px) {
     height: 125px;
     width: 125px;
@@ -19,7 +23,7 @@
   }
   &:hover, &:focus {
     &:after {
-      background-color: rgba(0,0,0,.8);
+      background-color: rgba(0,0,0,.6);
       cursor: alias;
     }
   }
@@ -32,7 +36,7 @@
     left:0;
     position: absolute;
     z-index:5;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.3);
   }
 }
 
@@ -58,13 +62,8 @@
 
 
 .media-partner-container-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  //justify-content: center;
-  //align-content: flex-start;
+  text-align: center;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
 .media-partner-description, .media-partner-name{
@@ -80,13 +79,13 @@ padding: 2em;
 
 @media screen and (min-width: 800px){
   .media-partner-container-grid{
-    width: 50%;
+    width: 48%;
   }
 }
 
 @media screen and (min-width: 1200px){
   .media-partner-container-grid{
-    width: 33%;
+    width: 30%;
   }
 }
 
@@ -94,8 +93,4 @@ padding: 2em;
   .media-partner-container-grid{
     width: 20%;
   }
-}
-
-.media-partner{
-  margin-bottom: 20px;
 }

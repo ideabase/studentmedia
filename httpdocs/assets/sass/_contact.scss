@@ -64,6 +64,17 @@ color: $dark-blue;
   flex-wrap: wrap;
   margin-top: 20px;
   width: 48%;
+  text-decoration: none;
+}
+
+.contact-info-about-leader {
+  max-height: 0;
+  overflow: hidden;
+  transition: ease-in-out .3s max-height;
+}
+
+.active .contact-info-about-leader {
+  max-height: 50em;
 }
 
 
@@ -78,14 +89,6 @@ color: $dark-blue;
     width:40%;
   }
 
-  .contact-info-about-leader {
-    display: none;
-  }
-
-.contact-info-about-leader:hover {
-    display: block;
-
-  }
 
   .student-leader-contact {
     font-size: 1.3em;
