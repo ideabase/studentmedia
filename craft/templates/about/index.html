@@ -11,18 +11,32 @@
 	<h2 class = "intro-sentence-header">Student Media Today</h2>
 	{{entry.body}}
 	<h3 class = "subhead">News & Recognition</h3>
+	<section class="about-recognition-flex-container">
+		<figure class="recognition-image-container">
+			<img class="recognition-image" src="<!-- link --!>"
+			<figcaption class="recognition-image-caption">Implement CMS </figcaption>
+		</figure>
+	<div class="recognition-content">
+		<div class="recognition-description-container">
+			<ul class="recognition-list">
 	{% for entry in craft.entries.section('recognition').find() %}
 		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>>
+			<!-- <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3> Old !-->
 			{{ entry.description }}
 			<p><a class="main-button recognition-button" href="{{ entry.url }}">See More</a></p>
 		</article>
 	{% endfor %}
+</li>
+</article>
+</ul>
+</div>
+</div>
+</section>
 
 	<h3 class = "subhead">Support Us</h3>
 	{{entry.supportUs}}
 	{% for entry in entry.callToActions %}
-	<a href ="{{ entry.url }}">{{entry.title}}</a>
+	<a class ="secondary-button app-button" href ="{{ entry.url }}">{{entry.title}}</a>
 	{% endfor %}
 {% endblock %}

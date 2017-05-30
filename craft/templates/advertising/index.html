@@ -10,6 +10,13 @@
   </div>
   <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
   <div class="intro-paragraph">{{entry.body}}</div>
+  {% if entry.mediaKit | length %}
+    {% for asset in entry.mediaKit %}
+        <a class="secondary-button app-button" href="{{ asset.url }}">View Media Kit</a>
+    {% endfor %}
+  {% endif %}
+
+
   <h2 class="subhead">Platforms</h2>
   {% set categories = craft.categories.group('adFormat') %}
 

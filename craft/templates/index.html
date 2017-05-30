@@ -47,17 +47,24 @@
           {% if loop.index0 % cols == 0 %}
             <div class="media-partner-container">
           {% endif %}
+
           {% if entry.heroImage | length %}
+
             {% for asset in entry.heroImage %}
               <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
             {% endfor %}
+
             {% for asset in entry.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
             {% endfor %}
+
           {% endif %}
         </a>
+
         {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+          <!-- Helps visualize <h2>xasd</h2> !-->
           </div>
+
         {% endif %}
         {% endfor %}
       </div>
