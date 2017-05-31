@@ -19,33 +19,33 @@
 
   <h2 class="subhead">Platforms</h2>
   {% set categories = craft.categories.group('adFormat') %}
-
   {% for category in categories %}
     <div id="accordion" class="accordion">
-    <div class="link platform-dropdown"><h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
+    	<div class="link platform-dropdown">
+				<h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
+				<div class="submenu">
+    			{% for entry in craft.entries.section('partners').relatedTo(category) %}
 
-    {% for entry in craft.entries.section('partners').relatedTo(category) %}
-      <div class="submenu">
-        <div class = "platform-content-container">
-          <div class = "platform-content">
-            <h2 class="platform-content-header">{{ entry.title }}</h2>
-            <p class="platform-description">{{entry.shortDescription}}</p>
-          </div>
-          {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
+			        <div class = "platform-content-container">
+			          <div class = "platform-content">
+			            <h2 class="platform-content-header">{{ entry.title }}</h2>
+			            <p class="platform-description">{{entry.shortDescription}}</p>
+
+          {# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
           <div class="platform-content">
             <h4 class="testimonial">{{quote.quote}}</h4>
             <p class="testimonial-name">{{quote.quotee}}</p>
           </div>
-          {% endfor %}
-          {% for ad in craft.entries.section('ad').relatedTo(category) %}
+          {% endfor %} #}
+          {% for ad in craft.entries.section('ad').relatedTo(entry) %}
             <div class="platform-content">
-              <button class="secondary-button ad-button">Advertising</button>
+              <a class="secondary-button ad-button" href="{{ ad.url }}">{{ad.title}} Advertising</a>
             </div>
           {% endfor %}
           </div>
         </div>
     {% endfor %}
-
+		</div>
   {% endfor %}
 </div>
 <h2 class="subhead">Creative Services</h2>

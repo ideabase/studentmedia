@@ -41,7 +41,7 @@
             </div>
                 {% endif %}
             {% endfor %}
-           
+
 </section>
             <section class="advertising-column">
                 {% for block in entry.adUnit.offset(3) %}
@@ -58,13 +58,15 @@
                 {% endif %}
                 {% endfor %}
             </section>
-           
+
         </table>
     </div>
 </section>
 </section>
 <section class="advertising-bottom-section">
-<button class="secondary-button">Visit {{entry.title}}</button>
+{% for partner in craft.entries.section('partners').relatedTo(entry) %}
+<a class="secondary-button" href="{{ partner.url }}">Visit {{ partner.title }}</a>
+{% endfor %}
 <button class="secondary-button">DOWNLOAD BUTTON</button>
 <ul class = "advertising-contact-list">
   <li>For any questions about advertising with Student Media, please contact:</li>

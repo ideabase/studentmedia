@@ -29,7 +29,9 @@
 
 	<div class="button-section">
 		<a href="#"><button class="main-button media-partner-button">Visit Website</button></a>
-		<a href="#"><button class="main-button media-partner-button">Advertise</button></a>
+		{% for ad in craft.entries.section('ad').relatedTo(entry) %}
+		<a href="{{ ad.url }}"><button class="main-button media-partner-button">Advertise with {{ entry.title }}</button></a>
+		{% endfor %}
 	</div>
 </section>
 
