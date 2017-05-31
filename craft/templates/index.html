@@ -40,6 +40,9 @@
 
 
   <section class = "section outside-div-container-brands">
+    {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
+    {% set randNum = random(entryNum) %}
+
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
       <div class = "owl-carousel brand-logo-grid">
         {% set cols = 2 %}
@@ -61,6 +64,22 @@
           {% endif %}
         </a>
 
+        {% if (loop.last and entryNum % 2 != 0) %}
+          <div class="media-partner-container">
+            <!-- {% for asset in entry.heroImage %}!-->
+              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
+                
+            <!-- {% endfor %} !-->
+
+            <!-- {% for asset in entry.logo %} !-->
+              <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+            <!-- {% endfor %} !-->
+          </a>
+        </div>
+        {% endif %}
+
+
+
         {% if (loop.index0 % cols == cols - 1 or loop.last) %}
           <!-- Helps visualize <h2>xasd</h2> !-->
           </div>
@@ -68,6 +87,7 @@
         {% endif %}
         {% endfor %}
       </div>
+    
   </section>
 
       <section class = "section statistics-container">
