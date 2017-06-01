@@ -245,6 +245,13 @@ header li.has-children > a::after {
 header .nav__level2 {
   background-color: rgb(138, 209, 207);
   background-color: #8ad1cf;
+  max-height: 0;
+  overflow: hidden;
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
 header .nav__level2 li > a {
@@ -259,7 +266,7 @@ header .nav__level2 li:last-child a {
   padding-bottom: 2em;
 }
 
-.js header .nav__level2 {
+header .nav__level2 {
   max-height: 0px;
   overflow: hidden;
   display: block;
@@ -267,13 +274,14 @@ header .nav__level2 li:last-child a {
   padding-left: 0px;
   transition: max-height 0.3s ease-in-out;
   -webkit-transition: max-height 0.3s ease-in-out;
+  background-color: #8ad1cf;
   max-height: 0;
   margin-left: 0;
   padding-left: 0;
 }
 
 @media screen and (min-width: 900px) {
-  .js header ul.nav__level2 {
+  header ul.nav__level2 {
     max-height: 0px;
     overflow: hidden;
     background-image: none;
@@ -307,7 +315,7 @@ header .nav__level2 li:last-child a {
     background-repeat: no-repeat no-repeat;
   }
 
-  .js header nav ul.nav__level2 {
+  header nav ul.nav__level2 {
     position: absolute;
     top: 4.5em;
     left: 0px;
@@ -768,15 +776,9 @@ li {
 }
 
 .owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-dot {
+.owl-carousel .owl-nav .owl-next {
   cursor: pointer;
   -webkit-user-select: none;
-  cursor: hand;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .owl-carousel.owl-loaded {
