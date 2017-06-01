@@ -1,12 +1,16 @@
-header{
-  background-color: $white;
-  z-index: 200;
+.header-container {
+  max-width: 1500px;
   position:relative;
   margin: 0 auto;
-  max-width: 1500px;
   @media screen and (min-width: 800px) {
     width: 93%;
   }
+}
+
+header{
+  background-color: $white;
+  z-index: 200;
+  width: 100%;
 }
 
 .header-nav-container{
@@ -325,7 +329,7 @@ header .nav__level2 {
     overflow: inherit;
   }
 
-  header{
+  .header-container {
     display: flex;
     justify-content: space-around;
     padding: .5em;

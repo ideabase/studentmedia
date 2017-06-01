@@ -1,5 +1,8 @@
 <div class="secondary-hero-image">
   {% for asset in entry.heroImage %}
-    <img class="secondary-image" src="{{asset.url('hero')}}" alt="{{asset.title}}" />
+  <picture>
+    <source srcset="{{ asset.url('heroShort') }}" media="(min-width: 700px)">
+      <img class="secondary-image" src="{{ asset.url('heroSmall') }}" alt="asset.title" />
+  </picture>
   {% endfor %}
 </div>
