@@ -42,7 +42,7 @@
 
 	<h2 class = "subhead">Meeting Minutes</h2>
 	<div class="meeting-minutes-container">
-	{% for entry in craft.entries.section('meetingMinutes').find() %}
+	{% for entry in craft.entries.section('meetingMinutes').order('date') | reverse %}
 
 	<div class="meeting-box">
 	<p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
