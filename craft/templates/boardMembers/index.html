@@ -48,10 +48,14 @@
 	{% for entry in craft.entries.section('meetingMinutes').order('date') | reverse %}
 
 	<div class="meeting-box">
-	<p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+	<p class="meeting-date">{{entry.title}}</p>
+
+	{# <p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p> #}
 	{% for asset in entry.files %}
-	<a><img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100"></a>
-		<a class="meeting-pdf" href="{{asset.url}}" alt="{{asset.title}}" />{{entry.title}}</a></div>
+	<img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100">
+	<a href="{{asset.url}}" alt="{{asset.title}}">
+	<p class="meeting-pdf">Download PDF</p></div>
+	</a>
 	{% endfor %}
 	{% endfor %}
 
