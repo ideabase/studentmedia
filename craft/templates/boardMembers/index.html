@@ -37,12 +37,11 @@
 	{% for entry in craft.entries.section('staff').order('postDate desc') %}
 
 		{% if entry.employeeType.contains('nonVoting') %}
-			<div class="member">
-			<p class="non-voting-member-name"><b>{{entry.firstName}} {{entry.lastName}}</b> <br></p>
-			<p class="non-voting-member-name">{{entry.jobTitle}}</p>
-			</div>
+
+			<p class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></p>
 		{% endif %}
 	{% endfor %}
+</div>
 
 	<h2 class = "subhead">Meeting Minutes</h2>
 	<div class="meeting-minutes-container">
