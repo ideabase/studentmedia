@@ -9,7 +9,10 @@
      <div class="home-carousel owl-carousel">
        {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
-          <img src="{{asset.url('hero')}}" alt="{{asset.title}}" />
+          <picture>
+        		<source srcset="{{ asset.url('hero') }}" media="(min-width: 800px)">
+        		<img src="{{ asset.url('heroSmall') }}" alt="asset.title" />
+        	</picture>
         </div>
        {% endfor %}
     </div>
@@ -68,7 +71,7 @@
           <div class="media-partner-container">
             <!-- {% for asset in entry.heroImage %}!-->
               <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
-                
+
             <!-- {% endfor %} !-->
 
             <!-- {% for asset in entry.logo %} !-->
@@ -87,7 +90,7 @@
         {% endif %}
         {% endfor %}
       </div>
-    
+
   </section>
 
       <section class = "section statistics-container">

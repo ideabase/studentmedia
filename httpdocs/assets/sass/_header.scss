@@ -1,12 +1,16 @@
-header{
-  background-color: $white;
-  z-index: 200;
+.header-container {
+  max-width: 1500px;
   position:relative;
   margin: 0 auto;
-  max-width: 1500px;
   @media screen and (min-width: 800px) {
     width: 93%;
   }
+}
+
+header{
+  background-color: $white;
+  z-index: 200;
+  width: 100%;
 }
 
 .header-nav-container{
@@ -160,7 +164,7 @@ header .nav__level2 {
   }
 }
 
-.js header  .nav__level2 {
+header  .nav__level2 {
   max-height: 0;
   overflow: hidden;
   display: block;
@@ -169,13 +173,13 @@ header .nav__level2 {
   transition: max-height 0.3s ease-in-out;
 }
 
-.js header  .nav__level2.active {
+header  .nav__level2.active {
 			max-height: 55em;
 }
 
 @media screen and (min-width: 900px){
 
-  .js header  ul.nav__level2 {
+  header  ul.nav__level2 {
 				max-height: 0;
 				overflow: hidden;
 				background: none;
@@ -211,12 +215,12 @@ header .nav__level2 {
     background-repeat: no-repeat;
   }
 
-  .js header nav ul li:hover > ul, .js header  .nav__level2.active {
+  header  .nav__level2.active {
 
         max-height: 50em;
 	}
 
-  .js header nav ul.nav__level2 {
+  header nav ul.nav__level2 {
     position: absolute;
 		top: 4.5em;
 		left: 0;
@@ -323,9 +327,10 @@ header .nav__level2 {
     flex-flow: row;
     align-content: space-between;
     overflow: inherit;
+    height: auto;
   }
 
-  header{
+  .header-container {
     display: flex;
     justify-content: space-around;
     padding: .5em;

@@ -28,7 +28,6 @@
     {% include '_includes/critical-home.css' %}
   </style>
   <script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
-  <script async src="{{ siteUrl }}assets/js/min/critical-min.js"></script>
   <noscript><link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"></noscript>
   {% hook 'seomaticRender' %}
 </head>
@@ -56,6 +55,7 @@
     <!-- INCLUDE FOOTER -->
     {% include '_includes/footer.html' %}
     <!-- INCLUDE FOOTER -->
+  <script src="{{ siteUrl }}assets/js/min/critical-min.js"></script>
   <script async src="{{ siteUrl }}assets/js/min/scripts-min.js"></script>
   {% if craft.config.devMode %}
   <!-- Live Reload - For local environment only -->

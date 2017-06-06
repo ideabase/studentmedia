@@ -11,7 +11,6 @@
 }
 
 .secondary-hero-image {
-  height: 225px;
   overflow: hidden;
 }
 
@@ -53,7 +52,7 @@
 .hero-image{
   //width: 100%;
   position: relative;
-  //max-height: 600px;
+  max-height: 600px;
   overflow: hidden;
   &:after {
     content: '';
@@ -67,17 +66,10 @@
   }
 }
 
-@media screen and(min-width: 800px){
-  .secondary-hero-image {
-    height: 325px;
-    overflow: hidden;
-  }
-}
-
 @media screen and(min-width: 850px){
 
   .secondary-hero-image {
-    height: 375px;
+    max-height: 500px;
     overflow: hidden;
   }
 }
