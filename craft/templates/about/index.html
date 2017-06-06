@@ -13,8 +13,10 @@
 	<h3 class = "subhead">News & Recognition</h3>
 	<section class="about-recognition-flex-container">
 		<figure class="recognition-image-container">
-			<img class="recognition-image" src="<!-- link --!>"
-			<figcaption class="recognition-image-caption">Implement CMS </figcaption>
+			{% for asset in entry.recognitionImage %}
+			<img class="recognition-image" src="{{asset.url}}" alt="{{asset.title}}"
+			<figcaption class="recognition-image-caption">{{entry.recognitionCaption}}</figcaption>
+		{% endfor %}
 		</figure>
 	<div class="recognition-content">
 		<div class="recognition-description-container">
