@@ -10,7 +10,11 @@
 	<h1 class="head-line">{{entry.title}}</h1></div>
 	<h2 class = "intro-sentence-header">Student Media Today</h2>
 	{{entry.body}}
-	<h3 class = "subhead">News & Recognition</h3>
+	{% for entry in entry.callToActions %}
+	<center><a class ="secondary-button app-button" href ="{{ entry.url }}">{{entry.title}}</a></center>
+	{% endfor %}
+
+	<h2 class = "subhead">News & Recognition</h2>
 	<section class="about-recognition-flex-container">
 		<figure class="recognition-image-container">
 			{% for asset in entry.recognitionImage %}
@@ -26,9 +30,11 @@
 			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>>
 			<!-- <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3> Old !-->
 			{{ entry.description }}
-			<p><a class="main-button recognition-button" href="{{ entry.url }}">See More</a></p>
 		</article>
 	{% endfor %}
+	<div class="div-button">
+		<li class="recognition-item">
+	<button class="secondary-button recognition-button">See More</button>
 </li>
 </article>
 </ul>
@@ -37,8 +43,6 @@
 </section>
 
 	<h3 class = "subhead">Support Us</h3>
-	{{entry.supportUs}}
-	{% for entry in entry.callToActions %}
-	<a class ="secondary-button app-button" href ="{{ entry.url }}">{{entry.title}}</a>
-	{% endfor %}
+	{{entry.supportUs}} 
+
 {% endblock %}
