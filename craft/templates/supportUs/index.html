@@ -17,4 +17,11 @@
 <button class="secondary-button app-button">{{entry.title}}</button>
 </a>
 
+
+{% for block in entry.fundraiser %}
+<h1>{{block.fundraiserTitle}}</h1>
+<p>{{block.description}}</p>
+<a href="{{block.linkUrl}}">{{block.linkName}}</a>
+{% endfor %}
+
 {% endblock %}
