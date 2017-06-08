@@ -33,6 +33,14 @@
 		<a href="{{ ad.url }}"><button class="main-button media-partner-button">Advertise with {{ entry.title }}</button></a>
 		{% endfor %}
 	</div>
+
+
+{% for block in entry.supplementalLinks %}
+
+<a href="{{block.linkUrl}}"><h1>{{block.linkName}}</h1></a>
+
+{% endfor %}
+
 </section>
 
 <section class="scroll-container">
@@ -81,7 +89,11 @@
 		{% endfor %}
 	</div>
 </div>
+
+
 </section>
+
+
 
 <!--{% for asset in entry.logo %}
 	<img src="{{asset.url}}" alt="{{asset.title}}" />
