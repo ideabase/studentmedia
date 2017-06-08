@@ -18,10 +18,12 @@
 </a>
 
 
-{% for block in entry.fundraiser %}
+{% for block in entry.fundraiser.type('fundraiserInfo') %}
 <h1>{{block.fundraiserTitle}}</h1>
-<p>{{block.description}}</p>
-<a href="{{block.linkUrl}}">{{block.linkName}}</a>
+<p>{{block.description}}</p> 
+{% endfor %}
+{% for block in entry.fundraiser.type('link') %}
+	<button class="secondary-button app button">{{block.linkName}}<a href="{{block.linkUrl}}"</a>
 {% endfor %}
 
 {% endblock %}
