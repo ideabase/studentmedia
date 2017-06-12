@@ -69,17 +69,17 @@
 
         {% if (loop.last and entryNum % 2 != 0) %}
           <div class="media-partner-container">
-            {% set randEntry = craft.entries.id(entryNum /2)%}
+            {# {% set randEntry = craft.entries.id(entryNum /2)%}
             {% set randAsset = craft.assets.id(entryNum / 2)%}
-            <!-- {% for asset in entry.heroImage %}!-->
+             {% for asset in entry.heroImage %}
               <a href="{{randEntry.url}}" class="media-partner" style="background-image:url('{{randAsset.url('mediaPartnerIcon')}}');">
 
-            <!-- {% endfor %} !-->
+              {% endfor %}
 
-            <!-- {% for asset in entry.logo %} !-->
+              {% for asset in entry.logo %}
               <img src="{{randAsset.url}}" alt="{{randAsset.title}}" class="brand-logo" />
-            <!-- {% endfor %} !-->
-          </a>
+            {% endfor %}
+          </a>  #}
         </div>
         {% endif %}
 
