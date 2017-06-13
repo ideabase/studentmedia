@@ -51,6 +51,14 @@
 <h2 class="subhead">Creative Services</h2>
 {{entry.creativeServicesDescription}}
 
-<h4>For any questions about advertising with Student Media, please contact: {{entry.advertisingOrder}}</h4>
-
+ 
+{% for adsales in craft.entries.slug('student-media-ad-sales') %}
+<ul class="advertising-contact-list">
+<li>For any questions about advertising with Student Media, please contact:</li>
+<li>
+{{adsales.email}}
+<br>
+{{adsales.phone}}
+</li>
+{% endfor %}
 {% endblock %}

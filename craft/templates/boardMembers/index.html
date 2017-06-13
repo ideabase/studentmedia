@@ -22,7 +22,7 @@
 	<h2 class = "subhead">Voting Members</h2>
 	<div class="voting-members">
     
-	{% for entry in craft.entries.section('staff').order('postDate desc') %}
+	{% for entry in craft.entries.section('staff').order('lastName') %}
 		{% if entry.employeeType.contains('voting') %}
 			<div class="member">
 			<h3 class="member-title">{{entry.firstName}} {{entry.lastName}}</h3>
@@ -34,7 +34,7 @@
 
 	<h2 class = "subhead">Non-Voting Members</h2>
 	 <div class="non-voting-members">
-	{% for entry in craft.entries.section('staff').order('postDate desc') %}
+	{% for entry in craft.entries.section('staff').order('lastName') %}
 
 		{% if entry.employeeType.contains('nonVoting') %}
 

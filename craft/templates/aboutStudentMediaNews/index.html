@@ -6,20 +6,34 @@
 
 {% block content %}
 
-	 <div class = "page-header">
-	<h1 class="first-word">{{entry.title}}</h1></div>
-	{{entry.body}}
 
-	<h2>Check Out Our Latest News</h2>
+	 <div class = "page-header">
+
+	<h1 class="head-line">{{entry.title}}</h1></div>
+	<h2 class="intro-sentence-header">{{entry.aboutStudentMediaSubheader}}</h2>
+	<p class="intro-paragraph">{{entry.body}}</p>
+	<h2 class="subhead">{{entry.newsSubheader}}</h2>
+	
+	<section class="about-news-flex-container">
 	{% for entry in craft.entries.section('news').limit(3) %}
-			<article>
-				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-				<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-				{{ entry.description}}
-				{% for asset in entry.image %}
-				<img src="{{asset.url}}" alt="{{asset.title}}" />
-			</article>
-			{% endfor %}
-	{% endfor %}
+			<div class="news-stories-content">
+					{% for asset in entry.image %}
+						<div class="news-image-container">
+				<img class="news-story-image" src="{{asset.url}}" alt="{{asset.title}}" />
+				</div>
+					{% endfor %}
+			<div class="news-story-description-container">
+				<h4 class="general-header"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
+
+				<p class="news-story-description">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+
+				<p class="news-story-description">{{ entry.body}}
+				</p>
+			</div>
+		</div>	
+</div>
+{% endfor %}
+</section>
+
 	<a href="/news">View Past News Stories</a>
 {% endblock %}
