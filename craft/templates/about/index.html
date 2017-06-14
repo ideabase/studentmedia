@@ -24,16 +24,17 @@
 	<div class="recognition-content">
 		<div class="recognition-description-container">
 			<ul class="recognition-list">
-	{% for entry in craft.entries.section('recognition').find() %}
+	{% for entry in craft.entries.section('recognition').limit(5).find() %}
 		<article>
-			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>>
+			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>
+			<br>
 			<!-- <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3> Old !-->
 			{{ entry.description }}
 		</article>
 	{% endfor %}
 	<div class="div-button">
 		<li class="recognition-item">
-	<button class="secondary-button recognition-button">See More</button>
+	<a href="/recognition"><button class="secondary-button recognition-button">See More</button></a>
 </li>
 </article>
 </ul>
