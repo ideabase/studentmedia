@@ -17,6 +17,10 @@
 		<h2 class = "subhead">Student Media Board Guidelines</h2>
 		<div class="guidelines"> <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Student Media Guidelines PDF</a></div>
 	{% endfor %}
+
+	{% for link in entry.supplementalLinks %}
+		<div class="guidelines"> <a class="main-button guidelines-button" href="{{link.linkUrl}}" alt="{{link.linkName}}" />{{link.linkName}}</a></div>
+	{% endfor %}
 	{% endfor %}
 
 	<h2 class = "subhead">Voting Members</h2>
