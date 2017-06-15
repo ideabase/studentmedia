@@ -43,6 +43,42 @@
 
 </section>
 
+<section class="media-partner-contact-container">
+	<h2 class="subhead">Contact & Connect</h2>
+
+	<div class="media-partner-container">
+
+
+		<div class="student-contact">
+		{% for entry in craft.entries.section('staff').relatedTo(entry).limit(2)%}
+		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
+		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+	    <p class = "contact-email"><a href="mailto:{{entry.email}}">{{entry.email}}</a></p>
+
+		{% endfor %}
+		</div>
+
+
+	<div class="department-contact">
+	    <h2 class = "contact-name">{{entry.title}} Contact Information</h2>
+	    <p class = "contact-phone">{{entry.phone}}</p>
+	    <p class = "contact-phone">{{entry.email}}</p>
+	</div>
+	
+
+	<div class="social-media">
+		<h2 class = "contact-name">Connect with {{entry.title}}</h2>
+		{% for block in entry.socialMedia %}
+		    {% if block.type == "socialMediaBlock" %}
+		        <a href= "{{block.address}}">{{ block.socialName }}</a>
+		    {% endif %}
+		{% endfor %}
+	</div>
+</div>
+
+
+</section>
+
 <section class="scroll-container">
 	<h2 class="subhead calender-subhead">Calendar & Events</h2>
 	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
@@ -64,34 +100,7 @@
 </section>
 </section>
 
-<section class="media-partner-contact-container">
-	<h2 class="subhead">Contact & Connect</h2>
 
-	<div class="media-partner-container">
-
-	<div class="student-contact">
-		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
-		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
-	    <p class = "contact-email"><a href="mailto:jmill231@kent.edu">{{entry.email}}</a></p>
-	</div>
-
-	<div class="department-contact">
-	    <h2 class = "contact-name">{{entry.department}}</h2>
-	    <p class = "contact-phone">{{entry.phone}}</p>
-	    <p class = "contact-phone">{{entry.email}}</p>
-	</div>
-
-	<div class="social-media">
-		{% for block in entry.socialMedia %}
-		    {% if block.type == "socialMediaBlock" %}
-		        <a href= "{{block.address}}">{{ block.socialName }}</a>
-		    {% endif %}
-		{% endfor %}
-	</div>
-</div>
-
-
-</section>
 
 
 
