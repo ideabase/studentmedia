@@ -105,3 +105,10 @@ $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
     $(".video-box__container").fitVids();
   });
+
+
+// Show more/less text in FAQ //
+$(".more-link").click(function(e){
+  $(this).closest(".FAQ").toggleClass("show-more");
+  e.preventDefault();
+});

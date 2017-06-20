@@ -51,19 +51,38 @@
 
 
 
+
 <h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
 <div class="FAQ-container">
+
   {% for block in entry.faq %}
   {% if block.type == "faqs" %}
     <div class="FAQ">
       <h4 class="question">{{block.question}}</h4>
+      
+      {% if block.answer | length > 109  %}
+      <p class="answer">{{block.answer | striptags | slice(0,104)}}</p>
+      <div class="more-text">
+      <p class="answer">{{block.answer | striptags | slice (105) }}</p>
+      </div>
+      <a href="#" class="more-link"></a>
+
+      {% endif %}
+
+    {% else %}
       <p class="answer">{{block.answer}}</p>
-    </div>
+    
   {% endif %}
+  </div>
   {% endfor %}
+
 </div>
 
+{#   Starts at 0, goes to 5. Default text is: Read More
+| striptags | slice(0,5) | default('Read More')
+109 characters is 2 lines
 
+ #}
 
 <section class = "scroll-container">
 <h2 class ="subhead calender-subhead">Calendar & Events</h2>
