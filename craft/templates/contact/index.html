@@ -30,7 +30,7 @@
 
 
 <div class="contact-about-group section">
-	{% for entry in craft.entries.section('staff').find() %}
+	{% for entry in craft.entries.section('staff').order('lastName') %}
 	{% if entry.employeeType.contains('officeStaff') %}
 	<a href="#" class="leader">
   <div class="circle-image-container">
@@ -57,7 +57,7 @@
 
 <h2 class = "subhead">Student Leaders</h2>
 <div class="student-leader-container section">
-{% for entry in craft.entries.section('staff').find() %}
+{% for entry in craft.entries.section('staff').order('lastName') %}
 {% if entry.employeeType.contains('studentMediaLeader') %}
   <div class="student-leader">
     <h2 class="student-leader-contact">{{entry.firstName}} {{entry.lastName}}</h2>
