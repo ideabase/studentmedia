@@ -71,6 +71,10 @@ footer .nav__level2 {
   text-transform: none;
   font-weight: normal;
   display:block;
+  a {
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 .footer-content-list{

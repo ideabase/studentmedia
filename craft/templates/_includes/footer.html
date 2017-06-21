@@ -45,14 +45,14 @@
       {% for asset in footer.footerLogo %}
           <img class = "footer-logo-image" src="{{asset.url}}" alt="{{asset.title}}"/>
       {% endfor %}
-    </div> 
+    </div>
     <div class="footer-contact-info">
       <ul class="footer-contact-list">
-        <li class="footer-list-item">{{footer.mailingAddress}}</li>     
+        <li class="footer-list-item">{{footer.mailingAddress}}</li>
         <li class="footer-list-item">{{footer.phone}}</li>
-        <li class="footer-list-item">{{footer.email}}</li>
+        <li class="footer-list-item"><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
       </ul>
     </div>
   </section>
-  </div>    
+  </div>
 </footer>
