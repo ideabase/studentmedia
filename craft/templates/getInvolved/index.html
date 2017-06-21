@@ -25,13 +25,13 @@
       <div class="position-name-contact-container">
       <div class="position-opening">
         <h4 class="position-name">{{block.position}}</h4>
-        <p class="opening-description">L{{block.positionDescription}}</p>
+        <p class="opening-description">{{block.positionDescription}}</p>
       </div>
 
       <div class="position-contact">
         <h4 class="contact">Contact:</h4>
         <p class="contact-name-title">{{block.contactInformation}}</p>
-        <a class="email" href="mailto:someone@example.com" target="_top">msmith@kent.edu</a>
+        <a class="email" href="mailto:someone@example.com" target="_top">{{block.contactEmail}}</a>
           <button class = "secondary-button app-button">Application Form</button>
       </div>
     </div>
@@ -51,19 +51,38 @@
 
 
 
+
 <h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
 <div class="FAQ-container">
+
   {% for block in entry.faq %}
   {% if block.type == "faqs" %}
     <div class="FAQ">
       <h4 class="question">{{block.question}}</h4>
+      
+      {% if block.answer | length > 109  %}
+      <p class="answer">{{block.answer | striptags | slice(0,104)}}</p>
+      <div class="more-text">
+      <p class="answer">{{block.answer | striptags | slice (105) }}</p>
+      </div>
+      <a href="#" class="more-link"></a>
+
+      {% endif %}
+
+    {% else %}
       <p class="answer">{{block.answer}}</p>
-    </div>
+    
   {% endif %}
+  </div>
   {% endfor %}
+
 </div>
 
+{#   Starts at 0, goes to 5. Default text is: Read More
+| striptags | slice(0,5) | default('Read More')
+109 characters is 2 lines
 
+ #}
 
 <section class = "scroll-container">
 <h2 class ="subhead calender-subhead">Calendar & Events</h2>
@@ -76,7 +95,7 @@
             <h4 class="date-style">{{entry.time|date("d")}}</h4>
           </div>
           <div class="month">
-            <h4 class="month-style">{{entry.time|date("F")}}</h4>
+            <h4 class="month-style">{{entry.time|date("M")}}</h4>
           </div>
         </div>
         <div class="event">

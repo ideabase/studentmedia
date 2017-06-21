@@ -3,16 +3,19 @@
 {% block content %}
 
 <div class = "page-header page-header--no-image">
-  <h1 class="first-word">Advertise</h1><h1 class="head-line">With {{entry.title}}</h2>
+  <h1 class="first-word">Advertise</h1>
+  <h1 class="head-line"> With {{entry.title}}</h1>
 </div>
 <h2 class="subhead first-subhead">Display Ads</h2>
+
 <section class="advertising-body-container">
 <section class="advertising-column">
-    <div>
+    
+    <div class="advertising-content">
+        <table class="advertising-matrix">
+                <tbody>
         {% for block in entry.adUnit.limit(3) %}
-
             {% if block.type == "adUnits" %}
-            <table class="advertising-matrix">
                 <tr>
                     <th></th>
                     <th>size (w x h)</th>
@@ -26,11 +29,17 @@
                         <td>{{row.size}}</td>
                     </tr>
                     {% endfor %}
+                </tbody>
             </table>
+
             <p>{{block.adDescription}}</p>
+            <a href="#">
+                <button class="main-button media-partner-button">View Examples </button>
+            </a>
             </div>
+
             {% elseif block.type == "adBundle" %}
-            <div>
+            <div class="advertising-content">
                 <h4 class="general-header orange-header">{{block.bundleName}}</h4>
                 <ul class="advertising-content-list">
                     <li>{{ block.bundleDescription }}</li>
@@ -41,7 +50,6 @@
             </div>
                 {% endif %}
             {% endfor %}
-
 </section>
             <section class="advertising-column">
                 {% for block in entry.adUnit.offset(3) %}
@@ -58,16 +66,17 @@
                 {% endif %}
                 {% endfor %}
             </section>
-
-        </table>
     </div>
 </section>
 </section>
+
 <section class="advertising-bottom-section">
 {% for partner in craft.entries.section('partners').relatedTo(entry) %}
-<a class="secondary-button" href="{{ partner.url }}">Visit {{ partner.title }}</a>
+
+<a href="{{ partner.url }}"><button class="secondary-button">Visit {{ partner.title }}</button></a>
 {% endfor %}
-<button class="secondary-button">DOWNLOAD BUTTON</button>
+
+<a href="#"><button class="secondary-button">DOWNLOAD BUTTON HERE</button></a>
 <ul class = "advertising-contact-list">
   <li>For any questions about advertising with Student Media, please contact:</li>
   <li>Jim Jones at (333)-333-3333, jjones@kent.edu</li>

@@ -125,3 +125,30 @@ margin-bottom: 0;
   }
 
 }
+
+.more-text {
+  max-height: 0;
+  overflow: hidden;
+  .show-more & {
+    max-height: 1000px;
+  }
+}
+
+.more-link {
+  display: block;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 3px;
+  background-color: #ddd;
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    background-color: #eee;
+  }
+  &:after {
+    content: "show more ⬇";
+    .show-more & {
+      content: "show less ⬆";
+    }
+  }
+}

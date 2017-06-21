@@ -6,24 +6,20 @@
 
 {% block content %}
 
-	<h1>{{entry.title}}</h1>
-  <h2>Student Media Fund Drive</h2>
-<h3>{{entry.tagline}}</h3>
-<p>{{entry.body}}</p>
 
-
-
-<a href="https://www.kentstatestudentmedia.com/lab/public/?p=templates-support">
-<button class="secondary-button app-button">{{entry.title}}</button>
-</a>
 
 
 {% for block in entry.fundraiser.type('fundraiserInfo') %}
+	
+<div class = "page-header"><h1 class="head-line">{{entry.title}}</h1></div>
+
+<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+<p>{{entry.body}}</p>
+
+
 <h1>{{block.fundraiserTitle}}</h1>
 <p>{{block.description}}</p> 
-{% endfor %}
-{% for block in entry.fundraiser.type('link') %}
-	<button class="secondary-button app button">{{block.linkName}}<a href="{{block.linkUrl}}"</a>
+<button class="secondary-button app button">{{block.linkName}}<a href="{{block.linkUrl}}"</a>
 {% endfor %}
 
 {% endblock %}
