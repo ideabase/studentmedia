@@ -183,7 +183,8 @@ header  .nav__level2.active {
 				max-height: 0;
 				overflow: hidden;
 				background: none;
-        transition: .3s max-height ease-in-out;
+        opacity: 0;
+        transition: .1s opacity ease-in-out;
 	}
 
   header li.has-children > a.active:after {
@@ -216,7 +217,7 @@ header  .nav__level2.active {
   }
 
   header  .nav__level2.active {
-
+        opacity: 1;
         max-height: 50em;
 	}
 

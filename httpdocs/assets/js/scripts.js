@@ -58,8 +58,14 @@ $(document).ready(function() {
       e.stopImmediatePropagation();
 			var $this = $(this);
 			$this.toggleClass('active').next('ul').toggleClass('active');
+      $('.nav__level2').not($(this).siblings()).removeClass('active');
       return false;
 		});
+});
+
+// Clicking away from dropdown will remove the dropdown class
+$('html').click(function() {
+  $('.nav__level2').removeClass('active');
 });
 
 // Drop Down Staff Profiles //
