@@ -269,11 +269,8 @@ header  .nav__level2.active {
     @media screen and (min-width: 1300px) {
       font-size: .95em;
     }
-    &:hover {
+    &:hover, &.active {
       border-color: $lime-green;
-      >a {
-        color: darken($gray,15%);
-      }
     }
     &:last-child {
       border-top: none;
