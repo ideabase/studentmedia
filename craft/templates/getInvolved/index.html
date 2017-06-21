@@ -56,26 +56,25 @@
 <div class="FAQ-container">
 
   {% for block in entry.faq %}
-  {% if block.type == "faqs" %}
-    <div class="FAQ">
+  
+      {% if block.answer | length > 200  %}
+      <div class="FAQ">
       <h4 class="question">{{block.question}}</h4>
-      
-      {% if block.answer | length > 109  %}
-      <p class="answer">{{block.answer | striptags | slice(0,104)}}</p>
+      <p class="answer">{{block.answer | striptags | slice(0,111)}}</p>
       <div class="more-text">
-      <p class="answer">{{block.answer | striptags | slice (105) }}</p>
+      <p class="answer">{{block.answer | striptags | slice(111) }}</p>
       </div>
       <a href="#" class="more-link"></a>
-
+      </div>
       {% endif %}
 
-    {% else %}
+    {% if block.answer | length < 200 %}
+      <div class="FAQ">
+      <h4 class="question">{{block.question}}</h4>
       <p class="answer">{{block.answer}}</p>
-    
-  {% endif %}
-  </div>
-  {% endfor %}
-
+      </div>
+    {% endif %}
+{% endfor %}
 </div>
 
 {#   Starts at 0, goes to 5. Default text is: Read More
