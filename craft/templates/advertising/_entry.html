@@ -73,10 +73,8 @@
 <section class="advertising-bottom-section">
 {% for partner in craft.entries.section('partners').relatedTo(entry) %}
 
-<a href="{{ partner.url }}"><button class="secondary-button">Visit {{ partner.title }}</button></a>
+<a class="secondary-button" href="{{ partner.url }}">Visit {{ partner.title }}</a>
 {% endfor %}
-
-<a href="#"><button class="secondary-button">DOWNLOAD BUTTON HERE</button></a>
 <ul class = "advertising-contact-list">
   <li>For any questions about advertising with Student Media, please contact:</li>
   <li>Jim Jones at (333)-333-3333, jjones@kent.edu</li>

@@ -58,9 +58,9 @@
       {% if block.answer | length > 200  %}
       <div class="FAQ">
       <h4 class="question">{{block.question}}</h4>
-      <p class="answer">{{block.answer | striptags | slice(0,111)}}</p>
+      <div class="answer">{{block.answer | striptags | slice(0,111)}}</div>
       <div class="more-text">
-      <p class="answer">{{block.answer | striptags | slice(111) }}</p>
+      <div class="answer">{{block.answer | striptags | slice(111) }}</div>
       </div>
       <a href="#" class="more-link"></a>
       </div>
@@ -69,7 +69,7 @@
     {% if block.answer | length < 200 %}
       <div class="FAQ">
       <h4 class="question">{{block.question}}</h4>
-      <p class="answer">{{block.answer}}</p>
+      <div class="answer">{{block.answer}}</div>
       </div>
     {% endif %}
 {% endfor %}
