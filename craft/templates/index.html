@@ -49,7 +49,6 @@
     {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
     {% set newww = pap[extraEntry] %}
 
-      <h1>{{newww.title}}</h1>
 
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
       <div class = "owl-carousel brand-logo-grid">
@@ -73,7 +72,6 @@
         </a>
 
         {% if (loop.last and entryNum % 2 != 0) %}
-          <div class="media-partner-container">
              {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
 
              {% for asset in newww.heroImage %}
@@ -83,13 +81,12 @@
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
             {% endfor %}
           </a>  
-        </div>
+      
         {% endif %}
 
 
 
         {% if (loop.index0 % cols == cols - 1 or loop.last) %}
-          <!-- Helps visualize <h2>xasd</h2> !-->
           </div>
 
         {% endif %}
