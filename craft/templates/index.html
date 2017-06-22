@@ -44,7 +44,13 @@
 
   <section class = "section outside-div-container-brands">
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
-    {% set randNum = random(entryNum) %}
+    {% set extraEntry = (entryNum/2) %}
+    
+    {# {% set nick = craft.entries.section('partners').featuredMediaParter('1') | batch(1) %}  returns 12 #}
+    {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
+    {% set newww = pap[extraEntry] %}
+    <img src="{{newww.url}}" alt="{{newww.email}}" class="brand-logo" />
+
 
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
       <div class = "owl-carousel brand-logo-grid">
@@ -69,12 +75,12 @@
 
         {% if (loop.last and entryNum % 2 != 0) %}
           <div class="media-partner-container">
-            {% set randEntry = (craft.entries.id(entryNum /2)) %}
-            {% set randAsset = (craft.assets.id(entryNum / 2)) %} 
-             {% for asset in entry.heroImage %}
+             {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
+
+             {% for asset in newww.heroImage %}
               <a href="{{asset.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
               {% endfor %}
-              {% for asset in entry.logo %}
+              {% for asset in newww.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
             {% endfor %}
           </a>  
