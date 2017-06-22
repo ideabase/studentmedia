@@ -45,8 +45,7 @@
   <section class = "section outside-div-container-brands">
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
     {% set extraEntry = (entryNum/2) %}
-    
-    {# {% set nick = craft.entries.section('partners').featuredMediaParter('1') | batch(1) %}  returns 12 #}
+    {# Gets all entries, and then indexes a certain entry #}
     {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
     {% set newww = pap[extraEntry] %}
 
