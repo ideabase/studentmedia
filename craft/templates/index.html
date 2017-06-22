@@ -75,7 +75,7 @@
              {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
 
              {% for asset in newww.heroImage %}
-              <a href="{{asset.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
+              <a href="{{newww.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
               {% endfor %}
               {% for asset in newww.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
