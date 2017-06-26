@@ -75,19 +75,18 @@ header .cta-header a {
   background-color: $white;
   border-style: solid;
   border-color: $lime-green;
-  border-width: 2.5px;
+  border-width: 3px;
   font-family: $mont;
-  cursor: pointer;
   color: $dark-blue;
-  width: 200px;
-  height: 50px;
-  margin:10px;
+  max-width: 200px;
+  padding: 1em 1.75em;
+  display: inline-block;
   font-size: .9em;
-}
-
-.secondary-button:hover{
-  //border-radius: 30px;
-  transition-duration: .3s;
-  transition-timing-function: ease-in;
-  background-color: $lime-green;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 1em;
+  transition: .3s background-color ease-in-out;
+  &:hover, &:focus {
+    background-color: $lime-green;
+  }
 }

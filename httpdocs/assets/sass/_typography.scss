@@ -9,8 +9,22 @@ p {
   line-height: 1.6;
 }
 
+p a, main li a {
+  color: $dark-blue;
+  font-weight: 500;
+  transition: .3s color ease-in-out;
+  &:hover, &:focus {
+    color: lighten($dark-blue, 10%);
+  }
+}
+
+ul {
+  font-weight: 300;
+}
+
 .intro-paragraph p {
-  font-size: 1em;
+  font-size: 1.05em;
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 300;
+  max-width: 800px;
 }

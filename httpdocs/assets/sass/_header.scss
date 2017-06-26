@@ -113,6 +113,7 @@ header nav>ul {
   margin-top: 0;
   margin-bottom: 0;
   overflow: scroll;
+  font-weight: 500;
 }
 
 header nav>ul>li {
@@ -185,6 +186,7 @@ header  .nav__level2.active {
 				background: none;
         opacity: 0;
         transition: .1s opacity ease-in-out;
+        font-weight: 500;
 	}
 
   header li.has-children > a.active:after {
