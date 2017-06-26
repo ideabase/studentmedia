@@ -9,12 +9,12 @@ html {
   box-sizing: inherit;
 }
 
-img,
-iframe {
+img {
   max-width: 100%;
   height: auto;
   display: inline-block;
   vertical-align: middle;
+  border-style: none;
 }
 
 html {
@@ -32,9 +32,9 @@ body {
   background-color: #e9ebee;
 }
 
+figcaption,
 figure,
 header,
-main,
 nav,
 section {
   display: block;
@@ -94,20 +94,6 @@ body {
   font-family: "Montserrat",sans-serif;
   padding: 0;
   background-color: #e9ebee;
-}
-
-p {
-  font-family: Montserrat, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.6;
-  font-family: "Montserrat",sans-serif;
-}
-
-.intro-paragraph p {
-  font-size: 1em;
-  line-height: 1.7;
-  font-weight: 400;
 }
 
 .header-container {
@@ -285,14 +271,15 @@ header .nav__level2 {
     max-height: 0px;
     overflow: hidden;
     background-image: none;
-    transition: max-height 0.3s ease-in-out;
-    -webkit-transition: max-height 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    -webkit-transition: opacity 0.1s ease-in-out;
     background-position: initial initial;
     background-repeat: initial initial;
     max-height: 0;
     background: none;
-    -webkit-transition: .3s max-height ease-in-out;
-    transition: .3s max-height ease-in-out;
+    -webkit-transition: .1s opacity ease-in-out;
+    transition: .1s opacity ease-in-out;
   }
 
   .header-logo-container {
@@ -444,6 +431,7 @@ header .nav__level2 {
 
   header nav ul {
     overflow: inherit;
+    height: auto;
     -ms-flex-flow: row;
     flex-flow: row;
     -ms-flex-line-pack: justify;
@@ -549,21 +537,6 @@ header .nav__level2 {
   background-repeat: initial initial;
 }
 
-.video-div-flex-container {
-  display: -webkit-box;
-  width: 100%;
-  margin: 0px auto;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.video-container-home {
-  margin-bottom: 1.5em;
-}
-
 .video-box {
   width: 100%;
   margin: 1em auto 0px;
@@ -571,13 +544,31 @@ header .nav__level2 {
   margin-top: 1em;
 }
 
-.video-box__container {
-  width: 100%;
+.video-box__caption {
+  font-size: 0.8em;
+  color: rgb(90, 106, 114);
+  margin-top: 1em;
+  font-size: .8em;
+  color: #5a6a72;
 }
 
-iframe {
-  max-width: 100%;
-  height: auto;
+.vimeo-wrapper {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.vimeo-wrapper .play-icon {
+  position: absolute;
+  z-index: 1000;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/img/icons/icon-play.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
+  background: url(/assets/img/icons/icon-play.png) no-repeat center center;
 }
 
 @media screen and (min-width: 970px) {
@@ -586,10 +577,6 @@ iframe {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-
-  .video-blurb {
-    width: 45%;
   }
 }
 
@@ -644,73 +631,11 @@ body {
   background-color: #e9ebee;
 }
 
-main {
-  margin: -50px auto 0px;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px, rgba(0, 0, 0, 0.188235) 0px 6px 20px 0px;
-  z-index: 1;
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  max-width: 1200px;
-  padding: 1em 1em 2em;
-  margin: 0 auto;
-  margin-top: -50px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  background-color: #fff;
-  padding: 1em;
-  padding-bottom: 2em;
-}
-
-@media screen and (min-width: 800px) {
-  main {
-    width: 93%;
-    padding: 1em 2em 3em;
-    padding: 1em 2em 3em 2em;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  main {
-    width: 80%;
-  }
-}
-
-.section {
-  margin-bottom: 2em;
-}
-
-@media screen and (min-width: 800px) {
-  .section {
-    margin-bottom: 2.5em;
-  }
-}
-
 h1 {
   color: rgb(31, 60, 114);
   font-size: 2em;
   margin: 0.67em 0;
   color: #1f3c72;
-}
-
-.intro-sentence-header {
-  font-size: 1.4em;
-  font-weight: 600;
-  padding-top: 0px;
-  letter-spacing: 1px;
-  margin-bottom: 0px;
-  color: rgb(238, 171, 21);
-  margin-top: 0.5em;
-  padding-top: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #eeab15;
-  margin-top: .5em;
-}
-
-@media screen and (min-width: 800px) {
-  .intro-sentence-header {
-    font-size: 1.8em;
-  }
 }
 
 li {

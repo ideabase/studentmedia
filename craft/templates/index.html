@@ -31,16 +31,14 @@
       	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
       {% endfor %}
     </div>
-    <figure class = "video-box">
-      <div class="video-box__container">
-        <iframe src="{{entry.video}}?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </div>
-      <figcaption class="video-box__caption">
-          {{entry.videoCaption}}
-      </figcaption>
+      <!-- Lazy Loaded Video -->
+      <figure class = "video-box">
+        <img src="/assets/img/icons/video-placeholder.gif" class="video-thumb" data-vimeo-id="{{entry.video}}" />
+        <figcaption class="video-box__caption">
+            {{entry.videoCaption}}
+        </figcaption>
     </figure>
   </section>
-
 
   <section class = "section outside-div-container-brands">
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
@@ -80,8 +78,8 @@
               {% for asset in newww.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
             {% endfor %}
-          </a>  
-      
+          </a>
+
         {% endif %}
 
 
