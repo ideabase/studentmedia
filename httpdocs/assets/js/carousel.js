@@ -3275,32 +3275,3 @@
 	}
 
 })(window.Zepto || window.jQuery, window, document);
-
-$(document).ready(function() {
-
-	$('.home-carousel').owlCarousel({
-	    items:1,
-			autoplay:true,
-			center: true,
-			loop: true
-	});
-
-	$('.brand-logo-grid').owlCarousel({
-	    center: true,
-	    items:2,
-	    loop:true,
-	    margin:10,
-	    responsive:{
-	        450:{
-	            items:3
-	        },
-	        600:{
-	            items:4
-	        },
-	        1000:{
-	            items:6
-	        }
-	    }
-	});
-
-});

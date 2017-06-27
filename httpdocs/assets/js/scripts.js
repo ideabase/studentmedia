@@ -1,4 +1,36 @@
+// Initialize Carousels on Home Page //
 
+$(document).ready(function() {
+
+	$('.home-carousel').owlCarousel({
+	    items:1,
+			autoplay:true,
+			center: true,
+			loop: true
+	});
+
+	$('.brand-logo-grid').owlCarousel({
+	    responsive: {
+          0:{
+              items:3,
+              nav: false,
+              loop: true,
+
+          },
+	        600:{
+	            items:3,
+							nav: true,
+							loop: true,
+	        },
+          900:{
+	            items:4,
+							nav: true,
+							loop: true,
+	        },
+	    }
+	});
+
+});
 
 // Sticky Navigation //
 
