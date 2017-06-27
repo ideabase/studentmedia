@@ -24,15 +24,19 @@
 
 .platform-content{
   width: 100%;
+  padding: 1.5em;
+  margin: .5em;
 }
 
 .platform-description {
   margin-bottom: 0;
+  font-size: .95em;
 }
 
 .platform-content-container{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .platform-title-header, .platform-price-header{
@@ -71,8 +75,8 @@
 
 .platform-content-header {
   font-weight: 400;
-  margin-left: 15px;
   color: $mandarin;
+  margin-top: 0;
 }
 
 .platform-price-header{
@@ -84,9 +88,6 @@
 
 .platform-content{
   background-color: $white;
-  margin: 15px;
-  margin: 0 auto;
-  padding-top: 1em;
 }
 
 .testimonial {
@@ -102,7 +103,7 @@
 
 .ad-button {
   margin: 0 auto;
-  margin-left: 15px;
+  margin-top: 1em;
   text-align: center;
 }
 
@@ -211,10 +212,6 @@ li{
     justify-content: space-between;
   }
 
-  .ad-button {
-    margin: 0 auto;
-  }
-
   .platform-content-header {
     flex: none;
   }
@@ -232,10 +229,6 @@ li{
 
 @media screen and (min-width: 1100px){
     .platform-content{
-    width: 30%;
-    }
-
-    .ad-button {
-      margin-top: 80px;
+    width: 31%;
     }
 }

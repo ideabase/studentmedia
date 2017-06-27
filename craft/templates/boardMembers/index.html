@@ -8,7 +8,6 @@
 	<div class = "page-header">
 	<h1 class="head-line">{{entry.title}}</h1></div>
 
-	<div class ="advertising-content">
 	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
 	<p class ="intro-paragraph">{{entry.body}}</p></div>
 
@@ -25,7 +24,7 @@
 
 	<h2 class = "subhead">Voting Members</h2>
 	<div class="voting-members">
-    
+
 	{% for entry in craft.entries.section('staff').order('lastName') %}
 		{% if entry.employeeType.contains('voting') %}
 			<div class="member">
@@ -38,13 +37,13 @@
 
 	<h2 class = "subhead">Non-Voting Members</h2>
 	 <div class="non-voting-members">
+		 <ul>
 	{% for entry in craft.entries.section('staff').order('lastName') %}
-
 		{% if entry.employeeType.contains('nonVoting') %}
-
-			<p class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></p>
+			<li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
 		{% endif %}
 	{% endfor %}
+	</ul>
 </div>
 
 	<h2 class = "subhead">Meeting Minutes</h2>
@@ -56,10 +55,11 @@
 
 	{# <p class="meeting-date">Posted on {{ entry.postDate.format('F d, Y') }}</p> #}
 	{% for asset in entry.files %}
-	<img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100">
-	<a href="{{asset.url}}" alt="{{asset.title}}">
-	<p class="meeting-pdf">Download PDF</p></div>
+	<a href="{{asset.url}}">
+		<img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100">
 	</a>
+	<a class="meeting-pdf" href="{{asset.url}}" alt="{{asset.title}}">Download Minutes</a>
+	</div>
 	{% endfor %}
 	{% endfor %}
 

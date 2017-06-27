@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-  
+
 
 
   <div class = "page-header">
@@ -28,34 +28,47 @@
     	<div class="link platform-dropdown">
 				<h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
 				<div class="submenu">
+					<div class = "platform-content-container">
     			{% for entry in craft.entries.section('partners').relatedTo(category) %}
-
-			        <div class = "platform-content-container">
 			          <div class = "platform-content">
 			            <h2 class="platform-content-header">{{ entry.title }}</h2>
 			            <p class="platform-description">{{entry.shortDescription}}</p>
-
-          {# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
-          <div class="platform-content">
-            <h4 class="testimonial">{{quote.quote}}</h4>
-            <p class="testimonial-name">{{quote.quotee}}</p>
-          </div>
-          {% endfor %} #}
-          {% for ad in craft.entries.section('ad').relatedTo(entry) %}
-            <div class="platform-content">
-              <a class="secondary-button ad-button" href="{{ ad.url }}">{{ad.title}} Advertising</a>
-            </div>
-          {% endfor %}
-          </div>
-        </div>
-    {% endfor %}
+					          {# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
+					          <div class="platform-content">
+					            <h4 class="testimonial">{{quote.quote}}</h4>
+					            <p class="testimonial-name">{{quote.quotee}}</p>
+					          </div>
+					          {% endfor %} #}
+					          {% for ad in craft.entries.section('ad').relatedTo(entry) %}
+					              <a class="secondary-button ad-button" href="{{ ad.url }}">View Advertising Options</a>
+					          {% endfor %}
+          		</div>
+    			{% endfor %}
+					{% if category.title == "Bundles" %}
+						{% for entry in craft.entries.section('ad') %}
+							{% for block in entry.adUnit %}
+								{% if block.type == "adBundle" %}
+									<div class = "platform-content">
+									<h2 class="platform-content-header">{{block.bundleName}}</h2>
+									<ul class="advertising-content-list">
+											<li>{{ block.bundleDescription }}</li>
+									</ul>
+									<ul class="advertising-price-list">
+											<li class="bold-info">{{ block.bundlePrice }}</li>
+									</ul>
+								</div>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+					{% endif %}
+				</div>
 		</div>
   {% endfor %}
 </div>
 <h2 class="subhead">Creative Services</h2>
 {{entry.creativeServicesDescription}}
 
- 
+
 {% for adsales in craft.entries.slug('student-media-ad-sales') %}
 <ul class="advertising-contact-list">
 <li>For any questions about advertising with Student Media, please contact:</li>

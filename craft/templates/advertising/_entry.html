@@ -3,71 +3,42 @@
 {% block content %}
 
 <div class = "page-header page-header--no-image">
-  <h1 class="first-word">Advertise</h1>
-  <h1 class="head-line"> With {{entry.title}}</h1>
+	<h1 class="head-line">Advertise with {{entry.title}}</h1>
 </div>
 <h2 class="subhead first-subhead">Display Ads</h2>
 
 <section class="advertising-body-container">
-<section class="advertising-column">
-    
-    <div class="advertising-content">
-        <table class="advertising-matrix">
-                <tbody>
-        {% for block in entry.adUnit.limit(3) %}
-            {% if block.type == "adUnits" %}
-                <tr>
-                    <th></th>
-                    <th>size (w x h)</th>
-                    <th>price</th>
-                    <th>Campus/Non-Profit Price</th>
-                </tr>
-                    {% for row in block.adUnitr %}
-                    <tr>
-                        <td>{{row.name}}</td>
-                        <td>{{row.price}}</td>
-                        <td>{{row.size}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <section class="advertising-column">
+            <div class="advertising-content">
+
+                {% for block in entry.adUnit.limit(3) %}
+                    {% if block.type == "adUnits" %}
+                    <table class="advertising-matrix">
+                            <tbody>
+                        <tr>
+                            <th></th>
+                            <th>size (w x h)</th>
+                            <th>price</th>
+                            <th>Campus/Non-Profit Price</th>
+                        </tr>
+                            {% for row in block.adUnitr %}
+                            <tr>
+                                <td>{{row.name}}</td>
+                                <td>{{row.price}}</td>
+                                <td>{{row.size}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
 
             <p>{{block.adDescription}}</p>
             <a href="#">
                 <button class="main-button media-partner-button">View Examples </button>
             </a>
             </div>
-
-            {% elseif block.type == "adBundle" %}
-            <div class="advertising-content">
-                <h4 class="general-header orange-header">{{block.bundleName}}</h4>
-                <ul class="advertising-content-list">
-                    <li>{{ block.bundleDescription }}</li>
-                </ul>
-                <ul class="advertising-price-list">
-                    <li class="bold-info">{{ block.bundlePrice }}</li>
-                </ul>
-            </div>
                 {% endif %}
-            {% endfor %}
-</section>
-            <section class="advertising-column">
-                {% for block in entry.adUnit.offset(3) %}
-                {% if block.type == "adBundle" %}
-                <div>
-                    <h4 class="general-header orange-header">{{block.bundleName}}</h4>
-                     <ul class="advertising-content-list">
-                        <li>{{ block.bundleDescription }}</li>
-                    </ul>
-                    <ul class="advertising-price-list">
-                        <li class="bold-info">{{ block.bundlePrice }}</li>
-                    </ul>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </section>
-    </div>
-</section>
+          {% endfor %}
+    </section>
 </section>
 
 <section class="advertising-bottom-section">
@@ -77,10 +48,9 @@
 {% endfor %}
 <ul class = "advertising-contact-list">
   <li>For any questions about advertising with Student Media, please contact:</li>
-  <li>Jim Jones at (333)-333-3333, jjones@kent.edu</li>
+  <li>########</li>
   <li>OR</li>
   <li>Download our Media Kit PDF for more info, <a href="#">here</a></li>
 </ul>
-</section>
 </section>
 {% endblock %}
