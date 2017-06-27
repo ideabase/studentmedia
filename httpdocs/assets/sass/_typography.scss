@@ -23,8 +23,12 @@ ul {
 }
 
 .intro-paragraph p {
-  font-size: 1.05em;
-  line-height: 1.7;
+  font-size: .95em;
+  letter-spacing: -.35px;
+  line-height: 1.6;
   font-weight: 300;
   max-width: 800px;
+  @media screen and (min-width: 800px) {
+    font-size: 1.05em;
+  }
 }

@@ -33,11 +33,12 @@ header .cta-header a {
 
 .main-button {
   margin-top: .5em;
+  text-transform: uppercase;
+  font-weight: 700;
   display: inline-block;
    padding: 10px 30px 13px 30px;
    font-family: $mont;
-   font-weight: 300;
-   font-size: 1em;
+   font-size: .8em;
    letter-spacing: .3px;
    line-height: 1.4em;
    color: white;

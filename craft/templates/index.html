@@ -16,16 +16,27 @@
         </div>
        {% endfor %}
     </div>
-     <div class="header-quote">
-       <h1 class = "hero-image-caption">{{entry.tagline}}</h1>
-     </div>
+    <div class="header-quote-container">
+       <div class="header-quote">
+         <h1 class = "hero-image-caption">
+           <span class="hero-image-caption__level">{{entry.tagline}}</span>
+           <span class="hero-image-caption__level">{{entry.taglineLevel2}}</span>
+           <span class="hero-image-caption__level">{{entry.taglineLevel3}}</span>
+         </h1>
+         <div class="hero-image-partners">
+           {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
+            <span class="hero-image-partners__name">{{entry.title}}</span>
+           {% endfor %}
+          </div>
+       </div>
+    </div>
   </section>
  {% endblock %}
  {% block content %}
  <section class = "section video-container-home">
-   <h2 class="intro-sentence-header">{{ entry.description }}</h2>
    <div class = "video-div-flex-container">
     <div class = "video-blurb">
+      <h2 class="intro-sentence-header">{{ entry.description }}</h2>
       <div class="intro-paragraph">{{entry.body}}</div>
       {% for entry in entry.aboutCta %}
       	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
@@ -51,7 +62,7 @@
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
       <div class = "owl-carousel brand-logo-grid">
         {% set cols = 2 %}
-        {% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
+        {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
           {% if loop.index0 % cols == 0 %}
             <div class="media-partner-container">
           {% endif %}

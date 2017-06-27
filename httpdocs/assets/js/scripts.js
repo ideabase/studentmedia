@@ -6,7 +6,8 @@ $(document).ready(function() {
 	    items:1,
 			autoplay:true,
 			center: true,
-			loop: true
+			loop: true,
+			smartSpeed: 1500,
 	});
 
 	$('.brand-logo-grid').owlCarousel({
@@ -58,7 +59,11 @@ $(".head-line").html(function(){
   return (text.length > 0 ? "<span class='first-word'>"+ first + "</span> " : first) + text.join(" ");
 });
 
-
+$(".hero-image-caption__level").html(function(){
+  var text= $(this).text().trim().split(" ");
+  var first = text.shift();
+  return (text.length > 0 ? "<span class='first-word'>"+ first + "</span> " : first) + text.join(" ");
+});
 
 
 // Navigation Menu Button //
