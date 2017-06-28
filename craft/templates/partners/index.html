@@ -11,7 +11,7 @@
 	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
 	<div class="intro-paragraph">{{entry.body}}</div>
 	<section class ="section brand-grid-all">
-			{% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
+			{% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('(CASE WHEN title LIKE "The %" THEN SUBSTRING(title, 3) ELSE title END ) asc') %}
 	  <div class = "media-partner-container-grid">
 			{% for asset in entry.heroImage %}
 				<a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">

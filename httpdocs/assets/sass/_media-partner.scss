@@ -46,21 +46,11 @@
 }
 
 .student-contact, .department-contact {
-  width: 75%;
   margin: 0 auto;
   //padding: 2px 0 10px 0;
-  text-align: center;
   border-bottom-style: solid;
   border-bottom-color: $lime-green;
   border-bottom-width: 4px;
-}
-
-.contact-name{
-  text-transform: uppercase;
-  color: $dark-blue;
-  letter-spacing: 0.5px;
-  font-size: 20px;
-  -webkit-margin-after: 0em;
 }
 
 .student-leader-name{
@@ -70,54 +60,51 @@
   color: $mandarin;
   font-weight: 400;
   font-size: 14px;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0.5em;
 }
 
 .contact-email, .contact-phone{
   font-size: 14px;
   font-weight: $light;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
 }
 
 .contact-name, .contact-title, .contact-email, .contact-phone{
-  text-align: center;
   margin-top: 0;
+  margin-bottom: .25em;
+}
+
+.contact-name{
+  text-transform: uppercase;
+  color: $dark-blue;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  margin-top: 1em;
 }
 
 .student-contact, .department-contact{
-  padding-top: 15px;
   padding-bottom: 15px;
-  //margin-bottom: 0;
 }
 
 .button-section {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  padding-bottom: 20px;
 }
 
 .media-partner-button {
-  margin-left: 7px;
   margin-right: 7px;
-  margin-top: 14px;
 }
 
 .logo-about-page {
   text-align: center;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: -20px;
   width: 200px;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 500px) {
 
 .button-section {
   display: flex;
-  justify-content: center;
   flex-direction: row;
   padding-bottom: 20px;
 }
@@ -129,7 +116,8 @@
   }
   .logo-about-page {
     width: 30%;
-    margin-top: 100px;
+    margin-top: 25px;
+    max-width: 300px;
   }
 
   .title-paragraph-container{
@@ -156,13 +144,11 @@
 
 .student-contact, .department-contact {
   border: none;
-  width: 32%;
   flex-direction: row;
   border-bottom-style: none;
   border-right-style: solid;
   border-right-color: $lime-green;
   border-right-width: 4px;
-  margin-bottom: 50px;
 }
 
 .social-media {
