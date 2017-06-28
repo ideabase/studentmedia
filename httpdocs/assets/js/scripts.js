@@ -14,19 +14,22 @@ $(document).ready(function() {
 	    responsive: {
           0:{
               items:3,
-              nav: false,
+              nav: true,
               loop: true,
+							center: true,
 
           },
 	        600:{
-	            items:3,
-							nav: true,
-							loop: true,
-	        },
-          900:{
 	            items:4,
 							nav: true,
 							loop: true,
+							center: true,
+	        },
+          900:{
+	            items:5,
+							nav: true,
+							loop: true,
+							center: true,
 	        },
 	    }
 	});

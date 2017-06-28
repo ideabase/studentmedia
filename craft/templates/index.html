@@ -39,7 +39,7 @@
       <h2 class="intro-sentence-header">{{ entry.description }}</h2>
       <div class="intro-paragraph">{{entry.body}}</div>
       {% for entry in entry.aboutCta %}
-      	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
+      	<a class="main-button" href="{{entry.url}}">Learn More {{ entry.title }}</a>
       {% endfor %}
     </div>
       <!-- Lazy Loaded Video -->
@@ -60,6 +60,17 @@
 
 
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
+    <div class = "video-div-flex-container">
+      <div class = "video-blurb">
+          {{entry.mediaPartnerBody}}
+      </div>
+      <div class="video-box video-box--nospace">
+        {% for entry in entry.mediaPartnersCta %}
+        	<a class="main-button" href="{{entry.url}}">See All {{ entry.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
       <div class = "owl-carousel brand-logo-grid">
         {% set cols = 2 %}
         {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
@@ -105,8 +116,21 @@
   </section>
 
       <section class = "section statistics-container">
-      <h2 class ="subhead">{{entry.advertisingHeader}}</h2>
-      {{entry.adBody}}
+
+        <h2 class ="subhead">{{entry.advertisingHeader}}</h2>
+        <div class = "video-div-flex-container">
+         <div class = "video-blurb">
+           {{entry.adBody}}
+         </div>
+           <div class = "video-box video-box--nospace">
+             {% for entry in entry.advertingCta %}
+             	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
+             {% endfor %}
+         </div>
+
+
+
+
       <div class = "statistics-box-flex-container">
             {% for entry in craft.entries.section('statistics') %}
               <div class = "statistics-box">
@@ -116,9 +140,6 @@
                 <hr class = "statistics-border"/>
                 <p class = "statistics-blurb">{{ entry.statistics }}</p>
             </div>
-            {% endfor %}
-            {% for entry in entry.advertingCta %}
-            	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
             {% endfor %}
       </section>
 {% endblock %}

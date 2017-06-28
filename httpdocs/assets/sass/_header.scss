@@ -208,7 +208,7 @@ header  .nav__level2.active {
   }
 
   header li.has-children > a:after {
-    right: .5em;
+    right: .25em;
     top: 60%;
     width: 10px;
     height: 10px;
@@ -265,6 +265,7 @@ header  .nav__level2.active {
     text-align: center;
     transition: .3s border-color ease-in-out;
     position: relative;
+    margin: 0 1px;
     @media screen and (min-width: 1000px) {
       font-size: .9em;
     }
@@ -301,7 +302,7 @@ header  .nav__level2.active {
   }
 
   .header-logo-container {
-    width: 23%;
+    width: 20%;
     .header-logo {
       width: auto;
       max-width: 250px;
@@ -338,11 +339,17 @@ header  .nav__level2.active {
 
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1200px){
   header nav>ul>li{
     padding-top: .2em;
     }
   header nav {
     margin-left: 3em;
+  }
+  header li.has-children > a:after {
+    right:.5em;
+  }
+  .header-logo-container {
+    width: 23%;
   }
 }

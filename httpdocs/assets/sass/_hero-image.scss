@@ -20,15 +20,19 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 20%;
+  bottom: 16%;
+  @media screen and(min-width: 800px){
+    bottom: 25%;
+  }
   @media screen and(min-width: 1200px){
-    bottom: 15%;
+    bottom: 19%;
   }
 }
 
 .header-quote {
   max-width: 1200px;
   z-index: 3;
+  width: 100%;
   @media screen and(min-width: 800px){
     bottom: 10%;
     width: 93%;
@@ -70,25 +74,27 @@
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: .8em;
+  font-size: .7em;
   margin-top: 1em;
   display: block;
   clear: left;
   float: left;
-  max-width: 800px;
-  padding-left: 1em;
+  max-width: 600px;
+  padding-left: 1.5em;
   padding-right: 1em;
   text-shadow: 1px 1px 3px rgba(0,0,0,.3);
   letter-spacing: .75px;
   @media screen and (min-width: 800px) {
-      padding-left: 1.5em;
+      padding-left: 1.9em;
       font-size: .9em;
+      max-width: 800px;
   }
   @media screen and (min-width: 1200px) {
       padding-left: 2.25em;
       font-size: .95em;
       line-height: 1.7;
       margin-top: 1.25em;
+      max-width: 1000px;
   }
 }
 

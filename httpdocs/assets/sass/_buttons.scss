@@ -1,11 +1,6 @@
 header .cta-header a {
-   padding-top: 10px;
-   padding-right: 30px;
-   padding-bottom: 10px;
-   padding-left: 30px;
+   padding: 10px 30px 11px 30px;
    font-family: $mont;
-   font-weight: 300;
-   font-size: .9em;
    letter-spacing: .3px;
    line-height: 1.4em;
    color: white;
@@ -18,9 +13,11 @@ header .cta-header a {
    width: inherit;
    margin: 0 auto;
    margin-top: 1em;
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: .8em;
    @media screen and (min-width: 900px) {
      margin-top: 1.7em;
-     padding: .5em 1em;
    }
    &:hover {
      background-color: $dark-blue;
