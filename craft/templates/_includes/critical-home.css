@@ -98,10 +98,17 @@ body {
 
 p {
   font-family: Montserrat, sans-serif;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family: "Montserrat",sans-serif;
+  font-size: .9em;
+}
+
+@media screen and (min-width: 800px) {
+  p {
+    font-size: 1em;
+  }
 }
 
 ul {
@@ -111,7 +118,7 @@ ul {
 .intro-paragraph p {
   font-size: 0.95em;
   letter-spacing: -0.35px;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 300;
   max-width: 800px;
   font-size: .95em;
@@ -122,6 +129,10 @@ ul {
   .intro-paragraph p {
     font-size: 1.05em;
   }
+}
+
+.video-blurb .intro-paragraph p {
+  margin-top: 1em;
 }
 
 .header-container {
@@ -318,11 +329,11 @@ header .nav__level2 {
   }
 
   header li.has-children > a {
-    padding-right: 0.15em;
+    padding-right: 0.5em;
   }
 
   header li.has-children > a::after {
-    right: 0.5em;
+    right: 0.25em;
     top: 60%;
     width: 10px;
     height: 10px;
@@ -489,8 +500,8 @@ header .nav__level2 {
     margin-left: 3em;
   }
 
-  header li.has-children > a {
-    padding-right: 0.5em;
+  header li.has-children > a::after {
+    right: 0.5em;
   }
 
   .header-logo-container {
@@ -502,23 +513,40 @@ header .nav__level2 {
   position: absolute;
   top: 40%;
   width: 100%;
+  z-index: 1000;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .owl-nav {
-    top: 38%;
+    top: 30%;
   }
 }
 
 .owl-next,
 .owl-prev {
-  width: 80px;
-  height: 80px;
+  width: 35px;
+  height: 35px;
   background-size: contain;
   text-indent: -999999px;
   overflow: hidden;
   background-repeat: no-repeat no-repeat;
   background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 600px) {
+  .owl-next,
+  .owl-prev {
+    margin-left: 15px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .owl-next,
+  .owl-prev {
+    margin-left: 15px;
+  }
 }
 
 .owl-next {
@@ -531,9 +559,15 @@ header .nav__level2 {
   transform: rotateY(180deg);
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .owl-next {
-    margin-left: 15px;
+    margin-right: 15px;
+    opacity: 0.65;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    opacity: .65;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
   }
 }
 
@@ -545,9 +579,15 @@ header .nav__level2 {
   background-image: url("../img/icons/arrow-left-orange.svg");
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 600px) {
   .owl-prev {
-    margin-right: -15px;
+    margin-left: 15px;
+    opacity: 0.65;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    opacity: .65;
+    -webkit-transition: .3s all ease-in-out;
+    transition: .3s all ease-in-out;
   }
 }
 
@@ -565,7 +605,7 @@ header .nav__level2 {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   position: absolute;
-  bottom: 20%;
+  bottom: 16%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -574,15 +614,22 @@ header .nav__level2 {
   justify-content: center;
 }
 
+@media screen and (min-width: 800px) {
+  .header-quote-container {
+    bottom: 25%;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .header-quote-container {
-    bottom: 15%;
+    bottom: 19%;
   }
 }
 
 .header-quote {
   max-width: 1200px;
   z-index: 3;
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -642,25 +689,26 @@ header .nav__level2 {
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-top: 1em;
   display: block;
   clear: left;
   float: left;
-  max-width: 800px;
-  padding-left: 1em;
+  max-width: 600px;
+  padding-left: 1.5em;
   padding-right: 1em;
   text-shadow: rgba(0, 0, 0, 0.298039) 1px 1px 3px;
   letter-spacing: 0.75px;
-  font-size: .8em;
+  font-size: .7em;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   letter-spacing: .75px;
 }
 
 @media screen and (min-width: 800px) {
   .hero-image-partners {
-    padding-left: 1.5em;
+    padding-left: 1.9em;
     font-size: 0.9em;
+    max-width: 800px;
     font-size: .9em;
   }
 }
@@ -671,6 +719,7 @@ header .nav__level2 {
     font-size: 0.95em;
     line-height: 1.7;
     margin-top: 1.25em;
+    max-width: 1000px;
     font-size: .95em;
   }
 }
@@ -738,6 +787,10 @@ header .nav__level2 {
   }
 }
 
+.video-blurb {
+  max-width: 500px;
+}
+
 .vimeo-wrapper {
   display: block;
   position: relative;
@@ -762,12 +815,21 @@ header .nav__level2 {
   height: 100%;
   background-image: url(/assets/img/icons/video-play-orange.svg);
   background-size: 80px;
-  opacity: 0.95;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
   background-position: 50% 50%;
   background-repeat: no-repeat no-repeat;
   background: url(/assets/img/icons/video-play-orange.svg) no-repeat center center;
   background-size: 80px 80px;
-  opacity: .95;
+  opacity: .9;
+  -webkit-transition: .3s opacity ease-in-out;
+  transition: .3s opacity ease-in-out;
+}
+
+.video-blurb p {
+  margin-top: 0px;
+  margin-top: 0;
 }
 
 @media screen and (min-width: 970px) {
@@ -780,7 +842,7 @@ header .nav__level2 {
   }
 
   .video-blurb {
-    width: 49%;
+    width: 48%;
   }
 }
 
@@ -890,7 +952,7 @@ h1 {
 }
 
 .intro-sentence-header {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 600;
   padding-top: 0px;
   letter-spacing: 1px;
@@ -967,7 +1029,8 @@ li {
   width: 100%;
 }
 
-.owl-carousel .owl-nav.disabled {
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
   display: none;
 }
 
