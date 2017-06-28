@@ -10,13 +10,13 @@
 	</div>
 	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
 	<div class="intro-paragraph">{{entry.body}}</div>
-	<section class ="lets-try-this">
-			{% for entry in craft.entries.section('partners').featuredMediaPartner('1') %}
+	<section class ="section brand-grid-all">
+			{% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
 	  <div class = "media-partner-container-grid">
 			{% for asset in entry.heroImage %}
 				<a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
 			{% endfor %}
-			
+
 	    {% for asset in entry.logo %}
 	      <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
 	    {% endfor %}
@@ -27,9 +27,8 @@
 		{% endfor %}
 	</section>
 
-	<section class = "scroll-container">
-	<h2 class ="subhead calender-subhead">Calender & Events</h2>
-	<section class="calender-container calender-main">
+	<section class = "section scroll-container">
+	<h2 class ="subhead calender-subhead">Upcoming Media Partner Events</h2>
 	  <div class ="container-scroll-box">
 	  {% for entry in craft.entries.section('events').find() %}
 		  <div class="event-container">
@@ -47,6 +46,5 @@
 		      </div>
 				</div>
 			{% endfor %}
-	</section>
 	</section>
 	{% endblock %}

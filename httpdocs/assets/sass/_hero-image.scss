@@ -50,6 +50,7 @@
   color: white;
   margin-bottom: 1em;
   text-transform: uppercase;
+  font-weight: 500;
   @media screen and (min-width: 700px) {
       font-size: 2em;
   }
@@ -67,7 +68,6 @@
   display: inline-block;
   float:left;
   clear:both;
-  font-weight: 500;
 }
 
 .hero-image-partners {

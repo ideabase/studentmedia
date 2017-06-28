@@ -65,7 +65,7 @@
 	    <p class = "contact-phone">{{entry.phone}}</p>
 	    <p class = "contact-phone">{{entry.email}}</p>
 	</div>
-	
+
 
 	<div class="social-media">
 		<h2 class = "contact-name">Connect with {{entry.title}}</h2>
@@ -81,19 +81,19 @@
 </section>
 
 <section class="scroll-container">
-	<h2 class="subhead calender-subhead">Calendar & Events</h2>
+	<h2 class="subhead calender-subhead">Upcoming {{entry.title}} Events</h2>
 	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
-		<div class="event-container">
+	<div class="event-container">
 			<div class="date-box">
 				<div class="date">
-					<h4 class="date-style">test</h4>
+					<h4 class="date-style">{{entry.time|date("d")}}</h4>
 				</div>
 				<div class="month">
-					<h4 class="month-style">Test Month</h4>
+					<h4 class="month-style">{{entry.time|date("M")}}</h4>
 				</div>
 			</div>
 			<div class="event">
-				<h3 class="event-title">{{ entry.title }}</h3>
+				<h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 				<p class="event-words">{{entry.description}}</p>
 			</div>
 		</div>
