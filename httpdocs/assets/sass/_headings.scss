@@ -39,14 +39,12 @@ h1 {
 
 
   .subhead {
-    padding-top: 20px;
-    padding-bottom: 8px;
-    margin-top: 0px;
+    margin-top: 20px;
     font-weight: 600;
-    line-height: 1em;
+    line-height: 1.2;
     display: block;
     position: relative;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
     font-size: 1.5em;
     letter-spacing: .25px;
     text-transform: uppercase;
@@ -57,13 +55,13 @@ h1 {
   }
 
   .subhead::before{
-    height: 25px;
+    height: 100%;
     width: 45px;
     content: '';
     display:block;
     background: $lime-green;
     position: absolute;
-    bottom: 7px;
+    bottom: 0;
     left: -2.15em;
     @media screen and (min-width: 800px) {
       left: -2.5em;
@@ -80,6 +78,7 @@ h1 {
   margin-bottom: 0;
   color: $mandarin;
   margin-top: .5em;
+  line-height:1.2;
   text-transform: uppercase;
   @media screen and (min-width: 800px) {
     font-size: 1.8em;

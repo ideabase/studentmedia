@@ -7,7 +7,7 @@
 {% block content %}
 
 
-
+<section class="section">
   <div class = "page-header">
     <h1 class="head-line">{{entry.title}}</h1>
   </div>
@@ -19,7 +19,8 @@
         <a class="secondary-button app-button" href="{{ asset.url }}">View Media Kit</a>
     {% endfor %}
   {% endif %}
-
+</section>
+<section class="section">
 
   <h2 class="subhead">Platforms</h2>
   {% set categories = craft.categories.group('adFormat') %}
@@ -65,6 +66,8 @@
 		</div>
   {% endfor %}
 </div>
+</section>
+<section class="section">
 <h2 class="subhead">Creative Services</h2>
 {{entry.creativeServicesDescription}}
 
@@ -78,4 +81,6 @@
 {{adsales.phone}}
 </li>
 {% endfor %}
+</section>
+
 {% endblock %}

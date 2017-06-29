@@ -1,4 +1,4 @@
-.container-scroll-box {
+.events {
   margin-top: 1.5em;
   @media screen and (min-width: 600px){
     display: grid;
@@ -63,10 +63,10 @@
 }
 .event-title{
 margin-top: .5em;
-a {
-  color: $dark-blue;
-  text-decoration: none;
-}
+  a {
+    color: $dark-blue;
+    text-decoration: none;
+  }
 }
 
 .event-words {

@@ -7,10 +7,11 @@
 {% block content %}
 	<div class = "page-header">
 	<h1 class="head-line">{{entry.title}}</h1></div>
-
-	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-	<p class ="intro-paragraph">{{entry.body}}</p></div>
-
+	<section class="section">
+		<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+		<p class ="intro-paragraph">{{entry.body}}</p></div>
+	</section>
+	<section class="section">
 	{% for entry in craft.entries.section('boardMembers').find() %}
 	{% for asset in entry.files %}
 		<h2 class = "subhead">Student Media Board Guidelines</h2>
@@ -21,7 +22,8 @@
 		<div class="guidelines"> <a class="main-button guidelines-button" href="{{link.linkUrl}}" alt="{{link.linkName}}" />{{link.linkName}}</a></div>
 	{% endfor %}
 	{% endfor %}
-
+	</section>
+	<section class="section">
 	<h2 class = "subhead">Voting Members</h2>
 	<div class="voting-members">
 
@@ -34,7 +36,8 @@
 		{% endif %}
 	{% endfor %}
 	</div>
-
+</section>
+<section class="section">
 	<h2 class = "subhead">Non-Voting Members</h2>
 	 <div class="non-voting-members">
 		 <ul>
@@ -45,7 +48,8 @@
 	{% endfor %}
 	</ul>
 </div>
-
+</section>
+<section class="section">
 	<h2 class = "subhead">Meeting Minutes</h2>
 	<div class="meeting-minutes-container">
 	{% for entry in craft.entries.section('meetingMinutes').order('date') | reverse %}
@@ -62,5 +66,5 @@
 	</div>
 	{% endfor %}
 	{% endfor %}
-
+</section>
 {% endblock %}

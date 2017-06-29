@@ -4,8 +4,6 @@
 	{% include '_includes/hero.html' %}
 {% endblock %}
 
-
-
 {% block content %}
 
 <section class="section media-partner-about-container">
@@ -16,11 +14,8 @@
 		<div class="logo-about-page">
 			{%for asset in entry.coloredLogo %}
 			<img src ="{{asset.url}}" alt="asset.title" class="brand-logo"/>
-			</div>
 		{% endfor %}
-
-
-
+		</div>
 	<div class="title-paragraph-container">
 		<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
 		<p class="intro-paragraph">{{entry.body}}</p>
@@ -30,57 +25,74 @@
 			<a href="{{ ad.url }}"><button class="main-button media-partner-button">Advertise with {{ entry.title }}</button></a>
 			{% endfor %}
 		</div>
+		</div>
+		{% if entry.supplementalLinks |length %}
+		<div class="supplemental">
+		<h4>Related Links:</h4>
+			<ul class="supplemental-links">
+			{% for block in entry.supplementalLinks %}
+				<li><a href="{{block.linkUrl}}">{{block.linkName}}</a></li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
 </div>
-</div>
-
-
-{% for block in entry.supplementalLinks %}
-
-<a href="{{block.linkUrl}}"><h1>{{block.linkName}}</h1></a>
-
-{% endfor %}
 
 </section>
 
-<section class="section media-partner-contact-container">
-	<h2 class="subhead">Contact & Connect</h2>
-
-	<div class="media-partner-container">
-
-
+<section class="section">
+	<h2 class="subhead">Contact & Connect with {{ entry.title}}</h2>
+	<div class="media-partner-contact-container">
 		<div class="student-contact">
+		<h2 class="contact-name">Leadership</h2>
 		{% for entry in craft.entries.section('staff').relatedTo(entry).limit(2)%}
-		<h2 class="contact-name">{{entry.firstName}} {{entry.lastName}}</h2>
+		<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
 		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
-	    <p class = "contact-email"><a href="mailto:{{entry.email}}">{{entry.email}}</a></p>
-
+	  <a class="contact-email" href="mailto:{{entry.email}}">
+				{{entry.email}}
+			</a>
 		{% endfor %}
 		</div>
 
 
 	<div class="department-contact">
-	    <h2 class = "contact-name">{{entry.title}} Contact Information</h2>
-	    <p class = "contact-phone">{{entry.phone}}</p>
-	    <p class = "contact-phone">{{entry.email}}</p>
+	    <h2 class = "contact-name">General Questions</h2>
+				{% if entry.phone | length %}
+				<dl class="contact-list">
+			    <dt class="contact-label">P:</dt>
+					<dd class="contact-phone">{{entry.phone}}</dd>
+				</dl>
+				{% endif %}
+				{% if entry.email | length %}
+				<dl class="contact-list">
+			    <dt class="contact-label">E:</dt>
+					<dd class="contact-email">
+						<a href="{{entry.email}}"> {{entry.email}}</a>
+					</dd>
+				</dl>
+				{% endif %}
 	</div>
-
-
 	<div class="social-media">
-		<h2 class = "contact-name">Connect with {{entry.title}}</h2>
+		<h2 class = "contact-name">Social Media</h2>
+		<div class="social-media__icons">
 		{% for block in entry.socialMedia %}
 		    {% if block.type == "socialMediaBlock" %}
-		        <a href= "{{block.address}}">{{ block.socialName }}</a>
+		        <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
 		    {% endif %}
 		{% endfor %}
+		</div>
 	</div>
 </div>
 
 
 </section>
 
+{% set events = craft.entries.section('events').relatedTo(entry) %}
+{% if events|length %}
 <section class="section scroll-container">
 	<h2 class="subhead calender-subhead">Upcoming {{entry.title}} Events</h2>
-	{% for entry in craft.entries.section('events').relatedTo(entry).limit(4)%}
+	<div class="events">
+	{% for entry in events.limit(4)%}
 	<div class="event-container">
 			<div class="date-box">
 				<div class="date">
@@ -96,29 +108,7 @@
 			</div>
 		</div>
 	{% endfor %}
+	</div>
 </section>
-</section>
-
-
-
-
-
-<!--{% for asset in entry.logo %}
-	<img src="{{asset.url}}" alt="{{asset.title}}" />
-{% endfor %}
-
-
-<h2>Student Leader</h2>
-{% for entry in craft.entries.section('staff').relatedTo(entry).limit(4)%}
-{{entry.firstName}}
-{{entry.lastName}}
-{{entry.phone}}
-{{entry.email}}
-{% endfor %}
-
-{% for ad in craft.entries.section('ad').relatedTo(entry) %}
-	<a href="{{ad.url}}">Advertise With Us</a>
-{% endfor %} -->
-</section>
-</main>
+{% endif %}
 {% endblock %}
