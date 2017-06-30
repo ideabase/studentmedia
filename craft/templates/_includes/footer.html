@@ -33,9 +33,11 @@
 <footer>
   <nav class="footer-navigation">
     <ul class="footer-content-list">
-    {% for node in nav %}
-          {{ _self.addNodeToNavigation(node, loop.index) }}
-      {% endfor %}
+      {% cache globally %}
+        {% for node in nav %}
+              {{ _self.addNodeToNavigation(node, loop.index) }}
+        {% endfor %}
+      {% endcache %}
     </ul>
   </nav>
   <div class ="bottom-box-footer__container">

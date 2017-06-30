@@ -14,7 +14,9 @@
         {% endfor %}
       </section>
 			<nav id="nav" class="out">
-        {{ craft.amNav.getNav("mainMenu") }}
+        {% cache %}
+          {{ craft.amNav.getNav("mainMenu") }}
+        {% endcache %}
 			</nav>
   </div>
 </header>

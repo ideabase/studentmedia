@@ -7,6 +7,7 @@
  {% block hero %}
    <section class="hero-image">
      <div class="home-carousel owl-carousel">
+       {% cache %}
        {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
           <picture>
@@ -16,7 +17,9 @@
         	</picture>
         </div>
        {% endfor %}
+       {% endcache %}
     </div>
+    {% cache %}
     <div class="header-quote-container">
        <div class="header-quote">
          <h1 class = "hero-image-caption">
@@ -31,6 +34,7 @@
           </div>
        </div>
     </div>
+    {% endcache %}
   </section>
  {% endblock %}
  {% block content %}
@@ -53,6 +57,7 @@
   </section>
 
   <section class = "section outside-div-container-brands">
+    {% cache %}
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
     {% set extraEntry = (entryNum/2) %}
     {# Gets all entries, and then indexes a certain entry #}
@@ -113,7 +118,7 @@
         {% endif %}
         {% endfor %}
       </div>
-
+      {% endcache %}
   </section>
 
       <section class = "section statistics-container">
