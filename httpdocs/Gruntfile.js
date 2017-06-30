@@ -10,7 +10,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-        'assets/css/style.css': 'assets/sass/style.scss'
+        'assets/css/style.css': 'assets/sass/style.scss',
+        '../craft/templates/_includes/critical-home.css': '../craft/templates/_includes/critical-home.css'
         }
       }
     },
@@ -18,12 +19,13 @@ module.exports = function(grunt) {
       home: {
         options: {
           url: "http://studentmedia.web/index.php",
-                width: 1200,
-                height: 900,
+                width: 1500,
+                height: 1200,
                 outputfile: "../craft/templates/_includes/critical-home.css",
                 filename: "assets/css/style.css", // Using path.resolve( path.join( ... ) ) is a good idea here
                 buffer: 800*1024,
-                ignoreConsole: true
+                ignoreConsole: true,
+                restoreFontFaces: true
         }
       },
     },

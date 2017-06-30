@@ -11,7 +11,8 @@
         <div class="hero-image-home">
           <picture>
         		<source srcset="{{ asset.url('hero') }}" media="(min-width: 800px)">
-        		<img src="{{ asset.url('heroSmall') }}" alt="asset.title" />
+            <source srcset="{{ asset.url('heroSmall') }}" media="(min-width: 550px)">
+        		<img src="{{ asset.url('heroImageSmallest') }}" alt="asset.title" />
         	</picture>
         </div>
        {% endfor %}

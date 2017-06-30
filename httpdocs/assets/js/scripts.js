@@ -2,15 +2,11 @@
 
 $(document).ready(function() {
 
-	$('.home-carousel').owlCarousel({
-	    items:1,
-			autoplay:true,
-			center: true,
-			loop: true,
-			smartSpeed: 1500,
-	});
-
 	$('.brand-logo-grid').owlCarousel({
+			items:5,
+			nav: true,
+			loop: true,
+			center: true,
 	    responsive: {
           0:{
               items:3,
@@ -33,6 +29,15 @@ $(document).ready(function() {
 	        },
 	    }
 	});
+
+	$('.home-carousel').owlCarousel({
+	    items:1,
+			autoplay:true,
+			center: true,
+			loop: true,
+			smartSpeed: 1500,
+	});
+
 
 });
 
