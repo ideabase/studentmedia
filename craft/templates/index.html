@@ -7,7 +7,6 @@
  {% block hero %}
    <section class="hero-image">
      <div class="home-carousel owl-carousel">
-       {% cache %}
        {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
           <picture>
@@ -17,7 +16,6 @@
         	</picture>
         </div>
        {% endfor %}
-       {% endcache %}
     </div>
     {% cache %}
     <div class="header-quote-container">
