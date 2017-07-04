@@ -85,14 +85,14 @@
           {% if entry.heroImage | length %}
 
             {% for asset in entry.heroImage %}
-              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
+              <a href="{{entry.url}}" class="lazy media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
             {% endfor %}
 
             {% for asset in entry.logo %}
               <noscript>
                 <img src="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="brand-logo">
               </noscript>
-              <img data-original="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="lazy brand-logo" />
+              <img data-src="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="lazy brand-logo" />
             {% endfor %}
 
           {% endif %}

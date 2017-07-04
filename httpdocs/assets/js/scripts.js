@@ -1,16 +1,10 @@
 // Lazy load below fold images
 
 $(function() {
-    $("img.lazy").lazyload({
-			event : "delay"
-		});
-});
-
-$(window).bind("load", function() {
-    var timeout = setTimeout(function() {
-        $("img.lazy").trigger("delay")
-    }, 2000);
-});
+        $('.lazy').lazy({
+            delay: 3000
+        });
+    });
 
 // Wrap all JQuery functions in this function, which will pause execution until the document is ready.  No need to repeat these. //
 $(document).ready(function() {
@@ -30,26 +24,24 @@ $(document).ready(function() {
 			items:5,
 			nav: true,
 			loop: true,
-			center: true,
+			center: false,
 	    responsive: {
           0:{
               items:3,
               nav: true,
               loop: true,
-							center: true,
 
           },
 	        600:{
 	            items:4,
 							nav: true,
 							loop: true,
-							center: true,
 	        },
           900:{
 	            items:5,
 							nav: true,
 							loop: true,
-							center: true,
+							center: false,
 	        },
 	    }
 		}, 3000);
