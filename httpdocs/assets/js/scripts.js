@@ -2,7 +2,7 @@
 
 $(function() {
         $('.lazy').lazy({
-            threshold: 100
+            threshold: 300
         });
     });
 

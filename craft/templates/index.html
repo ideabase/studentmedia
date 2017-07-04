@@ -55,7 +55,6 @@
   </section>
 
   <section class = "section outside-div-container-brands">
-    {% cache %}
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
     {% set extraEntry = (entryNum/2) %}
     {# Gets all entries, and then indexes a certain entry #}
@@ -85,7 +84,7 @@
           {% if entry.heroImage | length %}
 
             {% for asset in entry.heroImage %}
-              <a href="{{entry.url}}" class="lazy media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
+              <a href="{{entry.url}}" class="lazy media-partner" data-src="{{asset.url('mediaPartnerIcon')}}" {# style="background-image:url('{{asset.url('mediaPartnerIcon')}}');" #}>
             {% endfor %}
 
             {% for asset in entry.logo %}
@@ -102,7 +101,7 @@
              {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
 
              {% for asset in newww.heroImage %}
-              <a href="{{newww.url}}" class="media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
+              <a href="{{newww.url}}" class="lazy media-partner" data-src="{{asset.url('mediaPartnerIcon')}}" {# style="background-image:url('{{asset.url('mediaPartnerIcon')}}');" #}>
               {% endfor %}
               {% for asset in newww.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
@@ -119,7 +118,6 @@
         {% endif %}
         {% endfor %}
       </div>
-      {% endcache %}
   </section>
 
       <section class = "section statistics-container">
