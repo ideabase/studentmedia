@@ -11,7 +11,6 @@ return array(
   '*' => array(
 	       'extraAllowedFileExtensions' => 'eps',
          'siteUrl' => 'https://kentstatestudentmedia.com',
-         'generateTransformsBeforePageLoad' => true,
          'enableCsrfProtection' => true,
          'omitScriptNameInUrls' => true,
          'cpTrigger' => 'admin',

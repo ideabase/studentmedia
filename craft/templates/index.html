@@ -10,7 +10,7 @@
        {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
           <picture>
-        		<source srcset="{{ asset.url('hero') }}" media="(min-width: 800px)">
+        		<source srcset="{{ asset.url('hero') }}" media="(min-width: 1000px)">
             <source srcset="{{ asset.url('heroSmall') }}" media="(min-width: 550px)">
         		<img src="{{ asset.url('heroImageSmallest') }}" width="asset.width" height="asset.height" alt="asset.title" />
         	</picture>
