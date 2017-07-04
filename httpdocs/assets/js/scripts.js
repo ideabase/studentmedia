@@ -1,7 +1,9 @@
 // Lazy load below fold images
 
 $(function() {
-        $('.lazy').Lazy();
+        $('.lazy').lazy({
+            threshold: 100
+        });
     });
 
 // Wrap all JQuery functions in this function, which will pause execution until the document is ready.  No need to repeat these. //
