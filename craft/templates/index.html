@@ -10,9 +10,9 @@
        {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
           <picture>
-        		<source srcset="{{ asset.url('hero') }}" media="(min-width: 1000px)">
-            <source srcset="{{ asset.url('heroSmall') }}" media="(min-width: 550px)">
-        		<img src="{{ asset.url('heroImageSmallest') }}" width="asset.width" height="asset.height" alt="asset.title" />
+        		<source srcset="{{ asset.getUrl('hero') }}" media="(min-width: 1000px)">
+            <source srcset="{{ asset.getUrl('heroSmall') }}" media="(min-width: 550px)">
+        		<img src="{{ asset.getUrl('heroImageSmallest') }}" width="asset.width" height="asset.height" alt="asset.title" />
         	</picture>
         </div>
        {% endfor %}
@@ -85,11 +85,14 @@
           {% if entry.heroImage | length %}
 
             {% for asset in entry.heroImage %}
-              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
+              <a href="{{entry.url}}" class="media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
             {% endfor %}
 
             {% for asset in entry.logo %}
-              <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+              <noscript>
+                <img src="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="brand-logo">
+              </noscript>
+              <img data-original="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="lazy brand-logo" />
             {% endfor %}
 
           {% endif %}
@@ -99,7 +102,7 @@
              {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
 
              {% for asset in newww.heroImage %}
-              <a href="{{newww.url}}" class="media-partner" style="background-image:url('{{asset.url('mediaPartnerIcon')}}');">
+              <a href="{{newww.url}}" class="media-partner" style="background-image:url('{{asset.getUrl('mediaPartnerIcon')}}');">
               {% endfor %}
               {% for asset in newww.logo %}
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />

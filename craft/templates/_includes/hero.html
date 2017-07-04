@@ -2,15 +2,15 @@
   {% for asset in entry.heroImage %}
     {% if asset.imageCropDirection == "centerCenter" %}
       <picture>
-          <source srcset="{{ asset.url('hero') }}" media="(min-width: 1500px)">
-          <source srcset="{{ asset.url('heroShort') }}" media="(min-width: 700px)">
-          <img class="secondary-image" src="{{ asset.url('heroSmall') }}" alt="asset.title" />
+          <source srcset="{{ asset.getUrl('hero') }}" media="(min-width: 1500px)">
+          <source srcset="{{ asset.getUrl('heroShort') }}" media="(min-width: 700px)">
+          <img class="secondary-image" src="{{ asset.getUrl('heroSmall') }}" alt="asset.title" />
       </picture>
     {% else %}
     <picture>
-        <source srcset="{{ asset.url('hero') }}" media="(min-width: 1500px)">
-        <source srcset="{{ asset.url('heroShortTop') }}" media="(min-width: 700px)">
-        <img class="secondary-image" src="{{ asset.url('heroSmall') }}" alt="asset.title" />
+        <source srcset="{{ asset.getUrl('hero') }}" media="(min-width: 1500px)">
+        <source srcset="{{ asset.getUrl('heroShortTop') }}" media="(min-width: 700px)">
+        <img class="secondary-image" src="{{ asset.getUrl('heroSmall') }}" alt="asset.title" />
     </picture>
     {% endif %}
   {% endfor %}

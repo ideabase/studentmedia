@@ -1,3 +1,17 @@
+// Lazy load below fold images
+
+$(function() {
+    $("img.lazy").lazyload({
+			event : "delay"
+		});
+});
+
+$(window).bind("load", function() {
+    var timeout = setTimeout(function() {
+        $("img.lazy").trigger("delay")
+    }, 2000);
+});
+
 // Wrap all JQuery functions in this function, which will pause execution until the document is ready.  No need to repeat these. //
 $(document).ready(function() {
 
@@ -11,6 +25,7 @@ $(document).ready(function() {
 			smartSpeed: 1500,
 	});
 
+	setTimeout(function() {
 	$('.brand-logo-grid').owlCarousel({
 			items:5,
 			nav: true,
@@ -37,6 +52,7 @@ $(document).ready(function() {
 							center: true,
 	        },
 	    }
+		}, 3000);
 	});
 
 	// Sticky Navigation //
