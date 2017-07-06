@@ -50,7 +50,7 @@
   <div class="student-leader">
     <h2 class="student-leader-contact">{{entry.firstName}} {{entry.lastName}}</h2>
     <h5 class="student-leader-title">{{entry.jobTitle}}</h5>
-    <p class="student-leader-email">{{entry.email}}</p>
+    <a href="mailto:{{entry.email}}" class="student-leader-email">{{entry.email}}</a>
   </div>
 {% endif %}
 {% endfor %}

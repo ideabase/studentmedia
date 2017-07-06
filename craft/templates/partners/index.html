@@ -30,7 +30,7 @@
 	<section class = "section scroll-container">
 	<h2 class ="subhead calender-subhead">Upcoming Media Partner Events</h2>
 	  <div class ="events">
-	  {% for entry in craft.entries.section('events').find() %}
+	  {% for entry in craft.entries.section('events').order('date') | reverse %}
 		  <div class="event-container">
 		      <div class="date-box">
 		        <div class="date">
