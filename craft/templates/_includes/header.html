@@ -10,7 +10,9 @@
           </a>
         {% endfor %}
         {% for asset in header.smallLogo %}
-          <img class = "header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+          <a href= "{{siteUrl}}index.php">
+            <img class = "header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+          </a>
         {% endfor %}
       </section>
 			<nav id="nav" class="out">
