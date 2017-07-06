@@ -30,6 +30,8 @@
                             {% endfor %}
                         </tbody>
                     </table>
+            
+            <p>{{block.adDescription}}</p>
             {% for block in entry.adUnit.type('adBundle') %}
 
             {% for asset in block.bundleImage %}
@@ -37,7 +39,6 @@
     {% endfor %}
 {% endfor %}
 
-            <p>{{block.adDescription}}</p>
             <a href="#">
                 <button class="main-button media-partner-button">View Examples </button>
             </a>
