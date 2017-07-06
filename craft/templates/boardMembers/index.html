@@ -12,12 +12,14 @@
 		<p class ="intro-paragraph">{{entry.body}}</p></div>
 	</section>
 	<section class="section">
+
+	<h2 class = "subhead">Student Media Board Guidelines</h2>
 	{% for entry in craft.entries.section('boardMembers').find() %}
 	{% for link in entry.supplementalLinks %}
 		<div class="guidelines"> <a class="main-button guidelines-button" href="{{link.linkUrl}}" alt="{{link.linkName}}" />{{link.linkName}}</a></div>
 	{% endfor %}
+
 	{% for asset in entry.files %}
-		<h2 class = "subhead">Student Media Board Guidelines</h2>
 		<div class="guidelines"> <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Student Media Guidelines (PDF)</a></div>
 	{% endfor %}
 	{% endfor %}

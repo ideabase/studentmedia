@@ -16,15 +16,13 @@
 {% for block in entry.fundraiser.type('fundraiserInfo') %}
 	<h1>{{block.fundraiserTitle}}</h1>
 	<p>{{block.description}}</p>
-	<button class="secondary-button app button">{{block.linkName}}<a href="{{block.linkUrl}}"</a>
+	<a href="{{block.linkUrl}}" class="secondary-button app button">{{block.linkName}}</a>
 
-	{% for image in entry.fundraiser.type('image') %}
-		<img src="{{image.url}}">
+	{% for asset in block.fundraiserImage %}
+	<img src="{{asset.url}}" alt="Hi"/>
 	{% endfor %}
 
-
-
-
 {% endfor %}
+
 </section>
 {% endblock %}
