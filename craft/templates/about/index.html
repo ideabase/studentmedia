@@ -27,6 +27,12 @@
 	{% for entry in craft.entries.section('recognition').limit(5).find() %}
 		<article>
 			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>
+			{% for name in entry.associatedMediaPartners %}
+				<h3> {{name.title}} </h1>
+			{% endfor %}
+			<h4>{{entry.postDate}}</h2>
+
+
 			<br>
 			<!-- <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3> Old !-->
 			{{ entry.description }}

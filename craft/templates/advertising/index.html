@@ -57,6 +57,12 @@
 									<ul class="advertising-price-list">
 											<li class="bold-info">{{ block.bundlePrice }}</li>
 									</ul>
+
+
+            				{% for asset in block.bundleImage %}
+    						<img src="{{asset.url}}" alt="Hi"/>
+    							{% endfor %}
+
 								</div>
 								{% endif %}
 							{% endfor %}
