@@ -30,6 +30,12 @@
                             {% endfor %}
                         </tbody>
                     </table>
+            {% for block in entry.adUnit.type('adBundle') %}
+
+            {% for asset in block.bundleImage %}
+    <img src="{{asset.url}}" alt="Hi"/>
+    {% endfor %}
+{% endfor %}
 
             <p>{{block.adDescription}}</p>
             <a href="#">
