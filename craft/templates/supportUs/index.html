@@ -17,6 +17,14 @@
 	<h1>{{block.fundraiserTitle}}</h1>
 	<p>{{block.description}}</p>
 	<button class="secondary-button app button">{{block.linkName}}<a href="{{block.linkUrl}}"</a>
+
+	{% for image in entry.fundraiser.type('image') %}
+		<img src="{{image.url}}">
+	{% endfor %}
+
+
+
+
 {% endfor %}
 </section>
 {% endblock %}
