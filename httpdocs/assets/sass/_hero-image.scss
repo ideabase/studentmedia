@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 22%;
+  bottom: 20%;
   @media screen and(min-width: 400px){
     bottom: 18%;
   }
@@ -31,7 +31,7 @@
     bottom: 16%;
   }
   @media screen and(min-width: 800px){
-    bottom: 25%;
+    bottom: 20%;
   }
   @media screen and(min-width: 1200px){
     bottom: 19%;
@@ -79,7 +79,7 @@
 
 .hero-image-caption__level {
   background-color: rgba($dark-blue,.85);
-  padding: 0 .5em .1em .7em;
+  padding: .15em .5em .25em .7em;
   display: inline-block;
   float:left;
   clear:both;
@@ -92,11 +92,14 @@
   &:nth-child(3) {
     animation-delay: .65s;
   }
+  @media screen and (min-width: 800px) {
+    padding: 0 .5em .1em .7em;
+  }
 }
 
 .hero-image-partners {
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: .5em;
   margin-top: 1em;
@@ -147,7 +150,7 @@
   position: relative;
   max-height: 600px;
   overflow: hidden;
-  min-height: 600px;
+  min-height: 400px;
   animation-name: fadeIn;
   animation-duration: .5s;
   animation-fill-mode: both;
