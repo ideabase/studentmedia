@@ -118,10 +118,12 @@ $(document).ready(function() {
 	});
 
 // Drop Down Staff Profiles //
-	var $menuTrigger = $('.leader');
-	$menuTrigger.click(function(e) {
+	var $staffTrigger = $('.leader');
+	$staffTrigger.click(function(e) {
+    e.stopImmediatePropagation();
 		var $this = $(this);
 		$this.toggleClass('active');
+    $('.leader').not($(this)).removeClass('active');
     return false;
 	});
 
