@@ -5,15 +5,17 @@
 <div class = "page-header page-header--no-image">
 	<h1 class="head-line">Advertise with {{entry.title}}</h1>
 </div>
-{% for block in entry.adUnit %}
-<h2 class="subhead first-subhead">{{block.adType}}</h2>
-{% endfor %}
+
 <section class="advertising-body-container">
         <section class="advertising-column">
+
+					{% for block in entry.adUnit.limit(3) %}
+
+							{% if block.type == "adUnits" %}
+							<h2 class="subhead first-subhead">{{block.adType}}</h2>
+
             <div class="advertising-content">
 
-                {% for block in entry.adUnit.limit(3) %}
-                    {% if block.type == "adUnits" %}
                     <table class="advertising-matrix">
                             <tbody>
                         <tr>
