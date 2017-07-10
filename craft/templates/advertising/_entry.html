@@ -5,8 +5,9 @@
 <div class = "page-header page-header--no-image">
 	<h1 class="head-line">Advertise with {{entry.title}}</h1>
 </div>
-<h2 class="subhead first-subhead">Display Ads</h2>
-
+{% for block in entry.adUnit %}
+<h2 class="subhead first-subhead">{{block.adType}}</h2>
+{% endfor %}
 <section class="advertising-body-container">
         <section class="advertising-column">
             <div class="advertising-content">
@@ -30,7 +31,7 @@
                             {% endfor %}
                         </tbody>
                     </table>
-            
+
             <p>{{block.adDescription}}</p>
             {% for block in entry.adUnit.type('adBundle') %}
 
