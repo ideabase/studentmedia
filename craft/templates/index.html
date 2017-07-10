@@ -137,7 +137,7 @@
 
 
       <div class = "statistics-box-flex-container">
-            {% for entry in craft.entries.section('statistics') %}
+            {% for entry in craft.entries.section('statistics').limit(3).order('RAND()') %}
               <div class = "statistics-box">
                 <div class = "statistics-number">
                   <h3 class = "big-number">{{ entry.title }}</h3>
