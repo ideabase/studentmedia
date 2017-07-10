@@ -42,13 +42,23 @@
 	<h2 class = "subhead">Non-Voting Members</h2>
 	 <div class="non-voting-members">
 		 <ul>
-	{% for entry in craft.entries.section('staff').order('lastName') %}
-		{% if entry.employeeType.contains('nonVoting') %}
-			<li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
-		{% endif %}
+	{% for entry in craft.entries.section('staff') %}
+
+
+	{% if entry.employeeType.contains('director') %}
+		<li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
+	{% endif %}
+	{% endfor %}
+
+{% for entry in craft.entries.section('staff').order('lastName') %}
+	{% if entry.employeeType.contains('nonVoting') and not entry.employeeType.contains('director') %}
+	<li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
+	{% endif %}
+
 	{% endfor %}
 	</ul>
 </div>
+
 </section>
 <section class="section">
 	<h2 class = "subhead">Meeting Documents</h2>
