@@ -46,11 +46,13 @@
 		<div class="student-contact">
 		<h2 class="contact-name">Leadership</h2>
 		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
+		{% if entry.employeeType.contains('studentMediaLeader') %}
 		<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
 		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
 	  <a class="contact-email" href="mailto:{{entry.email}}">
 				{{entry.email}}
 			</a>
+		{% endif %}
 		{% endfor %}
 		</div>
 
