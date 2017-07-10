@@ -62,14 +62,14 @@
 				{% if entry.phone | length %}
 				<dl class="contact-list">
 			    <dt class="contact-label">P:</dt>
-					<dd class="contact-phone">AD PHONE NUMBER</dd>
+					<dd class="contact-phone">{{advertisingContact.phone}}</dd>
 				</dl>
 				{% endif %}
 				{% if entry.email | length %}
 				<dl class="contact-list">
 			    <dt class="contact-label">E:</dt>
 					<dd class="contact-email">
-						<a href="{{entry.email}}"> AD EMAIL</a>
+						<a href="{{entry.email}}">{{advertisingContact.email}}</a>
 					</dd>
 				</dl>
 				{% endif %}
