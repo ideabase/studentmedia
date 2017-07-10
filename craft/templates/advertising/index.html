@@ -34,12 +34,25 @@
 			          <div class = "platform-content">
 			            <h2 class="platform-content-header">{{ entry.title }}</h2>
 			            <p class="platform-description">{{entry.shortDescription}}</p>
-					          {# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
+
+									{% for block in craft.entries.section('ad').relatedTo(entry) %}
+									{% for asset in block.adUnit %}
+									{% for image in asset.exampleImage %}
+									{% if image %}
+									<a class="secondary-button ad-button" href="{{ image.url }}" alt="{{image.title}}">View Example</a>
+									{% endif %}
+									{% endfor %}
+									{% endfor %}
+									{% endfor %}
+
+										{# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
 					          <div class="platform-content">
 					            <h4 class="testimonial">{{quote.quote}}</h4>
 					            <p class="testimonial-name">{{quote.quotee}}</p>
 					          </div>
 					          {% endfor %} #}
+
+
 					          {% for ad in craft.entries.section('ad').relatedTo(entry) %}
 					              <a class="secondary-button ad-button" href="{{ ad.url }}">View Advertising Options</a>
 					          {% endfor %}
@@ -60,7 +73,7 @@
 
 
             				{% for asset in block.bundleImage %}
-    						<img src="{{asset.url}}" alt="Hi"/>
+    						<img src="{{asset.url}}" alt="{{asset.title}}"/>
     							{% endfor %}
 
 								</div>
