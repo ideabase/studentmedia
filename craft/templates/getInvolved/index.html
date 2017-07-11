@@ -16,31 +16,37 @@
 		{% endfor %}
 </section>
 <section class="section">
+
 <h2 class = "subhead">Student Employee Opportunities</h2>
   <section class="student-employee-container">
-    {% for block in entry.studentEmployeeOpportunities%}
-	   {% if block.type == "employeeOpportunities" %}
-      <div class="job-opening-container">
-        <div class="mediapartner-name">
-          <h2 class="mediapartner-type">{{block.hiring}}</h2>
-        </div>
 
+    {% for partner in craft.entries.section('partners') %}
+			{% for job in craft.entries.section('jobs').relatedTo(partner) %}
+				<div class="job-opening-container">
+	        <div class="mediapartner-name">
+	          <h2 class="mediapartner-type">{{partner.title}}</h2>
+	        </div>
+			{% endfor %}
+
+		{% for job in craft.entries.section('jobs').relatedTo(partner) %}
       <div class="position-name-contact-container">
       <div class="position-opening">
-        <h4 class="position-name">{{block.position}}</h4>
-        <p class="opening-description">{{block.positionDescription}}</p>
+        <h4 class="position-name">{{job.title}}</h4>
+        <p class="opening-description">{{job.body}}</p>
       </div>
+			{% endfor %}
 
+			{% for job in craft.entries.section('jobs').relatedTo(partner) %}
       <div class="position-contact">
         <h4 class="contact">Contact:</h4>
-        <p class="contact-name-title">{{block.contactInformation}}</p>
-        <a class="email" href="mailto:someone@example.com" target="_top">{{block.contactEmail}}</a>
+        <p class="contact-name-title">{{job.phone}}</p>
+        <a class="email" href="mailto:someone@example.com" target="_top">{{job.email}}</a>
           <button class = "secondary-button app-button">Application Form</button>
       </div>
     </div>
   </div>
-  {%endif%}
-  {%endfor%}
+	{% endfor %}
+  {% endfor %}
 </section>
 </section>
 
