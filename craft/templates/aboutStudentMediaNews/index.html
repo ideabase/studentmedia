@@ -13,26 +13,32 @@
 	<h2 class="intro-sentence-header">{{entry.aboutStudentMediaSubheader}}</h2>
 	<p class="intro-paragraph">{{entry.body}}</p>
 	<h2 class="subhead">{{entry.newsSubheader}}</h2>
-	
+
 	<section class="about-news-flex-container">
 	{% for entry in craft.entries.section('news').limit(3) %}
 			<div class="news-stories-content">
-					{% for asset in entry.image %}
+					{% for asset in entry.heroImage %}
+					{% if asset %}
 						<div class="news-image-container">
-				<img class="news-story-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}" />
-				</div>
+						<img class="news-story-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}" />
+						</div>
+						{% endif %}
 					{% endfor %}
+
 			<div class="news-story-description-container">
 				<h4 class="general-header"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
 
 				<p class="news-story-description">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+				{% set paragraphs = entry.body|split('</p>') %}
+				{% set firstParagraph = paragraphs|first ~'</p>'%}
+				<p class="news-story-description">{{ firstParagraph|raw}}</p>
 
-				<p class="news-story-description">{{ entry.body}}
-				</p>
+
+
 			</div>
-		</div>	
-</div>
-{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
 </section>
 
 	<a href="/news">View Past News Stories</a>
