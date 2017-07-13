@@ -29,6 +29,11 @@
     	<div class="link platform-dropdown">
 				<h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
 				<div class="submenu">
+
+					<div class = "platform-content-container">
+					<h1>{{category.description}}</h1>
+					</div>
+
 					<div class = "platform-content-container">
     			{% for entry in craft.entries.section('partners').relatedTo(category) %}
 			          <div class = "platform-content">
