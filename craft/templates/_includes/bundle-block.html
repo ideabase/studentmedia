@@ -1,0 +1,23 @@
+{% if category.title == "Bundles" %}
+  {% for entry in craft.entries.section('ad') %}
+    {% for block in entry.adUnit %}
+      {% if block.type == "adBundle" %}
+        <div class = "platform-content">
+        <h2 class="platform-content-header">{{block.bundleName}}</h2>
+        <ul class="advertising-content-list">
+            <li>{{ block.bundleDescription }}</li>
+        </ul>
+        <ul class="advertising-price-list">
+            <li class="bold-info">{{ block.bundlePrice }}</li>
+        </ul>
+
+
+          {% for asset in block.bundleImage %}
+      <img src="{{asset.url}}" alt="{{asset.title}}"/>
+        {% endfor %}
+
+      </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}

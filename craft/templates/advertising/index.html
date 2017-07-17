@@ -6,12 +6,10 @@
 
 {% block content %}
 
-
 <section class="section">
   <div class = "page-header">
     <h1 class="head-line">{{entry.title}}</h1>
   </div>
-
   <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
   <div class="intro-paragraph">{{entry.body}}</div>
   {% if entry.mediaKit | length %}
@@ -20,91 +18,42 @@
     {% endfor %}
   {% endif %}
 </section>
-<section class="section">
 
+<section class="section">
   <h2 class="subhead">Ad Platforms</h2>
   {% set categories = craft.categories.group('adFormat') %}
   {% for category in categories %}
     <div id="accordion" class="accordion">
     	<div class="link platform-dropdown">
-				<h4 class = "advertising-platform-headers">{{category.title}}</h4></div>
-				<div class="submenu">
-
-					<div class = "platform-content-container">
-					<h1>{{category.description}}</h1>
-					</div>
-
-					<div class = "platform-content-container">
-    			{% for entry in craft.entries.section('partners').relatedTo(category) %}
-			          <div class = "platform-content">
-			            <h2 class="platform-content-header">{{ entry.title }}</h2>
-			            <p class="platform-description">{{entry.shortDescription}}</p>
-
-									{% for block in craft.entries.section('ad').relatedTo(entry) %}
-									{% for asset in block.adUnit %}
-									{% for image in asset.exampleImage %}
-									{% if image %}
-									<a class="secondary-button ad-button" href="{{ image.url }}" alt="{{image.title}}">View Example</a>
-									{% endif %}
-									{% endfor %}
-									{% endfor %}
-									{% endfor %}
-
-										{# {% for quote in craft.entries.section('testimonials').relatedTo(category )%}
-					          <div class="platform-content">
-					            <h4 class="testimonial">{{quote.quote}}</h4>
-					            <p class="testimonial-name">{{quote.quotee}}</p>
-					          </div>
-					          {% endfor %} #}
-
-
-					          {% for ad in craft.entries.section('ad').relatedTo(entry) %}
-					              <a class="secondary-button ad-button" href="{{ ad.url }}">View Advertising Options</a>
-					          {% endfor %}
-          		</div>
-    			{% endfor %}
-					{% if category.title == "Bundles" %}
-						{% for entry in craft.entries.section('ad') %}
-							{% for block in entry.adUnit %}
-								{% if block.type == "adBundle" %}
-									<div class = "platform-content">
-									<h2 class="platform-content-header">{{block.bundleName}}</h2>
-									<ul class="advertising-content-list">
-											<li>{{ block.bundleDescription }}</li>
-									</ul>
-									<ul class="advertising-price-list">
-											<li class="bold-info">{{ block.bundlePrice }}</li>
-									</ul>
-
-
-            				{% for asset in block.bundleImage %}
-    						<img src="{{asset.url}}" alt="{{asset.title}}"/>
-    							{% endfor %}
-
-								</div>
-								{% endif %}
-							{% endfor %}
-						{% endfor %}
-					{% endif %}
+				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
+			</div>
+			<div class="submenu">
+				<div class = "platform-content-container">
+					<p>{{category.description}}</p>
 				</div>
-		</div>
+				<div class = "platform-content-container">
+					<!-- Display all "Ad" entries related to these categories-->
+					{% include '_includes/ad-block.html' %}
+					<!-- Display all "Ad" entries that are Bundles-->
+					{% include '_includes/bundle-block.html' %}
+					<!-- Display all "Ad" entries related to Creative Services -->
+					{% include '_includes/creative-block.html' %}
+				</div>
+			</div>
   {% endfor %}
-</div>
+		</div>
 </section>
+
 <section class="section">
-<h2 class="subhead">Creative Services</h2>
-{{entry.creativeServicesDescription}}
-
-
 {% for adsales in craft.entries.slug('student-media-ad-sales') %}
-<ul class="advertising-contact-list">
-<li>For any questions about advertising with Student Media, please contact:</li>
-<li>
-{{advertisingContact.email}}
-<br>
-{{advertisingContact.phone}}
-</li>
-{% endfor %}
+	<ul class="advertising-contact-list">
+		<li>For any questions about advertising with Student Media, please contact:</li>
+		<li>
+		{{advertisingContact.email}}
+		<br>
+		{{advertisingContact.phone}}
+		</li>
+	</ul>
+	{% endfor %}
 </section>
-
 {% endblock %}
