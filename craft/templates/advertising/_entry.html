@@ -83,7 +83,12 @@
   <li>{{advertisingContact.email}}</li>
 	<li>{{advertisingContact.phone}}</li>
   <li>OR</li>
-  <li>Download our Media Kit PDF for more info, <a href="#">here (NEEDS ADDED)</a></li>
+
+	{% for asset in craft.entries.section('advertising') %}
+	{% for media in asset.mediaKit %}
+	<li>Download our Media Kit PDF for more info, <a href="{{media.url}}">here.</a></li>
+	{% endfor %}
+	{% endfor %}
 </ul>
 {% endfor %}
 </section>
