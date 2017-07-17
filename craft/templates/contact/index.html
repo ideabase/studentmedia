@@ -16,9 +16,66 @@
 </section>
 <section class = "section">
 <h2 class = "subhead">Student Media Office</h2>
+
+{#
+
+<div class="non-voting-members">
+
+		<ul>
+ {% for entry in craft.entries.section('staff') %}
+
+
+ {% if entry.employeeType.contains('director') %}
+	 <li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
+
+ {% endif %}
+
+ {% endfor %}
+
+{% for entry in craft.entries.section('staff').order('lastName') %}
+ {% if entry.employeeType.contains('nonVoting') and not entry.employeeType.contains('director') %}
+ <br>
+ <li class="non-voting-member-name">{{entry.firstName}}  {{entry.lastName}}, <b>{{entry.jobTitle}}</b></li>
+ {% endif %}
+ {% endfor %}
+</ul>
+</div>
+
+#}
+
+
+
+
+
 <div class="contact-about-group section">
+	{% for entry in craft.entries.section('staff') %}
+
+	{% if entry.employeeType.contains('director') %}
+	<a href="#" class="leader">
+	<div class="circle-image-container">
+			{% for asset in entry.image %}
+		<img src="{{asset.url('staffProfile')}}" alt=”{{asset.title}}” />
+			{% endfor %}
+	</div>
+	<div class="contact-info-section">
+	<h4 class="contact-info-section-name">{{entry.firstName}} {{entry.lastName}}</h4>
+	<h5 class="contact-title-info-section">{{entry.jobTitle}}</h5>
+	<p class="contact-info-section-info">{{entry.phone}}</p>
+	<p class="contact-info-section-info">{{entry.email}}</p>
+	<div class="light-blue-line">
+	</div>
+</div>
+<div class="contact-info-about-leader">
+	<strong>About:</strong>
+	{{entry.body}}
+</div>
+</a>
+
+	{% endif %}
+	{% endfor %}
+
 	{% for entry in craft.entries.section('staff').order('lastName') %}
-	{% if entry.employeeType.contains('officeStaff') %}
+	{% if entry.employeeType.contains('officeStaff') and not entry.employeeType.contains('director') %}
 	<a href="#" class="leader">
   <div class="circle-image-container">
 			{% for asset in entry.image %}
