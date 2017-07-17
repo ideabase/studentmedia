@@ -1,4 +1,4 @@
-<header>
+<header role="banner">
   <div class="header-container">
       <section class = "header-nav-container">
         <button id="nav-trigger" class="nav-trigger">Menu</button>
@@ -15,7 +15,7 @@
           </a>
         {% endfor %}
       </section>
-			<nav id="nav" class="out">
+			<nav id="nav" class="out" role="navigation">
         {% cache %}
           {{ craft.amNav.getNav("mainMenu") }}
         {% endcache %}
