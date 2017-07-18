@@ -21,31 +21,53 @@
   <section class="student-employee-container">
 
     {% for partner in craft.entries.section('partners') %}
-			{% for job in craft.entries.section('jobs').relatedTo(partner) %}
+				{% if craft.entries.section('jobs').relatedTo(partner) | length %}
 				<div class="job-opening-container">
 	        <div class="mediapartner-name">
 	          <h2 class="mediapartner-type">{{partner.title}}</h2>
+						<h4 class="contact">Contact:</h4>
+						{% for entry in craft.entries.section('staff').relatedTo(partner)%}
+						{% if entry.employeeType.contains('studentMediaLeader') %}
+						<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
+						<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+					  <a class="contact-email" href="mailto:{{entry.email}}">{{entry.email}}</a>
+						{% endif %}
+						{% endfor %}
 	        </div>
-			{% endfor %}
 
-		{% for job in craft.entries.section('jobs').relatedTo(partner) %}
-      <div class="position-name-contact-container">
-      <div class="position-opening">
-        <h4 class="position-name">{{job.title}}</h4>
-        <p class="opening-description">{{job.body}}</p>
-      </div>
-			{% endfor %}
+					 <div class="position-name-contact-container">
+					{% for job in craft.entries.section('jobs').relatedTo(partner) %}
 
-			{% for job in craft.entries.section('jobs').relatedTo(partner) %}
-      <div class="position-contact">
-        <h4 class="contact">Contact:</h4>
-        <p class="contact-name-title">{{job.phone}}</p>
-        <a class="email" href="mailto:someone@example.com" target="_top">{{job.email}}</a>
-          <button class = "secondary-button app-button">Application Form</button>
-      </div>
-    </div>
+			      <div class="position-opening">
+			        <h4 class="position-name">{{job.title}}</h4>
+			        <p class="opening-description">{{job.body}}</p>
+			      </div>
+
+						{% if job.applicationForm | length or job.webUrl | length %}
+
+						<div class="position-contact">
+
+
+								{% if job.applicationForm | length %}
+								{% for app in job.applicationForm %}
+								<a href="{{app.url}}" class = "secondary-button app-button">Application Form</a>
+
+								{% endfor %}
+								{% endif %}
+
+								{% if job.webUrl | length %}
+								<a href="{{job.webUrl}}" class = "secondary-button app-button">Application Link</a>
+								{% endif %}
+
+			      </div>
+						{% endif %}
+
+
+				{% endfor %}
+				</div>
+
   </div>
-	{% endfor %}
+	{% endif %}
   {% endfor %}
 </section>
 </section>
