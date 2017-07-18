@@ -12,6 +12,14 @@ p {
   }
 }
 
+main ul, main ol {
+  font-size: .9em;
+  font-weight: 300;
+  @media screen and (min-width: 800px) {
+    font-size: 1em;
+  }
+}
+
 p a, main li a {
   color: $dark-blue;
   font-weight: 500;
@@ -19,6 +27,10 @@ p a, main li a {
   &:hover, &:focus {
     color: lighten($dark-blue, 10%);
   }
+}
+
+main li {
+  margin-bottom: 1.25em;
 }
 
 ul {
