@@ -21,10 +21,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ffffff">
+  {% if not craft.config.devMode %}
+  <!-- Critical CSS - For local environment only -->
   <style type="text/css">
     /* Critical CSS for Home */
     {% include '_includes/critical-home.css' %}
   </style>
+  {% endif %}
   <script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
   <noscript><link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"></noscript>
   {% hook 'seomaticRender' %}

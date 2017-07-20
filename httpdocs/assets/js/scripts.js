@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 	// Drop Down / Accordion Open/Close //
 
-	var $menuTrigger = $('.has-children > a');
+	var $menuTrigger = $('.nav > .has-children > a');
 	$menuTrigger.click(function(e) {
 	      e.stopImmediatePropagation();
 				var $this = $(this);
