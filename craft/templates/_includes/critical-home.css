@@ -347,7 +347,7 @@ header .nav__level3 {
     padding: 0.5em 0px;
   }
 
-  .dual-column ul.nav__level2 {
+  header .dual-column ul.nav__level2 {
     width: 30em;
   }
 
@@ -535,6 +535,10 @@ header .nav__level3 {
   .header-logo-container {
     width: 23%;
   }
+}
+
+footer .dual-column .nav__level3 {
+  display: none;
 }
 
 .owl-nav {
