@@ -108,6 +108,15 @@
     <h2 class="student-leader-contact">{{entry.firstName}} {{entry.lastName}}</h2>
     <h5 class="student-leader-title">{{entry.jobTitle}}</h5>
     <a href="mailto:{{entry.email}}" class="student-leader-email">{{entry.email}}</a>
+
+	<div class="social-media__icons">
+	{% for block in entry.socialMedia %}
+			{% if block.type == "socialMediaBlock" %}
+					<a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
+			{% endif %}
+	{% endfor %}
+	</div>
+
   </div>
 {% endif %}
 {% endfor %}
