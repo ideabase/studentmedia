@@ -45,10 +45,7 @@
 
     <div class="logo-footer">
       {% for asset in footer.footerLogo %}
-          <noscript>
             <img src="footer-logo-image" src="{{asset.url}}" alt="{{asset.title}}"/>
-          </noscript>
-          <img data-src="lazy footer-logo-image" src="{{asset.url}}" alt="{{asset.title}}"/>
       {% endfor %}
     </div>
     <div class="footer-contact-info">
