@@ -43,5 +43,8 @@ main{
 }
 
 .no-image {
-  margin-top: 30px;
+  margin-top: 0;
+  @media screen and (min-width: 800px) {
+    margin-top: 30px;
+  }
 }
