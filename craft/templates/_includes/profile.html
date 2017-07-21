@@ -1,0 +1,27 @@
+<div class="leader">
+<a href="#" class="circle-image-link">
+<div class="circle-image-container">
+    {% for asset in entry.image %}
+  <img src="{{asset.url('staffProfile')}}" alt=”{{asset.title}}” />
+    {% endfor %}
+</div>
+</a>
+<div class="contact-info-section">
+<h4 class="contact-info-section-name">{{entry.firstName}} {{entry.lastName}}</h4>
+<h5 class="contact-title-info-section">{{entry.jobTitle}}</h5>
+<p class="contact-info-section-info">{{entry.phone}}</p>
+<p class="contact-info-section-info">{{entry.email}}</p>
+<div class="light-blue-line">
+</div>
+{% if entry.body|length %}
+<a href="#" class="leader-link">View Bio</a>
+{% endif %}
+</div>
+  {% if entry.body|length %}
+  <div class="contact-info-about-leader__container">
+    <div class="contact-info-about-leader">
+    {{entry.body}}
+    </div>
+  </div>
+  {% endif %}
+</div>
