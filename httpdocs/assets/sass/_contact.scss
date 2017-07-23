@@ -29,8 +29,8 @@ color: $dark-blue;
   width: 200px;
   height: 200px;
   overflow: hidden;
-  border: 5px solid transparent;
-  transition: .3s border ease-in-out;
+  border: 2px solid $light-blue;
+  transition: .2s border ease-in-out;
   }
 
 .circle-image-link {
