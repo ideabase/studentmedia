@@ -11,18 +11,13 @@
 
 }
 
-.FAQ-container {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 .question {
 margin-bottom: 0;
 }
 
 .answer {
-  margin-top: 3px;
   margin-bottom: 0;
+  font-size: .9em;
 }
 
 .mediapartner-type {
@@ -61,9 +56,6 @@ margin-bottom: 0;
 }
 
 .job-opening-container {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
   border-top: 2px black solid;
 }
 
@@ -73,14 +65,19 @@ margin-bottom: 0;
   width: 100%;
 }
 
+.FAQ {
+  margin-bottom: 2.5em;
+}
+
 @media screen and (min-width: 625px){
 
   .FAQ-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .FAQ {
-    width: 45%;
+    width: 46%;
   }
 }
 
@@ -100,9 +97,7 @@ margin-bottom: 0;
   }
 
   .position-opening {
-    width: 50%;
     flex-wrap: wrap;
-
   }
 
   .position-contact {
@@ -122,28 +117,24 @@ margin-bottom: 0;
 }
 
 .more-text {
-  max-height: 0;
+  max-height: 6.5em;
   overflow: hidden;
+  transition: max-height .3s ease-in-out;
+  position: relative;
+  &:before {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #fff 100%);
+    background-size: 100% auto;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   .show-more & {
     max-height: 1000px;
-  }
-}
-
-.more-link {
-  display: block;
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 3px;
-  background-color: #ddd;
-  text-decoration: none;
-  color: #000;
-  &:hover {
-    background-color: #eee;
-  }
-  &:after {
-    content: "show more ⬇";
-    .show-more & {
-      content: "show less ⬆";
+    &:before {
+      background-image: none;
     }
   }
 }
