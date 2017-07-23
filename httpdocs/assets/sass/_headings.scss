@@ -46,9 +46,12 @@ h1 {
     display: block;
     position: relative;
     margin-bottom: 1em;
-    font-size: 1.5em;
+    font-size: 1.2em;
     letter-spacing: .25px;
     text-transform: uppercase;
+    @media screen and (min-width: 800px) {
+      font-size: 1.5em;
+    }
   }
 
   .first-subhead {
@@ -63,7 +66,7 @@ h1 {
     background: $lime-green;
     position: absolute;
     bottom: 0;
-    left: -3.2em;
+    left: -4em;
     @media screen and (min-width: 800px) {
       left: -3.5em
     }
@@ -71,7 +74,7 @@ h1 {
 
 
 .intro-sentence-header {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: 600;
   padding-top: 0;
   margin-top: 0;
