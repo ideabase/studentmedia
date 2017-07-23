@@ -9,44 +9,34 @@
 	<h1 class="head-line">{{entry.title}}</h1></div>
 	<section class="section">
 	<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
-	{{entry.body}}
+		<div class="body-dual-column">{{entry.body}}</a>
+	</section>
+	<section class="section">
+		<h2 class = "subhead">{{entry.missionTitle}}</h2>
+		{{ entry.missionBody }}
 	</section>
 
 	<section class="section">
 	<h2 class = "subhead">Awards & Recognition</h2>
-	<section class="about-recognition-flex-container">
+	<div class="about-recognition-flex-container">
 		<figure class="recognition-image-container">
 			{% for asset in entry.recognitionImage %}
-			<img class="recognition-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}"
-			<figcaption class="recognition-image-caption">{{entry.recognitionCaption}}</figcaption>
+			<img class="recognition-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}" />
+			<figcaption class="video-box__caption">{{entry.recognitionCaption}}</figcaption>
 		{% endfor %}
 		</figure>
-	<div class="recognition-content">
-		<div class="recognition-description-container">
-			<ul class="recognition-list">
-	{% for entry in craft.entries.section('recognition').limit(5).find() %}
-		<article>
-			<li class="recognition-item" <a href="{{ entry.url }}">{{ entry.title }}</a>
-			{% for name in entry.associatedMediaPartners %}
-			<h3> {{name.title}} </h1>
-			{% endfor %}
-			<h4>{{entry.postDate}}</h2>
-
-
-			<br>
-			<!-- <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3> Old !-->
-			{{ entry.description }}
-		</article>
-	{% endfor %}
-	<div class="div-button">
-		<li class="recognition-item">
-	<a href="/recognition"><button class="secondary-button recognition-button">See More</button></a>
-</li>
-</article>
-</ul>
-</div>
-</div>
-</section>
+		<div class="recognition-content">
+				{{ entry.awardsBody }}
+				<ul class="recognition-list">
+					{% for entry in craft.entries.section('recognition').limit(4).find() %}
+						<li class="recognition-item">
+							<a href="/recognition#{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+				<a href="/recognition" class="secondary-button recognition-button">See All Awards</a>
+		</div>
+	</div>
 </section>
 <section class="section">
 	<h3 class = "subhead">Support Us</h3>

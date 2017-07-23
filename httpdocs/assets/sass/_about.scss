@@ -14,17 +14,26 @@
 }
 .news-stories-content, .recognition-content{
   margin-bottom: 15px;
-  padding: 15px;
-}
-
-.about-recognition-flex-container{
-  padding-left: 25px;
-  padding-right: 25px;
 }
 
 @media screen and (min-width: 800px){
-  .news-stories-content, .recognition-content, .about-recognition-flex-container{
+  .news-stories-content, .about-recognition-flex-container{
     display: flex;
+    justify-content: space-between;
+  }
+  .recognition-image-container {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+  }
+  .recognition-content {
+    width: 65%;
+    p {
+      margin-top: 0;
+    }
+  }
+  .recognition-list {
+    columns: 2;
   }
 }
 
@@ -35,14 +44,10 @@
 }
 
 .recognition-item{
-  padding: 15px;
-  border-style: solid;
-  border-color: #ededed;
-  border-width: .5px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  padding: 15px 0;
+  border-top: .5px #e9ebee solid;
   width: 100%;
+  margin-bottom: .5em;
 }
 
 .recognition-image{
@@ -101,41 +106,42 @@ margin-left: 0;
 
 @media screen and (min-width:650px) {
     .voting-members {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: space-between;
+      grid-column-gap: 3em;
     }
 
     .member {
-      width: 33%;
       margin-bottom: 1em;
     }
 
     .meeting-box {
-      width: 24.5%;
+      width: inherit;
     }
 
     .meeting-minutes-container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-column-gap: .25em;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       justify-content: space-between;
     }
   }
 
   .non-voting-members {
-    ul {
       list-style-type: none;
       margin-left: 0;
       padding-left: 0;
       margin-top: 0;
-    }
   }
 
 @media screen and (min-width:900px) {
     .non-voting-members {
-      columns: 2 50px;
+      columns: 2;
+      column-gap: 50px;
     }
     .non-voting-member-name {
-      display: inline-block;
+      display: block;
       margin-top: 0;
     }
 }
@@ -147,7 +153,7 @@ margin-left: 0;
 }
 
 .member-name {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .non-voting-member-name {
@@ -166,6 +172,7 @@ b {
 }
 .guidelines-button {
   display: inline-block;
+  margin-right: 1em;
 }
 
 .non-voting-members {
@@ -183,6 +190,8 @@ b {
 .meeting-date {
   margin-left: 0;
   margin-top: 0;
+  font-size: .9em;
+  font-weight: 500;
 }
 
 .meeting-pdf {
@@ -191,6 +200,7 @@ b {
   display: block;
   text-decoration: none;
   padding-top: .5em;
+  color: $dark-blue;
 }
 /*end of board members CSS*/
 

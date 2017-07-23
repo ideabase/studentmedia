@@ -42,9 +42,23 @@ main{
 
 }
 
+.body-dual-column {
+  @media screen and (min-width: 900px) {
+    columns: 2;
+    margin-top: 1em;
+    column-gap: 50px;
+    width:100%;
+    display:block;
+    p:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
 .no-image {
   margin-top: 0;
   @media screen and (min-width: 800px) {
-    margin-top: 30px;
+    margin-top: 3em;
   }
 }

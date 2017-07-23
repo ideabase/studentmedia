@@ -1,19 +1,18 @@
 
 {% extends "_layout" %}
 
-{% block hero %}
-	{% include '_includes/hero.html' %}
+{% block main %}
+no-image
 {% endblock %}
 
 {% block content %}
-
+<div class = "page-header">
+<h1 class="head-line">{{entry.title}}</h1></div>
 	{% for entry in craft.entries.section('recognition').find() %}
-		<article>
-			
-			<h3>{{ entry.title }}</h3>
+	<section class="section">
+			<h3 class="subhead" id="{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</h3>
 			<p>{{entry.body}}</p>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		</article>
+	</section>
 	{% endfor %}
-	
+	<a class="main-button" href="/about">Return to About Student Media</a>
 {% endblock %}
