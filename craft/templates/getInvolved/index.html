@@ -20,17 +20,14 @@
 <h2 class = "subhead">Student Employment Opportunities</h2>
   <section class="student-employee-container">
 
-    {% for partner in craft.entries.section('partners') %}
+    {% for partner in craft.entries.section('partners').order('(CASE WHEN title LIKE "The %" THEN SUBSTRING(title, 5) ELSE title END ) asc') %}
 				{% if craft.entries.section('jobs').relatedTo(partner) | length %}
 				<div class="job-opening-container">
 	        <div class="mediapartner-name">
-	          <h2 class="mediapartner-type">{{partner.title}}</h2>
-						<h4 class="contact">Contact Person:</h4>
+						<h2 class="mediapartner-type"><a href="{{partner.url}}">{{partner.title}}</a></h2>
 						{% for entry in craft.entries.section('staff').relatedTo(partner)%}
 						{% if entry.employeeType.contains('studentMediaLeader') %}
-						<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-						<h3 class = "contact-title">{{entry.jobTitle}}</h3>
-					  <a class="contact-email" href="mailto:{{entry.email}}">{{entry.email}}</a>
+							<p class="mediapartner-contact">For questions related to these positions, contact {{entry.firstName}} {{entry.lastName}}, {{entry.jobTitle}} at <a class="contact-email" href="mailto:{{entry.email}}">{{entry.email}}</a></p>
 						{% endif %}
 						{% endfor %}
 	        </div>
@@ -40,8 +37,8 @@
 
 			      <div class="position-opening">
 			        <h4 class="position-name">{{job.title}}</h4>
-			        <p class="opening-description">{{job.body}}</p>
-			      </div>
+			        <div class="opening-description">{{job.body}}</div>
+
 
 						{% if job.applicationForm | length or job.webUrl | length %}
 
@@ -50,18 +47,18 @@
 
 								{% if job.applicationForm | length %}
 								{% for app in job.applicationForm %}
-								<a href="{{app.url}}" class = "secondary-button app-button">Application Form</a>
+								<a href="{{app.url}}" class = "secondary-button app-button">Download Application (PDF)</a>
 
 								{% endfor %}
 								{% endif %}
 
 								{% if job.webUrl | length %}
-								<a href="{{job.webUrl}}" class = "secondary-button app-button">Application Link</a>
+								<a href="{{job.webUrl}}" class = "secondary-button app-button">Apply Now</a>
 								{% endif %}
 
 			      </div>
 						{% endif %}
-
+						</div>
 
 				{% endfor %}
 				</div>
@@ -108,7 +105,7 @@
 <h2 class ="subhead calender-subhead">Calendar & Events</h2>
 <section class="calender-container calender-main">
   <div class ="events">
-    {% for entry in craft.entries.section('events').order('date') %}
+    {% for entry in craft.entries.section('events').order('time') %}
     <div class="event-container">
         <div class="date-box">
           <div class="date">
