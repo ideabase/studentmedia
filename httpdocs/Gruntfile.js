@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         },
         files: {
         'assets/css/style.css': 'assets/sass/style.scss',
-        '../craft/templates/_includes/critical-home.css': '../craft/templates/_includes/critical-home.css'
+        '../craft/templates/_includes/critical.css': 'assets/sass/critical.scss',
         }
       }
     },
