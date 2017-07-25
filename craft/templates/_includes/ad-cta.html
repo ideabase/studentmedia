@@ -1,0 +1,11 @@
+<div class="advertising-contact-list">
+  <p>{{advertisingContact.advertisingCallToActionText}}</p>
+  <p>{{advertisingContact.email}}</p>
+  <p>{{advertisingContact.phone}}</p>
+  <p>OR</p>
+	{% for asset in craft.entries.section('advertising') %}
+	{% for media in asset.mediaKit %}
+	<a class="secondary-button app-button" href="{{ asset.url }}">Download Media Kit (PDF)</a>
+	{% endfor %}
+	{% endfor %}
+</div>

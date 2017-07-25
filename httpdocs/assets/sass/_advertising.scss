@@ -163,7 +163,7 @@ th{
   margin-left: 15px;
 }
 
-.advertising-price-list, .advertising-content-list, .advertising-contact-list{
+.advertising-price-list, .advertising-content-list{
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -200,6 +200,7 @@ li{
 
 .advertising-contact-list{
   color: $dark-blue;
+  text-align: center;
 }
 
 @media screen and (min-width: 750px){

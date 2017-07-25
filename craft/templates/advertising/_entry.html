@@ -9,11 +9,11 @@ no-image
 <div class = "page-header">
 	<h1 class="head-line">Advertise with {{entry.title}}</h1>
 </div>
+{% if entry.body | length %}
 <section class="section">
-{% for partner in craft.entries.section('partners').relatedTo(entry) %}
-	<p class="intro-paragraph">{{ partner.shortDescription }}</p>
-{% endfor %}
+		{{ entry.body }}
 </section>
+{% endif %}
 <section class="section">
         <section class="advertising-column">
 					{% for block in entry.adUnit %}
@@ -59,10 +59,18 @@ no-image
                             {% for row in block.adUnitr %}
                             <tr>
                                 <td><strong>{{row.name}}</strong></td>
-                                <td>{{row.price}}</td>
-																<td>{{row.altPrice}}</td>
-                                <td>{{row.size}}</td>
-																<td>{{row.description}}</td>
+                                {% if row.price | length %}
+																	<td>{{row.price}}</td>
+																{% endif %}
+																{% if row.altPrice | length %}
+																	<td>{{row.altPrice}}</td>
+																{% endif %}
+																{% if row.size | length %}
+                                	<td>{{row.size}}</td>
+																{% endif %}
+																{% if row.description | length %}
+																	<td>{{row.description}}</td>
+																{% endif %}
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -76,24 +84,13 @@ no-image
         {% endif %}
           {% endfor %}
     </section>
+		<a class="main-button" href="/advertising">Return to All Ad Rates</a>
 </section>
 
 <section class="advertising-bottom-section">
 {% for partner in craft.entries.section('partners').relatedTo(entry) %}
-
 <a class="secondary-button" href="{{ partner.url }}">More About {{ partner.title }}</a>
-<ul class = "advertising-contact-list">
-  <li>For any questions about advertising with {{ partner.title }}, please contact:</li>
-  <li>{{advertisingContact.email}}</li>
-	<li>{{advertisingContact.phone}}</li>
-  <li>OR</li>
-
-	{% for asset in craft.entries.section('advertising') %}
-	{% for media in asset.mediaKit %}
-	<li>Download our Media Kit PDF for more info, <a href="{{media.url}}">here.</a></li>
-	{% endfor %}
-	{% endfor %}
-</ul>
 {% endfor %}
+{% include '_includes/ad-cta.html' %}
 </section>
 {% endblock %}

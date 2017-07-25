@@ -12,26 +12,22 @@
   </div>
   <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
   <div class="intro-paragraph">{{entry.body}}</div>
-  {% if entry.mediaKit | length %}
-    {% for asset in entry.mediaKit %}
-        <a class="secondary-button app-button" href="{{ asset.url }}">View Media Kit</a>
-    {% endfor %}
-  {% endif %}
 </section>
 
 <section class="section">
-  <h2 class="subhead">Ad Platforms</h2>
+  <h2 class="subhead">Ad & Creative Platform Rates</h2>
   {% set categories = craft.categories.group('adFormat') %}
+	<div id="accordion">
   {% for category in categories %}
-    <div id="accordion" class="accordion">
+    <div class="accordion">
     	<div class="link platform-dropdown">
 				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
 			</div>
 			<div class="submenu">
 				<div class = "platform-content-container">
-					<p>{{category.description}}</p>
-				</div>
-				<div class = "platform-content-container">
+					{% if category.description | length %}
+						<p>{{category.description}}</p>
+					{% endif %}
 					<!-- Display all "Ad" entries related to these categories-->
 					{% include '_includes/ad-block.html' %}
 					<!-- Display all "Ad" entries that are Bundles-->
@@ -40,20 +36,12 @@
 					{% include '_includes/creative-block.html' %}
 				</div>
 			</div>
-  {% endfor %}
 		</div>
+  {% endfor %}
+	</div>
 </section>
 
 <section class="section">
-{% for adsales in craft.entries.slug('student-media-ad-sales') %}
-	<ul class="advertising-contact-list">
-		<li>For any questions about advertising with Student Media, please contact:</li>
-		<li>
-		{{advertisingContact.email}}
-		<br>
-		{{advertisingContact.phone}}
-		</li>
-	</ul>
-	{% endfor %}
+	{% include '_includes/ad-cta.html' %}
 </section>
 {% endblock %}
