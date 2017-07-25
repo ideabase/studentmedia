@@ -13,7 +13,8 @@ $(document).ready(function() {
 
 	$('.home-carousel').owlCarousel({
 			items:1,
-			autoplay:8000,
+      autoplayTimeout: 10000,
+			autoplay:true,
 			center: true,
 			loop: true,
 			smartSpeed: 1500,
