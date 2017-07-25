@@ -9,6 +9,10 @@ $(function() {
 // Wrap all JQuery functions in this function, which will pause execution until the document is ready.  No need to repeat these. //
 $(document).ready(function() {
 
+  // Check Animation and Start Animation on Home Page //
+
+  $(".hero-image-caption").addClass("animation"); 
+
 	// Initialize Carousels on Home Page //
 
 	$('.home-carousel').owlCarousel({
