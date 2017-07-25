@@ -1,17 +1,4 @@
-{#
- # News index template
- # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
- #}
-
 {% extends "_layout" %}
-{% set title = "News" %}
 
 {% block hero %}
 	{% include '_includes/hero.html' %}
@@ -19,14 +6,36 @@
 
 {% block content %}
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
+{% paginate craft.entries.section('news').limit(15) as pageInfo, pageEntries %}
+
+<div class = "page-header">
+	<h1 class="head-line">{{entry.title}}</h1></div>
+	<section class="about-news-flex-container">
+	{% for entry in pageEntries %}
+			<div class="news-stories-content">
+					{% for asset in entry.heroImage %}
+					{% if asset | length %}
+						<div class="news-image-container">
+						   <img class="news-story-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}" />
+						</div>
+						{% endif %}
+					{% endfor %}
+          {% if entry.heroImage | length %}
+			       <div class="news-story-description-container">
+          {% else %}
+            <div class="news-story-description-container news-story-description-container--full">
+          {% endif %}
+				<h4 class="news-story-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
+				<p class="news-story-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+				{% set paragraphs = entry.body|split('</p>') %}
+				{% set firstParagraph = paragraphs|first ~'</p>'%}
+				<div class="news-story-description">{{ firstParagraph|raw}}</div>
+        <a class="news-story-link" href="{{ entry.url }}">Continue Reading</a>
+			</div>
+		</div>
+	</div>
 	{% endfor %}
-	
+</section>
+{% if pageInfo.prevUrl %}<a class="main-button" href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+{% if pageInfo.nextUrl %}<a class="main-button" href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
 {% endblock %}

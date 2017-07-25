@@ -21,7 +21,7 @@
 	<div class="about-recognition-flex-container">
 		<figure class="recognition-image-container">
 			{% for asset in entry.recognitionImage %}
-			<img class="recognition-image" src="{{asset.url('squareNews')}}" alt="{{asset.title}}" />
+			<img class="recognition-image" src="{{asset.url('flexibleHeight')}}" alt="{{asset.title}}" />
 			<figcaption class="video-box__caption">{{entry.recognitionCaption}}</figcaption>
 		{% endfor %}
 		</figure>

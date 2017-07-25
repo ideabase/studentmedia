@@ -1,15 +1,29 @@
 {% extends "_layout" %}
 
-
 {% block hero %}
-	{% include '_includes/hero.html' %}
+	{% if entry.featureImageFormat == "fullWidth" %}
+			{% include '_includes/hero.html' %}
+	{% endif %}
 {% endblock %}
 
-
+{% block main %}
+	{% if entry.featureImageFormat != "fullWidth" %}
+	no-image
+	{% endif %}
+{% endblock %}
 
 {% block content %}
 <article role="article">
 <h1 class="intro-sentence-header">{{entry.title}}</h1>
-<p>{{entry.body}}</p>
+<p class="news-story-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+{% if entry.featureImageFormat != "fullWidth" %}
+	{% for asset in entry.heroImage %}
+		<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title" />
+	{% endfor %}
+{% endif %}
+{{entry.body}}
 </article>
+<section class="section">
+<a class="main-button" href="/news">See All News</a>
+</section>
 {% endblock %}
