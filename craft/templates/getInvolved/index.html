@@ -105,22 +105,9 @@
 <h2 class ="subhead calender-subhead">Calendar & Events</h2>
 <section class="calender-container calender-main">
   <div class ="events">
-    {% for entry in craft.entries.section('events').order('time') %}
-    <div class="event-container">
-        <div class="date-box">
-          <div class="date">
-            <h4 class="date-style">{{entry.time|date("d")}}</h4>
-          </div>
-          <div class="month">
-            <h4 class="month-style">{{entry.time|date("M")}}</h4>
-          </div>
-        </div>
-        <div class="event">
-          <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-          <p class="event-words">{{entry.description}}</p>
-        </div>
-      </div>
-      {% endfor %}
+    {% for entry in craft.entries.section('events').order('date') %}
+    	{% include '_includes/event.html' %}
+    {% endfor %}
 </section>
 </section>
 {% endblock %}

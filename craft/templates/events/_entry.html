@@ -1,17 +1,28 @@
 {% extends "_layout" %}
+{% block hero %}
+	{% if entry.featureImageFormat == "fullWidth" %}
+			{% include '_includes/hero.html' %}
+	{% endif %}
+{% endblock %}
+
+{% block main %}
+	{% if entry.featureImageFormat != "fullWidth" %}
+	no-image
+	{% endif %}
+{% endblock %}
 
 {% block content %}
-
-		<h1>{{ entry.title }}</h1>
-		{% for asset in entry.image %}
-	<img src=”{{asset.url}}” alt=”{{asset.title}}”” />
-{% endfor %}
-    {{entry.description}}
-    {{entry.time}}
-    {{entry.location}}
-    {% for entry in entry.associatedMediaPartners %}
-	<a href=" {{entry.url}}">{{ entry.title }}</a>
-
-{% endfor %}
-
+<article role="article">
+		<h1 class="intro-sentence-header">{{ entry.title }}</h1>
+		{% if entry.featureImageFormat != "fullWidth" %}
+			{% for asset in entry.heroImage %}
+				<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title" />
+			{% endfor %}
+		{% endif %}
+    <p>{{entry.description}}</p>
+		<p>{{ entry.date}}</p>
+		<p>{{entry.time}}</p>
+		<p>{{ entry.endTime}}</p>
+    <p>{{entry.location}}</p>
+</article>
 {% endblock %}
