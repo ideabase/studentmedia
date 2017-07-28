@@ -10,7 +10,7 @@
 <h4 class="contact-info-section-name">{{entry.firstName}} {{entry.lastName}}</h4>
 <h5 class="contact-title-info-section">{{entry.jobTitle}}</h5>
 <p class="contact-info-section-info">{{entry.phone}}</p>
-<p class="contact-info-section-info">{{entry.email}}</p>
+<a class="contact-info-section-info" href="mailto:{{entry.email}}">{{entry.email}}</p>
 <div class="light-blue-line">
 </div>
 {% if entry.body|length %}
