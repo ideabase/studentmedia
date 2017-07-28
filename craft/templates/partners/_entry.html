@@ -43,19 +43,21 @@
 <section class="section">
 	<h2 class="subhead">Contact & Connect with {{ entry.title}}</h2>
 	<div class="media-partner-contact-container">
-		<div class="student-contact">
-		<h2 class="contact-name">Leadership</h2>
+
 		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
 		{% if entry.employeeType.contains('studentMediaLeader') %}
-		<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-		<h3 class = "contact-title">{{entry.jobTitle}}</h3>
-	  <a class="contact-email" href="mailto:{{entry.email}}">
-				{{entry.email}}
-			</a>
+		<div class="student-contact">
+		<h2 class="contact-name">Leadership</h2>
+
+
+			<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
+			<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+	  	<a class="contact-email" href="mailto:{{entry.email}}">
+				{{entry.email}} </a>
+
+		</div>
 		{% endif %}
 		{% endfor %}
-		</div>
-
 
 	<div class="department-contact">
 	    <h2 class = "contact-name">Advertising</h2>
@@ -74,16 +76,21 @@
 				</dl>
 				{% endif %}
 	</div>
-	<div class="social-media">
+
+	{% if entry.socialMedia | length (1) %}
+
+		<div class="social-media">
 		<h2 class = "contact-name">Social Media</h2>
+
+	{% for block in entry.socialMedia %}
+
 		<div class="social-media__icons">
-		{% for block in entry.socialMedia %}
-		    {% if block.type == "socialMediaBlock" %}
-		        <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
-		    {% endif %}
+		       <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
+
 		{% endfor %}
 		</div>
 	</div>
+	{% endif %}
 </div>
 
 
