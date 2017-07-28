@@ -1,5 +1,5 @@
 {% if category.title != "Creative Services" %}
-  {% for entry in craft.entries.section('partners').relatedTo(category) %}
+  {% for entry in craft.entries.section('partners').relatedTo(category).order('title') %}
         <div class = "platform-content">
             <h2 class="platform-content-header">{{ entry.title }}</h2>
             <p class="platform-description">{{entry.shortDescription}}</p>

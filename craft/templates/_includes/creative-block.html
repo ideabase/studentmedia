@@ -1,6 +1,6 @@
 {% if category.title == "Creative Services" %}
   {% for entry in craft.entries.section('partners').relatedTo(category) %}
-            {% for ad in craft.entries.section('ad').relatedTo(entry) %}
+            {% for ad in craft.entries.section('ad').relatedTo(entry).order('title') %}
               <div class = "platform-content">
                 <h2 class="platform-content-header">{{ ad.title }}</h2>
                 {{ ad.body }}
