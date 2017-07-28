@@ -36,6 +36,7 @@
   </section>
  {% endblock %}
  {% block content %}
+ {% cache %}
  <section class = "section video-container-home">
    <div class = "video-div-flex-container">
     <div class = "video-blurb">
@@ -53,7 +54,8 @@
         </figcaption>
     </figure>
   </section>
-
+  {% endcache %}
+  {% cache %}
   <section class = "section outside-div-container-brands">
     {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
     {% set extraEntry = (entryNum/2) %}
@@ -107,19 +109,15 @@
               <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
             {% endfor %}
           </a>
-
         {% endif %}
-
-
-
         {% if (loop.index0 % cols == cols - 1 or loop.last) %}
           </div>
-
         {% endif %}
         {% endfor %}
       </div>
   </section>
-
+  {% endcache %}
+  {% cache %}
       <section class = "section statistics-container">
 
         <h2 class ="subhead">{{entry.advertisingHeader}}</h2>
@@ -132,10 +130,8 @@
              	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
              {% endfor %}
          </div>
-
-
-
-
+  {% endcache %}
+  {% cache %}
       <div class = "statistics-box-flex-container">
             {% for entry in craft.entries.section('statistics').limit(3).order('RAND()') %}
               <div class = "statistics-box">
@@ -147,4 +143,5 @@
             </div>
             {% endfor %}
       </section>
+  {% endcache %}
 {% endblock %}

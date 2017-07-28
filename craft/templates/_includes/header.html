@@ -3,6 +3,7 @@
       <section class = "header-nav-container">
         <button id="nav-trigger" class="nav-trigger">Menu</button>
       </section>
+      {% cache %}
       <section class = "header-logo-container">
         {% for asset in header.logo %}
           <a href= "{{siteUrl}}index.php">
@@ -15,6 +16,7 @@
           </a>
         {% endfor %}
       </section>
+      {% endcache %}
 			<nav id="nav" class="out" role="navigation">
         {% cache %}
           {{ craft.amNav.getNav("mainMenu") }}
