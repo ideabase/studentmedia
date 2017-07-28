@@ -10,6 +10,7 @@
 	</div>
 	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
 	<div class="intro-paragraph">{{entry.body}}</div>
+	{% cache %}
 	<section class ="section brand-grid-all">
 			{% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('(CASE WHEN title LIKE "The %" THEN SUBSTRING(title, 5) ELSE title END ) asc') %}
 	  <div class = "media-partner-container-grid">
@@ -26,7 +27,7 @@
 	  </div>
 		{% endfor %}
 	</section>
-
+{% endcache %}
 	<section class = "section scroll-container">
 	<h2 class ="subhead calender-subhead">Upcoming Media Partner Events</h2>
 	  <div class ="events">
