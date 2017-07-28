@@ -18,6 +18,7 @@
 <section class="section">
 
 <h2 class = "subhead">Student Employment Opportunities</h2>
+{% cache %}
   <section class="student-employee-container">
 
     {% for partner in craft.entries.section('partners').order('(CASE WHEN title LIKE "The %" THEN SUBSTRING(title, 5) ELSE title END ) asc') %}
@@ -67,11 +68,13 @@
 	{% endif %}
   {% endfor %}
 </section>
+{% endcache %}
 </section>
 
 <section class="section">
 
 <h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
+{% cache %}
 <div class="FAQ-container">
 
   {% for block in entry.faq %}
@@ -94,13 +97,14 @@
     {% endif %}
 {% endfor %}
 </div>
-
+{% endcache %}
 {#   Starts at 0, goes to 5. Default text is: Read More
 | striptags | slice(0,5) | default('Read More')
 109 characters is 2 lines
 
  #}
 </section>
+
 <section class = "section">
 <h2 class ="subhead calender-subhead">Calendar & Events</h2>
 <section class="calender-container calender-main">

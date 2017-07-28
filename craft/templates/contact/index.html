@@ -16,6 +16,7 @@
 </section>
 <section class = "section">
 <h2 class = "subhead">Student Media Office</h2>
+{% cache %}
 <div class="contact-about-group section">
 	<div class="contact-about-group__column">
 	{% for entry in craft.entries.section('staff').order('lastName') %}
@@ -46,9 +47,12 @@
 	{% endfor %}
 	</div>
 </div>
+{% endcache %}
+
 </section>
 <section class = "section">
 <h2 class = "subhead">Student Leaders</h2>
+{% cache %}
 <div class="student-leader-container section">
 {% for entry in craft.entries.section('staff').order('lastName') %}
 {% if entry.employeeType.contains('studentMediaLeader') %}
@@ -69,6 +73,7 @@
 {% endif %}
 {% endfor %}
 </div>
+{% endcache %}
 </section>
 
 {% endblock %}

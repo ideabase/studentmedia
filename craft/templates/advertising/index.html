@@ -17,6 +17,7 @@
 <section class="section">
   <h2 class="subhead">Ad & Creative Rates by Platform</h2>
   {% set categories = craft.categories.group('adFormat') %}
+	{% cache %}
 	<div id="accordion">
   {% for category in categories %}
     <div class="accordion">
@@ -39,7 +40,9 @@
 		</div>
   {% endfor %}
 	</div>
+	{% endcache %}
 </section>
+
 
 <section class="section">
 	{% include '_includes/ad-cta.html' %}
