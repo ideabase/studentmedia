@@ -21,6 +21,7 @@ return array(
 	),
 	'studentmedia.web' => array(
 	    'devMode' => true,
+      'enableTemplateCaching' => false,
       'siteUrl' => 'http://studentmedia.web',
       'environmentVariables' => array(
        'basePath' => '',
