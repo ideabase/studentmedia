@@ -85,12 +85,12 @@ footer .dual-column .nav__level3 {display: none}
 
 .footer-content-list{
   list-style-type: none;
-  padding-top: 1em;
   @media screen and (min-width: 550px){
     columns:2;
   }
   @media screen and (min-width: 750px){
     columns:3;
+    padding-top: 1em;
   }
 }
 

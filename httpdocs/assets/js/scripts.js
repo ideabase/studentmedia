@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   // Check Animation and Start Animation on Home Page //
 
-  $(".hero-image-caption").addClass("animation"); 
+  $(".hero-image-caption").addClass("animation");
 
 	// Initialize Carousels on Home Page //
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
 	var navTrigger = document.getElementById('nav-trigger');
 	var nav = document.getElementById('nav');
 	var labels = document.getElementsByClassName('nav-label');
-
+  var navBody = document.getElementById('body');
 
 	// Navigation Menu Open/Close //
 	navTrigger.addEventListener('click', navToggle);
@@ -100,9 +100,11 @@ $(document).ready(function() {
 	  if(closed) {
 	    navTrigger.className = 'nav-trigger open';
 	    nav.className = 'out';
+      navBody.className = 'js';
 	  } else {
 	    navTrigger.className = 'nav-trigger close';
 	    nav.className = 'in';
+      navBody.className = 'js menu-open';
 	  }
 	}
 
