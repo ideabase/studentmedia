@@ -28,24 +28,24 @@ $(document).ready(function() {
 	$('.brand-logo-grid').owlCarousel({
 			items:5,
 			nav: true,
-			loop: true,
+			loop: false,
 			center: false,
 	    responsive: {
           0:{
               items:3,
               nav: true,
-              loop: true,
+              loop: false,
 
           },
 	        600:{
 	            items:4,
 							nav: true,
-							loop: true,
+							loop: false,
 	        },
           900:{
 	            items:5,
 							nav: true,
-							loop: true,
+							loop: false,
 							center: false,
 	        },
 	    }
