@@ -20,7 +20,9 @@
 		<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
 		<p class="intro-paragraph">{{entry.body}}</p>
 		<div class="button-section">
+			{% if entry.webUrl %}
 			<a href="{{entry.webUrl}}"><button class="main-button media-partner-button">Visit Website</button></a>
+			{% endif %}
 			{% for ad in craft.entries.section('ad').relatedTo(entry) %}
 			<a href="{{ ad.url }}"><button class="main-button media-partner-button">View Advertising Rates</button></a>
 			{% endfor %}
