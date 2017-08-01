@@ -53,10 +53,17 @@
 
 
 </section>
+
 <section class="section">
 	<h2 id="documents" class = "subhead">Meeting Documents</h2>
 	<div class="meeting-minutes-container">
-	{% for entry in craft.entries.section('meetingMinutes').order('date') | reverse %}
+
+
+
+
+{% paginate craft.entries.section('meetingMinutes').limit(8).order('date desc') as pageInfo, pageEntries %}
+
+	{% for entry in pageEntries %}
 
 	<div class="meeting-box">
 	<h5 class="meeting-date">{{entry.title}}</h5>
@@ -67,8 +74,16 @@
 	</a>
 	<a class="meeting-pdf" href="{{asset.url}}" alt="{{asset.title}}">Download (PDF)</a>
 	</div>
+
 	{% endfor %}
 	{% endfor %}
-</section>
+</div>
+
+
+	{% if pageInfo.nextUrl %}<a class="main-button" href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+	{% if pageInfo.prevUrl %}<a class="main-button" href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+
+	</section>
+
 {% endcache %}
 {% endblock %}
