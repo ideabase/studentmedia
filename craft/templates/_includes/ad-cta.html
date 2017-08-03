@@ -5,7 +5,7 @@
   <p>OR</p>
 	{% for asset in craft.entries.section('advertising') %}
 	{% for media in asset.mediaKit %}
-	<a class="secondary-button app-button" href="{{ asset.url }}">Download Media Kit (PDF)</a>
+	<a class="secondary-button app-button" href="{{ media.url }}">Download Media Kit (PDF)</a>
 	{% endfor %}
 	{% endfor %}
 </div>

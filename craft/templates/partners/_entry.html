@@ -20,7 +20,9 @@
 		<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
 		<p class="intro-paragraph">{{entry.body}}</p>
 		<div class="button-section">
+			{% if entry.webUrl %}
 			<a href="{{entry.webUrl}}"><button class="main-button media-partner-button">Visit Website</button></a>
+			{% endif %}
 			{% for ad in craft.entries.section('ad').relatedTo(entry) %}
 			<a href="{{ ad.url }}"><button class="main-button media-partner-button">View Advertising Rates</button></a>
 			{% endfor %}
@@ -74,20 +76,20 @@
 
 	<div class="department-contact">
 	    <h2 class = "contact-name">Advertising</h2>
-				{% if entry.phone | length %}
+
 				<dl class="contact-list">
 			    <dt class="contact-label">P:</dt>
 					<dd class="contact-phone">{{advertisingContact.phone}}</dd>
 				</dl>
-				{% endif %}
-				{% if entry.email | length %}
+
+
 				<dl class="contact-list">
 			    <dt class="contact-label">E:</dt>
 					<dd class="contact-email">
-						<a href="{{entry.email}}">{{advertisingContact.email}}</a>
+						<dd class="contact-phone" href="{{entry.email}}">{{advertisingContact.email}}</dd>
 					</dd>
 				</dl>
-				{% endif %}
+
 	</div>
 
 	{% if entry.socialMedia | length >= 1 %}
