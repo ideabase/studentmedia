@@ -18,6 +18,7 @@ no-image
         <section class="advertising-column">
 					{% for block in entry.adUnit %}
 							{% if block.type == "adUnits" %}
+							<div class="advertising-column__unit">
 							<h2 class="subhead">{{block.adType}}</h2>
 							<p>{{block.adDescription}}</p>
             		<div class="advertising-content">
@@ -81,6 +82,7 @@ no-image
 							{% endif %}
 						{% endfor %}
             </div>
+					</div>
         {% endif %}
           {% endfor %}
     </section>

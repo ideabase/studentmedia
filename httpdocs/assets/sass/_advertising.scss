@@ -234,8 +234,19 @@ li{
 
 @media screen and (min-width: 750px){
   .advertising-column{
-    width: 45%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5em;
+  }
+  .advertising-column h2 {
+    padding-top:1em;
+  }
+  .advertising-column .subhead:before {
+    left: 0;
+    height: 7px;
+    width: 50px;
+    top: 0;
   }
   .advertising-body-container{
     display: flex;
