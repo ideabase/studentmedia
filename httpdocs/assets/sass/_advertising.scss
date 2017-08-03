@@ -11,6 +11,7 @@
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  text-decoration: none;
 }
 
 .advertising-platform-headers{
@@ -134,6 +135,9 @@
 .platform-dropdown{
   border-style: solid;
   border-color: $gray;
+  &:hover, &:active {
+    background-color: lighten($gray,35%);
+  }
 }
 
 div.accordion:before{
@@ -143,6 +147,12 @@ div.accordion:before{
   font-size: 40px;
   margin-top: 4px;
   margin-left: 10px;
+  z-index: 1000;
+position: relative;
+}
+
+.open .advertising-platform-headers {
+  font-weight: 500;
 }
 
 div.accordion.open:before{
