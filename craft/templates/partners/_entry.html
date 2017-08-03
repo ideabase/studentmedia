@@ -23,8 +23,13 @@
 			{% if entry.webUrl %}
 			<a href="{{entry.webUrl}}"><button class="main-button media-partner-button">Visit Website</button></a>
 			{% endif %}
+			<!-- Conditionally shows advertising rates, as long as it's not creative services -->
 			{% for ad in craft.entries.section('ad').relatedTo(entry) %}
-			<a href="{{ ad.url }}"><button class="main-button media-partner-button">View Advertising Rates</button></a>
+				{% for category in ad.adFormat %}
+					{% if category.title != "Creative Services" %}
+						<a href="{{ ad.url }}"><button class="main-button media-partner-button">View {{ad.title}} Ad Rates</button></a>
+					{% endif %}
+				{% endfor %}
 			{% endfor %}
 		</div>
 		</div>
