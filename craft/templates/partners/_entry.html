@@ -67,9 +67,11 @@
 			{% if not entry.employeeType.contains('studentMediaLeader') %}
 			<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
 			<h3 class = "contact-title">{{entry.jobTitle}}</h3>
-	  	<a class="contact-email" href="mailto:{{entry.email}}">
-				{{entry.email}} </a>
+				{% if entry.email | length %}
+		  	<a class="contact-email" href="mailto:{{entry.email}}">
+					{{entry.email}} </a>
 				{% endif %}
+			{% endif %}
 		{% endfor %}
 		</div>
 		{% endif %}
@@ -78,15 +80,13 @@
 	    <h2 class = "contact-name">Advertising</h2>
 
 				<dl class="contact-list">
-			    <dt class="contact-label">P:</dt>
+			    <dt class="contact-label">Phone</dt>
 					<dd class="contact-phone">{{advertisingContact.phone}}</dd>
 				</dl>
 
-
 				<dl class="contact-list">
-			    <dt class="contact-label">E:</dt>
-					<dd class="contact-email">
-						<dd class="contact-phone" href="{{entry.email}}">{{advertisingContact.email}}</dd>
+			    <dt class="contact-label">Email</dt>
+					<dd class="contact-email"><a href="{{advertisingContact.email}}">{{advertisingContact.email}}</a></dd>
 					</dd>
 				</dl>
 
@@ -96,15 +96,12 @@
 
 		<div class="social-media">
 		<h2 class = "contact-name">Social Media</h2>
-
-	{% for block in entry.socialMedia %}
-
-		<div class="social-media__icons">
+			<div class="social-media__icons">
+				{% for block in entry.socialMedia %}
 		       <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
-
-		{% endfor %}
+				{% endfor %}
+			</div>
 		</div>
-	</div>
 	{% endif %}
 </div>
 
