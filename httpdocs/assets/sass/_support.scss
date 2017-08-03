@@ -1,14 +1,21 @@
-.support-image{
-width: 100%;
-display: block;
-margin-left: auto;
-margin-right: auto;
-margin-top: 15px;
+.fundraiser {
+  @media screen and (min-width: 500px) {
+    display: flex;
+  }
 }
 
-@media screen and (max-width:650px){
-.button-wrapper{
-  width:200px;
-  margin: 0 auto;
+.fundraiser__title {
+  color: $dark-blue;
+  margin-top: 0;
 }
+
+.fundraiser__image{
+width: 100%;
+display: block;
+margin-top: 15px;
+max-width:300px;
+margin: 0;
+  @media screen and (min-width: 500px) {
+    margin-right: 3em;
+  }
 }
