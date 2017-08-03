@@ -25,10 +25,11 @@
 				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
 			</div>
 			<div class="submenu">
+				{% if category.description | length %}
+					<p class="platform-content-container__description">{{category.description}}</p>
+				{% endif %}
 				<div class = "platform-content-container">
-					{% if category.description | length %}
-						<p>{{category.description}}</p>
-					{% endif %}
+
 					<!-- Display all "Ad" entries related to these categories-->
 					{% include '_includes/ad-block.html' %}
 					<!-- Display all "Ad" entries that are Bundles-->

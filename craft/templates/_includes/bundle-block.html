@@ -4,9 +4,9 @@
       {% if block.type == "adBundle" %}
         <div class = "platform-content">
         <h2 class="platform-content-header">{{block.bundleName}}</h2>
-        <ul class="advertising-content-list">
-            <li>{{ block.bundleDescription }}</li>
-        </ul>
+        <div class="advertising-content-list">
+            {{ block.bundleDescription }}
+        </div>
         <ul class="advertising-price-list">
             <li class="bold-info">{{ block.bundlePrice }}</li>
         </ul>

@@ -1,6 +1,6 @@
 /*Main advertising*/
 .accordion {
-  margin: 30px auto 20px;
+  margin: 20px auto 10px;
 }
 
 .accordion .link {
@@ -25,7 +25,7 @@
 .platform-content{
   width: 100%;
   padding: 1.5em;
-  margin: .5em;
+  margin: .5em 0;
 }
 
 .platform-description {
@@ -34,9 +34,19 @@
 }
 
 .platform-content-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin-left:1em;
+  margin-right:1em;
+  padding-top:.5em;
+  padding-bottom: .5em;
+  @media screen and (min-width: 600px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5em;
+    justify-content: space-around;
+  }
+  @media screen and (min-width: 1100px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .platform-title-header, .platform-price-header{
@@ -77,6 +87,7 @@
   font-weight: 400;
   color: $mandarin;
   margin-top: 0;
+  line-height:1.2;
 }
 
 .platform-price-header{
@@ -110,6 +121,7 @@
 /*Light gray Kelsey will probably change because she hates every color I pick out lolol*/
 .submenu{
   background-color: #ededed;
+  padding-top:.25em;
 }
 
 .platforms-container{
@@ -163,13 +175,20 @@ th{
   margin-left: 15px;
 }
 
-.advertising-price-list, .advertising-content-list{
+.advertising-price-list, .advertising-content-list ul{
   list-style-type: none;
   padding: 0;
   margin: 0;
-  margin-left: 15px;
+  font-size: .95em;
 }
 
+.platform-content-container__description {
+  padding: 1.5em;
+  background-color: white;
+  display: block;
+  margin:1em;
+  margin-bottom: 0;
+}
 
 .advertising-price-list{
   font-weight: bold;
@@ -216,20 +235,4 @@ li{
   .platform-content-header {
     flex: none;
   }
-}
-
-@media screen and (min-width: 800px){
-    .platform-content{
-    width: 50%;
-    }
-
-    .testimonial {
-      margin-top: 75px;
-    }
-}
-
-@media screen and (min-width: 1100px){
-    .platform-content{
-    width: 31%;
-    }
 }
