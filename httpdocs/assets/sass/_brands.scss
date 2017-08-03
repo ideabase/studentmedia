@@ -27,7 +27,7 @@
   }
   &:hover, &:focus {
     &:after {
-      background-color: rgba(0,0,0,.6);
+      background-color: rgba(0,0,0,.7);
     }
   }
   &:after {
@@ -39,7 +39,7 @@
     left:0;
     position: absolute;
     z-index:5;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(0,0,0,.45);
   }
 }
 
@@ -47,7 +47,7 @@
   margin: auto;
   align-items: center;
   justify-content: center;
-  max-width: 65%;
+  max-width: 60%;
   z-index:10;
 }
 
