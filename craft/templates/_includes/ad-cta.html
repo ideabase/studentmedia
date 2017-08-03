@@ -1,11 +1,11 @@
 <div class="advertising-contact-list">
-  <p>{{advertisingContact.advertisingCallToActionText}}</p>
-  <p>{{advertisingContact.email}}</p>
-  <p>{{advertisingContact.phone}}</p>
-  <p>OR</p>
+  <h3 class="advertising-contact-list__headline">{{advertisingContact.advertisingHeadline}}</h3>
+  <p class="advertising-contact-list__text">{{advertisingContact.advertisingCallToActionText}}</p>
+  <a class="advertising-contact-list__contact" href="mailto:{{advertisingContact.email}}">{{advertisingContact.email}}</a>
+  <p class="advertising-contact-list__contact">{{advertisingContact.phone}}</p>
 	{% for asset in craft.entries.section('advertising') %}
 	{% for media in asset.mediaKit %}
-	<a class="secondary-button app-button" href="{{ media.url }}">Download Media Kit (PDF)</a>
+	<a class="main-button app-button" href="{{ media.url }}">Download Media Sales Kit (PDF)</a>
 	{% endfor %}
 	{% endfor %}
 </div>

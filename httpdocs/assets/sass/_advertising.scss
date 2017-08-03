@@ -228,8 +228,34 @@ li{
 
 
 .advertising-contact-list{
-  color: $dark-blue;
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.advertising-contact-list__headline {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: $dark-blue;
+  margin-bottom: .25em;
+}
+
+.advertising-contact-list__contact {
+  font-weight: 500;
+  font-size: 1.2em;
+  color: $dark-blue;
+  margin-bottom: .25em;
+  margin-bottom: .5em;
+  margin-top: 0;
+  display:block;
+}
+
+.advertising-contact-list__text {
+  font-size: .9em;
+}
+
+.app-button {
+  margin-top: 1em;
 }
 
 @media screen and (min-width: 750px){
