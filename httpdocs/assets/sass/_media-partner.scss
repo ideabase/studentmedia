@@ -26,11 +26,16 @@
   padding-left: .5em;
   li {
     margin-bottom: .25em;
+    position: relative;
+    margin-left: 1em;
   }
   li:before {
     margin-right: .5em;
-    font-size: 1.2em;
-    content: "\25AA";
+    font-size: .7em;
+    content: "\25FC";
+    position: absolute;
+    left: -1.5em;
+    top: .25em;
     color: $mandarin;
   }
   a {
