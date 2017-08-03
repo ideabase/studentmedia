@@ -1,4 +1,4 @@
-{% if category.title == "Bundles" %}
+{% if category.title == "Bundles & Specials" %}
   {% for entry in craft.entries.section('ad') %}
     {% for block in entry.adUnit %}
       {% if block.type == "adBundle" %}
