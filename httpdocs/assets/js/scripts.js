@@ -101,12 +101,22 @@ $(document).ready(function() {
 	    navTrigger.className = 'nav-trigger open';
 	    nav.className = 'out';
       navBody.className = 'js';
+      nav.setAttribute('aria-hidden', 'true');
+      navTrigger.setAttribute('aria-expanded', 'false');
 	  } else {
 	    navTrigger.className = 'nav-trigger close';
 	    nav.className = 'in';
       navBody.className = 'js menu-open';
+      nav.setAttribute('aria-hidden', 'false');
+      navTrigger.setAttribute('aria-expanded', 'true');
 	  }
 	}
+
+  const mq = window.matchMedia( "(min-width: 900px)" );
+
+  if (mq.matches) {
+    nav.setAttribute('aria-hidden', 'false');
+  }
 
 	// Drop Down / Accordion Open/Close //
 

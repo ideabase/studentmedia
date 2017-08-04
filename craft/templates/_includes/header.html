@@ -1,9 +1,6 @@
 <header role="banner">
   <a id="skip-to-content" href="#content">skip to main content</a>
   <div class="header-container">
-      <section class = "header-nav-container">
-        <button id="nav-trigger" class="nav-trigger">Menu</button>
-      </section>
       {% cache %}
       <section class = "header-logo-container">
         {% for asset in header.logo %}
@@ -18,7 +15,10 @@
         {% endfor %}
       </section>
       {% endcache %}
-			<nav id="nav" class="out" role="navigation">
+      <section class = "header-nav-container">
+        <button aria-label="Menu" aria-expanded="false" aria-controls="nav" id="nav-trigger" class="nav-trigger">Menu</button>
+      </section>
+			<nav id="nav" class="out" aria-hidden="true" aria-labelledby="nav-trigger" role="navigation">
         {% cache %}
           {{ craft.amNav.getNav("mainMenu") }}
         {% endcache %}
