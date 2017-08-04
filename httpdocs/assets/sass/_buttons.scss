@@ -4,7 +4,7 @@ header .cta-header a {
    letter-spacing: .3px;
    line-height: 1.4em;
    color: white;
-   background-color: $light-blue;
+   background-color: darken($light-blue,24%);
    transition: .4s;
    transition-timing-function: ease-in;
    transition-timing-function: ease-out;
@@ -41,7 +41,7 @@ header .cta-header a {
    letter-spacing: .3px;
    line-height: 1.4em;
    color: white;
-   background-color: $light-blue;
+   background-color: darken($light-blue,24%);
    border-color:none;
    border-width: 0;
    transition: .4s;
