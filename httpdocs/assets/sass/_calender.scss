@@ -1,3 +1,11 @@
+.event-detail {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2em;
+  flex-wrap: wrap;
+
+}
+
 .events {
   margin-top: 1.5em;
   @media screen and (min-width: 700px){
@@ -8,22 +16,57 @@
   }
 }
 
+.event-detail .date-box {
+  margin-top: .15em;
+}
+
+.event-detail__description {
+  padding-left: 2em;
+  width: 65%;
+  @media screen and (min-width: 800px) {
+    width: 55%;
+    padding-left: 3em;
+  }
+}
+
+.event-detail__description .intro-sentence-header {
+  margin-top: 0;
+}
+
+.event-detail__stats {
+  font-size: .95em;
+  margin-left:.25em;
+  margin-top: 2em;
+  width: 100%;
+  @media screen and (min-width: 600px) {
+    width: 20%;
+  }
+  @media screen and (min-width: 800px) {
+    width:25%;
+    margin-top: 0;
+    padding-left: 3em;
+  }
+}
+
+.event-detail__time {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 2em;
+}
+
 .event-container {
       align-items: flex-start;
   background-color: #ededed;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding: .75em;
+  margin-bottom: .75em;
 }
 
 .date-box {
   background-color: $mandarin;
-    top: 30px;
-    left: 15px;
+  width: 115px;
 }
 .date-style {
   color: white;
@@ -40,7 +83,8 @@
 .date {
   border-bottom-style: solid;
   border-bottom-color: white;
-  width: 100px;
+  width: 100%;
+  padding: .35em 1em;
 }
 .month {
   background-color: $mandarin;
@@ -49,7 +93,7 @@
 .month-style {
   font-weight: 400;
   color: white;
-  font-size: 2em;
+  font-size: 1.75em;
   letter-spacing: .08em;
   text-align: center;
   display: block;
@@ -59,18 +103,17 @@
   padding-bottom: .25em;
 }
 .event {
-  padding-left: 1em;
+  padding-left: 1.5em;
   padding-right: 1em;
 
 }
 .event-title{
-margin-top: .5em;
+  margin-top: .5em;
   a {
     color: $dark-blue;
     text-decoration: none;
   }
 }
-
 .event-words {
   font-size: .8em;
 

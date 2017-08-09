@@ -8,13 +8,13 @@ main{
   margin: 0 auto;
   margin-top: -30px;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 1;
   position: relative;
   background-color: $white;
   max-width: 1200px;
   padding: 1.5em 1.75em;
   @media screen and (min-width: 800px) {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 93%;
     padding: 1em 3em 3em 3em;
   }
@@ -56,8 +56,14 @@ main{
 }
 
 .no-image {
-  margin-top: .5em;
+  margin-top: 0;
+  .page-header {
+    margin-top: -1em;
+  }
   @media screen and (min-width: 800px) {
     margin-top: 3em;
+    .page-header {
+      margin-top: -2em;
+    }
   }
 }

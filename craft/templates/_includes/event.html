@@ -9,7 +9,9 @@
     </div>
     <div class="event">
       <h3 class="event-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-      <div class="event-words">{{entry.body}}</div>
+      {% set paragraphs = entry.body|split('</p>') %}
+      {% set firstParagraph = paragraphs|first ~ '</p>' %}
+      <div class="event-words">{{ firstParagraph|raw }}</div>
       <a class="news-story-link" href="{{ entry.url }}">More About Event</a>
     </div>
   </div>
