@@ -5,7 +5,7 @@
           <h2 class="platform-content-header">{{ entry.title }}</h2>
           <p class="platform-description">{{entry.shortDescription}}</p>
         {% for ad in craft.entries.section('ad').relatedTo(entry) %}
-             <a class="secondary-button ad-button" href="{{ ad.url }}">View Rates for {{ad.title }}</a>
+             <a class="secondary-button rates-button" href="{{ ad.url }}">View Rates for {{ad.title }}</a>
         {% endfor %}
     </div>
       {% endif %}
