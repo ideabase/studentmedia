@@ -60,7 +60,7 @@
         <li class="footer-list-item">{{footer.phone}}</li>
         <li class="footer-list-item"><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
         {% for block in footer.socialMedia %}
-		       <li class="footer-list-item footer-list-item--social"><a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">Join Student Media on {{ block.socialName }}</a></li>
+		       <li class="footer-list-item footer-list-item--social"><a href= "{{block.address}}">Join Student Media on {{ block.socialName }}</a></li>
 				{% endfor %}
       </ul>
     </div>
