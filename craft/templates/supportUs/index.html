@@ -24,7 +24,7 @@
 		<div class="fundraiser__text">
 			<h3 class="fundraiser__title">{{block.fundraiserTitle}}</h3>
 			<p>{{block.description}}</p>
-			<a href="{{block.linkUrl}}" class="secondary-button app button">{{block.linkName}}</a>
+			<a onclick="ga('send', 'event', 'Donation', '{{block.fundraiserTitle}}');" href="{{block.linkUrl}}" class="secondary-button app button">{{block.linkName}}</a>
 		</div>
 	</section>
 {% endfor %}
