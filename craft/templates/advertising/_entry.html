@@ -15,14 +15,14 @@ no-image
 </section>
 {% endif %}
 <section class="section">
-        <section class="advertising-column">
+        <section class="package-column">
 					{% for block in entry.adUnit %}
 							{% if block.type == "adUnits" %}
-							<div class="advertising-column__unit">
+							<div class="package-column__unit">
 							<h2 class="subhead">{{block.adType}}</h2>
 							<p>{{block.adDescription}}</p>
-            		<div class="advertising-content">
-                    <table class="advertising-matrix">
+            		<div class="package-content">
+                    <table class="package-matrix">
                         <thead>
 													<tr>
 														{% for row in block.adUnitr | slice(0, 1) %}
@@ -89,7 +89,7 @@ no-image
 		<a class="main-button" href="/advertising">Return to All Ad Rates</a>
 </section>
 
-<section class="advertising-bottom-section">
+<section class="cta-bottom-section">
 {% for partner in craft.entries.section('partners').relatedTo(entry) %}
 <a class="secondary-button" href="{{ partner.url }}">More About {{ partner.title }}</a>
 {% endfor %}

@@ -9,11 +9,16 @@
   position: relative;
   transition: all 0.4s ease-in-out;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 75px;
 }
 
 .advertising-platform-headers{
   font-weight: $light;
   color: black;
+  margin:0;
+  padding:0;
 }
 
 .submenu {
@@ -144,11 +149,10 @@
   font-size: 2em;
   margin-left: .5em;
   z-index: 1;
-  height: 100%;
   margin-right: .5em;
-  margin-top: .2em;
-position: relative;
+  position: relative;
   width: 20px;
+  margin-top: -3px;
 }
 
 .open .advertising-platform-headers {
@@ -161,7 +165,7 @@ position: relative;
 
 /*Individual advertising*/
 
-.advertising-matrix{
+.package-matrix{
   width: 100%;
     border-spacing: 0;
 }
@@ -206,18 +210,18 @@ th{
 }
 
 
-.advertising-content{
+.package-content{
   margin-bottom: 50px;
   font-weight: 300;
   line-height: 1.5em;
 }
 
-.advertising-bottom-section{
+.cta-bottom-section{
   width: 100%;
 }
 
 
-.advertising-bottom-section{
+.cta-bottom-section{
   text-align: center;
 }
 
@@ -259,16 +263,16 @@ li{
 }
 
 @media screen and (min-width: 750px){
-  .advertising-column{
+  .package-column{
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
   }
-  .advertising-column h2 {
+  .package-column h2 {
     padding-top:1em;
   }
-  .advertising-column .subhead:before {
+  .package-column .subhead:before {
     left: 0;
     height: 7px;
     width: 50px;

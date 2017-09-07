@@ -90,6 +90,7 @@ header .cta-header a {
   transition: .3s background-color ease-in-out;
   margin-right:.5em;
   margin-left:.5em;
+  line-height: 1.5;
   &:hover, &:focus {
     background-color: $lime-green;
   }
