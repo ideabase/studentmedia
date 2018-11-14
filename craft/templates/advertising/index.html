@@ -17,10 +17,10 @@
 <section class="section">
   <h2 class="subhead">Ad & Creative Rates by Type</h2>
   {% set categories = craft.categories.group('adFormat') %}
-	{% cache %}
-	<div id="accordion">
+	<div id ="accordion">
   {% for category in categories %}
-    <div class="accordion">
+	{% if category.title == "Client Services" %}
+    <div id="accordion2">
     	<div class="link platform-dropdown">
 				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
 			</div>
@@ -39,6 +39,51 @@
 				</div>
 			</div>
 		</div>
+		{% endif %}
+  {% endfor %}
+	</div>
+</section>
+
+
+<section class="section">
+  <h2 class="subhead">Ad & Creative Rates by Type</h2>
+  {% set categories = craft.categories.group('adFormat') %}
+	{% cache %}
+	<div id="accordion">
+  {% for category in categories %}
+	{% if category.title != "Client Services" %}
+    <div class="accordion">
+    	<div class="link platform-dropdown">
+				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
+			</div>
+			<div class="submenu">
+				{% if category.description | length %}
+					<p class="platform-content-container__description">{{category.description}}</p>
+				{% endif %}
+				<div class = "platform-content-container">
+
+					<!-- Display all "Ad" entries related to these categories-->
+					{% include '_includes/ad-block.html' %}
+					<!-- Display all "Ad" entries that are Bundles-->
+					{% include '_includes/bundle-block.html' %}
+					<!-- Display all "Ad" entries related to Creative Services -->
+					{% include '_includes/creative-block.html' %}
+
+					<!-- {% if category.title == "Client Services" %}
+					  {% for entry in craft.entries.section('partners').relatedTo(category) %}
+					            {% for ad in craft.entries.section('ad').relatedTo(entry).order('title') %}
+					              <div class = "platform-content">
+					                <h2 class="platform-content-header">{{ ad.title }}</h2>
+					                {{ ad.body }}
+					                <a class="secondary-button rates-button" href="{{ ad.url }}">View {{ad.title }} Rates</a>
+					              </div>
+					          {% endfor %}
+					  {% endfor %}
+					{% endif %} -->
+				</div>
+			</div>
+		</div>
+		{% endif %}
   {% endfor %}
 	</div>
 	{% endcache %}
