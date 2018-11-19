@@ -5,3 +5,4 @@
 **/.DS_Store
 httpdocs/assets/uploads/*
 /httpdocs/assets/img/global/_hero
+/package-lock.json
