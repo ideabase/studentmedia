@@ -192,7 +192,7 @@ $(document).ready(function() {
       $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
     };
   }
-  var accordion2 = new Accordion2($('#accordion2'), false);
+  var accordion2 = new Accordion($('#accordion2'), false);
 
 	// Show more/less text in FAQ //
 	$(".more-link").click(function(e){
