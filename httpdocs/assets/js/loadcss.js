@@ -1,17 +1,17 @@
 //Async Load CSS //
 
-(function(w){
+(function(w) {
   "use strict";
-  var loadCSS = function( href, before, media ){
+  var loadCSS = function(href, before, media) {
     var doc = w.document;
-    var ss = doc.createElement( "link" );
+    var ss = doc.createElement("link");
     var ref;
-    if( before ){
+    if (before) {
       ref = before;
     }
     else {
-      var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-      ref = refs[ refs.length - 1];
+      var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+      ref = refs[refs.length - 1];
     }
 
     var sheets = doc.styleSheets;
@@ -19,17 +19,17 @@
     ss.href = href;
     ss.media = "only x";
 
-    ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-    var onloadcssdefined = function( cb ){
+    ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+    var onloadcssdefined = function(cb) {
       var resolvedHref = ss.href;
       var i = sheets.length;
-      while( i-- ){
-        if( sheets[ i ].href === resolvedHref ){
+      while (i--) {
+        if (sheets[i].href === resolvedHref) {
           return cb();
         }
       }
       setTimeout(function() {
-        onloadcssdefined( cb );
+        onloadcssdefined(cb);
       });
     };
     ss.onloadcssdefined = onloadcssdefined;
@@ -38,11 +38,11 @@
     });
     return ss;
   };
-  if( typeof module !== "undefined" ){
+  if (typeof module !== "undefined") {
     module.exports = loadCSS;
   }
   else {
     w.loadCSS = loadCSS;
   }
-}( typeof global !== "undefined" ? global : this ));
-loadCSS( "/assets/css/style.css" );
+}(typeof global !== "undefined" ? global : this));
+loadCSS("/assets/css/style.css");

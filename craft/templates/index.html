@@ -21,13 +21,13 @@
     <div class="header-quote-container">
        <div class="header-quote">
          <h1 class = "hero-image-caption">
-           <span class="hero-image-caption__level">{{entry.tagline}}</span>
-           <span class="hero-image-caption__level">{{entry.taglineLevel2}}</span>
-           <span class="hero-image-caption__level">{{entry.taglineLevel3}}</span>
+           <span class="hero-image-caption__level">{{ entry.tagline }}</span>
+           <span class="hero-image-caption__level">{{ entry.taglineLevel2 }}</span>
+           <span class="hero-image-caption__level">{{ entry.taglineLevel3 }}</span>
          </h1>
          <div class="hero-image-partners">
           {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('(CASE WHEN title LIKE "The %" THEN SUBSTRING(title, 5) ELSE title END ) asc') %}
-            <span class="hero-image-partners__name">{{entry.title}}</span>
+            <span class="hero-image-partners__name">{{ entry.title }}</span>
            {% endfor %}
           </div>
        </div>
@@ -41,16 +41,16 @@
    <div class = "video-div-flex-container">
     <div class = "video-blurb">
       <h2 class="intro-sentence-header">{{ entry.description }}</h2>
-      <div class="intro-paragraph">{{entry.body}}</div>
+      <div class="intro-paragraph">{{ entry.body }}</div>
       {% for entry in entry.aboutCta %}
-      	<a class="main-button" href="{{entry.url}}">Learn More {{ entry.title }}</a>
+      	<a class="main-button" href="{{ entry.url }}">Learn More {{ entry.title }}</a>
       {% endfor %}
     </div>
       {# Lazy Loaded Video #}
       <figure class = "video-box">
-        <img src="/assets/img/icons/video-placeholder.gif" class="video-thumb" data-vimeo-id="{{entry.video}}" alt="Kent Student Media Video" />
+        <img src="/assets/img/icons/video-placeholder.gif" class="video-thumb" data-vimeo-id="{{ entry.video }}" alt="Kent Student Media Video" />
         <figcaption class="video-box__caption">
-            {{entry.videoCaption}}
+            {{ entry.videoCaption }}
         </figcaption>
     </figure>
   </section>
@@ -67,11 +67,11 @@
     <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
     <div class = "video-div-flex-container">
       <div class = "video-blurb">
-          {{entry.mediaPartnerBody}}
+          {{ entry.mediaPartnerBody }}
       </div>
       <div class="video-box video-box--nospace">
         {% for entry in entry.mediaPartnersCta %}
-        	<a class="main-button" href="{{entry.url}}">See All {{ entry.title }}</a>
+        	<a class="main-button" href="{{ entry.url }}">See All {{ entry.title }}</a>
         {% endfor %}
       </div>
     </div>
@@ -86,27 +86,25 @@
           {% if entry.heroImage | length %}
 
             {% for asset in entry.heroImage %}
-              <a href="{{entry.url}}" class="lazy media-partner" data-src="{{asset.url('mediaPartnerIcon')}}" {# style="background-image:url('{{asset.url('mediaPartnerIcon')}}');" #}>
-            {% endfor %}
-
-            {% for asset in entry.logo %}
-              <noscript>
-                <img src="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="brand-logo">
-              </noscript>
-              <img data-src="{{ asset.getUrl('') }}" alt="{{asset.title}}" class="lazy brand-logo" />
+              <a href="{{ entry.url }}" class="lazy media-partner" data-src="{{ asset.url('mediaPartnerIcon') }}" {# style="background-image:url('{{ asset.url('mediaPartnerIcon')}}');" #}>
+                {% for asset in entry.logo %}
+                  <noscript>
+                    <img src="{{ asset.getUrl('') }}" alt="{{ asset.title }}" class="brand-logo">
+                  </noscript>
+                  <img data-src="{{ asset.getUrl('') }}" alt="{{ asset.title }}" class="lazy brand-logo" />
+                {% endfor %}
+              </a>
             {% endfor %}
 
           {% endif %}
-        </a>
 
         {% if (loop.last and entryNum % 2 != 0) %}
-             {# {% set entry = craft.entries.section('partners').featuredMediaPartner('extraEntry') %} #}
 
              {% for asset in newww.heroImage %}
-              <a href="{{newww.url}}" class="lazy media-partner" data-src="{{asset.url('mediaPartnerIcon')}}" {# style="background-image:url('{{asset.url('mediaPartnerIcon')}}');" #}>
+              <a href="{{ newww.url }}" class="lazy media-partner" data-src="{{ asset.url('mediaPartnerIcon') }}">
               {% endfor %}
               {% for asset in newww.logo %}
-              <img src="{{asset.url}}" alt="{{asset.title}}" class="brand-logo" />
+              <img src="{{ asset.url }}" alt="{{ asset.title }}" class="brand-logo" />
             {% endfor %}
           </a>
         {% endif %}
@@ -120,14 +118,14 @@
   {% cache %}
       <section class = "section statistics-container">
 
-        <h2 class ="subhead">{{entry.advertisingHeader}}</h2>
+        <h2 class ="subhead">{{ entry.advertisingHeader }}</h2>
         <div class = "video-div-flex-container">
          <div class = "video-blurb">
-           {{entry.adBody}}
+           {{ entry.adBody }}
          </div>
            <div class = "video-box video-box--nospace">
              {% for entry in entry.advertingCta %}
-             	<a class="main-button" href="{{entry.url}}">{{ entry.title }}</a>
+             	<a class="main-button" href="{{ entry.url }}">{{ entry.title }}</a>
              {% endfor %}
          </div>
   {% endcache %}

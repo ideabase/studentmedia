@@ -1,7 +1,3 @@
-
-
-
-
 // Lazy Load Home Page Video //
 
 /*
@@ -12,28 +8,28 @@
  *	Licensed under the MIT license
  */
 
-;(function ( $, window, document, undefined ) {
+; (function ($, window, document, undefined) {
 
 	var pluginName = "smartVimeoEmbed",
-	defaults = {
-		idSelectorName: 'vimeo-id',
-		vimeoPatternUrl: 'https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com/',
-		autoplay: true,
-		width: 640,
-		onComplete: function(){},
-		onError: function(){}
-	};
+		defaults = {
+			idSelectorName: 'vimeo-id',
+			vimeoPatternUrl: 'https://vimeo.com/api/oembed.json?url=https%3A%2F%2Fvimeo.com/',
+			autoplay: true,
+			width: 640,
+			onComplete: function () { },
+			onError: function () { }
+		};
 
-	function Plugin( element, options ) {
+	function Plugin(element, options) {
 		this.element = element;
-		this.options = $.extend( {}, defaults, options);
+		this.options = $.extend({}, defaults, options);
 		this._defaults = defaults;
 		this._name = pluginName;
 		this.init();
 	}
 
 	Plugin.prototype = {
-		init: function() {
+		init: function () {
 			var options = this.options;
 
 			$(this.element).each(function (i, e) {
@@ -50,7 +46,7 @@
 					$.ajax({
 						url: url,
 						dataType: 'jsonp',
-						success: function(data){
+						success: function (data) {
 							$('#output').text(JSON.stringify(data));
 
 							// add wrapper for play icon positioning
@@ -60,24 +56,24 @@
 							$e.attr('src', data.thumbnail_url);
 
 							// add play icon and click event listener
-							$e.parent().prepend('<span class="play-icon"/>').on('click', function(){
+							$e.parent().prepend('<span class="play-icon"/>').on('click', function () {
 								var $this = $(this);
 
 								// only append video once
-								if ( !$this.find('iframe').length ) {
+								if (!$this.find('iframe').length) {
 
 									// append video iframe and hide poster
 									// image and play icon
 									$this.append(data.html).find('img, .play-icon').hide();
 								}
 
-								if (options.onComplete && typeof(options.onComplete) === 'function') {
+								if (options.onComplete && typeof (options.onComplete) === 'function') {
 									options.onComplete.call(this);
 								}
 							});
 						},
-						error: function(errorSender, errorMsg){
-							if (options.onError && typeof(options.onError) === 'function') {
+						error: function (errorSender, errorMsg) {
+							if (options.onError && typeof (options.onError) === 'function') {
 								options.onError.call(this);
 							}
 						}
@@ -87,12 +83,12 @@
 		}
 	};
 
-	$.fn[pluginName] = function ( options ) {
+	$.fn[pluginName] = function (options) {
 		return this.each(function () {
 			if (!$.data(this, "plugin_" + pluginName)) {
-				$.data(this, "plugin_" + pluginName, new Plugin( this, options ));
+				$.data(this, "plugin_" + pluginName, new Plugin(this, options));
 			}
 		});
 	};
 
-})( jQuery, window, document );
+})(jQuery, window, document);
