@@ -9,15 +9,16 @@
 
 return array(
   '*' => array(
-	       'extraAllowedFileExtensions' => 'eps',
-         'siteUrl' => 'https://kentstatestudentmedia.com',
-         'enableCsrfProtection' => true,
-         'omitScriptNameInUrls' => true,
-         'cpTrigger' => 'admin',
-         'environmentVariables' => array(
-          'basePath' => '',
-          'baseUrl'  => 'https://kentstatestudentmedia.com',
-        )
+    'extraAllowedFileExtensions' => 'eps',
+    'sanitizeSvgUploads' => false,
+    'siteUrl' => 'https://kentstatestudentmedia.com',
+    'enableCsrfProtection' => true,
+    'omitScriptNameInUrls' => true,
+    'cpTrigger' => 'admin',
+    'environmentVariables' => array(
+      'basePath' => '',
+      'baseUrl'  => 'https://kentstatestudentmedia.com',
+    )
 	),
 	'studentmedia.web' => array(
 	    'devMode' => true,

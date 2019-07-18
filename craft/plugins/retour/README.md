@@ -1,8 +1,18 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# DEPRECATED
+
+This Craft CMS 2.x plugin is no longer supported, but it is fully functional, and you may continue to use it as you see fit. The license also allows you to fork it and make changes as needed for legacy support reasons.
+
+The Craft CMS 3.x version of this plugin can be found here: [craft-retour](https://github.com/nystudio107/craft-retour) and can also be installed via the Craft Plugin Store in the Craft CP.
+
 # Retour plugin for Craft CMS
 
 Retour allows you to intelligently redirect legacy URLs, so that you don't lose SEO value when rebuilding & restructuring a website.
 
 ![Screenshot](resources/screenshots/retour01.png)
+
+Related: [Retour for Craft 3.x](https://github.com/nystudio107/craft-retour)
 
 ## Installation
 
@@ -106,10 +116,6 @@ Create a Retour Redirect field as you would any other field; then set the defaul
 * **Redirect Type** - Select whether the redirect should be permanent or temporary.
 
 **Note:** if you add a Retour Redirect FieldType to an existing Section, or you import data from a foreign source into a Section with a Retour Redirect FieldType, the default values you set for the Retour Redirect FieldType will not be propagated to the entry yet.  To cause that to happen, go to **Settings->Sections** then click on the Section to edit it, and hit **Save**.  This will cause all of the entries in that section to be re-saved, and Retour will fill in the default field values.
-
-### Multiple Redirects to the Same Entry
-
-If you need more than one Legacy URL Pattern to redirect to a given entry, simply create a new Retour Redirect field (so that you get a new set of default options) and add it to your Entry Type layout.  You can add as many as you like.
 
 ## Static Redirects
 

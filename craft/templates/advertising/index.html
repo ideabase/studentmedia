@@ -33,14 +33,14 @@
 				{% endif %}
 				<div class = "platform-content-container">
 
-					<!-- Display all "Ad" entries related to these categories-->
+					{# Display all "Ad" entries related to these categories#}
 					{% include '_includes/ad-block.html' %}
-					<!-- Display all "Ad" entries that are Bundles-->
+					{# Display all "Ad" entries that are Bundles#}
 					{% include '_includes/bundle-block.html' %}
-					<!-- Display all "Ad" entries related to Creative Services -->
+					{# Display all "Ad" entries related to Creative Services #}
 					{% include '_includes/creative-block.html' %}
 
-					<!-- {% if category.title == "Client Services" %}
+					{# {% if category.title == "Client Services" %}
 					  {% for entry in craft.entries.section('partners').relatedTo(category) %}
 					            {% for ad in craft.entries.section('ad').relatedTo(entry).order('title') %}
 					              <div class = "platform-content">
@@ -50,7 +50,7 @@
 					              </div>
 					          {% endfor %}
 					  {% endfor %}
-					{% endif %} -->
+					{% endif %} #}
 				</div>
 			</div>
 		</div>

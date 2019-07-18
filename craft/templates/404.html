@@ -19,9 +19,10 @@
 {% extends "_layout" %}
 {% set title = "404" %}
 
-
 {% block main %}
+
 no-image
+
 {% endblock %}
 
 {% block content %}
@@ -29,5 +30,7 @@ no-image
 {% for err in errorPage.errorImage %}
 	<img src="{{err.url}}" alt="{{err.title}}"/>
 {% endfor %}
+
 <a class="main-button" href="{{siteUrl}}">Go Home</a>
+
 {% endblock %}
