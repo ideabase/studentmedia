@@ -10,7 +10,6 @@
 return array(
   '*' => array(
     'extraAllowedFileExtensions' => 'eps',
-    'sanitizeSvgUploads' => false,
     'siteUrl' => 'https://kentstatestudentmedia.com',
     'enableCsrfProtection' => true,
     'omitScriptNameInUrls' => true,
