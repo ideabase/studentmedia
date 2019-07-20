@@ -11,8 +11,10 @@
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1em;
   z-index: 100;
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
   @media screen and (min-width: 400px) {
     height: 100px;
     width: 100px;
@@ -106,15 +108,15 @@
 /* Next & previous buttons */
 .owl-nav{
   position: absolute;
-  top: 40%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
   z-index: 1000;
-  @media screen and (min-width: 600px){
-    top: 30%;
-  }
 }
 
 .owl-next, .owl-prev {
+  border: none;
+  background-color: transparent;
   width: 35px;
   height: 35px;
   background-repeat: no-repeat;
@@ -123,9 +125,8 @@
   overflow: hidden;
 
   @media screen and (min-width: 600px){
-    margin-left: 15px;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
   @media screen and (min-width: 1000px){
     margin-left: 15px;
@@ -138,7 +139,6 @@
   background-image: url("../img/icons/arrow-left-orange.svg");
   transform: rotateY(180deg);
   @media screen and (min-width: 600px){
-    margin-right: 15px;
     opacity: .65;
     transition: .3s all ease-in-out;
     &:hover {
@@ -152,7 +152,6 @@
   margin-left: 0;
   background-image: url("../img/icons/arrow-left-orange.svg");
   @media screen and (min-width: 600px){
-    margin-left: 15px;
     opacity: .65;
     transition: .3s all ease-in-out;
     &:hover {

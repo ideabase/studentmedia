@@ -28,6 +28,7 @@ $(document).ready(function() {
 	setTimeout(function() {
 		$('.brand-logo-grid').owlCarousel({
 			items: 5,
+			dots: false,
 			nav: true,
 			loop: false,
 			rewind: false,
