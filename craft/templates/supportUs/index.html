@@ -1,26 +1,29 @@
 {% extends "_layout" %}
 
 {% block hero %}
-	{% include '_includes/hero.html' %}
+{% include '_includes/hero.html' %}
 {% endblock %}
 
 {% block content %}
 
+<div class="page-header">
+	<h1 class="head-line">{{entry.title}}</h1>
+</div>
 
-<div class="page-header"><h1 class="head-line">{{entry.title}}</h1></div>
 <section class="section">
-<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-<div class="introduction">{{entry.body}}</div>
+	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+	<div class="introduction">{{entry.body}}</div>
 </section>
+
 {% for block in entry.fundraiser.type('fundraiserInfo') %}
-<section class="section fundraiser">
-	{% if block.fundraiserImage | length %}
-		{% for asset in block.fundraiserImage %}
-		<figure class="fundraiser__image">
-			<img src="{{asset.url('squareNews')}}" alt="{{asset.title}}"/>
-		</figure>
-		{% endfor %}
-	{% endif %}
+	<section class="section fundraiser">
+		{% if block.fundraiserImage | length %}
+			{% for asset in block.fundraiserImage %}
+				<figure class="fundraiser__image">
+					<img src="{{asset.url('squareNews')}}" alt="{{asset.title}}"/>
+				</figure>
+			{% endfor %}
+		{% endif %}
 		<div class="fundraiser__text">
 			<h3 class="fundraiser__title">{{block.fundraiserTitle}}</h3>
 			<p>{{block.description}}</p>
@@ -28,4 +31,5 @@
 		</div>
 	</section>
 {% endfor %}
+
 {% endblock %}

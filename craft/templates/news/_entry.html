@@ -1,29 +1,32 @@
 {% extends "_layout" %}
 
 {% block hero %}
-	{% if entry.featureImageFormat == "fullWidth" %}
-			{% include '_includes/hero.html' %}
-	{% endif %}
+{% if entry.featureImageFormat == "fullWidth" %}
+	{% include '_includes/hero.html' %}
+{% endif %}
 {% endblock %}
 
 {% block main %}
-	{% if entry.featureImageFormat != "fullWidth" %}
+{% if entry.featureImageFormat != "fullWidth" %}
 	no-image
-	{% endif %}
+{% endif %}
 {% endblock %}
 
 {% block content %}
+
 <article role="article">
-<h1 class="intro-sentence-header--news">{{entry.title}}</h1>
-<p class="news-story-date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
-{% if entry.featureImageFormat != "fullWidth" %}
-	{% for asset in entry.heroImage %}
-		<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title" />
-	{% endfor %}
-{% endif %}
-{{entry.body}}
+	<h1 class="intro-sentence-header--news">{{entry.title}}</h1>
+	<p class="news-story-date">Posted on
+		{{ entry.postDate.format('F d, Y') }}</p>
+	{% if entry.featureImageFormat != "fullWidth" %}
+		{% for asset in entry.heroImage %}
+			<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title"/>
+		{% endfor %}
+	{% endif %}
+	{{entry.body}}
 </article>
 <section class="section">
-<a class="main-button" href="/news">See All News</a>
+	<a class="main-button" href="/news">See All News</a>
 </section>
+
 {% endblock %}

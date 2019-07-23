@@ -1,27 +1,27 @@
 <header role="banner">
-  <a id="skip-to-content" href="#content">skip to main content</a>
+  <a href="#content" id="skip-to-content">skip to main content</a>
   <div class="header-container">
+    {% cache %}
+    <section class="header-logo-container">
+      {% for asset in header.logo %}
+        <a href="{{siteUrl}}">
+          <img class="header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
+        </a>
+      {% endfor %}
+      {% for asset in header.smallLogo %}
+        <a href="{{siteUrl}}">
+          <img class="header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+        </a>
+      {% endfor %}
+    </section>
+    {% endcache %}
+    <section class="header-nav-container">
+      <button aria-controls="nav" aria-expanded="false" aria-label="Menu" class="nav-trigger" id="nav-trigger">Menu</button>
+    </section>
+    <nav aria-hidden="true" aria-labelledby="nav-trigger" class="out" id="nav" role="navigation">
       {% cache %}
-      <section class="header-logo-container">
-        {% for asset in header.logo %}
-          <a href= "{{siteUrl}}">
-            <img class="header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
-          </a>
-        {% endfor %}
-        {% for asset in header.smallLogo %}
-          <a href= "{{siteUrl}}">
-            <img class="header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
-          </a>
-        {% endfor %}
-      </section>
+      {{ craft.amNav.getNav("mainMenu") }}
       {% endcache %}
-      <section class="header-nav-container">
-        <button aria-label="Menu" aria-expanded="false" aria-controls="nav" id="nav-trigger" class="nav-trigger">Menu</button>
-      </section>
-			<nav id="nav" class="out" aria-hidden="true" aria-labelledby="nav-trigger" role="navigation">
-        {% cache %}
-          {{ craft.amNav.getNav("mainMenu") }}
-        {% endcache %}
-			</nav>
+    </nav>
   </div>
 </header>

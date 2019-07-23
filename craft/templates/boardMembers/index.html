@@ -1,89 +1,90 @@
 {% extends "_layout" %}
 
 {% block hero %}
-	{% include '_includes/hero.html' %}
+{% include '_includes/hero.html' %}
 {% endblock %}
 
 {% block content %}
-	<div class="page-header">
-	<h1 class="head-line">{{entry.title}}</h1></div>
-	<section class="section">
-		<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-		<div class="body-dual-column">{{entry.body}}</div>
-	</section>
-	<section class="section">
 
-	<h2 id="guidelines" class="subhead">Student Media Board Guidelines</h2>
-	<div class="guidelines">
-	{% for entry in craft.entries.section('boardMembers').find() %}
-	{% for link in entry.supplementalLinks %}
-		 <a class="main-button guidelines-button" href="{{link.linkUrl}}" alt="{{link.linkName}}" />{{link.linkName}}</a>
-	{% endfor %}
-	{% for asset in entry.files %}
-		<a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}" />Student Media Guidelines (PDF)</a>
-	{% endfor %}
-	{% endfor %}
-	</div>
-	</section>
-	<section class="section">
-	<h2 id="voting" class="subhead">Voting Members</h2>
-	<div class="voting-members">
+  <div class="page-header">
+    <h1 class="head-line">{{entry.title}}</h1>
+  </div>
+  <section class="section">
+    <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+    <div class="body-dual-column">{{entry.body}}</div>
+  </section>
+  <section class="section">
 
-{% cache %}
-	{% for entry in craft.entries.section('staff').order('lastName') %}
-		{% if entry.employeeType.contains('voting') %}
-			<div class="member">
-			<h3 class="member-title">{{entry.firstName}} {{entry.lastName}}</h3>
-			<p class="member-name">{{entry.jobTitle}}</p>
-		</div>
-		{% endif %}
-	{% endfor %}
-	</div>
+    <h2 class="subhead" id="guidelines">Student Media Board Guidelines</h2>
+    <div class="guidelines">
+      {% for entry in craft.entries.section('boardMembers').find() %}
+        {% for link in entry.supplementalLinks %}
+          <a class="main-button guidelines-button" href="{{link.linkUrl}}" alt="{{link.linkName}}"/>{{link.linkName}}</a>
+      {% endfor %}
+      {% for asset in entry.files %}
+        <a class="main-button guidelines-button" href="{{asset.url}}" alt="{{asset.title}}"/>Student Media Guidelines (PDF)</a>
+    {% endfor %}
+  {% endfor %}
+</div></section><section class="section">
+<h2 class="subhead" id="voting">Voting Members</h2>
+<div class="voting-members">
+
+  {% cache %}
+  {% for entry in craft.entries.section('staff').order('lastName') %}
+    {% if entry.employeeType.contains('voting') %}
+      <div class="member">
+        <h3 class="member-title">{{entry.firstName}}
+          {{entry.lastName}}</h3>
+        <p class="member-name">{{entry.jobTitle}}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
 </section>
+
 <section class="section">
-	<h2 id="non-voting" class="subhead">Non-Voting Members</h2>
-	 <ul class="non-voting-members">
+	<h2 class="subhead" id="non-voting">Non-Voting Members</h2>
+	<ul class="non-voting-members">
 		{% for entry in craft.entries.section('staff').order('lastName') %}
 			{% if entry.employeeType.contains('nonVoting')  %}
-			<li class="non-voting-member-name"><strong>{{entry.firstName}}  {{entry.lastName}}</strong>, {{entry.jobTitle}}</li>
+				<li class="non-voting-member-name">
+					<strong>{{entry.firstName}}
+						{{entry.lastName}}</strong>,
+					{{entry.jobTitle}}</li>
 			{% endif %}
-			{% endfor %}
-		</ul>
+		{% endfor %}
+	</ul>
 </div>
-
-
 </section>
-
 <section class="section">
-	<h2 id="documents" class="subhead">Meeting Documents</h2>
+	<h2 class="subhead" id="documents">Meeting Documents</h2>
 	<div class="meeting-minutes-container">
+		{% paginate craft.entries.section('meetingMinutes').limit(8).order('date desc') as pageInfo, pageEntries %}
 
+		{% for entry in pageEntries %}
 
+			<div class="meeting-box">
+				<h5 class="meeting-date">{{entry.title}}</h5>
 
+				{% for asset in entry.files %}
+					<a href="{{asset.url}}">
+						<img alt="pdf icon" height="100" src="/assets/img/icons/pdf-icon.svg" width="100">
+					</a>
+					<a class="meeting-pdf" href="{{asset.url}}" alt="{{asset.title}}">Download (PDF)</a>
+				{% endfor %}
+			</div>
 
-{% paginate craft.entries.section('meetingMinutes').limit(8).order('date desc') as pageInfo, pageEntries %}
-
-	{% for entry in pageEntries %}
-
-	<div class="meeting-box">
-	<h5 class="meeting-date">{{entry.title}}</h5>
-
-	{% for asset in entry.files %}
-	<a href="{{asset.url}}">
-		<img src="/assets/img/icons/pdf-icon.svg" alt="pdf icon" height="100" width="100">
-	</a>
-	<a class="meeting-pdf" href="{{asset.url}}" alt="{{asset.title}}">Download (PDF)</a>
+		{% endfor %}
 	</div>
 
-	{% endfor %}
-	{% endfor %}
-</div>
+	{% if pageInfo.nextUrl %}
+		<a class="main-button" href="{{ pageInfo.nextUrl }}">Next Page</a>
+	{% endif %}
 
-
-	{% if pageInfo.nextUrl %}<a class="main-button" href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
-	{% if pageInfo.prevUrl %}<a class="main-button" href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
-
-	</section>
-
+	{% if pageInfo.prevUrl %}
+		<a class="main-button" href="{{ pageInfo.prevUrl }}">Previous Page</a>
+	{% endif %}
+</section>
 {% endcache %}
+
 {% endblock %}

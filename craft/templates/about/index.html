@@ -1,40 +1,42 @@
 {% extends "_layout" %}
 
 {% block hero %}
-	{% include '_includes/hero.html' %}
+{% include '_includes/hero.html' %}
 {% endblock %}
 
 {% block content %}
-	<div class="page-header">
-	<h1 class="head-line">{{entry.title}}</h1></div>
-	<section class="section">
-	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-		<div class="body-dual-column">{{entry.body}}</a>
-	</section>
-	<section class="section">
-		<h2 class="subhead">{{entry.missionTitle}}</h2>
-		{{ entry.missionBody }}
-	</section>
 
-	<section class="section">
+<div class="page-header">
+	<h1 class="head-line">{{entry.title}}</h1>
+</div>
+<section class="section">
+	<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
+	<div class="body-dual-column">{{entry.body}}</a>
+</section>
+<section class="section">
+	<h2 class="subhead">{{entry.missionTitle}}</h2>
+	{{ entry.missionBody }}
+</section>
+
+<section class="section">
 	<h2 class="subhead">Awards & Recognition</h2>
 	<div class="about-recognition-flex-container">
 		<figure class="recognition-image-container">
 			{% for asset in entry.recognitionImage %}
-			<img class="recognition-image" src="{{asset.url('flexibleHeight')}}" alt="{{asset.title}}" />
-			<figcaption class="video-box__caption">{{entry.recognitionCaption}}</figcaption>
-		{% endfor %}
+				<img class="recognition-image" src="{{asset.url('flexibleHeight')}}" alt="{{asset.title}}"/>
+				<figcaption class="video-box__caption">{{entry.recognitionCaption}}</figcaption>
+			{% endfor %}
 		</figure>
 		<div class="recognition-content">
-				{{ entry.awardsBody }}
-				<ul class="recognition-list">
-					{% for entry in craft.entries.section('recognition').limit(4).find() %}
-						<li class="recognition-item">
-							<a href="/recognition#{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</a>
-						</li>
-					{% endfor %}
-				</ul>
-				<a href="/recognition" class="secondary-button recognition-button">See All Awards</a>
+			{{ entry.awardsBody }}
+			<ul class="recognition-list">
+				{% for entry in craft.entries.section('recognition').limit(4).find() %}
+					<li class="recognition-item">
+						<a href="/recognition#{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<a class="secondary-button recognition-button" href="/recognition">See All Awards</a>
 		</div>
 	</div>
 </section>
@@ -42,7 +44,8 @@
 	<h3 class="subhead">Support Us</h3>
 	{{entry.supportUs}}
 	{% for entry in entry.callToActions %}
-	<a class="secondary-button app-button" href ="{{ entry.url }}">{{entry.title}}</a>
+		<a class="secondary-button app-button" href="{{ entry.url }}">{{entry.title}}</a>
 	{% endfor %}
 </section>
+
 {% endblock %}

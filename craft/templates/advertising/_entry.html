@@ -10,89 +10,93 @@ no-image
 	<h1 class="head-line">{{entry.title}}: Advertising & Services</h1>
 </div>
 {% if entry.body | length %}
-<section class="section">
+	<section class="section">
 		{{ entry.body }}
-</section>
+	</section>
 {% endif %}
 <section class="section">
-        <section class="package-column">
-					{% for block in entry.adUnit %}
-							{% if block.type == "adUnits" %}
-							<div class="package-column__unit">
-							<h2 class="subhead">{{block.adType}}</h2>
-							<p>{{block.adDescription}}</p>
-            		<div class="package-content">
-                    <table class="package-matrix">
-                        <thead>
-													<tr>
-														{% for row in block.adUnitr | slice(0, 1) %}
-															{% if row.name | length %}
-																<th>Type</th>
-															{% endif %}
-															{% if row.price | length %}
-																{% if block.priceTitles | length %}
-																	{% for row in block.priceTitles %}
-																			<th>{{ row.priceName }}</th>
-																	{% endfor %}
-																{% else %}
-																<th>Price</th>
-																{% endif %}
-															{% endif %}
-															{% if row.altPrice | length %}
-																{% if block.priceTitles | length %}
-																	{% for row in block.priceTitles %}
-																			<th>{{ row.alternativePriceName }}</th>
-																	{% endfor %}
-																{% else %}
-																<th>Price</th>
-																{% endif %}
-															{% endif %}
-															{% if row.size | length %}
-																<th>Size</th>
-															{% endif %}
-															{% if row.description | length %}
-																<th>Details</th>
-															{% endif %}
-														{% endfor %}
-													</tr>
-                        </thead>
-												<tbody>
-                            {% for row in block.adUnitr %}
-                            <tr>
-                                <td><strong>{{row.name}}</strong></td>
-                                {% if row.price | length %}
-																	<td>{{row.price}}</td>
-																{% endif %}
-																{% if row.altPrice | length %}
-																	<td>{{row.altPrice}}</td>
-																{% endif %}
-																{% if row.size | length %}
-                                	<td>{{row.size}}</td>
-																{% endif %}
-																{% if row.description | length %}
-																	<td>{{row.description}}</td>
-																{% endif %}
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+	<section class="package-column">
+		{% for block in entry.adUnit %}
+			{% if block.type == "adUnits" %}
+				<div class="package-column__unit">
+					<h2 class="subhead">{{block.adType}}</h2>
+					<p>{{block.adDescription}}</p>
+					<div class="package-content">
+						<table class="package-matrix">
+							<thead>
+								<tr>
+									{% for row in block.adUnitr | slice(0, 1) %}
+										{% if row.name | length %}
+											<th>Type</th>
+										{% endif %}
+										{% if row.price | length %}
+											{% if block.priceTitles | length %}
+												{% for row in block.priceTitles %}
+													<th>{{ row.priceName }}</th>
+												{% endfor %}
+											{% else %}
+												<th>Price</th>
+											{% endif %}
+										{% endif %}
+										{% if row.altPrice | length %}
+											{% if block.priceTitles | length %}
+												{% for row in block.priceTitles %}
+													<th>{{ row.alternativePriceName }}</th>
+												{% endfor %}
+											{% else %}
+												<th>Price</th>
+											{% endif %}
+										{% endif %}
+										{% if row.size | length %}
+											<th>Size</th>
+										{% endif %}
+										{% if row.description | length %}
+											<th>Details</th>
+										{% endif %}
+									{% endfor %}
+								</tr>
+							</thead>
+							<tbody>
+								{% for row in block.adUnitr %}
+									<tr>
+										<td>
+											<strong>{{row.name}}</strong>
+										</td>
+										{% if row.price | length %}
+											<td>{{row.price}}</td>
+										{% endif %}
+										{% if row.altPrice | length %}
+											<td>{{row.altPrice}}</td>
+										{% endif %}
+										{% if row.size | length %}
+											<td>{{row.size}}</td>
+										{% endif %}
+										{% if row.description | length %}
+											<td>{{row.description}}</td>
+										{% endif %}
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
 						{% for image in block.exampleImage %}
 							{% if image %}
 								<a class="secondary-button ad-button" href="{{ image.url }}" alt="{{image.title}}">View Example</a>
 							{% endif %}
 						{% endfor %}
-            </div>
 					</div>
-        {% endif %}
-          {% endfor %}
-    </section>
-		<a class="main-button" href="/advertising">Return to All Ad Rates</a>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</section>
+	<a class="main-button" href="/advertising">Return to All Ad Rates</a>
 </section>
 
 <section class="cta-bottom-section">
-{% for partner in craft.entries.section('partners').relatedTo(entry) %}
-<a class="secondary-button" href="{{ partner.url }}">More About {{ partner.title }}</a>
-{% endfor %}
-{% include '_includes/ad-cta.html' %}
+	{% for partner in craft.entries.section('partners').relatedTo(entry) %}
+		<a class="secondary-button" href="{{ partner.url }}">More About
+			{{ partner.title }}</a>
+	{% endfor %}
+	{% include '_includes/ad-cta.html' %}
 </section>
+
 {% endblock %}

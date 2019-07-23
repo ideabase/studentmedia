@@ -51,7 +51,6 @@
 	<h2 class="subhead">Contact & Connect with {{ entry.title}}</h2>
 	<div class="media-partner-contact-container">
 
-
 {% if craft.entries.section('staff').relatedTo(entry) | length >= 1 %}
 <div class="student-contact">
 <h2 class="contact-name">Leadership</h2>
@@ -63,7 +62,6 @@
 			<h3 class="contact-title">{{entry.jobTitle}}</h3>
 	  	<a class="contact-email" href="mailto:{{entry.email}}">
 				{{entry.email}} </a>
-
 
 		{% endif %}
 		{% endfor %}
@@ -109,7 +107,6 @@
 		</div>
 	{% endif %}
 </div>
-
 
 </section>
 

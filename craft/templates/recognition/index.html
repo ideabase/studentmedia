@@ -6,13 +6,18 @@ no-image
 {% endblock %}
 
 {% block content %}
+
 <div class="page-header">
-<h1 class="head-line">{{entry.title}}</h1></div>
+	<h1 class="head-line">{{entry.title}}</h1>
+</div>
+
+<section class="section">
 	{% for entry in craft.entries.section('recognition').find() %}
-	<section class="section">
-			<h3 class="subhead" id="{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</h3>
-			<p>{{entry.body}}</p>
-	</section>
+		<h3 class="subhead" id="{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</h3>
+		<p>{{entry.body}}</p>
 	{% endfor %}
-	<a class="main-button" href="/about">Return to About Student Media</a>
+</section>
+
+<a class="main-button" href="/about">Return to About Student Media</a>
+
 {% endblock %}

@@ -10,17 +10,17 @@
  #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<link rel="home" href="{{ siteUrl }}" />
+  <link rel="home" href="{{ siteUrl }}"/>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#ffffff">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/manifest.json" rel="manifest">
+  <meta content="#ffffff" name="theme-color">
   <style type="text/css">
     /* Critical CSS */
     {% include '_includes/critical.css' %}
@@ -28,7 +28,7 @@
   <script async src="{{ siteUrl }}assets/js/min/loadcss-min.js"></script>
   <script>
     // Picture element HTML5 shiv
-    document.createElement( "picture" );
+    document.createElement("picture");
   </script>
   <script src="{{ siteUrl }}assets/js/picturefill.js" async></script>
   <noscript><link href="{{ siteUrl }}assets/css/style.css" rel="stylesheet"></noscript>
@@ -44,20 +44,28 @@
     {{ craft.adminbar.bar(config) }}
   {% endif %}
 
-  {# INCLUDE HEADER #}
+  {# header #}
   {% include '_includes/header.html' %}
 
-  {% block hero %}
-  {% endblock %}
+  {% block hero %}{% endblock %}
 
   <main id="content" role="main" class="{% block main %} {% endblock %}">
     {% block content %}
-      <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-      <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+      <p>If you see me, you haven’t set your
+        <code>
+          {% verbatim %}
+            {% block content %}…
+            {% endblock %}
+          {% endverbatim %}
+        </code>
+        yet.</p>
+      <p>See Twig’s
+        <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a>
+        documentation for an explanation.</p>
     {% endblock %}
   </main>
 
-  {# INCLUDE FOOTER #}
+  {# footer #}
   {% include '_includes/footer.html' %}
 
   <script defer src="{{ siteUrl }}assets/js/min/critical-min.js"></script>
@@ -69,7 +77,18 @@
 
   {# Google Analytics #}
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      },
+      i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-92932444-1', 'auto');
     ga('send', 'pageview');
