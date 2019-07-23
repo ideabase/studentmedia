@@ -45,24 +45,24 @@
 
       <div class="logo-footer">
         {% for asset in footer.footerLogo %}
-          <img class="footer-logo-image" src="{{asset.url}}" alt="{{asset.title}}"/>
+          <img class="footer-logo-image" src="{{ asset.url }}" alt="{{ asset.title }}"/>
         {% endfor %}
         <div class="partners-footer">
           {% for asset in footer.logo %}
-            <a href="{{footer.footerAffiliateLink}}"><img class="partners-logo-image" src="{{asset.url}}" alt="{{asset.title}}"/></a>
+            <a href="{{ footer.footerAffiliateLink }}"><img class="partners-logo-image" src="{{ asset.url }}" alt="{{ asset.title }}"/></a>
           {% endfor %}
         </div>
       </div>
       <div class="footer-contact-info">
         <ul class="footer-contact-list">
-          <li class="footer-list-item">{{footer.mailingAddress}}</li>
-          <li class="footer-list-item">{{footer.phone}}</li>
+          <li class="footer-list-item">{{ footer.mailingAddress }}</li>
+          <li class="footer-list-item">{{ footer.phone }}</li>
           <li class="footer-list-item">
-            <a href="mailto:{{footer.email}}">{{footer.email}}</a>
+            <a href="mailto:{{ footer.email }}">{{ footer.email }}</a>
           </li>
           {% for block in footer.socialMedia %}
             <li class="footer-list-item footer-list-item--social">
-              <a href="{{block.address}}">Join Student Media on
+              <a href="{{ block.address }}">Join Student Media on
                 {{ block.socialName }}</a>
             </li>
           {% endfor %}
@@ -70,7 +70,7 @@
       </div>
     </section>
     <div class="footer-credit">
-      {{footer.footerCredit}}
+      {{ footer.footerCredit }}
     </div>
   </div>
   {% endcache %}

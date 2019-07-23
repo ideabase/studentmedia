@@ -17,10 +17,10 @@
 <article class="event-detail" role="article">
 	<div class="date-box">
 		<div class="date">
-			<h4 class="date-style">{{entry.date|date("d")}}</h4>
+			<h4 class="date-style">{{ entry.date|date("d") }}</h4>
 		</div>
 		<div class="month">
-			<h4 class="month-style">{{entry.date|date("M")}}</h4>
+			<h4 class="month-style">{{ entry.date|date("M") }}</h4>
 		</div>
 	</div>
 	<div class="event-detail__description">
@@ -30,20 +30,20 @@
 				<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title"/>
 			{% endfor %}
 		{% endif %}
-		<p>{{entry.body}}</p>
+		<p>{{ entry.body }}</p>
 	</div>
 	<div class="event-detail__stats">
 		{% if entry.time | length %}
 			<h3 class="contact-name">Time</h3>
-			<p class="event-detail__time">{{entry.time.format('g:i a')}}
+			<p class="event-detail__time">{{ entry.time.format('g:i a') }}
 			{% endif %}
 			{% if entry.endTime | length %}
 				-
-				{{ entry.endTime.format('g:i a')}}</p>
+				{{ entry.endTime.format('g:i a') }}</p>
 		{% endif %}
 		{% if entry.location | length %}
 			<h3 class="contact-name">Location</h3>
-			<p>{{entry.location}}</p>
+			<p>{{ entry.location }}</p>
 		{% endif %}
 	</div>
 </article>

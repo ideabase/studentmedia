@@ -15,7 +15,7 @@
 {% block content %}
 
 <article role="article">
-	<h1 class="intro-sentence-header--news">{{entry.title}}</h1>
+	<h1 class="intro-sentence-header--news">{{ entry.title }}</h1>
 	<p class="news-story-date">Posted on
 		{{ entry.postDate.format('F d, Y') }}</p>
 	{% if entry.featureImageFormat != "fullWidth" %}
@@ -23,7 +23,7 @@
 			<img class="news-half-image" src="{{ asset.getUrl('flexibleHeight') }}" alt="asset.title"/>
 		{% endfor %}
 	{% endif %}
-	{{entry.body}}
+	{{ entry.body }}
 </article>
 <section class="section">
 	<a class="main-button" href="/news">See All News</a>

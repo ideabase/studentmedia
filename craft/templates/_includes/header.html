@@ -4,13 +4,13 @@
     {% cache %}
     <section class="header-logo-container">
       {% for asset in header.logo %}
-        <a href="{{siteUrl}}">
-          <img class="header-logo" src="{{asset.url}}" alt="{{asset.title}}"/>
+        <a href="{{ siteUrl }}">
+          <img class="header-logo" src="{{ asset.url }}" alt="{{ asset.title }}"/>
         </a>
       {% endfor %}
       {% for asset in header.smallLogo %}
-        <a href="{{siteUrl}}">
-          <img class="header-logo__condensed" src="{{asset.url}}" alt="{{asset.title}}"/>
+        <a href="{{ siteUrl }}">
+          <img class="header-logo__condensed" src="{{ asset.url }}" alt="{{ asset.title }}"/>
         </a>
       {% endfor %}
     </section>

@@ -13,21 +13,21 @@
 	<div class="media-partner-into-container">
 		<div class="logo-about-page">
 			{%for asset in entry.coloredLogo %}
-			<img src ="{{asset.url}}" alt="asset.title" class="brand-logo"/>
+			<img src ="{{ asset.url }}" alt="asset.title" class="brand-logo"/>
 		{% endfor %}
 		</div>
 	<div class="title-paragraph-container">
-		<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-		<p class="intro-paragraph">{{entry.body}}</p>
+		<h2 class="intro-sentence-header">{{ entry.tagline }}</h2>
+		<p class="intro-paragraph">{{ entry.body }}</p>
 		<div class="button-section">
 			{% if entry.webUrl %}
-			<a href="{{entry.webUrl}}"><button class="main-button media-partner-button">Visit Website</button></a>
+			<a href="{{ entry.webUrl }}"><button class="main-button media-partner-button">Visit Website</button></a>
 			{% endif %}
 			{# Conditionally shows advertising rates, as long as it's not creative services #}
 			{% for ad in craft.entries.section('ad').relatedTo(entry) %}
 				{% for category in ad.adFormat %}
 					{% if category.title != "Creative Services" %}
-						<a href="{{ ad.url }}"><button class="main-button media-partner-button">View {{ad.title}} Ad Rates</button></a>
+						<a href="{{ ad.url }}"><button class="main-button media-partner-button">View {{ ad.title }} Ad Rates</button></a>
 					{% endif %}
 				{% endfor %}
 			{% endfor %}
@@ -38,7 +38,7 @@
 		<h4>Related Links:</h4>
 			<ul class="supplemental-links">
 			{% for block in entry.supplementalLinks %}
-				<li><a href="{{block.linkUrl}}">{{block.linkName}}</a></li>
+				<li><a href="{{ block.linkUrl }}">{{ block.linkName }}</a></li>
 			{% endfor %}
 			</ul>
 		{% endif %}
@@ -48,31 +48,31 @@
 </section>
 
 <section class="section">
-	<h2 class="subhead">Contact & Connect with {{ entry.title}}</h2>
+	<h2 class="subhead">Contact & Connect with {{ entry.title }}</h2>
 	<div class="media-partner-contact-container">
 
 {% if craft.entries.section('staff').relatedTo(entry) | length >= 1 %}
 <div class="student-contact">
 <h2 class="contact-name">Leadership</h2>
 
-		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
+		{% for entry in craft.entries.section('staff').relatedTo(entry) %}
 		{% if entry.employeeType.contains('studentMediaLeader') %}
 
-			<h3 class="contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-			<h3 class="contact-title">{{entry.jobTitle}}</h3>
-	  	<a class="contact-email" href="mailto:{{entry.email}}">
-				{{entry.email}} </a>
+			<h3 class="contact-leader">{{ entry.firstName }} {{ entry.lastName }}</h3>
+			<h3 class="contact-title">{{ entry.jobTitle }}</h3>
+	  	<a class="contact-email" href="mailto:{{ entry.email }}">
+				{{ entry.email }} </a>
 
 		{% endif %}
 		{% endfor %}
 
-		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
+		{% for entry in craft.entries.section('staff').relatedTo(entry) %}
 			{% if not entry.employeeType.contains('studentMediaLeader') %}
-			<h3 class="contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-			<h3 class="contact-title">{{entry.jobTitle}}</h3>
+			<h3 class="contact-leader">{{ entry.firstName }} {{ entry.lastName }}</h3>
+			<h3 class="contact-title">{{ entry.jobTitle }}</h3>
 				{% if entry.email | length %}
-		  	<a class="contact-email" href="mailto:{{entry.email}}">
-					{{entry.email}} </a>
+		  	<a class="contact-email" href="mailto:{{ entry.email }}">
+					{{ entry.email }} </a>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
@@ -84,12 +84,12 @@
 
 				<dl class="contact-list">
 			    <dt class="contact-label">Phone</dt>
-					<dd class="contact-phone">{{advertisingContact.phone}}</dd>
+					<dd class="contact-phone">{{ advertisingContact.phone }}</dd>
 				</dl>
 
 				<dl class="contact-list">
 			    <dt class="contact-label">Email</dt>
-					<dd class="contact-email"><a href="{{advertisingContact.email}}">{{advertisingContact.email}}</a></dd>
+					<dd class="contact-email"><a href="{{ advertisingContact.email }}">{{ advertisingContact.email }}</a></dd>
 					</dd>
 				</dl>
 
@@ -101,7 +101,7 @@
 		<h2 class="contact-name">Social Media</h2>
 			<div class="social-media__icons">
 				{% for block in entry.socialMedia %}
-		       <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>
+		       <a class="social-media__icon {{ block.socialName }}" href= "{{ block.address }}">{{ block.socialName }}</a>
 				{% endfor %}
 			</div>
 		</div>
@@ -113,7 +113,7 @@
 {% set events = craft.entries.section('events').relatedTo(entry) %}
 {% if events|length %}
 <section class="section scroll-container">
-	<h2 class="subhead calender-subhead">Upcoming {{entry.title}} Events</h2>
+	<h2 class="subhead calender-subhead">Upcoming {{ entry.title }} Events</h2>
 	<div class="events">
 	{% for entry in events.limit(4).order('date') %}
 		{% include '_includes/event.html' %}

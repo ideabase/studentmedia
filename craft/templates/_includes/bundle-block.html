@@ -3,7 +3,7 @@
     {% for block in entry.adUnit %}
       {% if block.type == "adBundle" %}
         <div class="platform-content">
-          <h2 class="platform-content-header">{{block.bundleName}}</h2>
+          <h2 class="platform-content-header">{{ block.bundleName }}</h2>
           <div class="advertising-content-list">
             {{ block.bundleDescription }}
           </div>
@@ -12,7 +12,7 @@
           </ul>
 
           {% for asset in block.bundleImage %}
-            <img src="{{asset.url}}" alt="{{asset.title}}"/>
+            <img src="{{ asset.url }}" alt="{{ asset.title }}"/>
           {% endfor %}
 
         </div>

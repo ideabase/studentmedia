@@ -8,13 +8,13 @@ no-image
 {% block content %}
 
 <div class="page-header">
-	<h1 class="head-line">{{entry.title}}</h1>
+	<h1 class="head-line">{{ entry.title }}</h1>
 </div>
 
 <section class="section">
 	{% for entry in craft.entries.section('recognition').find() %}
 		<h3 class="subhead" id="{{ entry.title|replace({' ':''}) }}">{{ entry.title }}</h3>
-		<p>{{entry.body}}</p>
+		{{ entry.body }}
 	{% endfor %}
 </section>
 

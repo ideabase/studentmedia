@@ -68,7 +68,7 @@
   {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
   {% set extraEntry = (entryNum/2) %}
   {# Gets all entries, and then indexes a certain entry #}
-  {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
+  {% set pap = craft.entries.section('partners').featuredMediaPartner('1') %}
   {% set newww = pap[extraEntry] %}
 
   <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>

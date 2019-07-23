@@ -7,7 +7,7 @@ no-image
 {% block content %}
 
 <div class="page-header">
-	<h1 class="head-line">{{entry.title}}: Advertising & Services</h1>
+	<h1 class="head-line">{{ entry.title }}: Advertising & Services</h1>
 </div>
 {% if entry.body | length %}
 	<section class="section">
@@ -19,8 +19,8 @@ no-image
 		{% for block in entry.adUnit %}
 			{% if block.type == "adUnits" %}
 				<div class="package-column__unit">
-					<h2 class="subhead">{{block.adType}}</h2>
-					<p>{{block.adDescription}}</p>
+					<h2 class="subhead">{{ block.adType }}</h2>
+					<p>{{ block.adDescription }}</p>
 					<div class="package-content">
 						<table class="package-matrix">
 							<thead>
@@ -60,19 +60,19 @@ no-image
 								{% for row in block.adUnitr %}
 									<tr>
 										<td>
-											<strong>{{row.name}}</strong>
+											<strong>{{ row.name }}</strong>
 										</td>
 										{% if row.price | length %}
-											<td>{{row.price}}</td>
+											<td>{{ row.price }}</td>
 										{% endif %}
 										{% if row.altPrice | length %}
-											<td>{{row.altPrice}}</td>
+											<td>{{ row.altPrice }}</td>
 										{% endif %}
 										{% if row.size | length %}
-											<td>{{row.size}}</td>
+											<td>{{ row.size }}</td>
 										{% endif %}
 										{% if row.description | length %}
-											<td>{{row.description}}</td>
+											<td>{{ row.description }}</td>
 										{% endif %}
 									</tr>
 								{% endfor %}
@@ -80,7 +80,7 @@ no-image
 						</table>
 						{% for image in block.exampleImage %}
 							{% if image %}
-								<a class="secondary-button ad-button" href="{{ image.url }}" alt="{{image.title}}">View Example</a>
+								<a class="secondary-button ad-button" href="{{ image.url }}" alt="{{ image.title }}">View Example</a>
 							{% endif %}
 						{% endfor %}
 					</div>

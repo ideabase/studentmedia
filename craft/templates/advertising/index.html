@@ -8,10 +8,10 @@
 
   <section class="section">
     <div class="page-header">
-      <h1 class="head-line">{{entry.title}}</h1>
+      <h1 class="head-line">{{ entry.title }}</h1>
     </div>
-    <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
-    <div class="intro-paragraph">{{entry.body}}</div>
+    <h2 class="intro-sentence-header">{{ entry.tagline }}</h2>
+    <div class="intro-paragraph">{{ entry.body }}</div>
   </section>
 
   <section class="section">
@@ -23,11 +23,11 @@
         {# {% if category.title != "Client Services" %} #}
         <div class="accordion">
           <div class="link platform-dropdown">
-            <h4 class="advertising-platform-headers">{{category.title}}</h4>
+            <h4 class="advertising-platform-headers">{{ category.title }}</h4>
           </div>
           <div class="submenu">
             {% if category.description | length %}
-              <p class="platform-content-container__description">{{category.description}}</p>
+              <p class="platform-content-container__description">{{ category.description }}</p>
             {% endif %}
             <div
               class="platform-content-container">
@@ -45,7 +45,7 @@
 										<div class="platform-content">
 											<h2 class="platform-content-header">{{ ad.title }}</h2>
 											{{ ad.body }}
-											<a class="secondary-button rates-button" href="{{ ad.url }}">View {{ad.title }} Rates</a>
+											<a class="secondary-button rates-button" href="{{ ad.url }}">View {{ ad.title }} Rates</a>
 										</div>
 									{% endfor %}
 								{% endfor %}

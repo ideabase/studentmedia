@@ -17,9 +17,9 @@
 
 {% block content %}
 
-<h1>{{entry.title}}<h1>
+<h1>{{ entry.title }}<h1>
 {% for asset in entry.image %}
-  <img src="{{asset.url}}" alt="{{asset.title}}"/>
+  <img src="{{ asset.url }}" alt="{{ asset.title }}"/>
 {% endfor %}
 
 <h2>Associated Publication</h2>
