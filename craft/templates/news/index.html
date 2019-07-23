@@ -8,7 +8,7 @@
 
 {% paginate craft.entries.section('news').limit(15) as pageInfo, pageEntries %}
 
-<div class = "page-header">
+<div class="page-header">
 	<h1 class="head-line">{{entry.title}}</h1></div>
 	<section class="about-news-flex-container">
 	{% for entry in pageEntries %}

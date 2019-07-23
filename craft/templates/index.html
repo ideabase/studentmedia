@@ -2,20 +2,21 @@
  # Homepage template
  # ---------------
  #}
-
  {% extends "_layout" %}
+
  {% block hero %}
-   <section class="hero-image">
-     <div class="home-carousel owl-carousel">
-       {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
+
+  <section class="hero-image">
+    <div class="home-carousel owl-carousel">
+      {% for asset in entry.heroImage.limit(3).order('RAND()').find() %}
         <div class="hero-image-home">
           <picture>
-        		<source srcset="{{ asset.getUrl('hero') }}" media="(min-width: 1000px)">
+            <source srcset="{{ asset.getUrl('hero') }}" media="(min-width: 1000px)">
             <source srcset="{{ asset.getUrl('heroSmall') }}" media="(min-width: 550px)">
-        		<img src="{{ asset.getUrl('heroImageSmallest') }}" width="asset.width" height="asset.height" alt="asset.title" />
-        	</picture>
+            <img src="{{ asset.getUrl('heroImageSmallest') }}" width="asset.width" height="asset.height" alt="asset.title" />
+          </picture>
         </div>
-       {% endfor %}
+      {% endfor %}
     </div>
     {% cache %}
     <div class="header-quote-container">
@@ -34,112 +35,117 @@
     </div>
     {% endcache %}
   </section>
+
  {% endblock %}
+
  {% block content %}
+
  {% cache %}
  <section class = "section video-container-home">
-   <div class = "video-div-flex-container">
+  <div class = "video-div-flex-container">
     <div class = "video-blurb">
       <h2 class="intro-sentence-header">{{ entry.description }}</h2>
-      <div class="intro-paragraph">{{ entry.body }}</div>
+      <div class="intro-paragraph">
+        {{ entry.body }}
+      </div>
       {% for entry in entry.aboutCta %}
       	<a class="main-button" href="{{ entry.url }}">Learn More {{ entry.title }}</a>
       {% endfor %}
     </div>
-      {# Lazy Loaded Video #}
-      <figure class = "video-box">
-        <img src="/assets/img/icons/video-placeholder.gif" class="video-thumb" data-vimeo-id="{{ entry.video }}" alt="Kent Student Media Video" />
-        <figcaption class="video-box__caption">
-            {{ entry.videoCaption }}
-        </figcaption>
+    {# Lazy Loaded Video #}
+    <figure class = "video-box">
+      <img src="/assets/img/icons/video-placeholder.gif" class="video-thumb" data-vimeo-id="{{ entry.video }}" alt="Kent Student Media Video" />
+      <figcaption class="video-box__caption">
+        {{ entry.videoCaption }}
+      </figcaption>
     </figure>
-  </section>
-  {% endcache %}
-  {% cache %}
-  <section class = "section outside-div-container-brands">
-    {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
-    {% set extraEntry = (entryNum/2) %}
-    {# Gets all entries, and then indexes a certain entry #}
-    {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
-    {% set newww = pap[extraEntry] %}
+  </div>
+</section>
+{% endcache %}
 
+{% cache %}
+<section class = "section outside-div-container-brands">
+  {% set entryNum = craft.entries.section('partners').featuredMediaPartner('1') | length %}
+  {% set extraEntry = (entryNum/2) %}
+  {# Gets all entries, and then indexes a certain entry #}
+  {% set pap = craft.entries.section('partners').featuredMediaPartner('1')%}
+  {% set newww = pap[extraEntry] %}
 
-    <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
-    <div class = "video-div-flex-container">
-      <div class = "video-blurb">
-          {{ entry.mediaPartnerBody }}
+  <h2 class="subhead">{{ entry.mediaPartnersHeader }}</h2>
+
+  <div class = "video-div-flex-container">
+    <div class = "video-blurb">
+      {{ entry.mediaPartnerBody }}
+    </div>
+    <div class="video-box video-box--nospace">
+      {% for entry in entry.mediaPartnersCta %}
+        <a class="main-button" href="{{ entry.url }}">See All {{ entry.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class = "owl-carousel brand-logo-grid">
+    {% set cols = 2 %}
+    {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
+      {% if loop.index0 % cols == 0 %}
+        <div class="media-partner-container">
+      {% endif %}
+
+      {% if entry.heroImage | length %}
+        <a href="{{ entry.getUrl() }}" class="lazy media-partner" data-src="{{ entry.heroImage.first().url('mediaPartnerIcon') }}">
+          <noscript>
+            <img src="{{ entry.logo.first().getUrl() }}" alt="{{ entry.logo.first().title }}" class="brand-logo">
+          </noscript>
+          <img src="{{ entry.logo.first().getUrl() }}" alt="{{ entry.logo.first().title }}" class="lazy brand-logo" />
+        </a>
+      {% endif %}
+
+    {% if (loop.last and entryNum % 2 != 0) %}
+      {% for asset in newww.heroImage %}
+        <a href="{{ newww.url }}" class="lazy media-partner" data-src="{{ asset.url('mediaPartnerIcon') }}">
+      {% endfor %}
+
+      {% for asset in newww.logo %}
+        <img src="{{ asset.url }}" alt="{{ asset.title }}" class="brand-logo" />
+      {% endfor %}
+        </a>
+    {% endif %}
+    {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+      </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endcache %}
+
+{% cache %}
+  <section class = "section statistics-container">
+    <h2 class="subhead">{{ entry.advertisingHeader }}</h2>
+
+    <div class="video-div-flex-container">
+      <div class="video-blurb">
+        {{ entry.adBody }}
       </div>
       <div class="video-box video-box--nospace">
-        {% for entry in entry.mediaPartnersCta %}
-        	<a class="main-button" href="{{ entry.url }}">See All {{ entry.title }}</a>
+        {% for entry in entry.advertingCta %}
+        <a class="main-button" href="{{ entry.url }}">{{ entry.title }}</a>
         {% endfor %}
       </div>
     </div>
-
-      <div class = "owl-carousel brand-logo-grid">
-        {% set cols = 2 %}
-        {% for entry in craft.entries.section('partners').featuredMediaPartner('1').order('title') %}
-          {% if loop.index0 % cols == 0 %}
-            <div class="media-partner-container">
-          {% endif %}
-
-          {% if entry.heroImage | length %}
-
-            {% for asset in entry.heroImage %}
-              <a href="{{ entry.url }}" class="lazy media-partner" data-src="{{ asset.url('mediaPartnerIcon') }}" {# style="background-image:url('{{ asset.url('mediaPartnerIcon')}}');" #}>
-                {% for asset in entry.logo %}
-                  <noscript>
-                    <img src="{{ asset.getUrl('') }}" alt="{{ asset.title }}" class="brand-logo">
-                  </noscript>
-                  <img data-src="{{ asset.getUrl('') }}" alt="{{ asset.title }}" class="lazy brand-logo" />
-                {% endfor %}
-              </a>
-            {% endfor %}
-
-          {% endif %}
-
-        {% if (loop.last and entryNum % 2 != 0) %}
-
-             {% for asset in newww.heroImage %}
-              <a href="{{ newww.url }}" class="lazy media-partner" data-src="{{ asset.url('mediaPartnerIcon') }}">
-              {% endfor %}
-              {% for asset in newww.logo %}
-              <img src="{{ asset.url }}" alt="{{ asset.title }}" class="brand-logo" />
-            {% endfor %}
-          </a>
-        {% endif %}
-        {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+{% endcache %}
+{% cache %}
+    <div class = "statistics-box-flex-container">
+      {% for entry in craft.entries.section('statistics').limit(3) %}
+        <div class="statistics-box">
+          <div class="statistics-number">
+            <h3 class="big-number">{{ entry.title }}</h3>
           </div>
-        {% endif %}
-        {% endfor %}
-      </div>
+          <hr class="statistics-border"/>
+          <p class="statistics-blurb">{{ entry.statistics }}</p>
+        </div>
+      {% endfor %}
+    </div>
   </section>
-  {% endcache %}
-  {% cache %}
-      <section class = "section statistics-container">
+{% endcache %}
 
-        <h2 class ="subhead">{{ entry.advertisingHeader }}</h2>
-        <div class = "video-div-flex-container">
-         <div class = "video-blurb">
-           {{ entry.adBody }}
-         </div>
-           <div class = "video-box video-box--nospace">
-             {% for entry in entry.advertingCta %}
-             	<a class="main-button" href="{{ entry.url }}">{{ entry.title }}</a>
-             {% endfor %}
-         </div>
-  {% endcache %}
-  {% cache %}
-      <div class = "statistics-box-flex-container">
-            {% for entry in craft.entries.section('statistics').limit(3) %}
-              <div class = "statistics-box">
-                <div class = "statistics-number">
-                  <h3 class = "big-number">{{ entry.title }}</h3>
-                </div>
-                <hr class = "statistics-border"/>
-                <p class = "statistics-blurb">{{ entry.statistics }}</p>
-            </div>
-            {% endfor %}
-      </section>
-  {% endcache %}
 {% endblock %}

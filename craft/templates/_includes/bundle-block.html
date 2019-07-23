@@ -2,7 +2,7 @@
   {% for entry in craft.entries.section('ad') %}
     {% for block in entry.adUnit %}
       {% if block.type == "adBundle" %}
-        <div class = "platform-content">
+        <div class="platform-content">
         <h2 class="platform-content-header">{{block.bundleName}}</h2>
         <div class="advertising-content-list">
             {{ block.bundleDescription }}

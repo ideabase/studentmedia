@@ -1,7 +1,7 @@
 {% if category.title != "Creative Services" %}
   {% for entry in craft.entries.section('partners').relatedTo(category).order('title') %}
       {% if entry.pushToTop %}
-      <div class = "platform-content">
+      <div class="platform-content">
           <h2 class="platform-content-header">{{ entry.title }}</h2>
           <p class="platform-description">{{entry.shortDescription}}</p>
         {% for ad in craft.entries.section('ad').relatedTo(entry) %}
@@ -17,7 +17,7 @@
   {% for entry in craft.entries.section('partners').relatedTo(category).order('title') %}
     {% if entry.pushToTop!= 1 %}
 
-    <div class = "platform-content">
+    <div class="platform-content">
       <h2 class="platform-content-header">{{ entry.title }}</h2>
       <p class="platform-description">{{entry.shortDescription}}</p>
     {% for ad in craft.entries.section('ad').relatedTo(entry) %}

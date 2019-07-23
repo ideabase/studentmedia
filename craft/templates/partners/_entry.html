@@ -17,7 +17,7 @@
 		{% endfor %}
 		</div>
 	<div class="title-paragraph-container">
-		<h2 class = "intro-sentence-header">{{entry.tagline}}</h2>
+		<h2 class="intro-sentence-header">{{entry.tagline}}</h2>
 		<p class="intro-paragraph">{{entry.body}}</p>
 		<div class="button-section">
 			{% if entry.webUrl %}
@@ -59,8 +59,8 @@
 		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
 		{% if entry.employeeType.contains('studentMediaLeader') %}
 
-			<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-			<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+			<h3 class="contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
+			<h3 class="contact-title">{{entry.jobTitle}}</h3>
 	  	<a class="contact-email" href="mailto:{{entry.email}}">
 				{{entry.email}} </a>
 
@@ -70,8 +70,8 @@
 
 		{% for entry in craft.entries.section('staff').relatedTo(entry)%}
 			{% if not entry.employeeType.contains('studentMediaLeader') %}
-			<h3 class = "contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
-			<h3 class = "contact-title">{{entry.jobTitle}}</h3>
+			<h3 class="contact-leader">{{entry.firstName}} {{entry.lastName}}</h3>
+			<h3 class="contact-title">{{entry.jobTitle}}</h3>
 				{% if entry.email | length %}
 		  	<a class="contact-email" href="mailto:{{entry.email}}">
 					{{entry.email}} </a>
@@ -82,7 +82,7 @@
 		{% endif %}
 
 	<div class="department-contact">
-	    <h2 class = "contact-name">Advertising</h2>
+	    <h2 class="contact-name">Advertising</h2>
 
 				<dl class="contact-list">
 			    <dt class="contact-label">Phone</dt>
@@ -100,7 +100,7 @@
 	{% if entry.socialMedia | length >= 1 %}
 
 		<div class="social-media">
-		<h2 class = "contact-name">Social Media</h2>
+		<h2 class="contact-name">Social Media</h2>
 			<div class="social-media__icons">
 				{% for block in entry.socialMedia %}
 		       <a class="social-media__icon {{ block.socialName }}" href= "{{block.address}}">{{ block.socialName }}</a>

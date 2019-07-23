@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class = "page-header">
+<div class="page-header">
   <h1 class="head-line">{{entry.title}}</h1>
 </div>
 <section class="section">
@@ -17,7 +17,7 @@
 </section>
 <section class="section">
 
-<h2 class = "subhead">Student Employment Opportunities</h2>
+<h2 class="subhead">Student Employment Opportunities</h2>
 {% cache %}
   <section class="student-employee-container">
 
@@ -48,13 +48,13 @@
 
 								{% if job.applicationForm | length %}
 								{% for app in job.applicationForm %}
-								<a href="{{app.url}}" class = "secondary-button app-button">Download Application (PDF)</a>
+								<a href="{{app.url}}" class="secondary-button app-button">Download Application (PDF)</a>
 
 								{% endfor %}
 								{% endif %}
 
 								{% if job.webUrl | length %}
-								<a href="{{job.webUrl}}" class = "secondary-button app-button">Apply Now</a>
+								<a href="{{job.webUrl}}" class="secondary-button app-button">Apply Now</a>
 								{% endif %}
 
 			      </div>
@@ -73,7 +73,7 @@
 
 <section class="section">
 
-<h2 class = "subhead">Frequently Asked Questions (FAQs)</h2>
+<h2 class="subhead">Frequently Asked Questions (FAQs)</h2>
 {% cache %}
 <div class="FAQ-container">
 
@@ -105,10 +105,10 @@
  #}
 </section>
 
-<section class = "section">
-<h2 class ="subhead calender-subhead">Calendar & Events</h2>
+<section class="section">
+<h2 class="subhead calender-subhead">Calendar & Events</h2>
 <section class="calender-container calender-main">
-  <div class ="events">
+  <div class="events">
     {% for entry in craft.entries.section('events').order('date') %}
     	{% include '_includes/event.html' %}
     {% endfor %}

@@ -7,7 +7,7 @@
 {% block content %}
 
 <section class="section">
-  <div class = "page-header">
+  <div class="page-header">
     <h1 class="head-line">{{entry.title}}</h1>
   </div>
   <h2 class="intro-sentence-header">{{entry.tagline}}</h2>
@@ -25,13 +25,13 @@
 {# {% if category.title != "Client Services" %} #}
     <div class="accordion">
     	<div class="link platform-dropdown">
-				<h4 class = "advertising-platform-headers">{{category.title}}</h4>
+				<h4 class="advertising-platform-headers">{{category.title}}</h4>
 			</div>
 			<div class="submenu">
 				{% if category.description | length %}
 					<p class="platform-content-container__description">{{category.description}}</p>
 				{% endif %}
-				<div class = "platform-content-container">
+				<div class="platform-content-container">
 
 					{# Display all "Ad" entries related to these categories#}
 					{% include '_includes/ad-block.html' %}
@@ -43,7 +43,7 @@
 					{# {% if category.title == "Client Services" %}
 					  {% for entry in craft.entries.section('partners').relatedTo(category) %}
 					            {% for ad in craft.entries.section('ad').relatedTo(entry).order('title') %}
-					              <div class = "platform-content">
+					              <div class="platform-content">
 					                <h2 class="platform-content-header">{{ ad.title }}</h2>
 					                {{ ad.body }}
 					                <a class="secondary-button rates-button" href="{{ ad.url }}">View {{ad.title }} Rates</a>
