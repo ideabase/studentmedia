@@ -1,0 +1,55 @@
+{% extends '_layout' %}
+
+{% block hero %}
+{% include '_includes/hero.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+	<h1 class="head-line">{{ entry.title }}</h1>
+</div>
+
+<section class="section">
+	<h2 class="intro-sentence-header">{{ entry.tagline }}</h2>
+
+  {% if entry.body|length %}
+	  {{ entry.body }}
+  {% endif %}
+</section>
+
+<section class="section">
+  <h2 class="subhead">Student Leaders</h2>
+  {% cache %}
+  <div class="student-leader-container section">
+    {% for entry in craft.entries.section('staff').order('lastName') %}
+      {% if entry.employeeType.contains('studentMediaLeader') %}
+        <div class="student-leader">
+          <h2 class="student-leader-contact">{{ entry.firstName }}
+            {{ entry.lastName }}</h2>
+          <h5 class="student-leader-title">{{ entry.jobTitle }}</h5>
+          <a class="student-leader-email" href="mailto:{{ entry.email }}">{{ entry.email }}</a>
+
+          <div class="social-media__icons social-media__icons--staff">
+            {% for block in entry.socialMedia %}
+              {% if block.type == "socialMediaBlock" %}
+                <a class="social-media__icon {{ block.socialName }}" href="{{ block.address }}">{{ block.socialName }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endcache %}
+</section>
+
+<section class="section">
+  <h2 class="subhead">Forms</h2>
+  {% for block in entry.formLinks %}
+    <a href="{{ block.formUrl }}" class="secondary-button">{{ block.formName }}</a>
+  {% endfor %}
+</section>
+
+{% endblock %}
