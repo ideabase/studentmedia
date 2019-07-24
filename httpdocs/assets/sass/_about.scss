@@ -235,6 +235,9 @@ b {
   background-color: #ededed;
   margin-bottom: .35em;
   padding: 1.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .meeting-date {

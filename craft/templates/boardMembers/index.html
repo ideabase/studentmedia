@@ -66,12 +66,12 @@
 			<div class="meeting-box">
 				<h5 class="meeting-date">{{ entry.title }}</h5>
 
-				{% for asset in entry.files %}
-					<a href="{{ asset.url }}">
+				<div class="meeting-links">
+					<a href="{{ entry.files.first().getUrl() }}">
 						<img alt="pdf icon" height="100" src="/assets/img/icons/pdf-icon.svg" width="100">
 					</a>
-					<a class="meeting-pdf" href="{{ asset.url }}" alt="{{ asset.title }}">Download (PDF)</a>
-				{% endfor %}
+					<a class="meeting-pdf" href="{{ entry.files.first().getUrl() }}" alt="{{ entry.files.first().title }}">Download (PDF)</a>
+				</div>
 			</div>
 
 		{% endfor %}
