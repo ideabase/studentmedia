@@ -18,7 +18,7 @@
     {%- set nodeClasses = nodeClasses|merge([node.listClass]) -%}
   {%- endif -%}
   <li {% if nodeClasses|length %} class="{{ nodeClasses|join(' ') }}" {% endif %}>
-    <a href="{{ node.url }}" class="link" title="{{ node.name }}" {% if node.blank %} target="_blank" {% endif %}>{{ node.name }}</a>
+    <a href="{{ node.url }}" class="link" title="{{ node.name }}"{% if node.blank %} target="_blank" {% endif %}>{{ node.name }}</a>
     {% if node.hasChildren %}
       <ul class="nav__level{{ (node.level + 1) }}">
         {% for subnode in node.children %}
@@ -33,9 +33,14 @@
   <nav class="footer-navigation" role="navigation">
     <ul class="footer-content-list">
       {% cache globally %}
+
       {% for node in nav %}
         {{ _self.addNodeToNavigation(node, loop.index) }}
       {% endfor %}
+
+      <li class="footer-header">
+        <a href="{{ url('student-leader-resources') }}" class="link" title="Student Leader Resources">Student Leader Resources</a>
+      </li>
       {% endcache %}
     </ul>
   </nav>
