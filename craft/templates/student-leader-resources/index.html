@@ -49,16 +49,16 @@
   <h2 class="subhead">Forms and Resources</h2>
   <div class="meeting-minutes-container">
 
-    {% for block in entry.formLinks %}
+    {% for resource in entry.resourceLinks %}
 
       <div class="meeting-box">
-        <h5 class="meeting-date">{{ block.formName }}</h5>
+        <h5 class="meeting-date">{{ block.resourceName }}</h5>
 
         <div class="meeting-links">
-          <a href="{{ block.formUrl }}" target="_blank">
+          <a href="{{ block.resourceUrl }}" target="_blank">
             <img alt="pdf icon" height="100" src="/assets/img/icons/pdf-icon.svg" width="100">
           </a>
-          <a href="{{ block.formUrl }}" target="_blank" class="meeting-pdf">{{ 'Complete and Sign' }}</a>
+          <a href="{{ block.resourceUrl }}" target="_blank" class="meeting-pdf">Complete</a>
         </div>
       </div>
 
