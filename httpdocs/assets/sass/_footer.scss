@@ -37,8 +37,6 @@ z-index: 0;
   }
 }
 
-
-
 footer ul {
   list-style-type: none;
   padding-left: 0;
@@ -47,11 +45,6 @@ footer ul {
 .footer-header {
   break-inside: avoid;
   margin-bottom: 0;
-}
-
-.footer-header.dual-column {
-  break-after: always;
-  -webkit-column-break-after: always;
 }
 
 .footer-logo-image{
@@ -89,7 +82,7 @@ footer ul {
 
 footer .nav__level2 {
   margin-top: .5em;
-  margin-bottom: 1.6em;
+  margin-bottom: 2em;
   display:inline-block;
 }
 
