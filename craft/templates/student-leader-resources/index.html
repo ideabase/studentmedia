@@ -49,22 +49,22 @@
   <h2 class="subhead">Forms and Resources</h2>
   <div class="meeting-minutes-container">
 
-    {% for block in entry.resourceLinks %}
+    {% for block in entry.resources %}
 
       <div class="meeting-box">
         <h5 class="meeting-date">{{ block.resourceName }}</h5>
 
         <div class="meeting-links">
-          {% if block.type == 'resourceLink' %}
+          {% if block.type == 'resourceUrl' %}
             <a href="{{ block.resourceUrl }}" target="_blank">
               <img alt="pdf icon" height="100" src="/assets/img/icons/pdf-icon.svg" width="100">
             </a>
             <a href="{{ block.resourceUrl }}" target="_blank" class="meeting-pdf">Complete</a>
           {% else %}
-            <a href="{{ block.resourceFile.first().url }}" target="_blank">
+            <a href="{{ block.resourceAsset.first().url }}" target="_blank">
               <img alt="pdf icon" height="100" src="/assets/img/icons/pdf-icon.svg" width="100">
             </a>
-            <a href="{{ block.resourceFile.first().url }}" target="_blank" class="meeting-pdf">View</a>
+            <a href="{{ block.resourceAsset.first().url }}" target="_blank" class="meeting-pdf">View</a>
           {% endif %}
         </div>
       </div>
