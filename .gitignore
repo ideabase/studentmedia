@@ -1,6 +1,5 @@
 httpdocs/assets/img/global/_hero
 httpdocs/assets/uploads/*
-craft/config/db.php
 httpdocs/assets/img/uploads/
 !httpdocs/assets/img/uploads/logo.png
 craft/storage/backups/

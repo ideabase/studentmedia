@@ -140,60 +140,61 @@ margin-left: 0;
 /*About Us-Board Members */
 
 @media screen and (max-width:650px) {
-    .voting-members {
-      display: block;
-    }
+  .voting-members {
+    display: block;
+  }
 
-    .meeting-minutes-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .meeting-box {
-      width: 49%;
-    }
+  .meeting-minutes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .meeting-box {
+    width: 49%;
+  }
 }
 
 @media screen and (min-width:650px) {
-    .voting-members {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-content: space-between;
-      grid-column-gap: 3em;
-    }
-
-    .member {
-      margin-bottom: 1em;
-    }
-
-    .meeting-box {
-      width: inherit;
-    }
-
-    .meeting-minutes-container {
-      display: grid;
-      grid-column-gap: .25em;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      justify-content: space-between;
-    }
+  .voting-members {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    grid-column-gap: 3em;
   }
 
-  .non-voting-members {
-      list-style-type: none;
-      margin-left: 0;
-      padding-left: 0;
-      margin-top: 0;
+  .member {
+    margin-bottom: 1em;
   }
+
+  .meeting-box {
+    width: inherit;
+  }
+
+  .meeting-minutes-container {
+    display: grid;
+    grid-column-gap: .25em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+  }
+}
+
+.non-voting-members {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 0;
+}
 
 @media screen and (min-width:900px) {
-    .non-voting-members {
-      columns: 2;
-      column-gap: 50px;
-    }
-    .non-voting-member-name {
-      display: block;
-      margin-top: 0;
-    }
+  .non-voting-members {
+    columns: 2;
+    column-gap: 50px;
+  }
+  .non-voting-member-name {
+    display: block;
+    margin-top: 0;
+  }
 }
 
 .member-title {
@@ -220,6 +221,7 @@ b {
 .guidelines {
   margin-bottom: 1em;
 }
+
 .guidelines-button {
   display: inline-block;
   margin-right: 1em;
@@ -238,21 +240,36 @@ b {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none;
+  transition: background-color .3s ease-in-out;
+
+  h5 {
+    color: black;
+  }
+
+  &:hover {
+    background-color: #d2d2d2;
+  }
 }
 
 .meeting-date {
-  margin-left: 0;
-  margin-top: 0;
+  margin: 0 0 1em 0;
   font-size: .9em;
   font-weight: 500;
 }
 
+.meeting-description {
+  color: black;
+  font-size: .7em;
+  font-weight: 300;
+}
+
 .meeting-pdf {
   margin-left: 0;
-  font-size: .7em;
+  font-size: .8em;
   display: block;
   text-decoration: none;
-  padding-top: .5em;
+  padding-top: 1em;
   color: $dark-blue;
 }
 /*end of board members CSS*/
