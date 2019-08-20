@@ -2,6 +2,7 @@ httpdocs/assets/img/global/_hero
 httpdocs/assets/uploads/*
 httpdocs/assets/img/uploads/
 !httpdocs/assets/img/uploads/logo.png
+craft/config/db.php
 craft/storage/backups/
 craft/storage/logs/
 craft/storage/runtime/
